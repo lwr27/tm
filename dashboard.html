@@ -129,6 +129,22 @@
   .diff-good { color: var(--good); }
   .diff-bad { color: var(--danger); }
 
+  .plastic-boy {
+    display: inline-flex; align-items: center; gap: 5px; margin: -2px 0 10px;
+    font-family: var(--display); font-weight: 600; font-size: 11px; letter-spacing: 0.04em;
+    text-decoration: none; color: #7dd3fc;
+    background: linear-gradient(180deg, rgba(125,211,252,0.16), rgba(125,211,252,0.06));
+    border: 1px solid rgba(125,211,252,0.35); border-radius: 999px; padding: 3px 10px;
+    transition: border-color 0.15s, transform 0.15s;
+  }
+  .plastic-boy:hover { border-color: rgba(125,211,252,0.7); transform: translateY(-1px); }
+
+  .chart-modal { position: fixed; inset: 0; z-index: 100; background: rgba(6,8,12,0.96); display: flex; flex-direction: column; padding: 20px; }
+  .chart-modal[hidden] { display: none; }
+  .chart-modal-bar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+  .chart-modal-title { font-family: var(--display); font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 0.08em; }
+  .chart-modal-body { flex: 1; position: relative; min-height: 0; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; }
+
   select { font-family: inherit; }
 
   @media (max-width: 640px) {
@@ -174,11 +190,21 @@
 
     <p class="section-title">Glicko-2 qualifier rating</p>
     <p class="section-note">Standard Glicko-2 scored on each cup's qualification percentile — the same approach as the COTD Qualifier Rating Discord bot, with its constants reverse-engineered from its own displayed numbers (virtual 1500-rated opponent with RD 280, one rating period per day, uncertainty inflating on days off). Raw daily values, no smoothing. Won't match the bot's numbers exactly (different history coverage), but the shape and levels should track closely.</p>
-    <div class="range-row" id="rangeRow"></div>
+    <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+      <div class="range-row" id="rangeRow" style="margin-bottom:12px;"></div>
+      <button id="chartFullscreenBtn" class="range-btn" style="margin-bottom:12px;" title="Open the full chart in a large window">⛶ Fullscreen</button>
+    </div>
     <div class="legend" id="legend"></div>
     <div style="display:flex; align-items:stretch; margin-bottom:1.5rem;">
       <div style="width:56px; flex:none;"><canvas id="divAxis"></canvas></div>
       <div class="chart-scroll" style="flex:1; margin-bottom:0; min-width:0;"><div class="chart-inner" id="divChartWrap"><canvas id="divChart"></canvas></div></div>
+    </div>
+    <div id="chartModal" class="chart-modal" hidden>
+      <div class="chart-modal-bar">
+        <span class="chart-modal-title">Glicko-2 qualifier rating — full history</span>
+        <button id="chartModalClose" class="range-btn">✕ Close</button>
+      </div>
+      <div class="chart-modal-body"><canvas id="divChartFull"></canvas></div>
     </div>
 
     <p class="section-title">Share summary</p>
@@ -231,15 +257,7 @@
     </div>
 
   <div class="tab-panel" id="tab-styles">
-    <p class="section-title">Player deep dive</p>
-    <p class="section-note">Pick a player to see their profile and strongest/weakest styles.</p>
-
-    <div class="chip-row" id="playerChips"></div>
-    <div id="playerDetail"></div>
-  <p class="section-title">Style vs personal average</p>
-    <p id="styleNote" class="section-note"></p>
-    <div id="styleBlocks"></div>
-  <p class="section-title">Style radar</p>
+    <p class="section-title">Style radar</p>
     <p class="section-note">Spike out = strong at that style, needs at least 10 cups to show. Further out is better.</p>
     <div style="position:relative; width:100%; height:380px; margin-bottom:1.5rem;">
       <canvas id="radarChart"></canvas>
@@ -253,6 +271,14 @@
     <p id="envNote" class="section-note"></p>
     <div id="envTable" style="overflow-x:auto; margin-bottom:1.5rem;"></div>
 
+    <p class="section-title">Player deep dive</p>
+    <p class="section-note">Pick a player to see their profile and strongest/weakest styles.</p>
+    <div class="chip-row" id="playerChips"></div>
+    <div id="playerDetail"></div>
+
+    <p class="section-title">Style vs personal average</p>
+    <p id="styleNote" class="section-note"></p>
+    <div id="styleBlocks"></div>
     </div>
 
   <div class="tab-panel" id="tab-trends">
@@ -510,6 +536,39 @@
     return Math.round(divs.reduce((a,b)=>a+b,0) / divs.length * 10) / 10;
   }
 
+  // "Plastic Boy": whoever placed best (lowest overall rank) in the most
+  // recent COTD that all three players entered AND was on a Plastic-tagged
+  // map. Returns { name, cup } or null.
+  function computePlasticBoy(){
+    if (!MAPTAGS || !MAPTAGS.maps) return null;
+    // index each player's cups by label for fast "did everyone play it" checks
+    const byLabel = {};
+    NAMES.forEach(name => {
+      byLabel[name] = {};
+      validCups(CACHE.players[name].cups).forEach(c => { byLabel[name][cupLabel(c)] = c; });
+    });
+    // candidate labels = cups the first player has, sorted newest first
+    const labels = Object.keys(byLabel[NAMES[0]] || {})
+      .sort((a, b) => labelDateKey(b).localeCompare(labelDateKey(a)));
+    for (const label of labels){
+      // all three must have played it
+      if (!NAMES.every(name => byLabel[name][label])) continue;
+      const c0 = byLabel[NAMES[0]][label];
+      const info = c0.mapuid && MAPTAGS.maps[c0.mapuid];
+      const isPlastic = info && info.found && info.tags &&
+        info.tags.some(t => /plastic/i.test(t));
+      if (!isPlastic) continue;
+      // winner = lowest overall rank among the three
+      let best = null;
+      NAMES.forEach(name => {
+        const c = byLabel[name][label];
+        if (best === null || c.rank < byLabel[best][label].rank) best = name;
+      });
+      return { name: best, cup: byLabel[best][label], label };
+    }
+    return null;
+  }
+
   function statsFor(name){
     const cups = validCups(CACHE.players[name].cups);
     if (!cups.length) return { total: 0 };
@@ -525,6 +584,7 @@
   function renderStatCards(){
     const el = document.getElementById('statCards');
     el.innerHTML = '';
+    const plasticBoy = computePlasticBoy();
     NAMES.forEach(name => {
       const cups = validCups(CACHE.players[name].cups);
       const s = statsFor(name);
@@ -537,11 +597,23 @@
       const history = glickoHistory(sortedCups);
       const currentRating = history.length ? Math.round(history[history.length - 1].rating) : null;
 
+      const isPlasticBoy = plasticBoy && plasticBoy.name === name;
+      // Link to that day's TOTD page on trackmania.io, keyed by date —
+      // more reliable than guessing an internal cup-id field.
+      const pd = isPlasticBoy ? cupDate(plasticBoy.cup) : null;
+      const plasticHref = pd
+        ? `https://trackmania.io/#/totd/${pd.getFullYear()}-${String(pd.getMonth()+1).padStart(2,'0')}-${String(pd.getDate()).padStart(2,'0')}`
+        : null;
+      const plasticBadge = isPlasticBoy
+        ? `<a class="plastic-boy" href="${plasticHref}" target="_blank" rel="noopener" title="Best of the three on the last Plastic COTD you all played (${plasticBoy.label}) — click for that day's map">🧊 Plastic Boy</a>`
+        : '';
+
       const card = document.createElement('div');
       card.className = 'card';
       card.style.borderLeftColor = colorOf(name);
       card.innerHTML = `
         <div class="name"><span class="dot" style="background:${colorOf(name)};"></span>${name}</div>
+        ${plasticBadge}
         <table>
           <tr><td>Glicko-2 rating</td><td class="val">${currentRating ?? '-'}</td></tr>
           <tr><td>Cups tracked</td><td class="val">${s.total ?? '-'}</td></tr>
@@ -679,6 +751,67 @@
     drawRatingAxis();
   }
 
+  // Fullscreen chart: the entire history rendered to fit one large window,
+  // no horizontal scroll, y-axis labels shown inline (space isn't tight
+  // here). Reuses the same glickoHistory data and end-of-line name labels.
+  let divChartFull = null;
+  function openChartFullscreen(){
+    const modal = document.getElementById('chartModal');
+    modal.hidden = false;
+    const fullLabels = allLabelsChrono();
+    const datasets = NAMES.map(name => {
+      const sortedCups = validCups(CACHE.players[name].cups).slice().sort((a,b) => new Date(a.timestamp) - new Date(b.timestamp));
+      const history = glickoHistory(sortedCups);
+      const byLabel = {};
+      history.forEach(h => { byLabel[h.label] = h.rating; });
+      return {
+        label: name,
+        data: fullLabels.map(l => byLabel[l] == null ? null : Math.round(byLabel[l])),
+        borderColor: colorOf(name), backgroundColor: colorOf(name),
+        spanGaps: true, tension: 0, borderWidth: 1.5, pointRadius: 0, pointHitRadius: 6,
+      };
+    });
+    const endLabels = {
+      id: 'endLabelsFull',
+      afterDatasetsDraw(chart){
+        const c = chart.ctx;
+        c.save();
+        c.font = "600 12px 'Chakra Petch', sans-serif";
+        c.textAlign = 'left'; c.textBaseline = 'middle';
+        chart.data.datasets.forEach((ds, i) => {
+          const meta = chart.getDatasetMeta(i);
+          if (meta.hidden) return;
+          for (let j = meta.data.length - 1; j >= 0; j--){
+            if (ds.data[j] != null && meta.data[j]){ c.fillStyle = ds.borderColor; c.fillText(ds.label, meta.data[j].x + 7, meta.data[j].y); break; }
+          }
+        });
+        c.restore();
+      }
+    };
+    if (divChartFull) divChartFull.destroy();
+    divChartFull = new Chart(document.getElementById('divChartFull'), {
+      type: 'line',
+      data: { labels: fullLabels, datasets },
+      plugins: [endLabels],
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        layout: { padding: { right: 120 } },
+        plugins: { legend: { display: false } },
+        scales: {
+          y: { ticks: { color: '#a8b0c3', font: { family: "'JetBrains Mono', monospace", size: 11 } }, grid: { color: 'rgba(255,255,255,0.07)' } },
+          x: { ticks: { autoSkip: true, maxTicksLimit: 24, color: '#a8b0c3', maxRotation: 0 }, grid: { display: false } }
+        }
+      }
+    });
+  }
+  function closeChartFullscreen(){
+    document.getElementById('chartModal').hidden = true;
+    if (divChartFull){ divChartFull.destroy(); divChartFull = null; }
+  }
+  document.getElementById('chartFullscreenBtn').onclick = openChartFullscreen;
+  document.getElementById('chartModalClose').onclick = closeChartFullscreen;
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeChartFullscreen(); });
+
   // Draws the y-axis rating numbers on a slim fixed canvas beside the
   // scrollable chart, so they stay visible however far right you scroll.
   function drawRatingAxis(){
@@ -758,11 +891,27 @@
       validCups(CACHE.players[name].cups).forEach(c => { byNameByLabel[name][cupLabel(c)] = c; });
     });
 
-    let html = '<table class="data"><tr><th>Cup</th>';
+    // Resolve a representative cup per label to get its map (any player's
+    // copy of that day's cup shares the same map).
+    const cupByLabel = {};
+    labelArr.forEach(label => {
+      for (const name of NAMES){ if (byNameByLabel[name][label]){ cupByLabel[label] = byNameByLabel[name][label]; break; } }
+    });
+
+    let html = '<table class="data"><tr><th>Date</th><th>Map</th>';
     NAMES.forEach(name => { html += `<th>${shortOf(name)}</th>`; });
     html += '</tr>';
     labelArr.forEach(label => {
-      html += `<tr><td style="color:var(--text-secondary);">${label}</td>`;
+      const rep = cupByLabel[label];
+      const info = rep && rep.mapuid && MAPTAGS && MAPTAGS.maps && MAPTAGS.maps[rep.mapuid];
+      let mapCell = '<span style="color:var(--text-muted);">—</span>';
+      if (info && info.found && info.name){
+        const href = info.mxid
+          ? `https://trackmania.exchange/maps/${info.mxid}`
+          : `https://trackmania.io/#/leaderboard/${rep.mapuid}`;
+        mapCell = `<a class="maplink" href="${href}" target="_blank" rel="noopener">${formatTMName(info.name)}</a>`;
+      }
+      html += `<tr><td style="color:var(--text-secondary);">${label}</td><td>${mapCell}</td>`;
       NAMES.forEach(name => {
         const c = byNameByLabel[name][label];
         if (!c){ html += '<td>-</td>'; return; }
