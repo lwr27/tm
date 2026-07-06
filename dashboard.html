@@ -1,0 +1,1721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>3KT.LIVE — COTD telemetry</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0c11; --surface: #10131b; --surface-2: #161b26; --border: #222939;
+    --text-primary: #eef1f7; --text-secondary: #a8b0c3; --text-muted: #667089;
+    --danger: #f4635e; --good: #3ddc97; --accent: #e8ecf5; --radius: 10px;
+    --grad: linear-gradient(90deg, #f5a623, #ef4444, #ec4899);
+    --mono: "JetBrains Mono", ui-monospace, monospace;
+    --display: "Chakra Petch", "Inter", sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scrollbar-color: var(--border) var(--bg); }
+  body {
+    background: var(--bg); color: var(--text-primary);
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    margin: 0; padding: 0 0 4rem;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection { background: rgba(236, 72, 153, 0.35); }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+  main { max-width: 1000px; margin: 0 auto; padding: 0 1rem; }
+
+  header { padding: 2.2rem 1rem 0; margin-bottom: 1.75rem; }
+  .header-inner { max-width: 1000px; margin: 0 auto; }
+  .wordmark {
+    font-family: var(--display); font-weight: 700; font-size: 34px; letter-spacing: 0.05em;
+    background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent;
+    display: inline-block; line-height: 1;
+  }
+  header p { font-size: 11px; color: var(--text-muted); margin: 8px 0 0; text-transform: uppercase; letter-spacing: 0.18em; }
+  .stripe { height: 2px; background: var(--grad); margin-top: 1.4rem; opacity: 0.9; }
+
+  .pills { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1.25rem; }
+  .pill { background: var(--surface); border: 1px solid var(--border); border-radius: 999px; padding: 6px 14px; font-size: 13px; color: var(--text-secondary); }
+  .pill b { color: var(--text-primary); font-family: var(--mono); font-weight: 600; font-variant-numeric: tabular-nums; }
+
+  nav.tabs { display: flex; gap: 2px; border-bottom: 1px solid var(--border); margin-bottom: 1.75rem; overflow-x: auto; }
+  nav.tabs button {
+    position: relative; white-space: nowrap; cursor: pointer; background: transparent; border: none;
+    font-family: var(--display); font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.09em;
+    color: var(--text-muted); padding: 10px 14px 12px; transition: color 0.15s;
+  }
+  nav.tabs button.active { color: var(--text-primary); }
+  nav.tabs button.active::after {
+    content: ""; position: absolute; left: 10px; right: 10px; bottom: -1px; height: 2px;
+    background: var(--grad); border-radius: 2px;
+  }
+  nav.tabs button:hover:not(.active) { color: var(--text-secondary); }
+
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+
+  .section-title {
+    font-family: var(--display); font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em;
+    margin: 2rem 0 4px; display: flex; align-items: center; gap: 9px; color: var(--text-primary);
+  }
+  .section-title::before { content: ""; width: 18px; height: 2px; background: var(--grad); border-radius: 2px; flex-shrink: 0; }
+  .section-note { font-size: 12px; color: var(--text-muted); margin: 0 0 14px; max-width: 72ch; line-height: 1.5; }
+
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; margin-bottom: 1.5rem; }
+  .card {
+    background: linear-gradient(180deg, var(--surface-2), var(--surface)); border-radius: 12px; padding: 1rem;
+    border: 1px solid var(--border); border-left: 3px solid var(--border);
+    transition: transform 0.15s, box-shadow 0.15s;
+    position: relative;
+  }
+  .card:hover { transform: translateY(-1px); box-shadow: 0 6px 22px rgba(0, 0, 0, 0.35); }
+  .card .name { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; font-family: var(--display); font-weight: 600; font-size: 14px; letter-spacing: 0.02em; }
+  .card .dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+  .card table { width: 100%; font-size: 13px; border-collapse: collapse; }
+  .card table td { padding: 3px 0; color: var(--text-secondary); }
+  .card table td.val { text-align: right; color: var(--text-primary); font-family: var(--mono); font-weight: 600; font-variant-numeric: tabular-nums; }
+
+  .chip-row { display: flex; gap: 8px; margin-bottom: 1.5rem; flex-wrap: wrap; }
+  .chip {
+    display: flex; align-items: center; gap: 8px; background: var(--surface); border: 1px solid var(--border);
+    border-radius: 999px; padding: 8px 16px; cursor: pointer; font-size: 13px; font-weight: 500; color: var(--text-secondary);
+    transition: border-color 0.15s, color 0.15s;
+  }
+  .chip .dot { width: 10px; height: 10px; border-radius: 50%; }
+  .chip.active { color: var(--text-primary); border-color: var(--chip-color, var(--accent)); background: var(--surface-2); }
+
+  .range-row { display: flex; gap: 6px; margin-bottom: 12px; flex-wrap: wrap; }
+  .range-btn {
+    font-family: inherit; font-size: 12px; cursor: pointer; background: var(--surface); border: 1px solid var(--border);
+    color: var(--text-secondary); padding: 6px 12px; border-radius: 999px; transition: border-color 0.15s, color 0.15s;
+  }
+  .range-btn:hover { color: var(--text-primary); }
+  .range-btn.active { background: var(--surface-2); color: var(--text-primary); border-color: var(--accent); }
+
+  table.data { width: 100%; font-size: 13px; border-collapse: collapse; }
+  table.data th, table.data td { padding: 8px 10px; text-align: left; }
+  table.data th {
+    font-family: var(--display); color: var(--text-muted); font-weight: 600; font-size: 11px;
+    text-transform: uppercase; letter-spacing: 0.08em; position: sticky; top: 0; background: var(--bg); z-index: 1;
+  }
+  table.data td { font-variant-numeric: tabular-nums; }
+  table.data td:nth-child(n+2) { font-family: var(--mono); font-size: 12.5px; }
+  table.data tr + tr td { border-top: 1px solid var(--border); }
+  table.data tbody tr:hover td, table.data tr:hover td { background: rgba(255, 255, 255, 0.015); }
+  .badge { display: inline-block; min-width: 24px; text-align: center; padding: 2px 7px; border-radius: 5px; font-size: 12px; font-weight: 600; font-family: var(--mono); }
+  .scroll-table { max-height: 480px; overflow-y: auto; border: 1px solid var(--border); border-radius: var(--radius); }
+
+  #status { font-size: 13px; color: var(--text-muted); margin-bottom: 1.5rem; }
+  .maplink { color: inherit; text-decoration: none; }
+  .maplink:hover { text-decoration: underline; }
+  code { background: var(--surface); border: 1px solid var(--border); padding: 1px 6px; border-radius: 4px; font-size: 12px; font-family: var(--mono); }
+  .legend { display: flex; gap: 16px; font-size: 12px; color: var(--text-secondary); margin-bottom: 8px; }
+  .legend span { display: flex; align-items: center; gap: 5px; }
+  .legend .dot { width: 10px; height: 10px; border-radius: 2px; }
+
+  .style-list { display: flex; flex-direction: column; gap: 6px; margin-bottom: 1rem; }
+  .style-row { display: flex; justify-content: space-between; align-items: center; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 8px 12px; font-size: 13px; }
+  .style-row .tag { font-weight: 500; }
+  .style-row .figure { color: var(--text-secondary); font-family: var(--mono); font-size: 12.5px; font-variant-numeric: tabular-nums; }
+
+  .chart-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.5rem; background: var(--surface); }
+  .chart-inner { position: relative; height: 340px; padding: 12px; }
+  .chart-fs-btn {
+    position: absolute; top: 8px; right: 8px; z-index: 3;
+    font-family: inherit; font-size: 11px; cursor: pointer;
+    background: rgba(16,19,27,0.85); border: 1px solid var(--border); color: var(--text-secondary);
+    padding: 4px 9px; border-radius: 7px; backdrop-filter: blur(4px);
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .chart-fs-btn:hover { color: var(--text-primary); border-color: var(--accent); }
+
+  .player-style-block { margin-bottom: 1.5rem; }
+  .player-style-header { display: flex; align-items: center; gap: 8px; font-family: var(--display); font-weight: 600; font-size: 14px; margin-bottom: 8px; }
+  .diff-good { color: var(--good); }
+  .diff-bad { color: var(--danger); }
+
+  .plastic-boy {
+    position: absolute; top: 12px; right: 12px;
+    display: inline-flex; align-items: center; gap: 5px;
+    font-family: var(--display); font-weight: 600; font-size: 10.5px; letter-spacing: 0.03em;
+    text-decoration: none; color: #7dd3fc;
+    background: linear-gradient(180deg, rgba(125,211,252,0.16), rgba(125,211,252,0.06));
+    border: 1px solid rgba(125,211,252,0.35); border-radius: 999px; padding: 3px 9px;
+    transition: border-color 0.15s, transform 0.15s;
+  }
+  .plastic-boy:hover { border-color: rgba(125,211,252,0.7); transform: translateY(-1px); }
+
+  .chart-modal { position: fixed; inset: 0; z-index: 100; background: rgba(6,8,12,0.96); display: flex; flex-direction: column; padding: 20px; }
+  .chart-modal[hidden] { display: none; }
+  .chart-modal-bar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+  .chart-modal-title { font-family: var(--display); font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 0.08em; }
+  .chart-modal-body { flex: 1; position: relative; min-height: 0; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; }
+
+  select { font-family: inherit; }
+
+  @media (max-width: 640px) {
+    .wordmark { font-size: 27px; }
+    header { padding-top: 1.5rem; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <div class="wordmark">3KT.LIVE</div>
+    <p>COTD telemetry &middot; XV27 / TheBreaker0 / Pho3nix_.</p>
+  </div>
+  <div class="stripe"></div>
+</header>
+
+
+<main>
+  <div class="pills" id="pills"></div>
+  <div id="status">Loading cache.json...</div>
+
+  <nav class="tabs">
+    <button data-tab="overview" class="active">Overview</button>
+    <button data-tab="results">Results</button>
+    <button data-tab="divisions">Divisions</button>
+    <button data-tab="styles">Styles</button>
+    <button data-tab="trends">Trends</button>
+    <button data-tab="authors">Author medals</button>
+  </nav>
+
+  <div class="tab-panel active" id="tab-overview">
+    <div class="cards" id="statCards"></div>
+
+    <p class="section-title">Glicko-2 qualifier rating</p>
+    <p class="section-note" style="max-width:none;">Standard Glicko-2 on each cup's qualification percentile — the same method as the COTD Qualifier Rating bot (virtual 1500-rated opponent, one rating period per day, uncertainty rising on days off). Raw daily values, so the shape and levels track the bot closely without matching its exact numbers.</p>
+    <div class="range-row" id="rangeRow" style="display:none;"></div>
+    <div class="legend" id="legend"></div>
+    <div style="position:relative; display:flex; align-items:stretch; margin-bottom:1.5rem;">
+      <button id="chartFullscreenBtn" class="chart-fs-btn" title="Open the full chart in a large window">⛶ Fullscreen</button>
+      <div style="width:56px; flex:none;"><canvas id="divAxis"></canvas></div>
+      <div class="chart-scroll" style="flex:1; margin-bottom:0; min-width:0;"><div class="chart-inner" id="divChartWrap"><canvas id="divChart"></canvas></div></div>
+    </div>
+    <div id="chartModal" class="chart-modal" hidden>
+      <div class="chart-modal-bar">
+        <span class="chart-modal-title">Glicko-2 qualifier rating — full history</span>
+        <button id="chartModalClose" class="range-btn">✕ Close</button>
+      </div>
+      <div class="chart-modal-body"><canvas id="divChartFull"></canvas></div>
+    </div>
+
+    <p class="section-title">This week's form</p>
+    <div id="formDigest" style="margin-bottom:1.5rem;"></div>
+
+    <p class="section-title">Group leaderboard (last 30 days)</p>
+    <div id="groupLeaderboard" style="margin-bottom:1.5rem;"></div>
+
+</div>
+
+  <div class="tab-panel" id="tab-results">
+    <p class="section-title">Cup by cup</p>
+    <p class="section-note">Full history, most recent first. Division badges are colour-coded per player: greener is better relative to that player's own range.</p>
+    <div class="scroll-table" id="cupTable"></div>
+  <p class="section-title">Monthly report card</p>
+    <p class="section-note">Cups played, average division, and trend vs the previous month.</p>
+    <div id="monthlyReport" style="overflow-x:auto; margin-bottom:1.5rem;"></div>
+
+    </div>
+
+  <div class="tab-panel" id="tab-divisions">
+    <p class="section-title">Division distribution</p>
+    <p class="section-note">How often each player has landed in each division. Taller bars further left mean more consistently strong placements.</p>
+    <div style="position:relative; width:100%; height:320px; margin-bottom:1.5rem;">
+      <canvas id="divHistChart"></canvas>
+    </div>
+  <p class="section-title">Personal bests timeline</p>
+    <p class="section-note">Every time a player set a new best-ever division.</p>
+    <div id="pbTimeline" style="margin-bottom:1.5rem;"></div>
+
+    <p class="section-title">Personal-best-division appearances</p>
+    <p class="section-note">Every cup where a player matched their strongest-ever division.</p>
+    <div id="pbTracker" style="overflow-x:auto;"></div>
+  <p class="section-title">Division 1 tracker</p>
+    <p class="section-note">How close each player has gotten to the top division.</p>
+    <div id="div1Tracker" style="overflow-x:auto; margin-bottom:1.5rem;"></div>
+
+    <p class="section-title">Promotion / relegation log</p>
+    <p class="section-note">Notable division shifts cup to cup (3+ divisions of movement).</p>
+    <div id="promoLog" style="margin-bottom:1.5rem;"></div>
+
+    <p class="section-title">Consistency</p>
+    <p class="section-note">Standard deviation of division over their last 30 cups. Lower means steadier — two players can have the same average division but very different reliability.</p>
+    <div class="cards" id="consistencyCards"></div>
+
+    <p class="section-title">Best and worst result ever</p>
+    <div class="cards" id="extremesCards"></div>
+
+    <p class="section-title">Qualified but didn't play rounds</p>
+    <p class="section-note">Cups where a division was assigned but the player never actually completed the division-stage rounds afterward.</p>
+    <div id="noShowTable" style="overflow-x:auto; margin-bottom:1.5rem;"></div>
+
+    </div>
+
+  <div class="tab-panel" id="tab-styles">
+    <p class="section-title">Style radar</p>
+    <p class="section-note">Spike out = strong at that style, needs at least 10 cups to show. Further out is better.</p>
+    <div style="position:relative; width:100%; height:380px; margin-bottom:1.5rem;">
+      <canvas id="radarChart"></canvas>
+    </div>
+
+    <p class="section-title">Style ownership</p>
+    <p class="section-note">Who's currently best of the three at each map style.</p>
+    <div id="styleOwnership" style="margin-bottom:1.5rem;"></div>
+
+    <p class="section-title">Player deep dive</p>
+    <p class="section-note">Pick a player to see their profile and strongest/weakest styles.</p>
+    <div class="chip-row" id="playerChips"></div>
+    <div id="playerDetail"></div>
+
+    <p class="section-title">Style vs personal average</p>
+    <p id="styleNote" class="section-note"></p>
+    <div id="styleBlocks"></div>
+    </div>
+
+  <div class="tab-panel" id="tab-trends">
+    <p class="section-title">Head-to-head</p>
+    <p class="section-note">Only counts cups two players both played. Better division wins that cup; equal division is a tie.</p>
+    <div class="range-row">
+      <button class="range-btn active" id="h2hToggleAll">All shared cups</button>
+      <button class="range-btn" id="h2hToggleSameMap">Same map only</button>
+    </div>
+    <div id="h2hTable" style="overflow-x:auto; margin-bottom:1.5rem;"></div>
+
+    <p class="section-title">Day-of-week performance</p>
+    <p class="section-note">Average division by weekday — lower bars are better.</p>
+    <div style="position:relative; width:100%; height:280px; margin-bottom:1.5rem;">
+      <canvas id="dowChart"></canvas>
+    </div>
+
+    <p class="section-title">Field size vs performance</p>
+    <p class="section-note">Does a bigger field on a given day correlate with better or worse division for each player?</p>
+    <div style="position:relative; width:100%; height:320px; margin-bottom:1.5rem;">
+      <canvas id="scatterChart"></canvas>
+    </div>
+
+    <p class="section-title">Longest gap between cups</p>
+    <div id="gapTable" style="overflow-x:auto; margin-bottom:1.5rem;"></div>
+
+    <p class="section-title">Projection</p>
+    <p class="section-note">A naive straight-line projection from each player's last 30 days of results. Not a promise — form isn't linear.</p>
+    <div id="projectionTable" style="overflow-x:auto; margin-bottom:1.5rem;"></div>
+
+    </div>
+
+  <div class="tab-panel" id="tab-authors">
+    <div class="pills" id="authorPills"></div>
+    <div id="authorStatus" style="font-size:13px; color:var(--text-muted); margin-bottom:1.5rem;"></div>
+
+    <div class="range-row" id="authorSortRow"></div>
+    <div class="scroll-table" id="authorTable"></div>
+  </div>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+(function(){
+  const PLAYER_META = {
+    'XV27 & Whidot': { color: '#f5a623', short: 'XV27' },
+    'TheBreaker0':   { color: '#ef4444', short: 'TheBreaker0' },
+    'Pho3nix_.':     { color: '#ec4899', short: 'Pho3nix_.' },
+  };
+  const MIN_STYLE_CUPS = 10; // minimum cups of a style before it counts as "best" or "worst"
+  const RANGES = [
+    { key: 'all', label: 'All time', days: null },
+  ];
+
+  const statusEl = document.getElementById('status');
+  let divChart = null, divHistChart = null;
+  let CACHE = null, MAPTAGS = null, AUTHORS = null, NAMES = [];
+  let selectedPlayer = null;
+  let selectedRange = 'all';
+
+  function setStatus(msg, isError){
+    statusEl.innerHTML = msg;
+    statusEl.style.color = isError ? 'var(--danger)' : 'var(--text-muted)';
+  }
+  function colorOf(name){ return (PLAYER_META[name] && PLAYER_META[name].color) || '#8888aa'; }
+  function shortOf(name){ return (PLAYER_META[name] && PLAYER_META[name].short) || name; }
+  function cupLabel(c){ return c.name || new Date(c.timestamp).toLocaleDateString(); }
+  function cupDate(c){
+    const m = cupLabel(c).match(/\d{4}-\d{2}-\d{2}/);
+    return m ? new Date(m[0]) : new Date(c.timestamp);
+  }
+
+  // A cup's numbers are only trustworthy if the field size, rank and
+  // division are internally consistent. trackmania.io's own API flags a
+  // small number of "broken" cups per player (bad/cancelled data) — this
+  // filter catches those so one bad record can't skew "best division" etc.
+  function isValidCup(c){
+    return c.div != null && c.rank != null && c.totalplayers != null
+      && c.totalplayers >= 32
+      && c.rank >= 1 && c.rank <= c.totalplayers
+      && c.div >= 1;
+  }
+  function validCups(cups){ return cups.filter(isValidCup); }
+
+  // Human-readable reason a cup fails isValidCup, for the debug view.
+  function invalidReason(c){
+    if (c.div == null || c.rank == null || c.totalplayers == null)
+      return 'missing division / rank / field size (incomplete record on trackmania.io)';
+    if (c.totalplayers < 32)
+      return `only ${c.totalplayers} players — too small a field to form a division`;
+    if (c.rank < 1 || c.rank > c.totalplayers)
+      return `rank ${c.rank} of ${c.totalplayers} is impossible (trackmania.io's qualifying and division records disagree)`;
+    if (c.div < 1)
+      return `division ${c.div} is invalid`;
+    return 'unknown';
+  }
+
+  // Some cups have a division assignment (they qualified into a bracket)
+  // but a divrank of 0 and a score of 0 — meaning they never actually
+  // played the division rounds after qualifying. Treat these separately
+  // rather than displaying "rank 0/64", which would be misleading, or
+  // letting them skew division-1/best-divrank stats.
+  function isNoShow(c){ return c.div != null && (c.divrank === 0 || (c.divrank != null && c.score === 0)); }
+
+  // --- Elo rating engine (division round-robin, Magpie Labs style) ---
+  // Each division appearance is treated as a round-robin against the other
+  // ~63 players in that bracket: beat everyone below you, lose to everyone
+  // above. Run through classic Elo game-by-game against a fixed synthetic
+  // "average field" opponent (since we don't have the real opponents'
+  // ratings), then smoothed with a trailing 10-cup rolling average — same
+  // two-step approach as the reference chart. Only cups with a recorded
+  // division rank count (qualifying-only cups are skipped, same as the
+  // reference only counting div 1 finishes).
+  // --- Glicko-2 qualifier rating ---
+  // Replicates the "COTD Qualifier Rating" bot's approach, reverse-
+  // engineered from its own numbers: its rating->percentile estimate
+  // (2400 -> 97.95%) pins the virtual opponent at 1500-rated with RD 280,
+  // and its uncertainty/latest-change values imply standard Glicko-2 with
+  // one rating period per COTD day and RD inflation on missed days.
+  // Scored on QUALIFICATION percentile (that's what the bot rates), no
+  // smoothing — the reference graph is raw daily ratings.
+  const G2_SCALE = 173.7178, G2_TAU = 0.5;
+  const G2_OPP_PHI = 280 / G2_SCALE, G2_SIGMA0 = 0.06, G2_PHI0 = 350 / G2_SCALE;
+
+  function g2_g(phi){ return 1 / Math.sqrt(1 + 3 * phi * phi / (Math.PI * Math.PI)); }
+  function g2_E(mu){ return 1 / (1 + Math.exp(-g2_g(G2_OPP_PHI) * mu)); }
+
+  function g2_update(state, s){
+    let { mu, phi, sigma } = state;
+    const gO = g2_g(G2_OPP_PHI), e = g2_E(mu);
+    const v = 1 / (gO * gO * e * (1 - e));
+    const delta = v * gO * (s - e);
+    const a = Math.log(sigma * sigma);
+    const f = (x) => {
+      const ex = Math.exp(x);
+      return (ex * (delta * delta - phi * phi - v - ex)) / (2 * Math.pow(phi * phi + v + ex, 2)) - (x - a) / (G2_TAU * G2_TAU);
+    };
+    let A = a, B;
+    if (delta * delta > phi * phi + v) B = Math.log(delta * delta - phi * phi - v);
+    else { let k = 1; while (f(a - k * G2_TAU) < 0 && k < 100) k++; B = a - k * G2_TAU; }
+    let fA = f(A), fB = f(B), iter = 0;
+    while (Math.abs(B - A) > 1e-6 && iter++ < 100){
+      const C = A + (A - B) * fA / (fB - fA), fC = f(C);
+      if (fC * fB < 0){ A = B; fA = fB; } else fA /= 2;
+      B = C; fB = fC;
+    }
+    const newSigma = Math.exp(A / 2);
+    const phiStar = Math.sqrt(phi * phi + newSigma * newSigma);
+    const newPhi = 1 / Math.sqrt(1 / (phiStar * phiStar) + 1 / v);
+    const newMu = mu + newPhi * newPhi * gO * (s - e);
+    return { mu: newMu, phi: newPhi, sigma: newSigma };
+  }
+
+  function qualPercentile(c){
+    const qr = c.qualificationrank ?? c.rank;
+    const total = c.totalplayers;
+    if (qr == null || !total || total < 2) return null;
+    const p = 1 - (qr - 0.5) / total;
+    return Math.min(0.995, Math.max(0.005, p));
+  }
+
+  function glickoHistory(cups){
+    // cups must already be sorted chronologically
+    let state = { mu: 0, phi: G2_PHI0, sigma: G2_SIGMA0 };
+    let lastDate = null;
+    const out = [];
+    cups.forEach(c => {
+      const p = qualPercentile(c);
+      if (p == null) return;
+      const d = cupDate(c);
+      if (lastDate){
+        const gapDays = Math.max(0, Math.round((d - lastDate) / 86400000) - 1);
+        if (gapDays > 0){
+          const phi = Math.min(Math.sqrt(state.phi * state.phi + state.sigma * state.sigma * gapDays), G2_PHI0);
+          state = { ...state, phi };
+        }
+      }
+      state = g2_update(state, p);
+      lastDate = d;
+      out.push({ label: cupLabel(c), rating: state.mu * G2_SCALE + 1500 });
+    });
+    return out;
+  }
+
+
+  document.querySelectorAll('nav.tabs button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('nav.tabs button').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+    });
+  });
+
+  async function load(){
+    setStatus('Loading cache.json...');
+    try {
+      const res = await fetch('./cache.json', { cache: 'no-store' });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      CACHE = await res.json();
+    } catch(e){
+      setStatus(`Couldn't load the data (${e.message}). The daily update may be mid-run — try refreshing in a few minutes.`, true);
+      return;
+    }
+    try {
+      const res2 = await fetch('./map-tags.json', { cache: 'no-store' });
+      if (res2.ok) MAPTAGS = await res2.json();
+    } catch(e){ /* optional */ }
+
+    NAMES = Object.keys(CACHE.players);
+    selectedPlayer = NAMES[0];
+
+    try {
+      const res3 = await fetch('./authors.json', { cache: 'no-store' });
+      if (res3.ok) AUTHORS = await res3.json();
+    } catch(e){ /* optional */ }
+
+    setStatus(`Data updated ${new Date(CACHE.generatedAt).toLocaleString()}.`);
+
+    renderPills(totalValid);
+    renderStatCards();
+    renderRangeButtons();
+    renderDivChart();
+    renderCupTable();
+    renderDivHistogram();
+    renderStyleBlocks();
+    renderPlayerChips();
+    renderPlayerDetail();
+    renderHeadToHead();
+    renderDayOfWeek();
+    renderConsistency();
+    renderPbTimeline();
+    renderPromoLog();
+    renderNoShowTable();
+    renderScatter();
+    renderMonthlyReport();
+    renderPbTracker();
+    renderFormDigest();
+    renderExtremes();
+    renderDiv1Tracker();
+    renderGroupLeaderboard();
+    renderGapTable();
+    renderRadarChart();
+    renderStyleOwnership();
+    renderProjection();
+    renderAuthorsTab();
+  }
+
+  function renderPills(totalValid){
+    document.getElementById('pills').innerHTML = `
+      <div class="pill"><b>${totalValid}</b> valid cups tracked</div>
+      <div class="pill"><b>${NAMES.length}</b> players</div>
+    `;
+  }
+
+  function avgDivOf(cups){
+    const divs = validCups(cups).map(c => c.div);
+    if (!divs.length) return null;
+    return Math.round(divs.reduce((a,b)=>a+b,0) / divs.length * 10) / 10;
+  }
+
+  // "Plastic Boy": whoever placed best (lowest overall rank) in the most
+  // recent COTD that all three players entered AND was on a Plastic-tagged
+  // map. Returns { name, cup } or null.
+  function computePlasticBoy(){
+    if (!MAPTAGS || !MAPTAGS.maps) return null;
+    // index each player's cups by label for fast "did everyone play it" checks
+    const byLabel = {};
+    NAMES.forEach(name => {
+      byLabel[name] = {};
+      validCups(CACHE.players[name].cups).forEach(c => { byLabel[name][cupLabel(c)] = c; });
+    });
+    // candidate labels = cups the first player has, sorted newest first
+    const labels = Object.keys(byLabel[NAMES[0]] || {})
+      .sort((a, b) => labelDateKey(b).localeCompare(labelDateKey(a)));
+    for (const label of labels){
+      // all three must have played it
+      if (!NAMES.every(name => byLabel[name][label])) continue;
+      const c0 = byLabel[NAMES[0]][label];
+      const info = c0.mapuid && MAPTAGS.maps[c0.mapuid];
+      const isPlastic = info && info.found && info.tags &&
+        info.tags.some(t => /plastic/i.test(t));
+      if (!isPlastic) continue;
+      // winner = lowest overall rank among the three
+      let best = null;
+      NAMES.forEach(name => {
+        const c = byLabel[name][label];
+        if (best === null || c.rank < byLabel[best][label].rank) best = name;
+      });
+      return { name: best, cup: byLabel[best][label], label };
+    }
+    return null;
+  }
+
+  function statsFor(name){
+    const cups = validCups(CACHE.players[name].cups);
+    if (!cups.length) return { total: 0 };
+    const divs = cups.map(c => c.div);
+    const bestdiv = Math.min(...divs);
+    const totalwins = cups.filter(c => c.rank === 1).length;
+    const totaldivwins = cups.filter(c => c.divrank === 1).length;
+    let winstreak = 0;
+    for (let i = cups.length - 1; i >= 0; i--){ if (cups[i].rank === 1) winstreak++; else break; }
+    return { total: cups.length, bestdiv, totalwins, totaldivwins, winstreak };
+  }
+
+  function renderStatCards(){
+    const el = document.getElementById('statCards');
+    el.innerHTML = '';
+    const plasticBoy = computePlasticBoy();
+    NAMES.forEach(name => {
+      const cups = validCups(CACHE.players[name].cups);
+      const s = statsFor(name);
+      const last10 = cups.slice(-10);
+      const last10divs = last10.map(c => c.div);
+      const avgLast10 = last10divs.length ? Math.round(last10divs.reduce((a,b)=>a+b,0) / last10divs.length * 10) / 10 : null;
+      const divWinRate = s.total ? Math.round((s.totaldivwins / s.total) * 1000) / 10 : 0;
+
+      const sortedCups = cups.slice().sort((a,b) => new Date(a.timestamp) - new Date(b.timestamp));
+      const history = glickoHistory(sortedCups);
+      const currentRating = history.length ? Math.round(history[history.length - 1].rating) : null;
+
+      const isPlasticBoy = plasticBoy && plasticBoy.name === name;
+      // Link straight to the map's own leaderboard (always resolvable),
+      // with the day shown as plain text rather than guessing a
+      // competition-id URL structure that isn't reliably available.
+      const pd = isPlasticBoy ? cupDate(plasticBoy.cup) : null;
+      const dayLabel = pd ? `${String(pd.getDate()).padStart(2,'0')}/${String(pd.getMonth()+1).padStart(2,'0')}` : '';
+      const plasticHref = isPlasticBoy && plasticBoy.cup.mapuid
+        ? `https://trackmania.io/#/leaderboard/${plasticBoy.cup.mapuid}`
+        : null;
+      const plasticBadge = isPlasticBoy
+        ? `<a class="plastic-boy" href="${plasticHref}" target="_blank" rel="noopener" title="Best of the three on the last Plastic COTD you all played, ${dayLabel} — click for the map">Plastic Boy</a>`
+        : '';
+
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.style.borderLeftColor = colorOf(name);
+      card.innerHTML = `
+        ${plasticBadge}
+        <div class="name"><span class="dot" style="background:${colorOf(name)};"></span>${name}</div>
+        <table>
+          <tr><td>Glicko-2 rating</td><td class="val">${currentRating ?? '-'}</td></tr>
+          <tr><td>Cups tracked</td><td class="val">${s.total ?? '-'}</td></tr>
+          <tr><td>Best division</td><td class="val">${s.bestdiv ?? '-'}</td></tr>
+          <tr><td>Avg division</td><td class="val">${avgDivOf(CACHE.players[name].cups) ?? '-'}</td></tr>
+          <tr><td>Avg division (last 10)</td><td class="val">${avgLast10 ?? '-'}</td></tr>
+          <tr><td>Division wins</td><td class="val">${s.totaldivwins ?? 0} <span style="color:var(--text-muted);">(${divWinRate}%)</span></td></tr>
+          <tr><td>Current win streak</td><td class="val">${s.winstreak ?? 0}</td></tr>
+        </table>
+      `;
+      el.appendChild(card);
+    });
+  }
+
+  function rollingAverage(values, window){
+    return values.map((_, i) => {
+      const start = Math.max(0, i - window + 1);
+      const slice = values.slice(start, i + 1).filter(v => v != null);
+      if (!slice.length) return null;
+      return slice.reduce((a, b) => a + b, 0) / slice.length;
+    });
+  }
+
+  function allLabelsChrono(){
+    const labelSet = new Set();
+    NAMES.forEach(name => validCups(CACHE.players[name].cups).forEach(c => labelSet.add(cupLabel(c))));
+    return Array.from(labelSet).sort((a, b) => {
+      const da = a.match(/\d{4}-\d{2}-\d{2}/), db = b.match(/\d{4}-\d{2}-\d{2}/);
+      return (da ? da[0] : a).localeCompare(db ? db[0] : b);
+    });
+  }
+
+  function renderRangeButtons(){
+    const el = document.getElementById('rangeRow');
+    el.innerHTML = '';
+    RANGES.forEach(r => {
+      const btn = document.createElement('button');
+      btn.className = 'range-btn' + (r.key === selectedRange ? ' active' : '');
+      btn.textContent = r.label;
+      btn.onclick = () => { selectedRange = r.key; renderRangeButtons(); renderDivChart(); };
+      el.appendChild(btn);
+    });
+  }
+
+  function filterLabelsByRange(labelArr){
+    const range = RANGES.find(r => r.key === selectedRange);
+    if (!range || range.days == null) return labelArr;
+    if (range.days === 'last10') return labelArr.slice(-10);
+    if (range.days === 'thisMonth'){
+      const now = new Date();
+      return labelArr.filter(l => {
+        const m = l.match(/\d{4}-\d{2}-\d{2}/);
+        if (!m) return false;
+        const d = new Date(m[0]);
+        return d.getFullYear() === now.getFullYear() && d.getMonth() === now.getMonth();
+      });
+    }
+    const cutoff = new Date();
+    cutoff.setDate(cutoff.getDate() - range.days);
+    return labelArr.filter(l => {
+      const m = l.match(/\d{4}-\d{2}-\d{2}/);
+      if (!m) return false;
+      return new Date(m[0]) >= cutoff;
+    });
+  }
+
+  function renderDivChart(){
+    const ctx = document.getElementById('divChart');
+    const fullLabels = allLabelsChrono();
+    const labelArr = filterLabelsByRange(fullLabels);
+
+    const pxPerPoint = selectedRange === 'all' ? 6 : selectedRange === '90' ? 14 : 24;
+    const width = Math.max(700, labelArr.length * pxPerPoint);
+    document.getElementById('divChartWrap').style.width = width + 'px';
+
+    const datasets = NAMES.map(name => {
+      const sortedCups = validCups(CACHE.players[name].cups).slice().sort((a,b) => new Date(a.timestamp) - new Date(b.timestamp));
+      const history = glickoHistory(sortedCups);
+      const byLabel = {};
+      history.forEach(h => { byLabel[h.label] = h.rating; });
+
+      return {
+        label: name,
+        data: labelArr.map(l => byLabel[l] == null ? null : Math.round(byLabel[l])),
+        borderColor: colorOf(name),
+        backgroundColor: colorOf(name),
+        spanGaps: true, tension: 0, borderWidth: 1.5, pointRadius: 0, pointHitRadius: 6,
+      };
+    });
+
+    document.getElementById('legend').innerHTML = NAMES.map(name =>
+      `<span><span class="dot" style="background:${colorOf(name)};"></span>${name}</span>`
+    ).join('');
+
+    // Reference-graph signature: each line is labeled with the player's
+    // name right at its end point, in the player's color.
+    const endLabels = {
+      id: 'endLabels',
+      afterDatasetsDraw(chart){
+        const c = chart.ctx;
+        c.save();
+        c.font = "600 11px 'Chakra Petch', sans-serif";
+        c.textAlign = 'left';
+        c.textBaseline = 'middle';
+        chart.data.datasets.forEach((ds, i) => {
+          const meta = chart.getDatasetMeta(i);
+          if (meta.hidden) return;
+          for (let j = meta.data.length - 1; j >= 0; j--){
+            if (ds.data[j] != null && meta.data[j]){
+              c.fillStyle = ds.borderColor;
+              c.fillText(ds.label, meta.data[j].x + 7, meta.data[j].y);
+              break;
+            }
+          }
+        });
+        c.restore();
+      }
+    };
+
+    if (divChart) divChart.destroy();
+    divChart = new Chart(ctx, {
+      type: 'line',
+      data: { labels: labelArr, datasets },
+      plugins: [endLabels],
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        layout: { padding: { right: 110 } }, // room for the end-of-line name labels
+        plugins: { legend: { display: false } },
+        scales: {
+          y: { title: { display: false }, ticks: { display: false }, grid: { color: 'rgba(255,255,255,0.07)' } },
+          x: { ticks: { autoSkip: true, maxTicksLimit: 14, autoSkipPadding: 20, maxRotation: 0, color: '#a8b0c3', callback: function(v){ const l = this.getLabelForValue(v); const m = l && l.match(/\d{4}-\d{2}-\d{2}/); return m ? m[0] : l; } }, grid: { display: false } }
+        }
+      }
+    });
+    drawRatingAxis();
+  }
+
+  // Fullscreen chart: the entire history rendered to fit one large window,
+  // no horizontal scroll, y-axis labels shown inline (space isn't tight
+  // here). Reuses the same glickoHistory data and end-of-line name labels.
+  let divChartFull = null;
+  function openChartFullscreen(){
+    const modal = document.getElementById('chartModal');
+    modal.hidden = false;
+    const fullLabels = allLabelsChrono();
+    const datasets = NAMES.map(name => {
+      const sortedCups = validCups(CACHE.players[name].cups).slice().sort((a,b) => new Date(a.timestamp) - new Date(b.timestamp));
+      const history = glickoHistory(sortedCups);
+      const byLabel = {};
+      history.forEach(h => { byLabel[h.label] = h.rating; });
+      return {
+        label: name,
+        data: fullLabels.map(l => byLabel[l] == null ? null : Math.round(byLabel[l])),
+        borderColor: colorOf(name), backgroundColor: colorOf(name),
+        spanGaps: true, tension: 0, borderWidth: 1.5, pointRadius: 0, pointHitRadius: 6,
+      };
+    });
+    const endLabels = {
+      id: 'endLabelsFull',
+      afterDatasetsDraw(chart){
+        const c = chart.ctx;
+        c.save();
+        c.font = "600 12px 'Chakra Petch', sans-serif";
+        c.textAlign = 'left'; c.textBaseline = 'middle';
+        chart.data.datasets.forEach((ds, i) => {
+          const meta = chart.getDatasetMeta(i);
+          if (meta.hidden) return;
+          for (let j = meta.data.length - 1; j >= 0; j--){
+            if (ds.data[j] != null && meta.data[j]){ c.fillStyle = ds.borderColor; c.fillText(ds.label, meta.data[j].x + 7, meta.data[j].y); break; }
+          }
+        });
+        c.restore();
+      }
+    };
+    if (divChartFull) divChartFull.destroy();
+    divChartFull = new Chart(document.getElementById('divChartFull'), {
+      type: 'line',
+      data: { labels: fullLabels, datasets },
+      plugins: [endLabels],
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        layout: { padding: { right: 120 } },
+        plugins: { legend: { display: false } },
+        scales: {
+          y: { ticks: { color: '#a8b0c3', font: { family: "'JetBrains Mono', monospace", size: 11 } }, grid: { color: 'rgba(255,255,255,0.07)' } },
+          x: { ticks: { autoSkip: true, maxTicksLimit: 12, color: '#a8b0c3', maxRotation: 0, autoSkipPadding: 24, callback: function(v){ const l = this.getLabelForValue(v); const m = l && l.match(/\d{4}-\d{2}-\d{2}/); return m ? m[0] : l; } }, grid: { display: false } }
+        }
+      }
+    });
+  }
+  function closeChartFullscreen(){
+    document.getElementById('chartModal').hidden = true;
+    if (divChartFull){ divChartFull.destroy(); divChartFull = null; }
+  }
+  document.getElementById('chartFullscreenBtn').onclick = openChartFullscreen;
+  document.getElementById('chartModalClose').onclick = closeChartFullscreen;
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeChartFullscreen(); });
+
+  // Draws the y-axis rating numbers on a slim fixed canvas beside the
+  // scrollable chart, so they stay visible however far right you scroll.
+  function drawRatingAxis(){
+    if (!divChart) return;
+    const axis = document.getElementById('divAxis');
+    const rect = divChart.canvas.getBoundingClientRect();
+    if (!rect.height) return; // tab hidden
+    const dpr = window.devicePixelRatio || 1;
+    axis.width = 56 * dpr; axis.height = Math.round(rect.height * dpr);
+    axis.style.width = '56px'; axis.style.height = Math.round(rect.height) + 'px';
+    const ctx2 = axis.getContext('2d');
+    ctx2.scale(dpr, dpr);
+    ctx2.clearRect(0, 0, 56, rect.height);
+    ctx2.font = "10px 'JetBrains Mono', monospace";
+    ctx2.fillStyle = '#a8b0c3';
+    ctx2.textAlign = 'right';
+    ctx2.textBaseline = 'middle';
+    const PAD = 13; // chart-inner padding (12px) + container border
+    divChart.scales.y.ticks.forEach(t => {
+      const y = PAD + divChart.scales.y.getPixelForValue(t.value);
+      if (y >= 0 && y <= rect.height) ctx2.fillText(String(t.label ?? t.value), 50, y);
+    });
+  }
+
+  function renderDivHistogram(){
+    const ctx = document.getElementById('divHistChart');
+    const maxDiv = 20;
+    const datasets = NAMES.map(name => {
+      const counts = new Array(maxDiv + 1).fill(0);
+      validCups(CACHE.players[name].cups).forEach(c => {
+        const bucket = Math.min(c.div, maxDiv + 1) - 1;
+        counts[bucket] += 1;
+      });
+      return { label: name, data: counts, backgroundColor: colorOf(name), borderRadius: 3 };
+    });
+    const labels = Array.from({length: maxDiv + 1}, (_, i) => i === maxDiv ? `${maxDiv}+` : `${i + 1}`);
+
+    if (divHistChart) divHistChart.destroy();
+    divHistChart = new Chart(ctx, {
+      type: 'bar',
+      data: { labels, datasets },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { labels: { color: '#a8b0c3' } } },
+        scales: {
+          y: { title: { display: true, text: 'Cups', color: '#a8b0c3' }, ticks: { color: '#a8b0c3' }, grid: { color: '#222939' } },
+          x: { title: { display: true, text: 'Division', color: '#a8b0c3' }, ticks: { color: '#a8b0c3' }, grid: { display: false } }
+        }
+      }
+    });
+  }
+
+  function divBadgeColor(div, playerCups){
+    const divs = validCups(playerCups).map(c => c.div);
+    if (!divs.length || div == null) return { bg: 'var(--surface-2)', fg: 'var(--text-secondary)' };
+    const best = Math.min(...divs), worst = Math.max(...divs);
+    const range = Math.max(1, worst - best);
+    const t = 1 - (div - best) / range;
+    const hue = Math.round(t * 120);
+    return { bg: `hsl(${hue}, 45%, 20%)`, fg: `hsl(${hue}, 70%, 70%)` };
+  }
+
+  function labelDateKey(label){
+    const m = label.match(/\d{4}-\d{2}-\d{2}/);
+    return m ? m[0] : label;
+  }
+
+  function renderCupTable(){
+    const el = document.getElementById('cupTable');
+    const labelSet = new Set();
+    NAMES.forEach(name => validCups(CACHE.players[name].cups).forEach(c => labelSet.add(cupLabel(c))));
+    const labelArr = Array.from(labelSet).sort((a, b) => labelDateKey(b).localeCompare(labelDateKey(a))); // full history, most recent first, by actual date
+
+    const byNameByLabel = {};
+    NAMES.forEach(name => {
+      byNameByLabel[name] = {};
+      validCups(CACHE.players[name].cups).forEach(c => { byNameByLabel[name][cupLabel(c)] = c; });
+    });
+
+    // Resolve a representative cup per label to get its map (any player's
+    // copy of that day's cup shares the same map).
+    const cupByLabel = {};
+    labelArr.forEach(label => {
+      for (const name of NAMES){ if (byNameByLabel[name][label]){ cupByLabel[label] = byNameByLabel[name][label]; break; } }
+    });
+
+    let html = '<table class="data"><tr><th>Date</th>';
+    NAMES.forEach(name => { html += `<th>${shortOf(name)}</th>`; });
+    html += '</tr>';
+    labelArr.forEach(label => {
+      const rep = cupByLabel[label];
+      const info = rep && rep.mapuid && MAPTAGS && MAPTAGS.maps && MAPTAGS.maps[rep.mapuid];
+      let mapLine = '';
+      if (info && info.found && info.name){
+        const href = info.mxid
+          ? `https://trackmania.exchange/maps/${info.mxid}`
+          : `https://trackmania.io/#/leaderboard/${rep.mapuid}`;
+        mapLine = `<br><a class="maplink" href="${href}" target="_blank" rel="noopener" style="font-size:11px; color:var(--text-muted);">${formatTMName(info.name)}</a>`;
+      }
+      html += `<tr><td style="color:var(--text-secondary);">${label}${mapLine}</td>`;
+      NAMES.forEach(name => {
+        const c = byNameByLabel[name][label];
+        if (!c){ html += '<td>-</td>'; return; }
+        const bc = divBadgeColor(c.div, CACHE.players[name].cups);
+        if (isNoShow(c)){
+          html += `<td><span class="badge" style="background:${bc.bg}; color:${bc.fg};">div ${c.div}</span> <span style="color:var(--text-muted); font-size:12px;">qualified, didn't play rounds</span></td>`;
+          return;
+        }
+        html += `<td><span class="badge" style="background:${bc.bg}; color:${bc.fg};">div ${c.div}</span> <span style="color:var(--text-muted); font-size:12px;">rank ${c.divrank ?? '-'}/64 &middot; #${c.rank}</span></td>`;
+      });
+      html += '</tr>';
+    });
+    html += '</table>';
+    el.innerHTML = html;
+  }
+
+  function styleBreakdown(){
+    const byTag = {};
+    NAMES.forEach(name => {
+      validCups(CACHE.players[name].cups).forEach(c => {
+        const info = c.mapuid && MAPTAGS && MAPTAGS.maps[c.mapuid];
+        if (!info || !info.found || !info.tags || !info.tags.length) return;
+        info.tags.forEach(tag => {
+          byTag[tag] = byTag[tag] || {};
+          byTag[tag][name] = byTag[tag][name] || { divSum: 0, count: 0 };
+          byTag[tag][name].divSum += c.div;
+          byTag[tag][name].count += 1;
+        });
+      });
+    });
+    return byTag;
+  }
+
+  function renderStyleBlocks(){
+    const noteEl = document.getElementById('styleNote');
+    const el = document.getElementById('styleBlocks');
+
+    if (!MAPTAGS){
+      noteEl.textContent = 'Map style data isn\'t available yet — it\'ll appear once the next daily update runs.';
+      el.innerHTML = '';
+      return;
+    }
+    noteEl.textContent = `Each player's average division per style, compared to their own overall average — so you can see e.g. "I'm 1.5 divisions worse than usual on Dirt" rather than just a raw number. Styles need at least ${MIN_STYLE_CUPS} cups to show (fewer than that is too noisy to trust).`;
+
+    const byTag = styleBreakdown();
+    el.innerHTML = '';
+
+    NAMES.forEach(name => {
+      const personalAvg = avgDivOf(CACHE.players[name].cups);
+      const rows = Object.keys(byTag)
+        .map(tag => ({ tag, v: byTag[tag][name] }))
+        .filter(r => r.v && r.v.count >= MIN_STYLE_CUPS)
+        .map(r => ({ tag: r.tag, avg: r.v.divSum / r.v.count, count: r.v.count, diff: (r.v.divSum / r.v.count) - personalAvg }))
+        .sort((a, b) => a.diff - b.diff);
+
+      const block = document.createElement('div');
+      block.className = 'player-style-block';
+      let rowsHtml;
+      if (!rows.length){
+        rowsHtml = `<p style="font-size:13px; color:var(--text-muted);">Not enough tagged data yet — need at least ${MIN_STYLE_CUPS} cups on a given style.</p>`;
+      } else {
+        rowsHtml = '<table class="data"><tr><th>Style</th><th>Avg division</th><th>Vs personal avg</th><th>Cups</th></tr>' +
+          rows.map(r => {
+            const diffClass = r.diff < -0.15 ? 'diff-good' : r.diff > 0.15 ? 'diff-bad' : '';
+            const sign = r.diff > 0 ? '+' : '';
+            return `<tr><td>${r.tag}</td><td>${Math.round(r.avg * 10) / 10}</td><td class="${diffClass}">${sign}${Math.round(r.diff * 10) / 10}</td><td>${r.count}</td></tr>`;
+          }).join('') + '</table>';
+      }
+      block.innerHTML = `
+        <div class="player-style-header"><span class="dot" style="width:10px;height:10px;border-radius:50%;background:${colorOf(name)};display:inline-block;"></span>${name} <span style="color:var(--text-muted); font-weight:400; font-size:12px;">(personal avg division: ${personalAvg ?? '-'})</span></div>
+        ${rowsHtml}
+      `;
+      el.appendChild(block);
+    });
+  }
+
+  function renderPlayerChips(){
+    const el = document.getElementById('playerChips');
+    el.innerHTML = '';
+    NAMES.forEach(name => {
+      const chip = document.createElement('div');
+      chip.className = 'chip' + (name === selectedPlayer ? ' active' : '');
+      chip.style.setProperty('--chip-color', colorOf(name));
+      chip.innerHTML = `<span class="dot" style="background:${colorOf(name)};"></span>${name}`;
+      chip.onclick = () => { selectedPlayer = name; renderPlayerChips(); renderPlayerDetail(); };
+      el.appendChild(chip);
+    });
+  }
+
+  function renderPlayerDetail(){
+    const el = document.getElementById('playerDetail');
+    if (!selectedPlayer){ el.innerHTML = ''; return; }
+    const cups = CACHE.players[selectedPlayer].cups || [];
+    const s = statsFor(selectedPlayer);
+    const byTag = styleBreakdown();
+
+    const perTag = [];
+    Object.keys(byTag).forEach(tag => {
+      const v = byTag[tag][selectedPlayer];
+      if (v && v.count >= MIN_STYLE_CUPS) perTag.push({ tag, avg: v.divSum / v.count, count: v.count });
+    });
+    perTag.sort((a, b) => a.avg - b.avg);
+    const best = perTag.slice(0, 3);
+    const worst = perTag.slice(-3).reverse();
+
+    function styleList(list){
+      if (!list.length) return `<p style="font-size:13px; color:var(--text-muted);">Not enough tagged data yet (need at least ${MIN_STYLE_CUPS} cups of a style).</p>`;
+      return '<div class="style-list">' + list.map(x =>
+        `<div class="style-row"><span class="tag">${x.tag}</span><span class="figure">avg div ${Math.round(x.avg * 10) / 10} <span style="color:var(--text-muted);">(${x.count} cups)</span></span></div>`
+      ).join('') + '</div>';
+    }
+
+    el.innerHTML = `
+      <div class="cards" style="margin-bottom:1.5rem;">
+        <div class="card" style="border-left-color:${colorOf(selectedPlayer)};">
+          <div class="name"><span class="dot" style="background:${colorOf(selectedPlayer)};"></span>${selectedPlayer}</div>
+          <table>
+            <tr><td>Cups tracked</td><td class="val">${s.total ?? '-'}</td></tr>
+            <tr><td>Best division</td><td class="val">${s.bestdiv ?? '-'}</td></tr>
+            <tr><td>Avg division</td><td class="val">${avgDivOf(cups) ?? '-'}</td></tr>
+            <tr><td>Division wins</td><td class="val">${s.totaldivwins ?? 0}</td></tr>
+          </table>
+        </div>
+      </div>
+      <p class="section-title">Best styles</p>
+      <p class="section-note">Lowest average division — where this player performs strongest. Requires at least ${MIN_STYLE_CUPS} cups of that style.</p>
+      ${styleList(best)}
+      <p class="section-title">Worst styles</p>
+      <p class="section-note">Highest average division — where this player struggles most.</p>
+      ${styleList(worst)}
+    `;
+  }
+
+  // --- 1. Head-to-head (all shared cups) ---
+  function computeHeadToHead(restrictToSameMap){
+    // pairKey -> { nameA, nameB, aWins, bWins, ties }
+    const results = {};
+    for (let i = 0; i < NAMES.length; i++){
+      for (let j = i + 1; j < NAMES.length; j++){
+        const a = NAMES[i], b = NAMES[j];
+        const aCups = {}; validCups(CACHE.players[a].cups).forEach(c => { aCups[cupLabel(c)] = c; });
+        const bCups = {}; validCups(CACHE.players[b].cups).forEach(c => { bCups[cupLabel(c)] = c; });
+        let aWins = 0, bWins = 0, ties = 0, shared = 0;
+        Object.keys(aCups).forEach(label => {
+          const ca = aCups[label], cb = bCups[label];
+          if (!cb) return;
+          if (restrictToSameMap && ca.mapuid !== cb.mapuid) return;
+          shared++;
+          if (ca.div < cb.div) aWins++;
+          else if (cb.div < ca.div) bWins++;
+          else ties++;
+        });
+        results[`${a}|${b}`] = { a, b, aWins, bWins, ties, shared };
+      }
+    }
+    return results;
+  }
+
+  function renderH2hInto(elId, restrictToSameMap){
+    const el = document.getElementById(elId);
+    const results = computeHeadToHead(restrictToSameMap);
+    const rows = Object.values(results);
+    if (!rows.length || rows.every(r => r.shared === 0)){
+      el.innerHTML = '<p style="font-size:13px; color:var(--text-muted);">No shared cups found yet.</p>';
+      return;
+    }
+    let html = '<table class="data"><tr><th>Matchup</th><th>Shared cups</th><th>Record</th></tr>';
+    rows.forEach(r => {
+      if (!r.shared) return;
+      html += `<tr><td><span style="color:${colorOf(r.a)};">${shortOf(r.a)}</span> vs <span style="color:${colorOf(r.b)};">${shortOf(r.b)}</span></td><td>${r.shared}</td><td>${r.aWins}&ndash;${r.bWins}${r.ties ? `&ndash;${r.ties} tied` : ''}</td></tr>`;
+    });
+    html += '</table>';
+    el.innerHTML = html;
+  }
+
+  function renderHeadToHead(restrictToSameMap){
+    renderH2hInto('h2hTable', !!restrictToSameMap);
+  }
+  document.getElementById('h2hToggleAll').onclick = () => {
+    document.getElementById('h2hToggleAll').classList.add('active');
+    document.getElementById('h2hToggleSameMap').classList.remove('active');
+    renderHeadToHead(false);
+  };
+  document.getElementById('h2hToggleSameMap').onclick = () => {
+    document.getElementById('h2hToggleSameMap').classList.add('active');
+    document.getElementById('h2hToggleAll').classList.remove('active');
+    renderHeadToHead(true);
+  };
+
+  // --- 2. Day-of-week performance ---
+  let dowChart = null;
+  function renderDayOfWeek(){
+    const ctx = document.getElementById('dowChart');
+    const dayNames = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+    const datasets = NAMES.map(name => {
+      const buckets = Array.from({length:7}, () => []);
+      validCups(CACHE.players[name].cups).forEach(c => {
+        const d = new Date(cupDate(c));
+        buckets[d.getDay()].push(c.div);
+      });
+      const avgs = buckets.map(b => b.length ? b.reduce((a,x)=>a+x,0)/b.length : null);
+      return { label: name, data: avgs, backgroundColor: colorOf(name), borderRadius: 3 };
+    });
+    if (dowChart) dowChart.destroy();
+    dowChart = new Chart(ctx, {
+      type: 'bar',
+      data: { labels: dayNames, datasets },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { labels: { color: '#a8b0c3' } } },
+        scales: {
+          y: { reverse: true, title: { display: true, text: 'Avg division', color: '#a8b0c3' }, ticks: { color: '#a8b0c3' }, grid: { color: '#222939' } },
+          x: { ticks: { color: '#a8b0c3' }, grid: { display: false } }
+        }
+      }
+    });
+  }
+
+  // --- 3. Consistency (stddev of division, last 30 cups) ---
+  function renderConsistency(){
+    const el = document.getElementById('consistencyCards');
+    el.innerHTML = '';
+    NAMES.forEach(name => {
+      const cups = validCups(CACHE.players[name].cups).slice(-30);
+      const divs = cups.map(c => c.div);
+      let stddev = null;
+      if (divs.length > 1){
+        const mean = divs.reduce((a,b)=>a+b,0) / divs.length;
+        const variance = divs.reduce((a,b)=>a+(b-mean)*(b-mean),0) / divs.length;
+        stddev = Math.round(Math.sqrt(variance) * 10) / 10;
+      }
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.style.borderLeftColor = colorOf(name);
+      card.innerHTML = `
+        <div class="name"><span class="dot" style="background:${colorOf(name)};"></span>${name}</div>
+        <table>
+          <tr><td>Division std. dev</td><td class="val">${stddev ?? '-'}</td></tr>
+          <tr><td>Based on</td><td class="val">${divs.length} cups</td></tr>
+        </table>
+      `;
+      el.appendChild(card);
+    });
+  }
+
+  // --- 4 & 10. Personal bests timeline / PB-division appearances ---
+  function computePersonalBests(name){
+    const cups = validCups(CACHE.players[name].cups).slice().sort((a,b) => new Date(a.timestamp) - new Date(b.timestamp));
+    let best = Infinity;
+    const events = []; // new-PB moments, as the best improves over time
+    cups.forEach(c => {
+      if (c.div < best){
+        best = c.div;
+        events.push({ label: cupLabel(c), div: c.div });
+      }
+    });
+    // matches = every cup equal to the FINAL best division, not whatever
+    // "best so far" happened to be at that point in the timeline
+    const matches = cups.filter(c => c.div === best).map(c => ({ label: cupLabel(c), div: c.div }));
+    return { events, matches, bestDiv: isFinite(best) ? best : null };
+  }
+
+  function renderPbTimeline(){
+    const el = document.getElementById('pbTimeline');
+    let html = '';
+    NAMES.forEach(name => {
+      const { events } = computePersonalBests(name);
+      html += `<div class="player-style-header"><span class="dot" style="width:10px;height:10px;border-radius:50%;background:${colorOf(name)};display:inline-block;"></span>${name}</div>`;
+      if (!events.length){
+        html += '<p style="font-size:13px; color:var(--text-muted); margin-bottom:1rem;">No data yet.</p>';
+      } else {
+        html += '<div class="style-list" style="margin-bottom:1rem;">' + events.slice(-8).reverse().map(e =>
+          `<div class="style-row"><span class="tag">${e.label}</span><span class="figure">new best: div ${e.div}</span></div>`
+        ).join('') + '</div>';
+      }
+    });
+    el.innerHTML = html;
+  }
+
+  function renderPbTracker(){
+    const el = document.getElementById('pbTracker');
+    let html = '<table class="data"><tr><th>Player</th><th>Best division</th><th>Times matched</th><th>Most recent</th></tr>';
+    NAMES.forEach(name => {
+      const { matches, bestDiv } = computePersonalBests(name);
+      const mostRecent = matches.length ? matches[matches.length - 1].label : '-';
+      html += `<tr><td><span style="color:${colorOf(name)};">${name}</span></td><td>${bestDiv ?? '-'}</td><td>${matches.length}</td><td style="color:var(--text-secondary);">${mostRecent}</td></tr>`;
+    });
+    html += '</table>';
+    el.innerHTML = html;
+  }
+
+  // --- 5. Promotion / relegation log ---
+  function renderPromoLog(){
+    const el = document.getElementById('promoLog');
+    const THRESHOLD = 3;
+    let html = '';
+    NAMES.forEach(name => {
+      const cups = validCups(CACHE.players[name].cups).slice().sort((a,b) => new Date(a.timestamp) - new Date(b.timestamp));
+      const moves = [];
+      for (let i = 1; i < cups.length; i++){
+        const delta = cups[i].div - cups[i-1].div;
+        if (Math.abs(delta) >= THRESHOLD){
+          moves.push({ label: cupLabel(cups[i]), from: cups[i-1].div, to: cups[i].div, delta });
+        }
+      }
+      html += `<div class="player-style-header"><span class="dot" style="width:10px;height:10px;border-radius:50%;background:${colorOf(name)};display:inline-block;"></span>${name}</div>`;
+      if (!moves.length){
+        html += '<p style="font-size:13px; color:var(--text-muted); margin-bottom:1rem;">No big swings yet.</p>';
+      } else {
+        html += '<div class="style-list" style="margin-bottom:1rem;">' + moves.slice(-6).reverse().map(m => {
+          const cls = m.delta < 0 ? 'diff-good' : 'diff-bad';
+          const arrow = m.delta < 0 ? '↑ promoted' : '↓ relegated';
+          return `<div class="style-row"><span class="tag">${m.label}</span><span class="figure ${cls}">div ${m.from} &rarr; div ${m.to} (${arrow})</span></div>`;
+        }).join('') + '</div>';
+      }
+    });
+    el.innerHTML = html;
+  }
+
+  // --- Qualified but didn't play division rounds ---
+  function renderNoShowTable(){
+    const el = document.getElementById('noShowTable');
+    let html = '<table class="data"><tr><th>Player</th><th>Count</th><th>Most recent</th></tr>';
+    let total = 0;
+    NAMES.forEach(name => {
+      const cups = validCups(CACHE.players[name].cups).slice().sort((a,b) => new Date(a.timestamp) - new Date(b.timestamp));
+      const noShows = cups.filter(isNoShow);
+      total += noShows.length;
+      const recent = noShows.length ? `div ${noShows[noShows.length-1].div} &middot; ${cupLabel(noShows[noShows.length-1])}` : '-';
+      html += `<tr><td><span style="color:${colorOf(name)};">${name}</span></td><td>${noShows.length}</td><td style="color:var(--text-secondary);">${recent}</td></tr>`;
+    });
+    html += '</table>';
+    if (!total) html += '<p style="font-size:13px; color:var(--text-muted); margin-top:8px;">None found yet — everyone who qualified has completed their division rounds so far.</p>';
+    el.innerHTML = html;
+  }
+
+  // --- 6. Field size vs performance scatter ---
+  let scatterChart = null;
+  function renderScatter(){
+    const ctx = document.getElementById('scatterChart');
+    const datasets = NAMES.map(name => ({
+      label: name,
+      data: validCups(CACHE.players[name].cups).map(c => ({ x: c.totalplayers, y: c.div })),
+      backgroundColor: colorOf(name),
+      pointRadius: 3,
+    }));
+    if (scatterChart) scatterChart.destroy();
+    scatterChart = new Chart(ctx, {
+      type: 'scatter',
+      data: { datasets },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { labels: { color: '#a8b0c3' } } },
+        scales: {
+          y: { reverse: true, title: { display: true, text: 'Division', color: '#a8b0c3' }, ticks: { color: '#a8b0c3' }, grid: { color: '#222939' } },
+          x: { title: { display: true, text: 'Field size that day', color: '#a8b0c3' }, ticks: { color: '#a8b0c3' }, grid: { color: '#222939' } }
+        }
+      }
+    });
+  }
+
+  // --- 9. Monthly report card ---
+  function renderMonthlyReport(){
+    const el = document.getElementById('monthlyReport');
+    // month key -> name -> divs[]
+    const byMonth = {};
+    NAMES.forEach(name => {
+      validCups(CACHE.players[name].cups).forEach(c => {
+        const d = cupDate(c);
+        const key = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}`;
+        byMonth[key] = byMonth[key] || {};
+        byMonth[key][name] = byMonth[key][name] || [];
+        byMonth[key][name].push(c.div);
+      });
+    });
+    const months = Object.keys(byMonth).sort().reverse();
+    if (!months.length){ el.innerHTML = ''; return; }
+
+    let html = '<table class="data"><tr><th>Month</th>';
+    NAMES.forEach(name => { html += `<th>${shortOf(name)}</th>`; });
+    html += '</tr>';
+    months.forEach((month, idx) => {
+      html += `<tr><td>${month}</td>`;
+      NAMES.forEach(name => {
+        const divs = byMonth[month][name];
+        if (!divs){ html += '<td>-</td>'; return; }
+        const avg = divs.reduce((a,b)=>a+b,0) / divs.length;
+        const prevMonth = months[idx + 1]; // idx+1 since months is newest-first
+        const prevDivs = prevMonth && byMonth[prevMonth][name];
+        let trend = '';
+        if (prevDivs && prevDivs.length){
+          const prevAvg = prevDivs.reduce((a,b)=>a+b,0) / prevDivs.length;
+          const delta = avg - prevAvg;
+          trend = delta < -0.3 ? ' <span class="diff-good">&uarr;</span>' : delta > 0.3 ? ' <span class="diff-bad">&darr;</span>' : ' &rarr;';
+        }
+        html += `<td>${Math.round(avg * 10) / 10}${trend} <span style="color:var(--text-muted);">(${divs.length})</span></td>`;
+      });
+      html += '</tr>';
+    });
+    html += '</table>';
+    el.innerHTML = html;
+  }
+
+  // --- 1. Weekly form digest ---
+  function renderFormDigest(){
+    const el = document.getElementById('formDigest');
+    const now = new Date();
+    const rows = NAMES.map(name => {
+      const cups = validCups(CACHE.players[name].cups);
+      const last7 = cups.filter(c => (now - cupDate(c)) / 86400000 <= 7);
+      const prev7 = cups.filter(c => { const d = (now - cupDate(c)) / 86400000; return d > 7 && d <= 14; });
+      const avg = arr => arr.length ? arr.reduce((a,c)=>a+c.div,0) / arr.length : null;
+      const a = avg(last7), b = avg(prev7);
+      let verdict = 'no cups in the last 7 days';
+      if (a != null){
+        if (b == null) verdict = `avg division ${Math.round(a*10)/10} over ${last7.length} cup(s), no prior week to compare`;
+        else {
+          const delta = a - b;
+          const word = delta < -0.3 ? 'up' : delta > 0.3 ? 'down' : 'steady';
+          verdict = `${word}${word !== 'steady' ? ` ${Math.round(Math.abs(delta)*10)/10} divisions` : ''} vs the previous week (avg ${Math.round(a*10)/10} now, was ${Math.round(b*10)/10})`;
+        }
+      }
+      return `<div class="style-row"><span class="tag" style="color:${colorOf(name)};">${name}</span><span class="figure">${verdict}</span></div>`;
+    });
+    el.innerHTML = '<div class="style-list">' + rows.join('') + '</div>';
+  }
+
+  // --- 2. Best/worst single result ---
+  function renderExtremes(){
+    const el = document.getElementById('extremesCards');
+    el.innerHTML = '';
+    NAMES.forEach(name => {
+      const cups = validCups(CACHE.players[name].cups);
+      if (!cups.length) return;
+      const best = cups.slice().sort((a,b) => a.div - b.div || a.rank - b.rank)[0];
+      const worst = cups.slice().sort((a,b) => b.div - a.div || b.rank - a.rank)[0];
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.style.borderLeftColor = colorOf(name);
+      card.innerHTML = `
+        <div class="name"><span class="dot" style="background:${colorOf(name)};"></span>${name}</div>
+        <table>
+          <tr><td>Best ever</td><td class="val">div ${best.div}, #${best.rank}</td></tr>
+          <tr><td></td><td class="val" style="font-weight:400; color:var(--text-muted); font-size:12px;">${cupLabel(best)}</td></tr>
+          <tr><td>Worst ever</td><td class="val">div ${worst.div}, #${worst.rank}</td></tr>
+          <tr><td></td><td class="val" style="font-weight:400; color:var(--text-muted); font-size:12px;">${cupLabel(worst)}</td></tr>
+        </table>
+      `;
+      el.appendChild(card);
+    });
+  }
+
+  // --- 3. Division 1 tracker ---
+  function renderDiv1Tracker(){
+    const el = document.getElementById('div1Tracker');
+    let html = '<table class="data"><tr><th>Player</th><th>Div 1 appearances</th><th>Best div 1 rank</th><th>Closest miss</th></tr>';
+    NAMES.forEach(name => {
+      const cups = validCups(CACHE.players[name].cups);
+      const div1s = cups.filter(c => c.div === 1 && !isNoShow(c));
+      const bestDiv1Rank = div1s.length ? Math.min(...div1s.map(c => c.divrank).filter(v => v != null)) : null;
+      let closestMiss = '-';
+      if (!div1s.length){
+        const div2s = cups.filter(c => c.div === 2 && !isNoShow(c)).sort((a,b) => a.divrank - b.divrank);
+        if (div2s.length) closestMiss = `div 2, rank ${div2s[0].divrank}/64 (${cupLabel(div2s[0])})`;
+      }
+      html += `<tr><td><span style="color:${colorOf(name)};">${name}</span></td><td>${div1s.length}</td><td>${bestDiv1Rank ?? '-'}</td><td style="color:var(--text-secondary);">${div1s.length ? 'reached it' : closestMiss}</td></tr>`;
+    });
+    html += '</table>';
+    el.innerHTML = html;
+  }
+
+  // --- 5. Group leaderboard (last 30 days) ---
+  function renderGroupLeaderboard(){
+    const el = document.getElementById('groupLeaderboard');
+    const now = new Date();
+    const rows = NAMES.map(name => {
+      const cups = validCups(CACHE.players[name].cups).filter(c => (now - cupDate(c)) / 86400000 <= 30);
+      const avg = cups.length ? cups.reduce((a,c)=>a+c.div,0) / cups.length : null;
+      return { name, avg, count: cups.length };
+    }).filter(r => r.avg != null).sort((a,b) => a.avg - b.avg);
+
+    if (!rows.length){ el.innerHTML = '<p style="font-size:13px; color:var(--text-muted);">No cups in the last 30 days.</p>'; return; }
+    el.innerHTML = '<div class="style-list">' + rows.map((r, i) =>
+      `<div class="style-row"><span class="tag">#${i+1} <span style="color:${colorOf(r.name)};">${r.name}</span></span><span class="figure">avg div ${Math.round(r.avg*10)/10} (${r.count} cups)</span></div>`
+    ).join('') + '</div>';
+  }
+
+  // --- 6. Longest gap between cups ---
+  function renderGapTable(){
+    const el = document.getElementById('gapTable');
+    let html = '<table class="data"><tr><th>Player</th><th>Longest gap</th><th>Between</th></tr>';
+    NAMES.forEach(name => {
+      const cups = validCups(CACHE.players[name].cups).slice().sort((a,b) => new Date(a.timestamp) - new Date(b.timestamp));
+      let maxGap = 0, gapLabel = '-';
+      for (let i = 1; i < cups.length; i++){
+        const days = Math.round((cupDate(cups[i]) - cupDate(cups[i-1])) / 86400000);
+        if (days > maxGap){ maxGap = days; gapLabel = `${cupLabel(cups[i-1])} &rarr; ${cupLabel(cups[i])}`; }
+      }
+      html += `<tr><td><span style="color:${colorOf(name)};">${name}</span></td><td>${maxGap} day(s)</td><td style="color:var(--text-secondary);">${gapLabel}</td></tr>`;
+    });
+    html += '</table>';
+    el.innerHTML = html;
+  }
+
+  // --- 7. Style radar ---
+  let radarChart = null;
+  function renderRadarChart(){
+    const ctx = document.getElementById('radarChart');
+    const byTag = styleBreakdown();
+    const tagNames = Object.keys(byTag).filter(tag =>
+      NAMES.some(name => byTag[tag][name] && byTag[tag][name].count >= MIN_STYLE_CUPS)
+    );
+    if (!tagNames.length){ if (radarChart) radarChart.destroy(); return; }
+
+    const datasets = NAMES.map(name => ({
+      label: name,
+      data: tagNames.map(tag => {
+        const v = byTag[tag][name];
+        if (!v || v.count < MIN_STYLE_CUPS) return 0;
+        return Math.max(0, 20 - (v.divSum / v.count)); // invert so further out = better division
+      }),
+      borderColor: colorOf(name),
+      backgroundColor: colorOf(name) + '33',
+      pointBackgroundColor: colorOf(name),
+    }));
+
+    if (radarChart) radarChart.destroy();
+    radarChart = new Chart(ctx, {
+      type: 'radar',
+      data: { labels: tagNames, datasets },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { labels: { color: '#a8b0c3' } } },
+        scales: {
+          r: {
+            angleLines: { color: '#222939' }, grid: { color: '#222939' },
+            pointLabels: { color: '#a8b0c3', font: { size: 11 } },
+            ticks: { display: false }
+          }
+        }
+      }
+    });
+  }
+
+  // --- 8. Style ownership ---
+  function renderStyleOwnership(){
+    const el = document.getElementById('styleOwnership');
+    const byTag = styleBreakdown();
+    const rows = [];
+    Object.keys(byTag).forEach(tag => {
+      const contenders = NAMES
+        .map(name => ({ name, v: byTag[tag][name] }))
+        .filter(r => r.v && r.v.count >= MIN_STYLE_CUPS)
+        .map(r => ({ name: r.name, avg: r.v.divSum / r.v.count, count: r.v.count }));
+      if (contenders.length < 2) return; // need at least two to compare
+      contenders.sort((a,b) => a.avg - b.avg);
+      rows.push({ tag, winner: contenders[0] });
+    });
+    if (!rows.length){
+      el.innerHTML = '<p style="font-size:13px; color:var(--text-muted);">Not enough overlapping tagged data yet — need at least two players with 10+ cups on the same style.</p>';
+      return;
+    }
+    el.innerHTML = '<div class="style-list">' + rows.map(r =>
+      `<div class="style-row"><span class="tag">${r.tag}</span><span class="figure"><span style="color:${colorOf(r.winner.name)};">${r.winner.name}</span> (avg div ${Math.round(r.winner.avg*10)/10})</span></div>`
+    ).join('') + '</div>';
+  }
+
+  // --- 9. Projection ---
+  function renderProjection(){
+    const el = document.getElementById('projectionTable');
+    const now = new Date();
+    let html = '<table class="data"><tr><th>Player</th><th>30-day trend</th><th>Naive projection</th></tr>';
+    NAMES.forEach(name => {
+      const cups = validCups(CACHE.players[name].cups).filter(c => (now - cupDate(c)) / 86400000 <= 30);
+      if (cups.length < 5){
+        html += `<tr><td><span style="color:${colorOf(name)};">${name}</span></td><td colspan="2" style="color:var(--text-muted);">Not enough recent cups (need 5+ in the last 30 days)</td></tr>`;
+        return;
+      }
+      // simple linear regression: x = days since first cup in window, y = division
+      const first = Math.min(...cups.map(c => cupDate(c).getTime()));
+      const points = cups.map(c => ({ x: (cupDate(c).getTime() - first) / 86400000, y: c.div }));
+      const n = points.length;
+      const sumX = points.reduce((a,p)=>a+p.x,0), sumY = points.reduce((a,p)=>a+p.y,0);
+      const sumXY = points.reduce((a,p)=>a+p.x*p.y,0), sumXX = points.reduce((a,p)=>a+p.x*p.x,0);
+      const denom = (n * sumXX - sumX * sumX);
+      const slope = denom !== 0 ? (n * sumXY - sumX * sumY) / denom : 0;
+      const intercept = (sumY - slope * sumX) / n;
+      const currentDiv = intercept + slope * sumX / n;
+      const trendWord = slope < -0.02 ? 'improving' : slope > 0.02 ? 'declining' : 'flat';
+      let projection = 'trend is flat — no meaningful projection';
+      if (slope < -0.01){
+        const daysToNextDiv = Math.round(1 / Math.abs(slope));
+        projection = `at this rate, roughly 1 division better in ~${daysToNextDiv} days`;
+      } else if (slope > 0.01){
+        const daysToDrop = Math.round(1 / slope);
+        projection = `at this rate, roughly 1 division worse in ~${daysToDrop} days`;
+      }
+      html += `<tr><td><span style="color:${colorOf(name)};">${name}</span></td><td>${trendWord}</td><td style="color:var(--text-secondary);">${projection}</td></tr>`;
+    });
+    html += '</table>';
+    el.innerHTML = html;
+  }
+
+  // Renders Maniaplanet text formatting as real HTML — colors ($xyz, also
+  // 1-2 digit forms), $o bold, $i italic, $t uppercase, $s shadow, $w/$n
+  // wide/narrow, $g color reset, $z full reset, $$ literal $, $l/$h/$p
+  // link codes (bracketed targets dropped). Text content is HTML-escaped.
+  function formatTMName(raw){
+    if (raw == null) return '';
+    const esc = (t) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    let out = '', buf = '';
+    let st = { color: null, bold: false, italic: false, upper: false, shadow: false, wide: 0 };
+    const flush = () => {
+      if (!buf) return;
+      let css = '';
+      if (st.color) css += `color:#${st.color};`;
+      if (st.bold) css += 'font-weight:700;';
+      if (st.italic) css += 'font-style:italic;';
+      if (st.upper) css += 'text-transform:uppercase;';
+      if (st.shadow) css += 'text-shadow:1px 1px 2px rgba(0,0,0,.9);';
+      if (st.wide === 1) css += 'letter-spacing:1.5px;';
+      if (st.wide === -1) css += 'letter-spacing:-0.5px;';
+      out += css ? `<span style="${css}">${esc(buf)}</span>` : esc(buf);
+      buf = '';
+    };
+    for (let i = 0; i < raw.length; i++){
+      const ch = raw[i];
+      if (ch !== '$'){ buf += ch; continue; }
+      const nxt = raw[i + 1];
+      if (nxt === undefined){ buf += '$'; break; }
+      if (nxt === '$'){ buf += '$'; i++; continue; }
+      if (/[0-9a-fA-F]/.test(nxt)){
+        let hex = '', j = i + 1;
+        while (j < raw.length && hex.length < 3 && /[0-9a-fA-F]/.test(raw[j])){ hex += raw[j]; j++; }
+        flush();
+        st.color = hex.padEnd(3, '0').split('').map(c => c + c).join('');
+        i = j - 1;
+        continue;
+      }
+      const c = nxt.toLowerCase();
+      if (c === 'o'){ flush(); st.bold = true; }
+      else if (c === 'i'){ flush(); st.italic = true; }
+      else if (c === 't'){ flush(); st.upper = true; }
+      else if (c === 's'){ flush(); st.shadow = true; }
+      else if (c === 'w'){ flush(); st.wide = 1; }
+      else if (c === 'n'){ flush(); st.wide = -1; }
+      else if (c === 'g'){ flush(); st.color = null; }
+      else if (c === 'z'){ flush(); st = { color: null, bold: false, italic: false, upper: false, shadow: false, wide: 0 }; }
+      else if (c === 'l' || c === 'h' || c === 'p'){
+        i++; // consume the letter; drop a bracketed link target if present
+        if (raw[i + 1] === '['){ const close = raw.indexOf(']', i + 1); if (close !== -1) i = close; }
+        continue;
+      }
+      // unknown code: both characters consumed silently, like the game
+      i++;
+    }
+    flush();
+    return out;
+  }
+
+  // Strips Maniaplanet's in-game text formatting codes ($o bold, $t
+  // uppercase, $f00 colors, $$ for a literal $, etc.) so names render as
+  // plain readable text instead of raw control codes.
+  function stripTMFormatting(raw){
+    if (!raw) return raw;
+    let s = String(raw).replace(/\$\$/g, '\u0000'); // protect literal $ signs first
+    s = s.replace(/\$[0-9a-fA-F]{3}/g, '');          // color codes like $f80
+    s = s.replace(/\$[wnoitsgzlhpWNOITSGZLHP]/g, ''); // style codes: w n o i t s g z, plus l/h (link), p (padding)
+    s = s.replace(/\u0000/g, '$');
+    return s;
+  }
+
+  // --- Author medals tab ---
+  let authorSort = 'date_desc';
+  let authorFilterPlayers = new Set();
+  let authorFilterStatus = 'any';
+  const AUTHOR_SORTS = [
+    { key: 'date_desc', label: 'Newest first' },
+    { key: 'date_asc', label: 'Oldest first' },
+    { key: 'pct_asc', label: 'Hardest (lowest % first)' },
+    { key: 'pct_desc', label: 'Easiest (highest % first)' },
+    { key: 'total_desc', label: 'Most played' },
+  ];
+
+  function renderAuthorsTab(){
+    const statusEl = document.getElementById('authorStatus');
+    const pillsEl = document.getElementById('authorPills');
+    const sortEl = document.getElementById('authorSortRow');
+    const tableEl = document.getElementById('authorTable');
+
+    if (!AUTHORS || !AUTHORS.maps || !AUTHORS.maps.length){
+      statusEl.textContent = 'Author medal data isn\'t available yet — it\'ll appear once the next daily update runs.';
+      pillsEl.innerHTML = ''; sortEl.innerHTML = ''; tableEl.innerHTML = '';
+      return;
+    }
+
+    const maps = AUTHORS.maps.filter(m => m.authorTimeMs != null);
+
+    const authorPlayerNames = ['XV27', 'TheBreaker0', 'Pho3nix_.'];
+    const authorColors = { 'XV27': '#f5a623', 'TheBreaker0': '#ef4444', 'Pho3nix_.': '#ec4899' };
+    pillsEl.innerHTML = authorPlayerNames.map(name => {
+      const count = maps.filter(m => m.playerHasAuthor && m.playerHasAuthor[name]).length;
+      return `<div class="pill"><span style="color:${authorColors[name]};">${name}</span>: <b>${count}</b> / ${maps.length}</div>`;
+    }).join('');
+
+    sortEl.innerHTML = '';
+    AUTHOR_SORTS.forEach(s => {
+      const btn = document.createElement('button');
+      btn.className = 'range-btn' + (s.key === authorSort ? ' active' : '');
+      btn.textContent = s.label;
+      btn.onclick = () => { authorSort = s.key; renderAuthorsTab(); };
+      sortEl.appendChild(btn);
+    });
+
+    // Filter row: which player, and whether they have it or don't
+    let filterEl = document.getElementById('authorFilterRow');
+    if (!filterEl) {
+      filterEl = document.createElement('div');
+      filterEl.id = 'authorFilterRow';
+      filterEl.className = 'range-row';
+      sortEl.parentNode.insertBefore(filterEl, sortEl.nextSibling);
+    }
+    const playerOptions = authorPlayerNames;
+    const statusOptions = [
+      { key: 'any', label: 'Any status' },
+      { key: 'has', label: 'Has it' },
+      { key: 'missing', label: "Doesn't have it" },
+    ];
+    filterEl.innerHTML = `
+      <span style="font-size:12px; color:var(--text-secondary); align-self:center;">Filter:</span>
+      ${playerOptions.map(p => `
+        <label style="display:flex; align-items:center; gap:5px; background:var(--surface); border:1px solid var(--border); border-radius:999px; padding:6px 12px; font-size:12px; cursor:pointer;">
+          <input type="checkbox" data-player="${p}" ${authorFilterPlayers.has(p) ? 'checked' : ''} style="accent-color:${authorColors[p]};" />
+          <span style="color:${authorColors[p]};">${p}</span>
+        </label>
+      `).join('')}
+      <select id="authorFilterStatusSelect" style="background:var(--surface); color:var(--text-primary); border:1px solid var(--border); border-radius:999px; padding:6px 12px; font-size:12px;">
+        ${statusOptions.map(s => `<option value="${s.key}" ${s.key === authorFilterStatus ? 'selected' : ''}>${s.label}</option>`).join('')}
+      </select>
+    `;
+    filterEl.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+      cb.onchange = (e) => {
+        const p = e.target.dataset.player;
+        if (e.target.checked) authorFilterPlayers.add(p); else authorFilterPlayers.delete(p);
+        renderAuthorsTab();
+      };
+    });
+    document.getElementById('authorFilterStatusSelect').onchange = (e) => { authorFilterStatus = e.target.value; renderAuthorsTab(); };
+
+    let filtered = maps;
+    if (authorFilterPlayers.size > 0 && authorFilterStatus !== 'any') {
+      filtered = maps.filter(m => {
+        return [...authorFilterPlayers].every(p => {
+          const has = !!(m.playerHasAuthor && m.playerHasAuthor[p]);
+          return authorFilterStatus === 'has' ? has : !has;
+        });
+      });
+    }
+    statusEl.textContent = `Author medal data pulled ${AUTHORS.generatedAt ? new Date(AUTHORS.generatedAt).toLocaleString() : '?'}. ${maps.length} TOTD maps loaded${filtered.length !== maps.length ? `, ${filtered.length} shown after filter` : ''}.`;
+
+    const dateKey = (m) => `${m.monthYear || ''}-${String(m.day ?? 0).padStart(2, '0')}`;
+    const sorted = filtered.slice().sort((a, b) => {
+      switch (authorSort) {
+        case 'date_asc': return dateKey(a).localeCompare(dateKey(b));
+        case 'pct_asc': return (a.pct ?? 999) - (b.pct ?? 999);
+        case 'pct_desc': return (b.pct ?? -1) - (a.pct ?? -1);
+        case 'total_desc': return (b.totalFinishers ?? 0) - (a.totalFinishers ?? 0);
+        case 'date_desc': default: return dateKey(b).localeCompare(dateKey(a));
+      }
+    });
+
+    let html = '<table class="data"><tr><th>Map</th><th>Date</th><th>Author count</th><th>Finishers</th><th>%</th>';
+    authorPlayerNames.forEach(name => { html += `<th style="color:${authorColors[name]};">${name}</th>`; });
+    html += '</tr>';
+    sorted.forEach(m => {
+      const dateDisplay = (() => {
+        if (!m.monthYear) return '?';
+        const [y, mo] = m.monthYear.split('-');
+        return m.day != null ? `${String(m.day).padStart(2, '0')}/${mo}/${y}` : `${mo}/${y}`;
+      })();
+      const tagInfo = MAPTAGS && MAPTAGS.maps && MAPTAGS.maps[m.mapUid];
+      const mapHref = tagInfo && tagInfo.mxid
+        ? `https://trackmania.exchange/maps/${tagInfo.mxid}`
+        : `https://trackmania.io/#/leaderboard/${m.mapUid}`;
+      html += `<tr><td><a class="maplink" href="${mapHref}" target="_blank" rel="noopener">${formatTMName(m.name) || m.mapUid}</a></td><td style="color:var(--text-secondary);">${dateDisplay}</td><td>${m.authorCount != null ? (m.authorCapped ? '&ge;' : '') + m.authorCount : '-'}</td><td>${m.totalFinishers ?? '-'}</td><td>${m.pct != null ? (m.authorCapped ? '&ge;' : '') + m.pct + '%' : '-'}</td>`;
+      authorPlayerNames.forEach(name => {
+        const has = m.playerHasAuthor && m.playerHasAuthor[name];
+        html += `<td style="color:${has ? 'var(--good)' : 'var(--text-muted)'};">${has ? '✓' : '—'}</td>`;
+      });
+      html += '</tr>';
+    });
+    html += '</table>';
+    tableEl.innerHTML = html;
+  }
+
+  load();
+})();
+</script>
+</body>
+</html>
