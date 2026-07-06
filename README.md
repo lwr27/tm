@@ -1,51 +1,42 @@
-# tm-cotd-tracker (dockerized)
+# TM COTD Dashboard
 
-One container, one port: serves the API (talking to trackmania.io on the
-server side) and the static frontend from the same origin, so there's no
-CORS setup to think about.
+Trackmania Cup of the Day analytics for XV27, TheBreaker0 and Pho3nix_. —
+cup history, divisions, Glicko-2 qualifier ratings, map-style breakdowns,
+and a TOTD author-medal table.
 
-## Run locally
+Live dashboard: **https://lwr27.github.io/tm/**
 
-```bash
-docker compose up --build
+## How it works
+
+- Static single-file dashboard (`dashboard.html`) that reads four JSON
+  caches sitting next to it: `cache.json` (COTD cup history),
+  `map-tags.json` (TMX style tags / environments / TMX ids),
+  `authors.json` (TOTD author-medal stats), `totd-months.json`
+  (TOTD listing cache).
+- A daily GitHub Actions workflow (`.github/workflows/update-data.yml`)
+  runs the fetch scripts incrementally and commits any changed data back
+  to the repo, which redeploys GitHub Pages automatically.
+
+## Scripts
+
+| Command | What it does |
+| --- | --- |
+| `npm start` | Local server at http://localhost:3001/dashboard.html |
+| `npm run update` | Incremental COTD cup history -> cache.json |
+| `npm run tags` | TMX style tags / environment / TMX id per map -> map-tags.json |
+| `npm run authors` | TOTD author-medal stats (new maps only) -> authors.json |
+| `npm run medals` | Refresh only the three players' personal medal ticks |
+
+`authors` and `medals` need Nadeo dedicated-server credentials — locally
+via a `.env` file (`NADEO_SERVER_LOGIN` / `NADEO_SERVER_PASSWORD`), in CI
+via repo Actions secrets of the same names. `.env` is gitignored; never
+commit it.
+
+## Local use
+
+```
+npm install
+npm start
 ```
 
-Visit `http://localhost:3001`.
-
-## Put it on a real website
-
-1. Build and push the image somewhere your host can pull it from:
-
-   ```bash
-   docker build -t ghcr.io/YOUR_USER/tm-cotd-tracker:latest .
-   docker push ghcr.io/YOUR_USER/tm-cotd-tracker:latest
-   ```
-
-2. On the server (your lab, a VPS, whatever), run it behind a reverse
-   proxy that handles HTTPS — e.g. Caddy, Traefik, or nginx with certbot.
-   Caddy is the least fuss if you've not got one already:
-
-   ```
-   yourdomain.com {
-     reverse_proxy tm-cotd-tracker:3001
-   }
-   ```
-
-3. Point DNS at the host, done. No further config changes needed — the
-   frontend calls the API with relative paths, so it works under any
-   domain automatically.
-
-## Notes
-
-- Friend lists are stored in each visitor's browser (`localStorage`), not
-  on the server. If you want everyone in the group to see one shared
-  list instead of each person adding friends themselves, that's a small
-  change — swap `localStorage` for a couple of extra API endpoints
-  backed by a JSON file or SQLite in the container. Say the word if you
-  want that.
-- `TM_USER_AGENT` is set via environment variable now (see
-  `docker-compose.yml`) rather than hardcoded, so you can change it
-  without rebuilding the image.
-- trackmania.io's API is unofficial and undocumented — if a field ever
-  goes missing or renames, the fix is almost always in the `results[...] =`
-  line in `public/index.html`, mapping the actual response shape.
+Then open http://localhost:3001/dashboard.html.
