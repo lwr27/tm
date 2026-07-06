@@ -54,5 +54,6 @@ jobs:
             echo "No data changes today."
           else
             git commit -m "data: daily update $(date -u +%F)"
+            git pull --rebase --autostash origin main
             git push
           fi
