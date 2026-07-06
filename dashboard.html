@@ -497,32 +497,7 @@
       if (res3.ok) AUTHORS = await res3.json();
     } catch(e){ /* optional */ }
 
-    const totalRaw = NAMES.reduce((a, n) => a + CACHE.players[n].cups.length, 0);
-    const totalValid = NAMES.reduce((a, n) => a + validCups(CACHE.players[n].cups).length, 0);
-    const excluded = totalRaw - totalValid;
-
-    // Collect the actual excluded cups (deduped across players) with reasons.
-    const excludedSeen = new Set();
-    const excludedList = [];
-    NAMES.forEach(name => {
-      CACHE.players[name].cups.forEach(c => {
-        if (isValidCup(c)) return;
-        const key = cupLabel(c);
-        if (excludedSeen.has(key)) return;
-        excludedSeen.add(key);
-        excludedList.push({ label: key, reason: invalidReason(c) });
-      });
-    });
-    excludedList.sort((a, b) => labelDateKey(b.label).localeCompare(labelDateKey(a.label)));
-
-    const base = `Data updated ${new Date(CACHE.generatedAt).toLocaleString()}.`;
-    if (excluded){
-      setStatus(`${base} <a href="#" id="excludedToggle" style="color:var(--text-secondary); text-decoration:underline dotted;">Excluded ${excludedList.length} cup(s) with inconsistent data</a> — why?<div id="excludedDetail" hidden style="margin-top:8px; font-size:12px; color:var(--text-muted); border-left:2px solid var(--border); padding-left:10px;">${excludedList.map(e => `<div style="margin:3px 0;"><span style="color:var(--text-secondary);">${e.label}</span> — ${e.reason}</div>`).join('')}</div>`);
-      const t = document.getElementById('excludedToggle');
-      if (t) t.onclick = (ev) => { ev.preventDefault(); const d = document.getElementById('excludedDetail'); d.hidden = !d.hidden; };
-    } else {
-      setStatus(base);
-    }
+    setStatus(`Data updated ${new Date(CACHE.generatedAt).toLocaleString()}.`);
 
     renderPills(totalValid);
     renderStatCards();
