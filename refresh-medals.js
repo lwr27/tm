@@ -5,9 +5,11 @@
 // Run with: npm run medals
 // Requires .env with NADEO_SERVER_LOGIN / NADEO_SERVER_PASSWORD.
 //
-// Fast: the mapRecords endpoint accepts a list of map IDs per request, so
-// this batches ~25 maps per call — the whole TOTD history refreshes in a
-// couple of minutes, safe to run as often as you like after playing.
+// One request per map (accountIdList batches all three players together,
+// but mapId does NOT accept a comma-separated list — confirmed by the API
+// itself rejecting a joined list with "is not a valid UUID", i.e. it was
+// trying to parse the whole comma-joined string as a single ID). ~2200
+// requests at a steady pace — a background job, not a quick refresh.
 
 const fs = require("fs");
 const path = require("path");
@@ -15,7 +17,6 @@ const { nadeoFetch } = require("./nadeo-auth");
 
 const CORE = "NadeoServices";
 const OUT_PATH = path.join(__dirname, "authors.json");
-const CHUNK = 25;
 
 const PLAYERS = [
   { name: "XV27", accountId: "8b537233-4931-49a8-af54-b0cefc33fa72" },
@@ -35,63 +36,35 @@ async function main() {
   const accountList = PLAYERS.map((p) => p.accountId).join(",");
   let updated = 0, checked = 0;
 
-  for (let i = 0; i < maps.length; i += CHUNK) {
-    const chunk = maps.slice(i, i + CHUNK);
-    const mapIdList = chunk.map((m) => m.mapId).join(",");
-    let records;
+  for (const m of maps) {
+    checked++;
     try {
-      // NB: the parameter is named mapId (singular) — the API rejects
-      // "mapIdList" with a "Missing mapId parameter" error, but accepts a
-      // comma-separated list under mapId.
-      records = await nadeoFetch(
-        `https://prod.trackmania.core.nadeo.online/v2/mapRecords/?accountIdList=${accountList}&mapId=${mapIdList}`,
+      const records = await nadeoFetch(
+        `https://prod.trackmania.core.nadeo.online/v2/mapRecords/?accountIdList=${accountList}&mapId=${m.mapId}`,
         CORE
       );
-    } catch (err) {
-      const tail = err.message.length > 150 ? '...' + err.message.slice(-150) : err.message;
-      console.warn(`Chunk ${Math.floor(i / CHUNK) + 1} failed as a batch (${tail}) — retrying these ${chunk.length} maps one at a time`);
-      records = [];
-      for (const m of chunk) {
-        try {
-          const single = await nadeoFetch(
-            `https://prod.trackmania.core.nadeo.online/v2/mapRecords/?accountIdList=${accountList}&mapId=${m.mapId}`,
-            CORE
-          );
-          records = records.concat(Array.isArray(single) ? single : []);
-        } catch (err2) {
-          console.error(`  ${m.name || m.mapId}: ${err2.message.slice(0, 100)}`);
-        }
-        await new Promise((r) => setTimeout(r, 700));
-      }
-    }
-
-    // index records by mapId -> accountId -> time
-    const byMap = {};
-    (Array.isArray(records) ? records : []).forEach((rec) => {
-      if (!rec.mapId || !rec.recordScore || rec.recordScore.time == null) return;
-      byMap[rec.mapId] = byMap[rec.mapId] || {};
-      byMap[rec.mapId][rec.accountId] = rec.recordScore.time;
-    });
-
-    chunk.forEach((m) => {
-      checked++;
-      const times = byMap[m.mapId] || {};
+      const times = {};
+      (Array.isArray(records) ? records : []).forEach((rec) => {
+        if (rec.recordScore && rec.recordScore.time != null) times[rec.accountId] = rec.recordScore.time;
+      });
       const fresh = {};
       PLAYERS.forEach((p) => {
         const t = times[p.accountId];
         fresh[p.name] = t != null ? t <= m.authorTimeMs : false;
       });
-      const old = JSON.stringify(m.playerHasAuthor || {});
-      if (JSON.stringify(fresh) !== old) {
+      if (JSON.stringify(fresh) !== JSON.stringify(m.playerHasAuthor || {})) {
         m.playerHasAuthor = fresh;
         updated++;
       }
-    });
+    } catch (err) {
+      console.error(`  ${m.name || m.mapId}: ${err.message.slice(0, 100)}`);
+    }
 
-    console.log(`Checked ${Math.min(i + CHUNK, maps.length)}/${maps.length} maps (${updated} changed so far)`);
-    // save as we go so an interrupt loses nothing
-    fs.writeFileSync(OUT_PATH, JSON.stringify(results, null, 2));
-    await new Promise((r) => setTimeout(r, 800));
+    if (checked % 50 === 0) {
+      console.log(`Checked ${checked}/${maps.length} maps (${updated} changed so far)`);
+      fs.writeFileSync(OUT_PATH, JSON.stringify(results, null, 2)); // save as we go
+    }
+    await new Promise((r) => setTimeout(r, 700));
   }
 
   results.medalsRefreshedAt = new Date().toISOString();
