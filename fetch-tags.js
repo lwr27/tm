@@ -57,17 +57,25 @@ async function main() {
     (tags || []).forEach((t) => { mapTags.tagNames[t.ID] = t.Name; });
   }
 
-  // 2. collect every unique map UID across all players
+  // 2. collect every unique map UID across all players' cups, plus every
+  //    TOTD map in authors.json (so the author-medal table can link to TMX)
   const uids = new Set();
   Object.values(cache.players).forEach((p) => {
     (p.cups || []).forEach((c) => { if (c.mapuid) uids.add(c.mapuid); });
   });
-  console.log(`${uids.size} unique maps found across cached cups.`);
+  const AUTHORS_PATH = path.join(__dirname, "authors.json");
+  if (fs.existsSync(AUTHORS_PATH)) {
+    try {
+      const authors = JSON.parse(fs.readFileSync(AUTHORS_PATH, "utf8"));
+      (authors.maps || []).forEach((m) => { if (m.mapUid) uids.add(m.mapUid); });
+    } catch (e) { /* optional */ }
+  }
+  console.log(`${uids.size} unique maps found across cached cups + TOTD listing.`);
 
   let fetched = 0, skipped = 0, notFound = 0;
   for (const uid of uids) {
     const existing = mapTags.maps[uid];
-    const needsBackfill = existing && existing.found && existing.env === undefined;
+    const needsBackfill = existing && existing.found && (existing.env === undefined || existing.mxid === undefined);
     if (existing && !needsBackfill) { skipped++; continue; }
     try {
       const info = await fetchWithRetry(`${TMX_BASE}/maps/get_map_info/uid/${uid}`);
@@ -77,7 +85,7 @@ async function main() {
       } else {
         const tagIds = (info.Tags || "").split(",").map((s) => s.trim()).filter(Boolean);
         const tagNames = tagIds.map((id) => mapTags.tagNames[id]).filter(Boolean);
-        mapTags.maps[uid] = { found: true, name: info.Name, tags: tagNames, env: info.EnvironmentName || null };
+        mapTags.maps[uid] = { found: true, name: info.Name, tags: tagNames, env: info.EnvironmentName || null, mxid: info.MapID ?? info.TrackID ?? null };
         fetched++;
       }
     } catch (err) {

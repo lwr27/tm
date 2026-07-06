@@ -64,6 +64,8 @@
   .scroll-table { max-height: 480px; overflow-y: auto; border: 1px solid var(--border); border-radius: var(--radius); }
 
   #status { font-size: 13px; color: var(--text-muted); margin-bottom: 1.5rem; }
+  .maplink { color: inherit; text-decoration: none; }
+  .maplink:hover { text-decoration: underline; }
   code { background: var(--surface); padding: 1px 6px; border-radius: 4px; font-size: 13px; }
   .legend { display: flex; gap: 16px; font-size: 12px; color: var(--text-secondary); margin-bottom: 8px; }
   .legend span { display: flex; align-items: center; gap: 4px; }
@@ -1526,7 +1528,11 @@
         const [y, mo] = m.monthYear.split('-');
         return m.day != null ? `${String(m.day).padStart(2, '0')}/${mo}/${y}` : `${mo}/${y}`;
       })();
-      html += `<tr><td>${stripTMFormatting(m.name) || m.mapUid}</td><td style="color:var(--text-secondary);">${dateDisplay}</td><td>${m.authorCount != null ? (m.authorCapped ? '&ge;' : '') + m.authorCount : '-'}</td><td>${m.totalFinishers ?? '-'}</td><td>${m.pct != null ? (m.authorCapped ? '&ge;' : '') + m.pct + '%' : '-'}</td>`;
+      const tagInfo = MAPTAGS && MAPTAGS.maps && MAPTAGS.maps[m.mapUid];
+      const mapHref = tagInfo && tagInfo.mxid
+        ? `https://trackmania.exchange/maps/${tagInfo.mxid}`
+        : `https://trackmania.io/#/leaderboard/${m.mapUid}`;
+      html += `<tr><td><a class="maplink" href="${mapHref}" target="_blank" rel="noopener">${formatTMName(m.name) || m.mapUid}</a></td><td style="color:var(--text-secondary);">${dateDisplay}</td><td>${m.authorCount != null ? (m.authorCapped ? '&ge;' : '') + m.authorCount : '-'}</td><td>${m.totalFinishers ?? '-'}</td><td>${m.pct != null ? (m.authorCapped ? '&ge;' : '') + m.pct + '%' : '-'}</td>`;
       authorPlayerNames.forEach(name => {
         const has = m.playerHasAuthor && m.playerHasAuthor[name];
         html += `<td style="color:${has ? 'var(--good)' : 'var(--text-muted)'};">${has ? '✓' : '—'}</td>`;
