@@ -23455,7 +23455,7 @@
       "totalFinishers": 11131,
       "pct": 23.6,
       "playerHasAuthor": {
-        "XV27": false,
+        "XV27": true,
         "TheBreaker0": true,
         "Pho3nix_.": true
       }
@@ -31921,7 +31921,7 @@
       "totalFinishers": 11926,
       "pct": 24.6,
       "playerHasAuthor": {
-        "XV27": false,
+        "XV27": true,
         "TheBreaker0": false,
         "Pho3nix_.": true
       }
@@ -34471,7 +34471,7 @@
       "totalFinishers": 10738,
       "pct": 29.3,
       "playerHasAuthor": {
-        "XV27": false,
+        "XV27": true,
         "TheBreaker0": false,
         "Pho3nix_.": true
       }
@@ -34743,7 +34743,7 @@
       "totalFinishers": 12291,
       "pct": 23.9,
       "playerHasAuthor": {
-        "XV27": false,
+        "XV27": true,
         "TheBreaker0": false,
         "Pho3nix_.": true
       }
@@ -34947,7 +34947,7 @@
       "totalFinishers": 11572,
       "pct": 27.9,
       "playerHasAuthor": {
-        "XV27": false,
+        "XV27": true,
         "TheBreaker0": false,
         "Pho3nix_.": true
       }
@@ -35440,7 +35440,7 @@
       "totalFinishers": 12340,
       "pct": 26.2,
       "playerHasAuthor": {
-        "XV27": false,
+        "XV27": true,
         "TheBreaker0": false,
         "Pho3nix_.": true
       }
@@ -37465,5 +37465,6 @@
       "verified": true
     }
   ],
-  "generatedAt": "2026-07-05T18:49:38.077Z"
+  "generatedAt": "2026-07-05T18:49:38.077Z",
+  "medalsRefreshedAt": "2026-07-06T12:26:31.081Z"
 }

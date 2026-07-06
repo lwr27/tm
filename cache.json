@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-03T10:10:05.071Z",
+  "generatedAt": "2026-07-06T11:32:46.422Z",
   "players": {
     "XV27 & Whidot": {
       "cups": [
@@ -14688,10 +14688,24 @@
           "score": 37,
           "qualificationrank": 701,
           "totalplayers": 1695
+        },
+        {
+          "id": 43938,
+          "timestamp": "2026-07-03T17:16:30Z",
+          "name": "COTD 2026-07-03 #1",
+          "mapuid": "RPgcAxX0LkqEaIwM4Kuygu15aL4",
+          "mapgroup": "3421207f-fdee-4916-b093-af08b4ca8d74",
+          "mapname": "$o$36bTE$37bAR$38cS D$39cO$49cN$4acT F$4bdAL$4cdL",
+          "div": 12,
+          "rank": 710,
+          "divrank": 6,
+          "score": 48,
+          "qualificationrank": 730,
+          "totalplayers": 1590
         }
       ],
       "stats": {
-        "total": 1049,
+        "total": 1050,
         "bestrank": 72,
         "avgrank": 791,
         "bestdiv": 2,
@@ -30017,10 +30031,24 @@
           "score": 43,
           "qualificationrank": 829,
           "totalplayers": 1901
+        },
+        {
+          "id": 43938,
+          "timestamp": "2026-07-03T17:16:30Z",
+          "name": "COTD 2026-07-03 #1",
+          "mapuid": "RPgcAxX0LkqEaIwM4Kuygu15aL4",
+          "mapgroup": "3421207f-fdee-4916-b093-af08b4ca8d74",
+          "mapname": "$o$36bTE$37bAR$38cS D$39cO$49cN$4acT F$4bdAL$4cdL",
+          "div": 9,
+          "rank": 547,
+          "divrank": 35,
+          "score": 19,
+          "qualificationrank": 553,
+          "totalplayers": 1590
         }
       ],
       "stats": {
-        "total": 1094,
+        "total": 1095,
         "bestrank": 160,
         "avgrank": 1047,
         "bestdiv": 3,
@@ -43666,10 +43694,24 @@
           "score": 28,
           "qualificationrank": 781,
           "totalplayers": 1703
+        },
+        {
+          "id": 43938,
+          "timestamp": "2026-07-03T17:16:30Z",
+          "name": "COTD 2026-07-03 #1",
+          "mapuid": "RPgcAxX0LkqEaIwM4Kuygu15aL4",
+          "mapgroup": "3421207f-fdee-4916-b093-af08b4ca8d74",
+          "mapname": "$o$36bTE$37bAR$38cS D$39cO$49cN$4acT F$4bdAL$4cdL",
+          "div": 7,
+          "rank": 406,
+          "divrank": 22,
+          "score": 24,
+          "qualificationrank": 398,
+          "totalplayers": 1590
         }
       ],
       "stats": {
-        "total": 974,
+        "total": 975,
         "bestrank": 2,
         "avgrank": 854,
         "bestdiv": 1,
