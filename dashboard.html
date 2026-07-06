@@ -311,6 +311,10 @@
     <div class="pills" id="authorPills"></div>
     <div id="authorStatus" style="font-size:13px; color:var(--text-muted); margin-bottom:1.5rem;"></div>
 
+    <p class="section-title">Recent activity</p>
+    <p class="section-note">Author medals as they're earned. This log only tracks medals detected from when this feature was added — it can't retroactively know when older ones were set.</p>
+    <div id="medalLog" style="margin-bottom:1.5rem;"></div>
+
     <div class="range-row" id="authorSortRow"></div>
     <div class="scroll-table" id="authorTable"></div>
   </div>
@@ -1647,11 +1651,31 @@
     { key: 'total_desc', label: 'Most played' },
   ];
 
+  function renderMedalLog(){
+    const el = document.getElementById('medalLog');
+    const events = (AUTHORS && AUTHORS.medalEvents) || [];
+    if (!events.length){
+      el.innerHTML = '<p style="font-size:13px; color:var(--text-muted);">No medals logged yet — check back after the next daily update.</p>';
+      return;
+    }
+    const sorted = events.slice().sort((a, b) =>
+      new Date(b.achievedAt || b.detectedAt) - new Date(a.achievedAt || a.detectedAt)
+    );
+    const authorColors = { 'XV27': '#f5a623', 'TheBreaker0': '#ef4444', 'Pho3nix_.': '#ec4899' };
+    el.innerHTML = '<div class="style-list">' + sorted.slice(0, 30).map(e => {
+      const when = e.achievedAt
+        ? new Date(e.achievedAt).toLocaleDateString()
+        : `detected ${new Date(e.detectedAt).toLocaleDateString()}`;
+      return `<div class="style-row"><span class="tag" style="color:${authorColors[e.player] || 'var(--text-primary)'};">${e.player}</span><span class="figure">${formatTMName(e.mapName) || e.mapUid} &middot; ${when}</span></div>`;
+    }).join('') + '</div>';
+  }
+
   function renderAuthorsTab(){
     const statusEl = document.getElementById('authorStatus');
     const pillsEl = document.getElementById('authorPills');
     const sortEl = document.getElementById('authorSortRow');
     const tableEl = document.getElementById('authorTable');
+    renderMedalLog();
 
     if (!AUTHORS || !AUTHORS.maps || !AUTHORS.maps.length){
       statusEl.textContent = 'Author medal data isn\'t available yet — it\'ll appear once the next daily update runs.';

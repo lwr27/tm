@@ -37,6 +37,24 @@ const PLAYERS = [
   { name: "Pho3nix_.", accountId: "ede8dd52-dc02-4abc-a864-eb6e3934bc2b" },
 ];
 
+// Appends an entry to the shared medal-achievement log (results.medalEvents),
+// deduped so the same player+map is never logged twice. Prefers the
+// record's own timestamp (when Nadeo actually set the time); falls back to
+// "detected today" if that field turns out to be missing.
+function logMedalEvent(results, playerName, entry, recordTimestamp){
+  results.medalEvents = results.medalEvents || [];
+  const key = `${playerName}|${entry.mapUid}`;
+  if (results.medalEvents.some((e) => e.key === key)) return;
+  results.medalEvents.push({
+    key,
+    player: playerName,
+    mapUid: entry.mapUid,
+    mapName: entry.name,
+    achievedAt: recordTimestamp || null,
+    detectedAt: new Date().toISOString(),
+  });
+}
+
 // --- TOTD listing (trackmania.io, cheap, once per run) ---
 
 // Watchdog: prints a heartbeat every 30s with the current operation, so a
@@ -281,15 +299,23 @@ async function countAuthorAndTotal(entry) {
   return { authorCount: Math.max(0, authorCount), totalFinishers };
 }
 
+let loggedRecordShape = false;
 async function getPlayerScores(mapId, accountIds) {
   const idList = accountIds.join(",");
   const data = await nadeoFetch(
     `https://prod.trackmania.core.nadeo.online/v2/mapRecords/?accountIdList=${idList}&mapId=${mapId}`,
     CORE
   );
+  if (!loggedRecordShape && Array.isArray(data) && data.length) {
+    loggedRecordShape = true;
+    console.log("  Raw mapRecords entry (checking for a timestamp field):");
+    console.log("  " + JSON.stringify(data[0]));
+  }
   const byAccount = {};
   (Array.isArray(data) ? data : []).forEach((rec) => {
-    if (rec.recordScore && rec.recordScore.time != null) byAccount[rec.accountId] = rec.recordScore.time;
+    if (rec.recordScore && rec.recordScore.time != null) {
+      byAccount[rec.accountId] = { time: rec.recordScore.time, timestamp: rec.timestamp || null };
+    }
   });
   return byAccount;
 }
@@ -409,8 +435,10 @@ async function main() {
         try {
           const scores = await getPlayerScores(entry.mapId, PLAYERS.map((p) => p.accountId));
           PLAYERS.forEach((p) => {
-            const score = scores[p.accountId];
-            playerHasAuthor[p.name] = score != null ? score <= entry.authorTimeMs : false;
+            const rec = scores[p.accountId];
+            const has = rec != null && rec.time <= entry.authorTimeMs;
+            playerHasAuthor[p.name] = has;
+            if (has) logMedalEvent(results, p.name, entry, rec.timestamp);
           });
         } catch (err) {
           console.warn(`  personal medal check failed (${err.message}) — leaving blank`);

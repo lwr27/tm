@@ -24,6 +24,22 @@ const PLAYERS = [
   { name: "Pho3nix_.", accountId: "ede8dd52-dc02-4abc-a864-eb6e3934bc2b" },
 ];
 
+// Same dedup logic as fetch-authors.js — shared log, one entry per
+// player+map, ever.
+function logMedalEvent(results, playerName, m, recordTimestamp){
+  results.medalEvents = results.medalEvents || [];
+  const key = `${playerName}|${m.mapUid}`;
+  if (results.medalEvents.some((e) => e.key === key)) return;
+  results.medalEvents.push({
+    key,
+    player: playerName,
+    mapUid: m.mapUid,
+    mapName: m.name,
+    achievedAt: recordTimestamp || null,
+    detectedAt: new Date().toISOString(),
+  });
+}
+
 async function main() {
   if (!fs.existsSync(OUT_PATH)) {
     console.error("authors.json not found — run `npm run authors` first.");
@@ -34,7 +50,7 @@ async function main() {
   console.log(`${maps.length} cached maps with a mapId to check.`);
 
   const accountList = PLAYERS.map((p) => p.accountId).join(",");
-  let updated = 0, checked = 0;
+  let updated = 0, checked = 0, newMedals = 0, loggedShape = false;
 
   for (const m of maps) {
     checked++;
@@ -43,16 +59,29 @@ async function main() {
         `https://prod.trackmania.core.nadeo.online/v2/mapRecords/?accountIdList=${accountList}&mapId=${m.mapId}`,
         CORE
       );
-      const times = {};
+      if (!loggedShape && Array.isArray(records) && records.length) {
+        loggedShape = true;
+        console.log("Raw mapRecords entry (checking for a timestamp field):", JSON.stringify(records[0]));
+      }
+      const recByAccount = {};
       (Array.isArray(records) ? records : []).forEach((rec) => {
-        if (rec.recordScore && rec.recordScore.time != null) times[rec.accountId] = rec.recordScore.time;
+        if (rec.recordScore && rec.recordScore.time != null) {
+          recByAccount[rec.accountId] = { time: rec.recordScore.time, timestamp: rec.timestamp || null };
+        }
       });
       const fresh = {};
+      const previouslyHad = m.playerHasAuthor || {};
       PLAYERS.forEach((p) => {
-        const t = times[p.accountId];
-        fresh[p.name] = t != null ? t <= m.authorTimeMs : false;
+        const rec = recByAccount[p.accountId];
+        const has = rec != null && rec.time <= m.authorTimeMs;
+        fresh[p.name] = has;
+        // log only the false -> true transition, i.e. a genuinely new medal
+        if (has && !previouslyHad[p.name]) {
+          logMedalEvent(results, p.name, m, rec.timestamp);
+          newMedals++;
+        }
       });
-      if (JSON.stringify(fresh) !== JSON.stringify(m.playerHasAuthor || {})) {
+      if (JSON.stringify(fresh) !== JSON.stringify(previouslyHad)) {
         m.playerHasAuthor = fresh;
         updated++;
       }
@@ -61,7 +90,7 @@ async function main() {
     }
 
     if (checked % 50 === 0) {
-      console.log(`Checked ${checked}/${maps.length} maps (${updated} changed so far)`);
+      console.log(`Checked ${checked}/${maps.length} maps (${updated} changed, ${newMedals} new medals so far)`);
       fs.writeFileSync(OUT_PATH, JSON.stringify(results, null, 2)); // save as we go
     }
     await new Promise((r) => setTimeout(r, 700));
@@ -69,7 +98,7 @@ async function main() {
 
   results.medalsRefreshedAt = new Date().toISOString();
   fs.writeFileSync(OUT_PATH, JSON.stringify(results, null, 2));
-  console.log(`\nDone. ${checked} maps checked, ${updated} medal statuses changed.`);
+  console.log(`\nDone. ${checked} maps checked, ${updated} medal statuses changed, ${newMedals} new medal(s) logged.`);
 }
 
 main().catch((err) => {
