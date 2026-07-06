@@ -70,6 +70,7 @@
     background: linear-gradient(180deg, var(--surface-2), var(--surface)); border-radius: 12px; padding: 1rem;
     border: 1px solid var(--border); border-left: 3px solid var(--border);
     transition: transform 0.15s, box-shadow 0.15s;
+    position: relative;
   }
   .card:hover { transform: translateY(-1px); box-shadow: 0 6px 22px rgba(0, 0, 0, 0.35); }
   .card .name { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; font-family: var(--display); font-weight: 600; font-size: 14px; letter-spacing: 0.02em; }
@@ -130,11 +131,12 @@
   .diff-bad { color: var(--danger); }
 
   .plastic-boy {
-    display: inline-flex; align-items: center; gap: 5px; margin: -2px 0 10px;
-    font-family: var(--display); font-weight: 600; font-size: 11px; letter-spacing: 0.04em;
+    position: absolute; top: 12px; right: 12px;
+    display: inline-flex; align-items: center; gap: 5px;
+    font-family: var(--display); font-weight: 600; font-size: 10.5px; letter-spacing: 0.03em;
     text-decoration: none; color: #7dd3fc;
     background: linear-gradient(180deg, rgba(125,211,252,0.16), rgba(125,211,252,0.06));
-    border: 1px solid rgba(125,211,252,0.35); border-radius: 999px; padding: 3px 10px;
+    border: 1px solid rgba(125,211,252,0.35); border-radius: 999px; padding: 3px 9px;
     transition: border-color 0.15s, transform 0.15s;
   }
   .plastic-boy:hover { border-color: rgba(125,211,252,0.7); transform: translateY(-1px); }
@@ -190,9 +192,9 @@
 
     <p class="section-title">Glicko-2 qualifier rating</p>
     <p class="section-note">Standard Glicko-2 scored on each cup's qualification percentile — the same approach as the COTD Qualifier Rating Discord bot, with its constants reverse-engineered from its own displayed numbers (virtual 1500-rated opponent with RD 280, one rating period per day, uncertainty inflating on days off). Raw daily values, no smoothing. Won't match the bot's numbers exactly (different history coverage), but the shape and levels should track closely.</p>
-    <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
-      <div class="range-row" id="rangeRow" style="margin-bottom:12px;"></div>
-      <button id="chartFullscreenBtn" class="range-btn" style="margin-bottom:12px;" title="Open the full chart in a large window">⛶ Fullscreen</button>
+    <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:12px;">
+      <div class="range-row" id="rangeRow" style="display:none;"></div>
+      <button id="chartFullscreenBtn" class="range-btn" title="Open the full chart in a large window">⛶ Fullscreen</button>
     </div>
     <div class="legend" id="legend"></div>
     <div style="display:flex; align-items:stretch; margin-bottom:1.5rem;">
@@ -206,10 +208,6 @@
       </div>
       <div class="chart-modal-body"><canvas id="divChartFull"></canvas></div>
     </div>
-
-    <p class="section-title">Share summary</p>
-    <div class="row" style="margin-bottom:8px;"><button id="copyShareBtn">Copy summary to clipboard</button></div>
-    <pre id="shareText" style="background:var(--surface); border-radius:var(--radius); padding:1rem; font-size:12px; white-space:pre-wrap; color:var(--text-secondary);"></pre>
   </div>
 
   <div class="tab-panel" id="tab-results">
@@ -266,10 +264,6 @@
     <p class="section-title">Style ownership</p>
     <p class="section-note">Who's currently best of the three at each map style.</p>
     <div id="styleOwnership" style="margin-bottom:1.5rem;"></div>
-
-    <p class="section-title">Environment breakdown</p>
-    <p id="envNote" class="section-note"></p>
-    <div id="envTable" style="overflow-x:auto; margin-bottom:1.5rem;"></div>
 
     <p class="section-title">Player deep dive</p>
     <p class="section-note">Pick a player to see their profile and strongest/weakest styles.</p>
@@ -331,10 +325,6 @@
   const MIN_STYLE_CUPS = 10; // minimum cups of a style before it counts as "best" or "worst"
   const RANGES = [
     { key: 'all', label: 'All time', days: null },
-    { key: '90',  label: 'Last 3 months', days: 90 },
-    { key: '30',  label: 'Last month', days: 30 },
-    { key: 'month', label: 'This month', days: 'thisMonth' },
-    { key: '10',  label: 'Last 10 cups', days: 'last10' },
   ];
 
   const statusEl = document.getElementById('status');
@@ -508,7 +498,6 @@
     renderPromoLog();
     renderNoShowTable();
     renderScatter();
-    renderEnvTable();
     renderMonthlyReport();
     renderPbTracker();
     renderFormDigest();
@@ -519,7 +508,6 @@
     renderRadarChart();
     renderStyleOwnership();
     renderProjection();
-    renderShareText();
     renderAuthorsTab();
   }
 
@@ -598,22 +586,24 @@
       const currentRating = history.length ? Math.round(history[history.length - 1].rating) : null;
 
       const isPlasticBoy = plasticBoy && plasticBoy.name === name;
-      // Link to that day's TOTD page on trackmania.io, keyed by date —
-      // more reliable than guessing an internal cup-id field.
+      // Link straight to the map's own leaderboard (always resolvable),
+      // with the day shown as plain text rather than guessing a
+      // competition-id URL structure that isn't reliably available.
       const pd = isPlasticBoy ? cupDate(plasticBoy.cup) : null;
-      const plasticHref = pd
-        ? `https://trackmania.io/#/totd/${pd.getFullYear()}-${String(pd.getMonth()+1).padStart(2,'0')}-${String(pd.getDate()).padStart(2,'0')}`
+      const dayLabel = pd ? `${String(pd.getDate()).padStart(2,'0')}/${String(pd.getMonth()+1).padStart(2,'0')}` : '';
+      const plasticHref = isPlasticBoy && plasticBoy.cup.mapuid
+        ? `https://trackmania.io/#/leaderboard/${plasticBoy.cup.mapuid}`
         : null;
       const plasticBadge = isPlasticBoy
-        ? `<a class="plastic-boy" href="${plasticHref}" target="_blank" rel="noopener" title="Best of the three on the last Plastic COTD you all played (${plasticBoy.label}) — click for that day's map">🧊 Plastic Boy</a>`
+        ? `<a class="plastic-boy" href="${plasticHref}" target="_blank" rel="noopener" title="Best of the three on the last Plastic COTD you all played, ${dayLabel} — click for the map">🥤 Plastic Boy</a>`
         : '';
 
       const card = document.createElement('div');
       card.className = 'card';
       card.style.borderLeftColor = colorOf(name);
       card.innerHTML = `
-        <div class="name"><span class="dot" style="background:${colorOf(name)};"></span>${name}</div>
         ${plasticBadge}
+        <div class="name"><span class="dot" style="background:${colorOf(name)};"></span>${name}</div>
         <table>
           <tr><td>Glicko-2 rating</td><td class="val">${currentRating ?? '-'}</td></tr>
           <tr><td>Cups tracked</td><td class="val">${s.total ?? '-'}</td></tr>
@@ -898,20 +888,20 @@
       for (const name of NAMES){ if (byNameByLabel[name][label]){ cupByLabel[label] = byNameByLabel[name][label]; break; } }
     });
 
-    let html = '<table class="data"><tr><th>Date</th><th>Map</th>';
+    let html = '<table class="data"><tr><th>Date</th>';
     NAMES.forEach(name => { html += `<th>${shortOf(name)}</th>`; });
     html += '</tr>';
     labelArr.forEach(label => {
       const rep = cupByLabel[label];
       const info = rep && rep.mapuid && MAPTAGS && MAPTAGS.maps && MAPTAGS.maps[rep.mapuid];
-      let mapCell = '<span style="color:var(--text-muted);">—</span>';
+      let mapLine = '';
       if (info && info.found && info.name){
         const href = info.mxid
           ? `https://trackmania.exchange/maps/${info.mxid}`
           : `https://trackmania.io/#/leaderboard/${rep.mapuid}`;
-        mapCell = `<a class="maplink" href="${href}" target="_blank" rel="noopener">${formatTMName(info.name)}</a>`;
+        mapLine = `<br><a class="maplink" href="${href}" target="_blank" rel="noopener" style="font-size:11px; color:var(--text-muted);">${formatTMName(info.name)}</a>`;
       }
-      html += `<tr><td style="color:var(--text-secondary);">${label}</td><td>${mapCell}</td>`;
+      html += `<tr><td style="color:var(--text-secondary);">${label}${mapLine}</td>`;
       NAMES.forEach(name => {
         const c = byNameByLabel[name][label];
         if (!c){ html += '<td>-</td>'; return; }
@@ -1273,54 +1263,6 @@
     });
   }
 
-  // --- 7. Environment breakdown ---
-  function renderEnvTable(){
-    const noteEl = document.getElementById('envNote');
-    const el = document.getElementById('envTable');
-    if (!MAPTAGS){
-      noteEl.textContent = 'No map-tags.json found. Run "npm run tags" in the proxy folder to pull this data.';
-      el.innerHTML = '';
-      return;
-    }
-    const hasEnv = Object.values(MAPTAGS.maps).some(m => m.env);
-    if (!hasEnv){
-      noteEl.textContent = 'Environment data (Stadium/Canyon/etc.) isn\'t in map-tags.json yet — it was added after your last tag pull. Re-run "npm run tags" to backfill it (it only needs to fetch info for maps it hasn\'t seen, so this should be quick), then refresh.';
-      el.innerHTML = '';
-      return;
-    }
-    noteEl.textContent = 'Average division per map environment, same comparison style as the map-style breakdown.';
-
-    const byEnv = {};
-    NAMES.forEach(name => {
-      validCups(CACHE.players[name].cups).forEach(c => {
-        const info = c.mapuid && MAPTAGS.maps[c.mapuid];
-        if (!info || !info.found || !info.env) return;
-        byEnv[info.env] = byEnv[info.env] || {};
-        byEnv[info.env][name] = byEnv[info.env][name] || { divSum: 0, count: 0 };
-        byEnv[info.env][name].divSum += c.div;
-        byEnv[info.env][name].count += 1;
-      });
-    });
-    const envNames = Object.keys(byEnv);
-    if (!envNames.length){
-      el.innerHTML = '<p style="font-size:13px; color:var(--text-muted);">No environment-tagged maps found yet.</p>';
-      return;
-    }
-    let html = '<table class="data"><tr><th>Environment</th>';
-    NAMES.forEach(name => { html += `<th>${shortOf(name)}</th>`; });
-    html += '</tr>';
-    envNames.forEach(env => {
-      html += `<tr><td>${env}</td>`;
-      NAMES.forEach(name => {
-        const v = byEnv[env][name];
-        html += `<td>${v ? `${Math.round(v.divSum / v.count * 10) / 10} <span style="color:var(--text-muted);">(${v.count})</span>` : '-'}</td>`;
-      });
-      html += '</tr>';
-    });
-    html += '</table>';
-    el.innerHTML = html;
-  }
-
   // --- 9. Monthly report card ---
   function renderMonthlyReport(){
     const el = document.getElementById('monthlyReport');
@@ -1561,26 +1503,6 @@
     });
     html += '</table>';
     el.innerHTML = html;
-  }
-
-  // --- 10. Share summary ---
-  function renderShareText(){
-    const el = document.getElementById('shareText');
-    const lines = [`Trackmania COTD summary — ${new Date().toLocaleDateString()}`, ''];
-    NAMES.forEach(name => {
-      const s = statsFor(name);
-      const cups = CACHE.players[name].cups;
-      lines.push(`${name}: ${s.total} cups, best div ${s.bestdiv}, avg div ${avgDivOf(cups)}, ${s.totaldivwins} div wins`);
-    });
-    el.textContent = lines.join('\n');
-    document.getElementById('copyShareBtn').onclick = () => {
-      navigator.clipboard.writeText(el.textContent).then(() => {
-        const btn = document.getElementById('copyShareBtn');
-        const original = btn.textContent;
-        btn.textContent = 'Copied!';
-        setTimeout(() => { btn.textContent = original; }, 1500);
-      });
-    };
   }
 
   // Renders Maniaplanet text formatting as real HTML — colors ($xyz, also
