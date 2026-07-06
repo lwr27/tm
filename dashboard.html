@@ -184,14 +184,8 @@
   <div class="tab-panel active" id="tab-overview">
     <div class="cards" id="statCards"></div>
 
-    <p class="section-title">This week's form</p>
-    <div id="formDigest" style="margin-bottom:1.5rem;"></div>
-
-    <p class="section-title">Group leaderboard (last 30 days)</p>
-    <div id="groupLeaderboard" style="margin-bottom:1.5rem;"></div>
-
     <p class="section-title">Glicko-2 qualifier rating</p>
-    <p class="section-note">Standard Glicko-2 scored on each cup's qualification percentile — the same approach as the COTD Qualifier Rating Discord bot, with its constants reverse-engineered from its own displayed numbers (virtual 1500-rated opponent with RD 280, one rating period per day, uncertainty inflating on days off). Raw daily values, no smoothing. Won't match the bot's numbers exactly (different history coverage), but the shape and levels should track closely.</p>
+    <p class="section-note" style="max-width:none;">Standard Glicko-2 scored on each cup's qualification percentile — the same approach as the COTD Qualifier Rating Discord bot, with its constants reverse-engineered from its own displayed numbers (virtual 1500-rated opponent with RD 280, one rating period per day, uncertainty inflating on days off). Raw daily values, no smoothing. Won't match the bot's numbers exactly (different history coverage), but the shape and levels should track closely.</p>
     <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:12px;">
       <div class="range-row" id="rangeRow" style="display:none;"></div>
       <button id="chartFullscreenBtn" class="range-btn" title="Open the full chart in a large window">⛶ Fullscreen</button>
@@ -208,7 +202,14 @@
       </div>
       <div class="chart-modal-body"><canvas id="divChartFull"></canvas></div>
     </div>
-  </div>
+
+    <p class="section-title">This week's form</p>
+    <div id="formDigest" style="margin-bottom:1.5rem;"></div>
+
+    <p class="section-title">Group leaderboard (last 30 days)</p>
+    <div id="groupLeaderboard" style="margin-bottom:1.5rem;"></div>
+
+</div>
 
   <div class="tab-panel" id="tab-results">
     <p class="section-title">Cup by cup</p>
@@ -461,7 +462,7 @@
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       CACHE = await res.json();
     } catch(e){
-      setStatus(`Couldn't load cache.json (${e.message}). Run <code>npm run update</code> in the proxy folder first, then refresh this page.`, true);
+      setStatus(`Couldn't load the data (${e.message}). The daily update may be mid-run — try refreshing in a few minutes.`, true);
       return;
     }
     try {
@@ -480,7 +481,7 @@
     const totalRaw = NAMES.reduce((a, n) => a + CACHE.players[n].cups.length, 0);
     const totalValid = NAMES.reduce((a, n) => a + validCups(CACHE.players[n].cups).length, 0);
     const excluded = totalRaw - totalValid;
-    setStatus(`Data pulled ${new Date(CACHE.generatedAt).toLocaleString()}.${excluded ? ` Excluded ${excluded} cup(s) with inconsistent data (e.g. trackmania.io's own "broken" flag).` : ''} Run <code>npm run update</code> for fresh results, <code>npm run tags</code> for new map styles.`);
+    setStatus(`Data updated ${new Date(CACHE.generatedAt).toLocaleString()}.${excluded ? ` Excluded ${excluded} cup(s) with inconsistent data.` : ''}`);
 
     renderPills(totalValid);
     renderStatCards();
@@ -595,7 +596,7 @@
         ? `https://trackmania.io/#/leaderboard/${plasticBoy.cup.mapuid}`
         : null;
       const plasticBadge = isPlasticBoy
-        ? `<a class="plastic-boy" href="${plasticHref}" target="_blank" rel="noopener" title="Best of the three on the last Plastic COTD you all played, ${dayLabel} — click for the map">🥤 Plastic Boy</a>`
+        ? `<a class="plastic-boy" href="${plasticHref}" target="_blank" rel="noopener" title="Best of the three on the last Plastic COTD you all played, ${dayLabel} — click for the map">Plastic Boy</a>`
         : '';
 
       const card = document.createElement('div');
@@ -940,7 +941,7 @@
     const el = document.getElementById('styleBlocks');
 
     if (!MAPTAGS){
-      noteEl.textContent = 'No map-tags.json found. Run "npm run tags" in the proxy folder (after npm run update) to pull TMX style tags, then refresh.';
+      noteEl.textContent = 'Map style data isn\'t available yet — it\'ll appear once the next daily update runs.';
       el.innerHTML = '';
       return;
     }
@@ -1593,7 +1594,7 @@
     const tableEl = document.getElementById('authorTable');
 
     if (!AUTHORS || !AUTHORS.maps || !AUTHORS.maps.length){
-      statusEl.textContent = 'No authors.json found yet. Run "npm run authors" in the proxy folder (needs a .env with your Nadeo dedicated server credentials), then refresh.';
+      statusEl.textContent = 'Author medal data isn\'t available yet — it\'ll appear once the next daily update runs.';
       pillsEl.innerHTML = ''; sortEl.innerHTML = ''; tableEl.innerHTML = '';
       return;
     }
