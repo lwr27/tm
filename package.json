@@ -1,0 +1,22 @@
+{
+  "name": "tm-cotd-proxy",
+  "version": "1.0.0",
+  "description": "Small proxy so a browser app can pull Trackmania COTD data from trackmania.io",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "update": "node fetch-data.js",
+    "tags": "node fetch-tags.js",
+    "authors": "node fetch-authors.js",
+    "medals": "node refresh-medals.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5"
+  }
+}
