@@ -48,7 +48,8 @@ async function main() {
         CORE
       );
     } catch (err) {
-      console.warn(`Chunk ${Math.floor(i / CHUNK) + 1} failed as a batch (${err.message.slice(0, 120)}...) — retrying these ${chunk.length} maps one at a time`);
+      const tail = err.message.length > 150 ? '...' + err.message.slice(-150) : err.message;
+      console.warn(`Chunk ${Math.floor(i / CHUNK) + 1} failed as a batch (${tail}) — retrying these ${chunk.length} maps one at a time`);
       records = [];
       for (const m of chunk) {
         try {
