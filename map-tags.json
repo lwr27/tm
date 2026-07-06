@@ -22156,6 +22156,18 @@
       ],
       "env": "Stadium",
       "mxid": 309940
+    },
+    "OewiwxAjweQWNJsGL3GM3foBkP3": {
+      "found": true,
+      "name": "Bridges of Midgard",
+      "tags": [
+        "SpeedFun",
+        "Scenery",
+        "Grass",
+        "Freeblocking"
+      ],
+      "env": "Stadium",
+      "mxid": 334673
     }
   }
 }
