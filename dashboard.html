@@ -124,6 +124,14 @@
 
   .chart-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1.5rem; background: var(--surface); }
   .chart-inner { position: relative; height: 340px; padding: 12px; }
+  .chart-fs-btn {
+    position: absolute; top: 8px; right: 8px; z-index: 3;
+    font-family: inherit; font-size: 11px; cursor: pointer;
+    background: rgba(16,19,27,0.85); border: 1px solid var(--border); color: var(--text-secondary);
+    padding: 4px 9px; border-radius: 7px; backdrop-filter: blur(4px);
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .chart-fs-btn:hover { color: var(--text-primary); border-color: var(--accent); }
 
   .player-style-block { margin-bottom: 1.5rem; }
   .player-style-header { display: flex; align-items: center; gap: 8px; font-family: var(--display); font-weight: 600; font-size: 14px; margin-bottom: 8px; }
@@ -185,13 +193,11 @@
     <div class="cards" id="statCards"></div>
 
     <p class="section-title">Glicko-2 qualifier rating</p>
-    <p class="section-note" style="max-width:none;">Standard Glicko-2 scored on each cup's qualification percentile — the same approach as the COTD Qualifier Rating Discord bot, with its constants reverse-engineered from its own displayed numbers (virtual 1500-rated opponent with RD 280, one rating period per day, uncertainty inflating on days off). Raw daily values, no smoothing. Won't match the bot's numbers exactly (different history coverage), but the shape and levels should track closely.</p>
-    <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:12px;">
-      <div class="range-row" id="rangeRow" style="display:none;"></div>
-      <button id="chartFullscreenBtn" class="range-btn" title="Open the full chart in a large window">⛶ Fullscreen</button>
-    </div>
+    <p class="section-note" style="max-width:none;">Standard Glicko-2 on each cup's qualification percentile — the same method as the COTD Qualifier Rating bot (virtual 1500-rated opponent, one rating period per day, uncertainty rising on days off). Raw daily values, so the shape and levels track the bot closely without matching its exact numbers.</p>
+    <div class="range-row" id="rangeRow" style="display:none;"></div>
     <div class="legend" id="legend"></div>
-    <div style="display:flex; align-items:stretch; margin-bottom:1.5rem;">
+    <div style="position:relative; display:flex; align-items:stretch; margin-bottom:1.5rem;">
+      <button id="chartFullscreenBtn" class="chart-fs-btn" title="Open the full chart in a large window">⛶ Fullscreen</button>
       <div style="width:56px; flex:none;"><canvas id="divAxis"></canvas></div>
       <div class="chart-scroll" style="flex:1; margin-bottom:0; min-width:0;"><div class="chart-inner" id="divChartWrap"><canvas id="divChart"></canvas></div></div>
     </div>
@@ -735,7 +741,7 @@
         plugins: { legend: { display: false } },
         scales: {
           y: { title: { display: false }, ticks: { display: false }, grid: { color: 'rgba(255,255,255,0.07)' } },
-          x: { ticks: { autoSkip: selectedRange === 'all', maxTicksLimit: 30, color: '#a8b0c3' }, grid: { display: false } }
+          x: { ticks: { autoSkip: true, maxTicksLimit: 14, autoSkipPadding: 20, maxRotation: 0, color: '#a8b0c3', callback: function(v){ const l = this.getLabelForValue(v); const m = l && l.match(/\d{4}-\d{2}-\d{2}/); return m ? m[0] : l; } }, grid: { display: false } }
         }
       }
     });
@@ -790,7 +796,7 @@
         plugins: { legend: { display: false } },
         scales: {
           y: { ticks: { color: '#a8b0c3', font: { family: "'JetBrains Mono', monospace", size: 11 } }, grid: { color: 'rgba(255,255,255,0.07)' } },
-          x: { ticks: { autoSkip: true, maxTicksLimit: 24, color: '#a8b0c3', maxRotation: 0 }, grid: { display: false } }
+          x: { ticks: { autoSkip: true, maxTicksLimit: 12, color: '#a8b0c3', maxRotation: 0, autoSkipPadding: 24, callback: function(v){ const l = this.getLabelForValue(v); const m = l && l.match(/\d{4}-\d{2}-\d{2}/); return m ? m[0] : l; } }, grid: { display: false } }
         }
       }
     });
