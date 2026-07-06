@@ -42,7 +42,8 @@
   .pill { background: var(--surface); border: 1px solid var(--border); border-radius: 999px; padding: 6px 14px; font-size: 13px; color: var(--text-secondary); }
   .pill b { color: var(--text-primary); font-family: var(--mono); font-weight: 600; font-variant-numeric: tabular-nums; }
 
-  nav.tabs { display: flex; gap: 2px; border-bottom: 1px solid var(--border); margin-bottom: 1.75rem; overflow-x: auto; }
+  nav.tabs { display: flex; gap: 2px; border-bottom: 1px solid var(--border); margin-bottom: 1.75rem; overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none; }
+  nav.tabs::-webkit-scrollbar { display: none; }
   nav.tabs button {
     position: relative; white-space: nowrap; cursor: pointer; background: transparent; border: none;
     font-family: var(--display); font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.09em;
@@ -240,13 +241,6 @@
     <p class="section-title">Personal-best-division appearances</p>
     <p class="section-note">Every cup where a player matched their strongest-ever division.</p>
     <div id="pbTracker" style="overflow-x:auto;"></div>
-  <p class="section-title">Division 1 tracker</p>
-    <p class="section-note">How close each player has gotten to the top division.</p>
-    <div id="div1Tracker" style="overflow-x:auto; margin-bottom:1.5rem;"></div>
-
-    <p class="section-title">Promotion / relegation log</p>
-    <p class="section-note">Notable division shifts cup to cup (3+ divisions of movement).</p>
-    <div id="promoLog" style="margin-bottom:1.5rem;"></div>
 
     <p class="section-title">Consistency</p>
     <p class="section-note">Standard deviation of division over their last 30 cups. Lower means steadier — two players can have the same average division but very different reliability.</p>
@@ -298,7 +292,8 @@
     </div>
 
     <p class="section-title">Field size vs performance</p>
-    <p class="section-note">Does a bigger field on a given day correlate with better or worse division for each player?</p>
+    <p class="section-note">Does a bigger field on a given day correlate with better or worse division? Click a player to isolate them.</p>
+    <div class="range-row" id="scatterFilter"></div>
     <div style="position:relative; width:100%; height:320px; margin-bottom:1.5rem;">
       <canvas id="scatterChart"></canvas>
     </div>
@@ -346,7 +341,15 @@
   }
   function colorOf(name){ return (PLAYER_META[name] && PLAYER_META[name].color) || '#8888aa'; }
   function shortOf(name){ return (PLAYER_META[name] && PLAYER_META[name].short) || name; }
-  function cupLabel(c){ return c.name || new Date(c.timestamp).toLocaleDateString(); }
+  function cupLabel(c){
+    const raw = c.name || new Date(c.timestamp).toLocaleDateString();
+    // trackmania.io changed naming over time ("Cup of the Day 2021-10-15 #1"
+    // vs "COTD 2026-07-02 #1"). Normalize everything to one format.
+    const date = raw.match(/\d{4}-\d{2}-\d{2}/);
+    const edition = raw.match(/#(\d+)/);
+    if (date) return `COTD ${date[0]}${edition ? ' #' + edition[1] : ''}`;
+    return raw;
+  }
   function cupDate(c){
     const m = cupLabel(c).match(/\d{4}-\d{2}-\d{2}/);
     return m ? new Date(m[0]) : new Date(c.timestamp);
@@ -356,11 +359,16 @@
   // division are internally consistent. trackmania.io's own API flags a
   // small number of "broken" cups per player (bad/cancelled data) — this
   // filter catches those so one bad record can't skew "best division" etc.
+  function cupEdition(c){
+    const m = (c.name || '').match(/#(\d+)/);
+    return m ? parseInt(m[1], 10) : 1;
+  }
   function isValidCup(c){
     return c.div != null && c.rank != null && c.totalplayers != null
       && c.totalplayers >= 32
       && c.rank >= 1 && c.rank <= c.totalplayers
-      && c.div >= 1;
+      && c.div >= 1
+      && cupEdition(c) === 1; // only the main #1 edition — excludes Cup of the Morning/Night (#2/#3)
   }
   function validCups(cups){ return cups.filter(isValidCup); }
 
@@ -499,7 +507,8 @@
 
     setStatus(`Data updated ${new Date(CACHE.generatedAt).toLocaleString()}.`);
 
-    renderPills();
+    const totalValid = NAMES.reduce((a, n) => a + validCups(CACHE.players[n].cups).length, 0);
+    renderPills(totalValid);
     renderStatCards();
     renderRangeButtons();
     renderDivChart();
@@ -512,14 +521,12 @@
     renderDayOfWeek();
     renderConsistency();
     renderPbTimeline();
-    renderPromoLog();
     renderNoShowTable();
     renderScatter();
     renderMonthlyReport();
     renderPbTracker();
     renderFormDigest();
     renderExtremes();
-    renderDiv1Tracker();
     renderGroupLeaderboard();
     renderGapTable();
     renderRadarChart();
@@ -848,23 +855,34 @@
     const maxDiv = 20;
     const datasets = NAMES.map(name => {
       const counts = new Array(maxDiv + 1).fill(0);
-      validCups(CACHE.players[name].cups).forEach(c => {
+      const cups = validCups(CACHE.players[name].cups);
+      cups.forEach(c => {
         const bucket = Math.min(c.div, maxDiv + 1) - 1;
         counts[bucket] += 1;
       });
-      return { label: name, data: counts, backgroundColor: colorOf(name), borderRadius: 3 };
+      // as % of that player's cups, so players with different totals compare fairly
+      const total = cups.length || 1;
+      const pct = counts.map(v => Math.round((v / total) * 1000) / 10);
+      const col = colorOf(name);
+      return {
+        label: name, data: pct,
+        borderColor: col, backgroundColor: col + '33',
+        fill: true, tension: 0.4, borderWidth: 2, pointRadius: 0, pointHitRadius: 6,
+      };
     });
     const labels = Array.from({length: maxDiv + 1}, (_, i) => i === maxDiv ? `${maxDiv}+` : `${i + 1}`);
 
     if (divHistChart) divHistChart.destroy();
     divHistChart = new Chart(ctx, {
-      type: 'bar',
+      type: 'line',
       data: { labels, datasets },
       options: {
         responsive: true, maintainAspectRatio: false,
-        plugins: { legend: { labels: { color: '#a8b0c3' } } },
+        interaction: { mode: 'index', intersect: false },
+        plugins: { legend: { labels: { color: '#a8b0c3' } },
+          tooltip: { callbacks: { label: (i) => `${i.dataset.label}: ${i.formattedValue}% of cups` } } },
         scales: {
-          y: { title: { display: true, text: 'Cups', color: '#a8b0c3' }, ticks: { color: '#a8b0c3' }, grid: { color: '#222939' } },
+          y: { title: { display: true, text: '% of that player\'s cups', color: '#a8b0c3' }, ticks: { color: '#a8b0c3' }, grid: { color: '#222939' } },
           x: { title: { display: true, text: 'Division', color: '#a8b0c3' }, ticks: { color: '#a8b0c3' }, grid: { display: false } }
         }
       }
@@ -927,7 +945,9 @@
           html += `<td><span class="badge" style="background:${bc.bg}; color:${bc.fg};">div ${c.div}</span> <span style="color:var(--text-muted); font-size:12px;">qualified, didn't play rounds</span></td>`;
           return;
         }
-        html += `<td><span class="badge" style="background:${bc.bg}; color:${bc.fg};">div ${c.div}</span> <span style="color:var(--text-muted); font-size:12px;">rank ${c.divrank ?? '-'}/64 &middot; #${c.rank}</span></td>`;
+        const medalColor = c.rank === 1 ? '#d4af37' : c.rank === 2 ? '#b8c0cc' : c.rank === 3 ? '#cd7f32' : null;
+        const rankStyle = medalColor ? `color:${medalColor}; font-weight:600;` : 'color:var(--text-muted);';
+        html += `<td><span class="badge" style="background:${bc.bg}; color:${bc.fg};">div ${c.div}</span> <span style="font-size:12px; ${rankStyle}">rank ${c.divrank ?? '-'}/64 &middot; #${c.rank}</span></td>`;
       });
       html += '</tr>';
     });
@@ -982,9 +1002,18 @@
       } else {
         rowsHtml = '<table class="data"><tr><th>Style</th><th>Avg division</th><th>Vs personal avg</th><th>Cups</th></tr>' +
           rows.map(r => {
-            const diffClass = r.diff < -0.15 ? 'diff-good' : r.diff > 0.15 ? 'diff-bad' : '';
+            // Tint the whole row: green if better than personal avg (negative
+            // diff), red if worse. Intensity scales with magnitude, capped at
+            // ±2 divisions so one outlier doesn't blow out the scale.
+            const mag = Math.min(Math.abs(r.diff), 2) / 2; // 0..1
+            const alpha = (0.06 + mag * 0.20).toFixed(3);
+            const rowBg = r.diff < -0.15
+              ? `background: rgba(61,220,151,${alpha});`
+              : r.diff > 0.15
+                ? `background: rgba(244,99,94,${alpha});`
+                : '';
             const sign = r.diff > 0 ? '+' : '';
-            return `<tr><td>${r.tag}</td><td>${Math.round(r.avg * 10) / 10}</td><td class="${diffClass}">${sign}${Math.round(r.diff * 10) / 10}</td><td>${r.count}</td></tr>`;
+            return `<tr style="${rowBg}"><td>${r.tag}</td><td>${Math.round(r.avg * 10) / 10}</td><td>${sign}${Math.round(r.diff * 10) / 10}</td><td>${r.count}</td></tr>`;
           }).join('') + '</table>';
       }
       block.innerHTML = `
@@ -1085,13 +1114,62 @@
       el.innerHTML = '<p style="font-size:13px; color:var(--text-muted);">No shared cups found yet.</p>';
       return;
     }
-    let html = '<table class="data"><tr><th>Matchup</th><th>Shared cups</th><th>Record</th></tr>';
-    rows.forEach(r => {
-      if (!r.shared) return;
-      html += `<tr><td><span style="color:${colorOf(r.a)};">${shortOf(r.a)}</span> vs <span style="color:${colorOf(r.b)};">${shortOf(r.b)}</span></td><td>${r.shared}</td><td>${r.aWins}&ndash;${r.bWins}${r.ties ? `&ndash;${r.ties} tied` : ''}</td></tr>`;
+    if (NAMES.length !== 3){
+      // fall back to a table for anything other than 3 players
+      let html = '<table class="data"><tr><th>Matchup</th><th>Shared cups</th><th>Record</th></tr>';
+      rows.forEach(r => { if (!r.shared) return;
+        html += `<tr><td><span style="color:${colorOf(r.a)};">${shortOf(r.a)}</span> vs <span style="color:${colorOf(r.b)};">${shortOf(r.b)}</span></td><td>${r.shared}</td><td>${r.aWins}&ndash;${r.bWins}${r.ties ? `&ndash;${r.ties} tied` : ''}</td></tr>`;
+      });
+      el.innerHTML = html + '</table>';
+      return;
+    }
+
+    // --- triangle: three vertices, three edges ---
+    const W = 460, H = 380;
+    const V = { // vertex positions per player index
+      0: { x: W/2, y: 46 },
+      1: { x: 70, y: H - 70 },
+      2: { x: W - 70, y: H - 70 },
+    };
+    const idx = {}; NAMES.forEach((n, i) => idx[n] = i);
+    const rec = (a, b) => results[`${a}|${b}`] || (results[`${b}|${a}`] ? (() => { const r = results[`${b}|${a}`]; return { a, b, aWins: r.bWins, bWins: r.aWins, ties: r.ties, shared: r.shared }; })() : null);
+
+    let svg = `<svg viewBox="0 0 ${W} ${H}" width="100%" style="max-width:${W}px; display:block; margin:0 auto;" font-family="'JetBrains Mono', monospace">`;
+
+    // edges
+    for (let i = 0; i < 3; i++){
+      for (let j = i + 1; j < 3; j++){
+        const a = NAMES[i], b = NAMES[j];
+        const r = rec(a, b);
+        if (!r || !r.shared) continue;
+        const pa = V[i], pb = V[j];
+        // split point along the edge proportional to wins — the winner
+        // "owns" more of the line
+        const total = r.aWins + r.bWins || 1;
+        const t = r.aWins / total;
+        const mx = pa.x + (pb.x - pa.x) * t, my = pa.y + (pb.y - pa.y) * t;
+        svg += `<line x1="${pa.x}" y1="${pa.y}" x2="${mx}" y2="${my}" stroke="${colorOf(a)}" stroke-width="${2 + 6*t}" stroke-linecap="round" opacity="0.85"/>`;
+        svg += `<line x1="${mx}" y1="${my}" x2="${pb.x}" y2="${pb.y}" stroke="${colorOf(b)}" stroke-width="${2 + 6*(1-t)}" stroke-linecap="round" opacity="0.85"/>`;
+        // record label at edge midpoint
+        const lx = (pa.x + pb.x) / 2, ly = (pa.y + pb.y) / 2;
+        const leader = r.aWins > r.bWins ? a : r.bWins > r.aWins ? b : null;
+        svg += `<rect x="${lx-30}" y="${ly-13}" width="60" height="22" rx="6" fill="#10131b" stroke="var(--border)"/>`;
+        svg += `<text x="${lx}" y="${ly+3}" text-anchor="middle" font-size="12" font-weight="600" fill="${leader ? colorOf(leader) : '#a8b0c3'}">${r.aWins}\u2013${r.bWins}</text>`;
+      }
+    }
+    // vertices
+    NAMES.forEach((n, i) => {
+      const p = V[i];
+      const total = validCups(CACHE.players[n].cups).length;
+      svg += `<circle cx="${p.x}" cy="${p.y}" r="8" fill="${colorOf(n)}"/>`;
+      const anchor = i === 0 ? 'middle' : i === 1 ? 'start' : 'end';
+      const dy = i === 0 ? -16 : 24;
+      const dx = i === 0 ? 0 : i === 1 ? -6 : 6;
+      svg += `<text x="${p.x + dx}" y="${p.y + dy}" text-anchor="${anchor}" font-size="13" font-weight="700" fill="${colorOf(n)}" font-family="'Chakra Petch', sans-serif">${shortOf(n)}</text>`;
     });
-    html += '</table>';
-    el.innerHTML = html;
+    svg += '</svg>';
+    svg += '<p style="text-align:center; font-size:11px; color:var(--text-muted); margin-top:6px;">Each edge is a head-to-head record on cups both played; the thicker, more-coloured side belongs to whoever wins more.</p>';
+    el.innerHTML = svg;
   }
 
   function renderHeadToHead(restrictToSameMap){
@@ -1130,7 +1208,7 @@
         responsive: true, maintainAspectRatio: false,
         plugins: { legend: { labels: { color: '#a8b0c3' } } },
         scales: {
-          y: { reverse: true, title: { display: true, text: 'Avg division', color: '#a8b0c3' }, ticks: { color: '#a8b0c3' }, grid: { color: '#222939' } },
+          y: { beginAtZero: true, title: { display: true, text: 'Avg division (lower is better)', color: '#a8b0c3' }, ticks: { color: '#a8b0c3' }, grid: { color: '#222939' } },
           x: { ticks: { color: '#a8b0c3' }, grid: { display: false } }
         }
       }
@@ -1210,35 +1288,7 @@
     el.innerHTML = html;
   }
 
-  // --- 5. Promotion / relegation log ---
-  function renderPromoLog(){
-    const el = document.getElementById('promoLog');
-    const THRESHOLD = 3;
-    let html = '';
-    NAMES.forEach(name => {
-      const cups = validCups(CACHE.players[name].cups).slice().sort((a,b) => new Date(a.timestamp) - new Date(b.timestamp));
-      const moves = [];
-      for (let i = 1; i < cups.length; i++){
-        const delta = cups[i].div - cups[i-1].div;
-        if (Math.abs(delta) >= THRESHOLD){
-          moves.push({ label: cupLabel(cups[i]), from: cups[i-1].div, to: cups[i].div, delta });
-        }
-      }
-      html += `<div class="player-style-header"><span class="dot" style="width:10px;height:10px;border-radius:50%;background:${colorOf(name)};display:inline-block;"></span>${name}</div>`;
-      if (!moves.length){
-        html += '<p style="font-size:13px; color:var(--text-muted); margin-bottom:1rem;">No big swings yet.</p>';
-      } else {
-        html += '<div class="style-list" style="margin-bottom:1rem;">' + moves.slice(-6).reverse().map(m => {
-          const cls = m.delta < 0 ? 'diff-good' : 'diff-bad';
-          const arrow = m.delta < 0 ? '↑ promoted' : '↓ relegated';
-          return `<div class="style-row"><span class="tag">${m.label}</span><span class="figure ${cls}">div ${m.from} &rarr; div ${m.to} (${arrow})</span></div>`;
-        }).join('') + '</div>';
-      }
-    });
-    el.innerHTML = html;
-  }
-
-  // --- Qualified but didn't play division rounds ---
+// --- Qualified but didn't play division rounds ---
   function renderNoShowTable(){
     const el = document.getElementById('noShowTable');
     let html = '<table class="data"><tr><th>Player</th><th>Count</th><th>Most recent</th></tr>';
@@ -1257,12 +1307,25 @@
 
   // --- 6. Field size vs performance scatter ---
   let scatterChart = null;
+  let scatterFilter = 'all';
   function renderScatter(){
     const ctx = document.getElementById('scatterChart');
-    const datasets = NAMES.map(name => ({
+
+    // filter buttons
+    const filt = document.getElementById('scatterFilter');
+    const opts = ['all', ...NAMES];
+    filt.innerHTML = opts.map(o =>
+      `<button class="range-btn${o === scatterFilter ? ' active' : ''}" data-sf="${o}">${o === 'all' ? 'All players' : o}</button>`
+    ).join('');
+    filt.querySelectorAll('button').forEach(b => {
+      b.onclick = () => { scatterFilter = b.dataset.sf; renderScatter(); };
+    });
+
+    const shown = scatterFilter === 'all' ? NAMES : [scatterFilter];
+    const datasets = shown.map(name => ({
       label: name,
       data: validCups(CACHE.players[name].cups).map(c => ({ x: c.totalplayers, y: c.div })),
-      backgroundColor: colorOf(name),
+      backgroundColor: colorOf(name) + (scatterFilter === 'all' ? 'aa' : 'cc'),
       pointRadius: 3,
     }));
     if (scatterChart) scatterChart.destroy();
@@ -1271,7 +1334,7 @@
       data: { datasets },
       options: {
         responsive: true, maintainAspectRatio: false,
-        plugins: { legend: { labels: { color: '#a8b0c3' } } },
+        plugins: { legend: { display: false } },
         scales: {
           y: { reverse: true, title: { display: true, text: 'Division', color: '#a8b0c3' }, ticks: { color: '#a8b0c3' }, grid: { color: '#222939' } },
           x: { title: { display: true, text: 'Field size that day', color: '#a8b0c3' }, ticks: { color: '#a8b0c3' }, grid: { color: '#222939' } }
@@ -1371,26 +1434,7 @@
     });
   }
 
-  // --- 3. Division 1 tracker ---
-  function renderDiv1Tracker(){
-    const el = document.getElementById('div1Tracker');
-    let html = '<table class="data"><tr><th>Player</th><th>Div 1 appearances</th><th>Best div 1 rank</th><th>Closest miss</th></tr>';
-    NAMES.forEach(name => {
-      const cups = validCups(CACHE.players[name].cups);
-      const div1s = cups.filter(c => c.div === 1 && !isNoShow(c));
-      const bestDiv1Rank = div1s.length ? Math.min(...div1s.map(c => c.divrank).filter(v => v != null)) : null;
-      let closestMiss = '-';
-      if (!div1s.length){
-        const div2s = cups.filter(c => c.div === 2 && !isNoShow(c)).sort((a,b) => a.divrank - b.divrank);
-        if (div2s.length) closestMiss = `div 2, rank ${div2s[0].divrank}/64 (${cupLabel(div2s[0])})`;
-      }
-      html += `<tr><td><span style="color:${colorOf(name)};">${name}</span></td><td>${div1s.length}</td><td>${bestDiv1Rank ?? '-'}</td><td style="color:var(--text-secondary);">${div1s.length ? 'reached it' : closestMiss}</td></tr>`;
-    });
-    html += '</table>';
-    el.innerHTML = html;
-  }
-
-  // --- 5. Group leaderboard (last 30 days) ---
+// --- 5. Group leaderboard (last 30 days) ---
   function renderGroupLeaderboard(){
     const el = document.getElementById('groupLeaderboard');
     const now = new Date();
@@ -1417,7 +1461,7 @@
         const days = Math.round((cupDate(cups[i]) - cupDate(cups[i-1])) / 86400000);
         if (days > maxGap){ maxGap = days; gapLabel = `${cupLabel(cups[i-1])} &rarr; ${cupLabel(cups[i])}`; }
       }
-      html += `<tr><td><span style="color:${colorOf(name)};">${name}</span></td><td>${maxGap} day(s)</td><td style="color:var(--text-secondary);">${gapLabel}</td></tr>`;
+      html += `<tr><td><span style="color:${colorOf(name)};">${name}</span></td><td>${maxGap} days</td><td style="color:var(--text-secondary);">${gapLabel}</td></tr>`;
     });
     html += '</table>';
     el.innerHTML = html;
