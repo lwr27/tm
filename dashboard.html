@@ -1288,12 +1288,16 @@
   }
 
   function computeSameDivH2h(days){
-    // pairKey "a|b" -> { aWins, bWins, ties }
+    // pairKey uses a fixed alphabetical order so the same matchup always
+    // merges into one row, regardless of who ranked better on a given day.
     const results = {};
     days.forEach(d => {
+      // d.entries was sorted by divrank for display — do NOT rely on that
+      // ordering for comparisons, compare the actual divrank values instead.
       for (let i = 0; i < d.entries.length; i++){
         for (let j = i + 1; j < d.entries.length; j++){
-          const ea = d.entries[i], eb = d.entries[j];
+          const e1 = d.entries[i], e2 = d.entries[j];
+          const [ea, eb] = e1.name < e2.name ? [e1, e2] : [e2, e1];
           const key = `${ea.name}|${eb.name}`;
           if (!results[key]) results[key] = { a: ea.name, b: eb.name, aWins: 0, bWins: 0, ties: 0 };
           const r = results[key];
