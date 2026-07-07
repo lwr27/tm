@@ -1,8 +1,9 @@
 name: Backfill division opponents
 
-# Manual only, for now — this hits an endpoint we haven't verified from
-# outside the sandbox yet. Once a run succeeds and the data looks right,
-# fold `npm run opponents` into update-data.yml's daily steps instead.
+# Manual only. Currently runs the PROBE, not the real backfill — we don't
+# yet know if trackmania.io's cup id maps directly to Nadeo's competition
+# id. Once the probe confirms that (or tells us what's needed instead),
+# swap the final step back to `npm run opponents`.
 on:
   workflow_dispatch: {}
 
@@ -22,18 +23,8 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Fetch division opponents
-        run: npm run opponents
-
-      - name: Commit opponents data
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add opponents.json
-          if git diff --cached --quiet; then
-            echo "No data changes."
-          else
-            git commit -m "data: division opponents backfill $(date -u +%F)"
-            git pull --rebase --autostash origin main
-            git push
-          fi
+      - name: Probe the competition-id question
+        run: node probe-opponents.js
+        env:
+          NADEO_SERVER_LOGIN: ${{ secrets.NADEO_SERVER_LOGIN }}
+          NADEO_SERVER_PASSWORD: ${{ secrets.NADEO_SERVER_PASSWORD }}
