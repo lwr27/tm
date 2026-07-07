@@ -9,7 +9,8 @@
     "update": "node fetch-data.js",
     "tags": "node fetch-tags.js",
     "authors": "node fetch-authors.js",
-    "medals": "node refresh-medals.js"
+    "medals": "node refresh-medals.js",
+    "opponents": "node fetch-opponents.js"
   },
   "engines": {
     "node": ">=18"
