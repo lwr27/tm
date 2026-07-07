@@ -505,14 +505,29 @@
   }
 
 
+  let opponentsLoadStarted = false;
   document.querySelectorAll('nav.tabs button').forEach(btn => {
     btn.addEventListener('click', () => {
       document.querySelectorAll('nav.tabs button').forEach(b => b.classList.remove('active'));
       document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
       btn.classList.add('active');
       document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+      if (btn.dataset.tab === 'rivals' && !opponentsLoadStarted){
+        opponentsLoadStarted = true;
+        loadOpponentsAndRender();
+      }
     });
   });
+
+  async function loadOpponentsAndRender(){
+    const statusEl = document.getElementById('rivalsStatus');
+    statusEl.textContent = 'Loading opponents data (this file is large, may take a moment)...';
+    try {
+      const res = await fetch('./opponents.json', { cache: 'no-store' });
+      if (res.ok) OPPONENTS = await res.json();
+    } catch(e){ /* handled by renderRivalsTab's not-available message */ }
+    renderRivalsTab();
+  }
 
   async function load(){
     setStatus('Loading cache.json...');
@@ -537,10 +552,9 @@
       if (res3.ok) AUTHORS = await res3.json();
     } catch(e){ /* optional */ }
 
-    try {
-      const res4 = await fetch('./opponents.json', { cache: 'no-store' });
-      if (res4.ok) OPPONENTS = await res4.json();
-    } catch(e){ /* optional */ }
+    // opponents.json is large (long tail of one-off accountIds) —
+    // fetched lazily on first visit to the Rivals tab instead, so it
+    // doesn't slow down every other tab's initial load.
 
     setStatus(`Data updated ${new Date(CACHE.generatedAt).toLocaleString()}.`);
 
@@ -572,7 +586,7 @@
     renderStyleOwnership();
     renderProjection();
     renderAuthorsTab();
-    renderRivalsTab();
+    // renderRivalsTab() is triggered lazily when the Rivals tab is first clicked
   }
 
   function renderPills(totalValid){
@@ -2022,8 +2036,14 @@
       }
     });
 
+    const RIVALS_ROW_CAP = 200;
+    const shown = rows.slice(0, RIVALS_ROW_CAP);
+    if (rows.length > RIVALS_ROW_CAP){
+      statusEl.textContent += ` Showing top ${RIVALS_ROW_CAP} by current sort (${rows.length - RIVALS_ROW_CAP} more hidden — mostly one-off opponents met a handful of times).`;
+    }
+
     let html = '<table class="data"><tr><th>Opponent</th><th>Faced</th><th>Beaten</th><th>Lost to</th><th>Win rate</th></tr>';
-    rows.forEach(r => {
+    shown.forEach(r => {
       const label = r.name || shortAccountId(r.accountId);
       const pct = Math.round(r.winrate * 1000) / 10;
       html += `<tr><td>${label}</td><td>${r.faced}</td><td>${r.beaten}</td><td>${r.lostTo}</td><td>${pct}%</td></tr>`;
