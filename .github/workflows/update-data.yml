@@ -46,7 +46,17 @@ jobs:
         # Resumable via players.json — only resolves accountIds that
         # showed up for the first time in today's opponents run. No Nadeo
         # creds needed, trackmania.io's player endpoint is public.
+        #
+        # MAX_RUNTIME_MINUTES is deliberately short here: this step should
+        # only ever be catching up on the handful of opponents from
+        # today's single new cup, not chewing through the full backlog
+        # from a one-time bulk backfill (that's what the separate
+        # "Backfill player names and clan tags" workflow is for, with its
+        # own much longer default budget). Capping it here stops the
+        # nightly job from silently turning into an hours-long run.
         run: npm run names
+        env:
+          MAX_RUNTIME_MINUTES: 10
       - name: Commit updated data
         run: |
           git config user.name "github-actions[bot]"
