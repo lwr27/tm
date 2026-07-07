@@ -294,7 +294,8 @@
 
     <p class="section-title">Shared division log</p>
     <p class="section-note">Every day two or more players landed in the exact same division. Scroll for full history.</p>
-    <div class="scroll-table" id="sameDivLog" style="margin-bottom:1.5rem;"></div>
+    <div class="scroll-table" id="sameDivLog" style="margin-bottom:0.75rem;"></div>
+    <div id="sameDivH2h" style="margin-bottom:1.5rem;"></div>
 
     <p class="section-title">Day-of-week performance</p>
     <p class="section-note">Average division by weekday — lower bars are better.</p>
@@ -1279,11 +1280,44 @@
     return days;
   }
 
+  function computeSameDivH2h(days){
+    // pairKey "a|b" -> { aWins, bWins, ties }
+    const results = {};
+    days.forEach(d => {
+      for (let i = 0; i < d.entries.length; i++){
+        for (let j = i + 1; j < d.entries.length; j++){
+          const ea = d.entries[i], eb = d.entries[j];
+          const key = `${ea.name}|${eb.name}`;
+          if (!results[key]) results[key] = { a: ea.name, b: eb.name, aWins: 0, bWins: 0, ties: 0 };
+          const r = results[key];
+          if (ea.c.divrank < eb.c.divrank) r.aWins++;
+          else if (eb.c.divrank < ea.c.divrank) r.bWins++;
+          else r.ties++;
+        }
+      }
+    });
+    return Object.values(results);
+  }
+
+  function renderSameDivH2h(days){
+    const el = document.getElementById('sameDivH2h');
+    const rows = computeSameDivH2h(days);
+    if (!rows.length){ el.innerHTML = ''; return; }
+    let html = '<div class="style-list">';
+    rows.forEach(r => {
+      const total = r.aWins + r.bWins + r.ties;
+      html += `<div class="style-row"><span class="tag"><span style="color:${colorOf(r.a)};">${shortOf(r.a)}</span> vs <span style="color:${colorOf(r.b)};">${shortOf(r.b)}</span></span><span class="figure">${r.aWins}&ndash;${r.bWins}${r.ties ? `&ndash;${r.ties} tied` : ''} <span style="color:var(--text-muted);">(${total} shared-div ${total === 1 ? 'day' : 'days'})</span></span></div>`;
+    });
+    html += '</div>';
+    el.innerHTML = html;
+  }
+
   function renderSameDivLog(){
     const el = document.getElementById('sameDivLog');
     const days = computeSameDivDays();
     if (!days.length){
       el.innerHTML = '<p style="font-size:13px; color:var(--text-muted); padding:12px;">No days yet where two or more players shared the exact same division.</p>';
+      renderSameDivH2h([]);
       return;
     }
     let html = '<table class="data"><tr><th>Date</th><th>Division</th><th>Result</th></tr>';
@@ -1301,6 +1335,7 @@
     });
     html += '</table>';
     el.innerHTML = html;
+    renderSameDivH2h(days);
   }
 
   // --- 2. Day-of-week performance ---
