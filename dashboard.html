@@ -343,6 +343,11 @@
     <div id="rivalWorldMap" style="width:100%; margin-bottom:0.5rem;"></div>
     <div id="rivalMapLegend" style="display:flex; align-items:center; gap:10px; font-size:11px; color:var(--text-muted); margin-bottom:1.5rem;"></div>
 
+    <p class="section-title">Clan tag leaderboard</p>
+    <p class="section-note">Which clans you cross paths with most often in shared divisions, and how you do against them.</p>
+    <div id="clanTagStatus" style="font-size:13px; color:var(--text-muted); margin-bottom:0.75rem;"></div>
+    <div class="scroll-table" id="clanTagTable" style="margin-bottom:1.5rem;"></div>
+
     <div class="range-row" id="rivalsSortRow"></div>
     <div id="rivalsStatus" style="font-size:13px; color:var(--text-muted); margin-bottom:1rem;"></div>
     <div class="scroll-table" id="rivalsTable"></div>
@@ -2074,6 +2079,54 @@
     tableEl.innerHTML = html;
 
     renderRivalWorldMap(rivalMap);
+    renderClanTagLeaderboard(rivalMap);
+  }
+
+  function renderClanTagLeaderboard(rivalMap){
+    const statusEl = document.getElementById('clanTagStatus');
+    const tableEl = document.getElementById('clanTagTable');
+
+    if (!PLAYERS_LOOKUP){
+      statusEl.textContent = 'Clan tag data comes from players.json, which hasn\'t loaded yet.';
+      tableEl.innerHTML = '';
+      return;
+    }
+
+    // Aggregate faced/beaten/lostTo by clan tag, plus how many distinct
+    // rivals carry that tag (a clan you've faced 40 times via 2 people
+    // reads differently than 40 times via 20 people).
+    const byClan = {}; // clanTag -> { faced, beaten, lostTo, rivals: Set }
+    let noTagFaced = 0;
+    Object.entries(rivalMap).forEach(([accountId, v]) => {
+      const lookup = PLAYERS_LOOKUP[accountId];
+      const clanTag = lookup && lookup.clanTag;
+      if (!clanTag){ noTagFaced += v.faced; return; }
+      const bucket = (byClan[clanTag] = byClan[clanTag] || { faced: 0, beaten: 0, lostTo: 0, rivals: new Set() });
+      bucket.faced += v.faced;
+      bucket.beaten += v.beaten;
+      bucket.lostTo += v.lostTo;
+      bucket.rivals.add(accountId);
+    });
+
+    const rows = Object.entries(byClan)
+      .map(([clanTag, b]) => ({ clanTag, faced: b.faced, beaten: b.beaten, lostTo: b.lostTo, rivalCount: b.rivals.size, winrate: b.faced > 0 ? b.beaten / b.faced : 0 }))
+      .sort((a, b) => b.rivalCount - a.rivalCount || b.faced - a.faced);
+
+    statusEl.textContent = `${rows.length} distinct clan tags spotted across your division-mates.` +
+      (noTagFaced > 0 ? ` ${noTagFaced} faced-count from opponents with no clan tag or not yet resolved.` : '');
+
+    if (!rows.length){
+      tableEl.innerHTML = '<p style="font-size:13px; color:var(--text-muted); padding:12px;">No clan tag data yet.</p>';
+      return;
+    }
+
+    let html = '<table class="data"><tr><th>Clan</th><th>Rivals</th><th>Faced</th><th>Beaten</th><th>Lost to</th><th>Win rate</th></tr>';
+    rows.forEach(r => {
+      const pct = Math.round(r.winrate * 1000) / 10;
+      html += `<tr><td>${formatTMName(r.clanTag)}</td><td>${r.rivalCount}</td><td>${r.faced}</td><td>${r.beaten}</td><td>${r.lostTo}</td><td>${pct}%</td></tr>`;
+    });
+    html += '</table>';
+    tableEl.innerHTML = html;
   }
 
   // --- World map: green = win more, red = lose more, by opponent country ---
