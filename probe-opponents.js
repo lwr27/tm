@@ -34,6 +34,31 @@ async function main() {
     );
     console.log("SUCCESS — rounds response:");
     console.log(JSON.stringify(rounds).slice(0, 800));
+
+    const roundId = Array.isArray(rounds) && rounds[0] && rounds[0].id;
+    if (!roundId) { console.log("\nNo round id found — stopping here."); return; }
+
+    console.log(`\nFetching matches for round ${roundId}...\n`);
+    const matches = await nadeoFetch(
+      `https://meet.trackmania.nadeo.club/api/rounds/${roundId}/matches`,
+      LIVE
+    );
+    console.log(`Matches response (${Array.isArray(matches) ? matches.length : '?'} matches):`);
+    console.log(JSON.stringify(Array.isArray(matches) ? matches.slice(0, 3) : matches).slice(0, 1000));
+
+    if (!Array.isArray(matches) || !matches.length) { console.log("\nNo matches array — stopping here."); return; }
+
+    // our player's actual division this cup, to try to line up with a match
+    console.log(`\n${sample.name} was in division ${sample.cup.div} this cup — looking for a matching match...`);
+
+    const firstMatchId = matches[0].id;
+    console.log(`\nFetching results for match ${firstMatchId} (first match in the list, just to see the shape)...\n`);
+    const results = await nadeoFetch(
+      `https://meet.trackmania.nadeo.club/api/matches/${firstMatchId}/results`,
+      LIVE
+    );
+    console.log("Match results response:");
+    console.log(JSON.stringify(results).slice(0, 1200));
   } catch (err) {
     console.log("FAILED:", err.message.slice(0, 300));
     console.log("\nThis likely means trackmania.io's cup id is NOT the same as Nadeo's competition id.");
