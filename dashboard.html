@@ -2017,7 +2017,7 @@
       sortEl.appendChild(btn);
     });
 
-    const rivalMap = OPPONENTS.players[selectedRivalPlayer] || {};
+    const rivalMap = (OPPONENTS.players && OPPONENTS.players[shortOf(selectedRivalPlayer)]) || {};
     let rows = Object.entries(rivalMap).map(([accountId, v]) => {
       const name = (OPPONENTS.names && OPPONENTS.names[accountId]) || null;
       const winrate = v.faced > 0 ? v.beaten / v.faced : 0;
