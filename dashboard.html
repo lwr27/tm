@@ -336,6 +336,13 @@
     <p class="section-title">Rivals</p>
     <p class="section-note">Who you've shared a division with most, judged by final division rank on cups both played. "Beaten" and "Lost to" only count division-mates, not the whole field.</p>
     <div class="chip-row" id="rivalsPlayerChips"></div>
+
+    <p class="section-title">Where your rivals come from</p>
+    <p class="section-note">Green countries are ones you tend to beat, red ones tend to beat you — shaded by win rate across every shared-division opponent from that country. Grey means not enough data yet (fewer than 3 faced) or no resolved location.</p>
+    <div id="rivalMapStatus" style="font-size:13px; color:var(--text-muted); margin-bottom:0.75rem;"></div>
+    <div id="rivalWorldMap" style="width:100%; margin-bottom:0.5rem;"></div>
+    <div id="rivalMapLegend" style="display:flex; align-items:center; gap:10px; font-size:11px; color:var(--text-muted); margin-bottom:1.5rem;"></div>
+
     <div class="range-row" id="rivalsSortRow"></div>
     <div id="rivalsStatus" style="font-size:13px; color:var(--text-muted); margin-bottom:1rem;"></div>
     <div class="scroll-table" id="rivalsTable"></div>
@@ -343,6 +350,8 @@
 </main>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
 <script>
 (function(){
   const PLAYER_META = {
@@ -1997,6 +2006,9 @@
     if (!OPPONENTS || !OPPONENTS.players){
       statusEl.textContent = 'Rivals data isn\'t available yet — it\'ll appear once the opponents backfill/daily job has run.';
       chipsEl.innerHTML = ''; sortEl.innerHTML = ''; tableEl.innerHTML = '';
+      document.getElementById('rivalMapStatus').textContent = '';
+      document.getElementById('rivalWorldMap').innerHTML = '';
+      document.getElementById('rivalMapLegend').innerHTML = '';
       return;
     }
 
@@ -2060,6 +2072,139 @@
     });
     html += '</table>';
     tableEl.innerHTML = html;
+
+    renderRivalWorldMap(rivalMap);
+  }
+
+  // --- World map: green = win more, red = lose more, by opponent country ---
+  let WORLD_GEO = null; // cached GeoJSON features, fetched once
+  let WORLD_ID_TO_NAME = null; // cached ISO numeric id -> English country name
+  let worldAssetsLoading = null;
+
+  // trackmania.io's zone names occasionally differ from the Natural
+  // Earth / ISO name list used by the map data below (e.g. official vs
+  // common names). Add entries here as mismatches are spotted — anything
+  // not in this list is tried as an exact (case-insensitive) match first.
+  const COUNTRY_NAME_ALIASES = {
+    "united states": "United States of America",
+    "usa": "United States of America",
+    "uk": "United Kingdom",
+    "south korea": "South Korea",
+    "russia": "Russia",
+    "czechia": "Czechia",
+    "czech republic": "Czechia",
+  };
+
+  async function loadWorldMapAssets(){
+    if (WORLD_GEO && WORLD_ID_TO_NAME) return;
+    if (worldAssetsLoading) return worldAssetsLoading;
+    worldAssetsLoading = (async () => {
+      const [topoRes, namesRes] = await Promise.all([
+        fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json'),
+        fetch('https://gist.githubusercontent.com/mbostock/4090846/raw/07e73f3c2d21558489604a0bc434b3a5cf41a867/world-country-names.tsv'),
+      ]);
+      const topo = await topoRes.json();
+      const tsv = await namesRes.text();
+
+      WORLD_ID_TO_NAME = {};
+      tsv.split('\n').slice(1).forEach(line => {
+        const [id, name] = line.split('\t');
+        if (id && name) WORLD_ID_TO_NAME[Number(id.trim())] = name.trim();
+      });
+
+      WORLD_GEO = topojson.feature(topo, topo.objects.countries).features;
+    })();
+    return worldAssetsLoading;
+  }
+
+  function normalizeCountryName(raw){
+    if (!raw) return null;
+    const key = raw.trim().toLowerCase();
+    return COUNTRY_NAME_ALIASES[key] || raw.trim();
+  }
+
+  async function renderRivalWorldMap(rivalMap){
+    const statusEl = document.getElementById('rivalMapStatus');
+    const mapEl = document.getElementById('rivalWorldMap');
+    const legendEl = document.getElementById('rivalMapLegend');
+
+    if (!PLAYERS_LOOKUP){
+      statusEl.textContent = 'Country data comes from players.json, which hasn\'t loaded yet.';
+      mapEl.innerHTML = ''; legendEl.innerHTML = '';
+      return;
+    }
+
+    statusEl.textContent = 'Loading world map...';
+    try {
+      await loadWorldMapAssets();
+    } catch (e){
+      statusEl.textContent = 'Could not load the world map (network issue) — try refreshing.';
+      return;
+    }
+
+    // Aggregate faced/beaten by country for the currently selected player.
+    const byCountry = {}; // name -> { faced, beaten }
+    let unresolvedCountry = 0;
+    Object.entries(rivalMap).forEach(([accountId, v]) => {
+      const lookup = PLAYERS_LOOKUP[accountId];
+      const country = lookup && normalizeCountryName(lookup.country);
+      if (!country){ unresolvedCountry += v.faced; return; }
+      const bucket = (byCountry[country] = byCountry[country] || { faced: 0, beaten: 0 });
+      bucket.faced += v.faced;
+      bucket.beaten += v.beaten;
+    });
+
+    const MIN_FACED_FOR_COLOR = 3;
+    function colorFor(name){
+      const c = byCountry[name];
+      if (!c || c.faced < MIN_FACED_FOR_COLOR) return '#2a3040'; // grey — no/insufficient data
+      const winrate = c.beaten / c.faced; // 0 = always lose, 1 = always win
+      // interpolate red (#ef4444) -> grey-ish mid -> green (#22c55e), centered on 50%
+      const t = Math.max(0, Math.min(1, winrate));
+      const lo = t < 0.5 ? [239, 68, 68] : [148, 163, 184];
+      const hi = t < 0.5 ? [148, 163, 184] : [34, 197, 94];
+      const localT = t < 0.5 ? t / 0.5 : (t - 0.5) / 0.5;
+      const rgb = lo.map((c0, i) => Math.round(c0 + (hi[i] - c0) * localT));
+      return `rgb(${rgb[0]},${rgb[1]},${rgb[2]})`;
+    }
+
+    const width = mapEl.clientWidth || 900, height = Math.round(width * 0.5);
+    const projection = d3.geoNaturalEarth1().fitSize([width, height], { type: 'FeatureCollection', features: WORLD_GEO });
+    const path = d3.geoPath(projection);
+
+    mapEl.innerHTML = '';
+    const svg = d3.select(mapEl).append('svg')
+      .attr('viewBox', `0 0 ${width} ${height}`)
+      .attr('width', '100%')
+      .attr('height', 'auto')
+      .style('display', 'block');
+
+    svg.selectAll('path')
+      .data(WORLD_GEO)
+      .join('path')
+      .attr('d', path)
+      .attr('fill', d => colorFor(WORLD_ID_TO_NAME[Number(d.id)] || ''))
+      .attr('stroke', '#0b0e14')
+      .attr('stroke-width', 0.5)
+      .append('title')
+      .text(d => {
+        const name = WORLD_ID_TO_NAME[Number(d.id)] || 'Unknown';
+        const c = byCountry[name];
+        if (!c) return name;
+        const pct = Math.round((c.beaten / c.faced) * 1000) / 10;
+        return `${name}: ${c.beaten}/${c.faced} beaten (${pct}%)`;
+      });
+
+    const countriesWithData = Object.keys(byCountry).filter(n => byCountry[n].faced >= MIN_FACED_FOR_COLOR).length;
+    statusEl.textContent = `${countriesWithData} countries with enough data to colour (${MIN_FACED_FOR_COLOR}+ faced).` +
+      (unresolvedCountry > 0 ? ` ${unresolvedCountry} faced-count from opponents with no resolved location yet.` : '');
+
+    legendEl.innerHTML = `
+      <span>Lose more</span>
+      <span style="display:inline-block; width:120px; height:10px; border-radius:4px; background:linear-gradient(90deg, rgb(239,68,68), rgb(148,163,184), rgb(34,197,94));"></span>
+      <span>Win more</span>
+      <span style="margin-left:12px; display:inline-flex; align-items:center; gap:5px;"><span style="display:inline-block; width:10px; height:10px; border-radius:2px; background:#2a3040;"></span> not enough data</span>
+    `;
   }
 
   load();
