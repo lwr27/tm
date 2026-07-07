@@ -28,32 +28,12 @@ const { nadeoFetch } = require("./nadeo-auth");
 const LIVE = "NadeoLiveServices";
 const CACHE_PATH = path.join(__dirname, "cache.json");
 const OUT_PATH = path.join(__dirname, "opponents.json");
-const TMIO_BASE = "https://trackmania.io/api";
-const USER_AGENT = process.env.TM_USER_AGENT || "tm-cotd-tracker division-opponents / contact: lewis (github.com/lwr27/tm)";
 
-// Nadeo's match results only give raw account IDs, no display name (the
-// direct name-lookup endpoint was deprecated in 2023). trackmania.io's
-// public player-profile endpoint can resolve one, so we look each unique
-// opponent up once ever and cache the result in opponents.json — the same
-// community regulars reappear across hundreds of cups, so after the
-// initial backfill this cost drops to near zero.
-async function resolvePlayerName(accountId) {
-  try {
-    const controller = new AbortController();
-    const timer = setTimeout(() => controller.abort(), 15000);
-    let res, body;
-    try {
-      res = await fetch(`${TMIO_BASE}/player/${accountId}`, { headers: { "User-Agent": USER_AGENT }, signal: controller.signal });
-      if (res.ok) body = await res.json();
-    } finally {
-      clearTimeout(timer);
-    }
-    if (!res.ok) return null;
-    return body && body.displayname || body && body.name || null;
-  } catch (e) {
-    return null; // non-fatal — the leaderboard can show a shortened id as fallback
-  }
-}
+// Nadeo's match results only give raw account IDs, no display name. Name
+// (and clan tag) resolution is handled entirely by the separate
+// resolve-player-names.js script, which reads the accountIds tallied
+// below out of opponents.json and writes to a standalone players.json —
+// keeping one source of truth instead of two overlapping ones.
 
 const PLAYERS = [
   { name: "XV27", accountId: "8b537233-4931-49a8-af54-b0cefc33fa72" },
@@ -106,7 +86,6 @@ function main() {
   const cache = JSON.parse(fs.readFileSync(CACHE_PATH, "utf8"));
   const out = loadOut();
   out.players = out.players || {};
-  out.names = out.names || {};
   const processed = new Set(out.processedCups || []);
 
   // Group by competition id (== cup.id) so a cup shared by 2-3 of our
@@ -175,28 +154,7 @@ function main() {
       await new Promise((r) => setTimeout(r, 900));
     }
     console.log(`\nFinished tallying. ${processed.size} COTDs processed in total.`);
-
-    // Name resolution happens LAST and only for whoever actually matters:
-    // the top 20 by faced-count per player. Resolving every one-off
-    // opponent ever shared with would be thousands of extra requests for
-    // names nobody will see; this is a few dozen at most, however many
-    // cups were processed.
-    const TOP_N = 20;
-    const idsNeeded = new Set();
-    Object.values(out.players).forEach((tally) => {
-      Object.entries(tally)
-        .sort((a, b) => b[1].faced - a[1].faced)
-        .slice(0, TOP_N)
-        .forEach(([id]) => { if (!out.names[id]) idsNeeded.add(id); });
-    });
-    console.log(`Resolving ${idsNeeded.size} opponent name(s) for the top ${TOP_N} lists...`);
-    for (const accId of idsNeeded) {
-      out.names[accId] = (await resolvePlayerName(accId)) || null;
-      await new Promise((r) => setTimeout(r, 500));
-    }
-    out.generatedAt = new Date().toISOString();
-    fs.writeFileSync(OUT_PATH, JSON.stringify(out, null, 2));
-    console.log("Done.");
+    console.log("Name/clan-tag resolution now happens separately — run `npm run names` next.");
   })().catch((err) => { console.error(err); process.exit(1); });
 }
 

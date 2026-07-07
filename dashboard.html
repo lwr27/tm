@@ -357,7 +357,7 @@
 
   const statusEl = document.getElementById('status');
   let divChart = null, divHistChart = null, divRankHistChart = null;
-  let CACHE = null, MAPTAGS = null, AUTHORS = null, OPPONENTS = null, NAMES = [];
+  let CACHE = null, MAPTAGS = null, AUTHORS = null, OPPONENTS = null, PLAYERS_LOOKUP = null, NAMES = [];
   let selectedPlayer = null;
   let selectedRange = 'all';
 
@@ -526,6 +526,10 @@
       const res = await fetch('./opponents.json', { cache: 'no-store' });
       if (res.ok) OPPONENTS = await res.json();
     } catch(e){ /* handled by renderRivalsTab's not-available message */ }
+    try {
+      const res2 = await fetch('./players.json', { cache: 'no-store' });
+      if (res2.ok) PLAYERS_LOOKUP = await res2.json();
+    } catch(e){ /* optional — falls back to shortened accountIds if missing */ }
     renderRivalsTab();
   }
 
@@ -2019,12 +2023,17 @@
 
     const rivalMap = (OPPONENTS.players && OPPONENTS.players[shortOf(selectedRivalPlayer)]) || {};
     let rows = Object.entries(rivalMap).map(([accountId, v]) => {
-      const name = (OPPONENTS.names && OPPONENTS.names[accountId]) || null;
+      const lookup = (PLAYERS_LOOKUP && PLAYERS_LOOKUP[accountId]) || null;
+      const name = (lookup && lookup.name) || null;
+      const clanTag = (lookup && lookup.clanTag) || null;
       const winrate = v.faced > 0 ? v.beaten / v.faced : 0;
-      return { accountId, name, faced: v.faced, beaten: v.beaten, lostTo: v.lostTo, winrate };
+      return { accountId, name, clanTag, faced: v.faced, beaten: v.beaten, lostTo: v.lostTo, winrate };
     });
 
-    statusEl.textContent = `${rows.length} opponent${rows.length === 1 ? '' : 's'} faced across division-mate cups. Names are resolved only for the top 20 by faced-count per player; others show a shortened account ID.`;
+    const resolvedCount = rows.filter(r => r.name).length;
+    statusEl.textContent = PLAYERS_LOOKUP
+      ? `${rows.length} opponent${rows.length === 1 ? '' : 's'} faced across division-mate cups. ${resolvedCount} names resolved so far (players.json backfill may still be in progress); others show a shortened account ID.`
+      : `${rows.length} opponent${rows.length === 1 ? '' : 's'} faced across division-mate cups. players.json hasn't loaded — showing shortened account IDs only.`;
 
     rows.sort((a, b) => {
       switch (rivalsSort){
@@ -2044,7 +2053,8 @@
 
     let html = '<table class="data"><tr><th>Opponent</th><th>Faced</th><th>Beaten</th><th>Lost to</th><th>Win rate</th></tr>';
     shown.forEach(r => {
-      const label = r.name || shortAccountId(r.accountId);
+      const tagHtml = r.clanTag ? `<span style="color:var(--text-muted);">${formatTMName(r.clanTag)}</span> ` : '';
+      const label = r.name ? `${tagHtml}${r.name}` : shortAccountId(r.accountId);
       const pct = Math.round(r.winrate * 1000) / 10;
       html += `<tr><td>${label}</td><td>${r.faced}</td><td>${r.beaten}</td><td>${r.lostTo}</td><td>${pct}%</td></tr>`;
     });
