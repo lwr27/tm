@@ -292,6 +292,10 @@
     </div>
     <div id="h2hTable" style="overflow-x:auto; margin-bottom:1.5rem;"></div>
 
+    <p class="section-title">Shared division log</p>
+    <p class="section-note">Every day two or more players landed in the exact same division. Scroll for full history.</p>
+    <div class="scroll-table" id="sameDivLog" style="margin-bottom:1.5rem;"></div>
+
     <p class="section-title">Day-of-week performance</p>
     <p class="section-note">Average division by weekday — lower bars are better.</p>
     <div style="position:relative; width:100%; height:280px; margin-bottom:1.5rem;">
@@ -530,6 +534,7 @@
     renderPlayerChips();
     renderPlayerDetail();
     renderHeadToHead();
+    renderSameDivLog();
     renderDayOfWeek();
     renderConsistency();
     renderPbTimeline();
@@ -1242,6 +1247,61 @@
     document.getElementById('h2hToggleAll').classList.remove('active');
     renderHeadToHead(true);
   };
+
+  // --- 1b. Shared division log: days 2+ players landed in the exact same division ---
+  function computeSameDivDays(){
+    // label -> cup object, per player
+    const byNameByLabel = {};
+    NAMES.forEach(name => {
+      byNameByLabel[name] = {};
+      validCups(CACHE.players[name].cups).forEach(c => { byNameByLabel[name][cupLabel(c)] = c; });
+    });
+    const allLabels = new Set();
+    NAMES.forEach(name => Object.keys(byNameByLabel[name]).forEach(l => allLabels.add(l)));
+
+    const days = [];
+    allLabels.forEach(label => {
+      const present = NAMES.filter(name => byNameByLabel[name][label]);
+      if (present.length < 2) return;
+      // group present players by exact div value
+      const byDiv = {};
+      present.forEach(name => {
+        const c = byNameByLabel[name][label];
+        (byDiv[c.div] = byDiv[c.div] || []).push({ name, c });
+      });
+      Object.entries(byDiv).forEach(([div, entries]) => {
+        if (entries.length < 2) return; // need 2+ sharing that specific division
+        entries.sort((a, b) => a.c.divrank - b.c.divrank);
+        days.push({ label, div: Number(div), entries });
+      });
+    });
+    days.sort((a, b) => labelDateKey(b.label).localeCompare(labelDateKey(a.label)));
+    return days;
+  }
+
+  function renderSameDivLog(){
+    const el = document.getElementById('sameDivLog');
+    const days = computeSameDivDays();
+    if (!days.length){
+      el.innerHTML = '<p style="font-size:13px; color:var(--text-muted); padding:12px;">No days yet where two or more players shared the exact same division.</p>';
+      return;
+    }
+    let html = '<table class="data"><tr><th>Date</th><th>Division</th><th>Result</th></tr>';
+    days.forEach(d => {
+      const rep = d.entries[0].c;
+      const info = MAPTAGS && MAPTAGS.maps && MAPTAGS.maps[rep.mapuid];
+      const mapHref = info && info.mxid
+        ? `https://trackmania.exchange/maps/${info.mxid}`
+        : `https://trackmania.io/#/leaderboard/${rep.mapuid}`;
+      const dateSub = `<a class="maplink" href="${mapHref}" target="_blank" rel="noopener" style="font-size:11px; color:var(--text-muted);">${formatTMName(rep.mapname) || rep.mapuid}</a>`;
+      const resultCells = d.entries.map((e, i) =>
+        `<span style="color:${colorOf(e.name)};">${shortOf(e.name)}</span> <span style="color:var(--text-secondary); font-family:var(--mono); font-size:12px;">#${e.c.divrank}</span>`
+      ).join(' &middot; ');
+      html += `<tr><td>${d.label}<br/>${dateSub}</td><td>${d.div}</td><td>${resultCells}</td></tr>`;
+    });
+    html += '</table>';
+    el.innerHTML = html;
+  }
 
   // --- 2. Day-of-week performance ---
   let dowChart = null;
