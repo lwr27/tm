@@ -187,8 +187,8 @@
     <button data-tab="divisions">Divisions</button>
     <button data-tab="styles">Styles</button>
     <button data-tab="trends">Trends</button>
-    <button data-tab="authors">Author medals</button>
     <button data-tab="rivals">Rivals</button>
+    <button data-tab="authors">Author medals</button>
   </nav>
 
   <div class="tab-panel active" id="tab-overview">
@@ -1048,9 +1048,11 @@
           html += `<td><span class="badge" style="background:${bc.bg}; color:${bc.fg};">div ${c.div}</span> <span style="color:var(--text-muted); font-size:12px;">qualified, didn't play rounds</span></td>`;
           return;
         }
-        const medalColor = c.rank === 1 ? '#d4af37' : c.rank === 2 ? '#b8c0cc' : c.rank === 3 ? '#cd7f32' : null;
-        const rankStyle = medalColor ? `color:${medalColor}; font-weight:600;` : 'color:var(--text-muted);';
-        html += `<td><span class="badge" style="background:${bc.bg}; color:${bc.fg};">div ${c.div}</span> <span style="font-size:12px; ${rankStyle}">rank ${c.divrank ?? '-'}/64 &middot; #${c.rank}</span></td>`;
+        const medalColor = c.rank === 1 ? '#d4af37' : c.rank === 2 ? '#9aa4b2' : c.rank === 3 ? '#b3703a' : null;
+        const medalHtml = medalColor
+          ? ` <span style="font-size:11px; color:${medalColor}; opacity:0.85;">rank ${c.rank} of ${c.totalplayers}</span>`
+          : '';
+        html += `<td><span class="badge" style="background:${bc.bg}; color:${bc.fg};">div ${c.div}</span> <span style="font-size:12px; color:var(--text-muted);">rank ${c.divrank ?? '-'}/64 &middot; #${c.rank}</span>${medalHtml}</td>`;
       });
       html += '</tr>';
     });
