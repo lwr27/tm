@@ -388,6 +388,12 @@
   }
   function validCups(cups){ return cups.filter(isValidCup); }
 
+  // A separate, narrower check: divrank:0 (paired with score:0) means no
+  // valid time was set in the division round itself — a real division
+  // placement exists (isValidCup passes) but there's no real within-division
+  // rank to report. Anything using divrank must filter through this too.
+  function hasValidDivRank(c){ return c.divrank != null && c.divrank >= 1; }
+
   // Human-readable reason a cup fails isValidCup, for the debug view.
   function invalidReason(c){
     if (c.div == null || c.rank == null || c.totalplayers == null)
@@ -914,7 +920,7 @@
     const numBuckets = Math.ceil(maxRank / bucketSize) + 1; // last bucket = overflow "65+"
     const datasets = NAMES.map(name => {
       const counts = new Array(numBuckets).fill(0);
-      const cups = validCups(CACHE.players[name].cups).filter(c => c.divrank != null);
+      const cups = validCups(CACHE.players[name].cups).filter(hasValidDivRank);
       cups.forEach(c => {
         const bucket = Math.min(Math.floor((c.divrank - 1) / bucketSize), numBuckets - 1);
         counts[bucket] += 1;
@@ -1268,6 +1274,7 @@
       const byDiv = {};
       present.forEach(name => {
         const c = byNameByLabel[name][label];
+        if (!hasValidDivRank(c)) return; // no real time set that round — can't compare divrank
         (byDiv[c.div] = byDiv[c.div] || []).push({ name, c });
       });
       Object.entries(byDiv).forEach(([div, entries]) => {
