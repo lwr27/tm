@@ -75,7 +75,7 @@ function reserveSlot() {
 }
 
 // Fetches trackmania.io's player-profile endpoint for one accountId.
-// Returns { name, clanTag } — either can be null if not present/resolvable.
+// Returns { name, clanTag, country, countryFlag } — any can be null.
 async function resolvePlayer(accountId) {
   await reserveSlot();
   try {
@@ -88,7 +88,7 @@ async function resolvePlayer(accountId) {
     } finally {
       clearTimeout(timer);
     }
-    if (!res.ok || !body) return { name: null, clanTag: null };
+    if (!res.ok || !body) return { name: null, clanTag: null, country: null, countryFlag: null };
 
     // Confirmed field: "clubtag" (all lowercase, one word), matching
     // "displayname" also being all-lowercase on this endpoint. Comes
@@ -96,9 +96,30 @@ async function resolvePlayer(accountId) {
     // so formatTMName() in the dashboard can render it directly.
     const name = body.displayname || body.name || (body.player && body.player.name) || null;
     const clanTag = body.clubtag || (body.player && body.player.clubtag) || null;
-    return { name, clanTag };
+
+    // Country: trophies.zone is a nested chain from the player's most
+    // specific location up to "World" (city -> region -> country ->
+    // continent -> World, though some players only have coarser levels
+    // set). Walk the chain to the top, then take the node two steps below
+    // World — that's reliably the country regardless of how many finer
+    // sub-levels exist below it.
+    let country = null, countryFlag = null;
+    const leafZone = body.trophies && body.trophies.zone;
+    if (leafZone) {
+      const chain = [leafZone];
+      let node = leafZone;
+      while (node.parent) { chain.push(node.parent); node = node.parent; }
+      // chain is now [leaf, ..., continent, World] (World has no parent)
+      if (chain.length >= 3) {
+        const countryNode = chain[chain.length - 3];
+        country = countryNode.name || null;
+        countryFlag = countryNode.flag || null;
+      }
+    }
+
+    return { name, clanTag, country, countryFlag };
   } catch (e) {
-    return { name: null, clanTag: null };
+    return { name: null, clanTag: null, country: null, countryFlag: null };
   }
 }
 
@@ -149,8 +170,12 @@ async function main() {
     console.log(`Loaded ${Object.keys(out).length} already-resolved players from players.json.`);
   }
 
-  const idsNeeded = allIds.filter((id) => !out[id]);
-  console.log(`${idsNeeded.length} still need resolving (of ${allIds.length} matching the MIN_FACED filter).`);
+  const idsNeeded = allIds.filter((id) => !out[id] || !("country" in out[id]));
+  const backfillCount = idsNeeded.filter((id) => out[id]).length;
+  console.log(`${idsNeeded.length} still need (re-)resolving (of ${allIds.length} matching the MIN_FACED filter).`);
+  if (backfillCount > 0) {
+    console.log(`Of those, ${backfillCount} are already-resolved players getting re-fetched once to backfill the new country field.`);
+  }
   if (!idsNeeded.length) {
     console.log("Nothing to do. Done.");
     return;
@@ -179,8 +204,8 @@ async function main() {
       const i = cursor++;
       if (i >= idsNeeded.length) return;
       const accountId = idsNeeded[i];
-      const { name, clanTag } = await resolvePlayer(accountId);
-      out[accountId] = { name, clanTag, resolvedAt: new Date().toISOString() };
+      const { name, clanTag, country, countryFlag } = await resolvePlayer(accountId);
+      out[accountId] = { name, clanTag, country, countryFlag, resolvedAt: new Date().toISOString() };
       processed++;
       maybeCheckpoint(false);
     }
