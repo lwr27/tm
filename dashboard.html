@@ -234,6 +234,13 @@
     <div style="position:relative; width:100%; height:320px; margin-bottom:1.5rem;">
       <canvas id="divHistChart"></canvas>
     </div>
+
+    <p class="section-title">Division rank distribution</p>
+    <p class="section-note">Where each player finishes within their division on cups they actively played. Not the same as division distribution above — this is performance once you're already in a division, not which tier you land in. Taller bars further left mean stronger finishes relative to division rivals.</p>
+    <div style="position:relative; width:100%; height:320px; margin-bottom:1.5rem;">
+      <canvas id="divRankHistChart"></canvas>
+    </div>
+
   <p class="section-title">Personal bests timeline</p>
     <p class="section-note">Every time a player set a new best-ever division.</p>
     <div id="pbTimeline" style="margin-bottom:1.5rem;"></div>
@@ -334,7 +341,7 @@
   ];
 
   const statusEl = document.getElementById('status');
-  let divChart = null, divHistChart = null;
+  let divChart = null, divHistChart = null, divRankHistChart = null;
   let CACHE = null, MAPTAGS = null, AUTHORS = null, NAMES = [];
   let selectedPlayer = null;
   let selectedRange = 'all';
@@ -518,6 +525,7 @@
     renderDivChart();
     renderCupTable();
     renderDivHistogram();
+    renderDivRankHistogram();
     renderStyleBlocks();
     renderPlayerChips();
     renderPlayerDetail();
@@ -888,6 +896,51 @@
         scales: {
           y: { title: { display: true, text: '% of that player\'s cups', color: '#a8b0c3' }, ticks: { color: '#a8b0c3' }, grid: { color: '#222939' } },
           x: { title: { display: true, text: 'Division', color: '#a8b0c3' }, ticks: { color: '#a8b0c3' }, grid: { display: false } }
+        }
+      }
+    });
+  }
+
+  function renderDivRankHistogram(){
+    const ctx = document.getElementById('divRankHistChart');
+    const bucketSize = 8;
+    const maxRank = 64;
+    const numBuckets = Math.ceil(maxRank / bucketSize) + 1; // last bucket = overflow "65+"
+    const datasets = NAMES.map(name => {
+      const counts = new Array(numBuckets).fill(0);
+      const cups = validCups(CACHE.players[name].cups).filter(c => c.divrank != null);
+      cups.forEach(c => {
+        const bucket = Math.min(Math.floor((c.divrank - 1) / bucketSize), numBuckets - 1);
+        counts[bucket] += 1;
+      });
+      // as % of that player's cups, so players with different totals compare fairly
+      const total = cups.length || 1;
+      const pct = counts.map(v => Math.round((v / total) * 1000) / 10);
+      const col = colorOf(name);
+      return {
+        label: name, data: pct,
+        borderColor: col, backgroundColor: col + '33',
+        fill: true, tension: 0.4, borderWidth: 2, pointRadius: 0, pointHitRadius: 6,
+      };
+    });
+    const labels = Array.from({length: numBuckets}, (_, i) => {
+      if (i === numBuckets - 1) return `${maxRank + 1}+`;
+      const lo = i * bucketSize + 1, hi = lo + bucketSize - 1;
+      return `${lo}-${hi}`;
+    });
+
+    if (divRankHistChart) divRankHistChart.destroy();
+    divRankHistChart = new Chart(ctx, {
+      type: 'line',
+      data: { labels, datasets },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        interaction: { mode: 'index', intersect: false },
+        plugins: { legend: { labels: { color: '#a8b0c3' } },
+          tooltip: { callbacks: { label: (i) => `${i.dataset.label}: ${i.formattedValue}% of cups` } } },
+        scales: {
+          y: { title: { display: true, text: '% of that player\'s cups', color: '#a8b0c3' }, ticks: { color: '#a8b0c3' }, grid: { color: '#222939' } },
+          x: { title: { display: true, text: 'Division rank', color: '#a8b0c3' }, ticks: { color: '#a8b0c3' }, grid: { display: false } }
         }
       }
     });
