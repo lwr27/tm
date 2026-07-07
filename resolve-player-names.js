@@ -38,6 +38,19 @@ const TMIO_BASE = "https://trackmania.io/api";
 const USER_AGENT = process.env.TM_USER_AGENT || "tm-cotd-tracker player-names / contact: lewis (github.com/lwr27/tm)";
 const SAVE_EVERY = 50; // write to disk periodically, not on every single request
 
+// SAFETY: GitHub Actions kills the job outright if it exceeds its time
+// limit — and if that happens mid-script, the "commit" step never runs,
+// so every checkpoint written this run would be lost with the runner
+// (players.json only exists on that ephemeral VM until it's committed).
+// To guarantee real progress survives every run regardless of how far
+// through the full list it gets, the script voluntarily stops accepting
+// new work once this budget is up and exits cleanly — so the commit step
+// always executes. Default leaves comfortable headroom under Actions'
+// standard 6-hour limit (npm install, prior steps, etc. also eat into it).
+const MAX_RUNTIME_MINUTES = Number(process.env.MAX_RUNTIME_MINUTES || 320);
+const MAX_RUNTIME_MS = MAX_RUNTIME_MINUTES * 60 * 1000;
+const startTime = Date.now();
+
 // Rate limiting: a shared "next available slot" reserved by whichever
 // concurrent worker asks first, so total throughput across ALL workers
 // stays under the limit — same idea as a fixed delay, just without the
@@ -162,10 +175,12 @@ async function main() {
   }
 
   console.log(`\nResolving with ${CONCURRENCY} concurrent workers, capped at ~${TARGET_RATE_PER_SEC} requests/sec total.`);
+  console.log(`Runtime budget: ${MAX_RUNTIME_MINUTES} minutes — will stop cleanly and save before then regardless of progress, so this run always commits something.`);
 
   let processed = 0;
   let cursor = 0;
   let savePending = false;
+  let stoppedEarly = false;
 
   function maybeCheckpoint(force) {
     if (!force && processed % SAVE_EVERY !== 0) return;
@@ -178,6 +193,7 @@ async function main() {
 
   async function worker() {
     while (true) {
+      if (Date.now() - startTime > MAX_RUNTIME_MS) { stoppedEarly = true; return; }
       const i = cursor++;
       if (i >= idsNeeded.length) return;
       const accountId = idsNeeded[i];
@@ -191,7 +207,13 @@ async function main() {
   await Promise.all(Array.from({ length: CONCURRENCY }, () => worker()));
 
   maybeCheckpoint(true);
-  console.log(`\nDone. ${processed} player(s) resolved this run, ${Object.keys(out).length} total in players.json.`);
+  const remaining = idsNeeded.length - processed;
+  console.log(`\n${processed} player(s) resolved this run, ${Object.keys(out).length} total in players.json.`);
+  if (stoppedEarly && remaining > 0) {
+    console.log(`Stopped early on the runtime budget with ${remaining} still to go — just re-run the workflow again to continue from here.`);
+  } else {
+    console.log("Done — nothing left to resolve.");
+  }
 }
 
 main().catch((err) => { console.error(err); process.exit(1); });
