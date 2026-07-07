@@ -38,38 +38,32 @@ async function main() {
     const roundId = Array.isArray(rounds) && rounds[0] && rounds[0].id;
     if (!roundId) { console.log("\nNo round id found — stopping here."); return; }
 
-    console.log(`\nFetching matches for round ${roundId}...\n`);
+    console.log(`\nFetching matches for round ${roundId} (with pagination params)...\n`);
     const matchesResp = await nadeoFetch(
-      `https://meet.trackmania.nadeo.club/api/rounds/${roundId}/matches`,
+      `https://meet.trackmania.nadeo.club/api/rounds/${roundId}/matches?length=100&offset=0`,
       LIVE
     );
-    // response is wrapped: { matches: [...] }, not a bare array
     const matches = Array.isArray(matchesResp) ? matchesResp : (matchesResp && matchesResp.matches) || [];
-    console.log(`Matches found: ${matches.length}`);
-    console.log(JSON.stringify(matches.slice(0, 2)).slice(0, 500));
+    console.log(`Matches found: ${matches.length} (round claimed nbMatches — check this matches)`);
 
     if (!matches.length) { console.log("\nNo matches found — stopping here."); return; }
 
-    // Working theory from the match names/positions: "Match N" has
-    // position N-1, and Match N IS division N. Test that theory directly
-    // by fetching the match for OUR test player's actual division.
     const wantPosition = sample.cup.div - 1;
     const targetMatch = matches.find((m) => m.position === wantPosition) || matches[0];
     console.log(`\n${sample.name} was in division ${sample.cup.div} this cup (expecting position ${wantPosition}).`);
-    console.log(`Fetching results for match ${targetMatch.id} ("${targetMatch.name}", position ${targetMatch.position})...\n`);
+    console.log(`Fetching results for match ${targetMatch.id} ("${targetMatch.name}", position ${targetMatch.position}), with pagination params...\n`);
 
     const results = await nadeoFetch(
-      `https://meet.trackmania.nadeo.club/api/matches/${targetMatch.id}/results`,
+      `https://meet.trackmania.nadeo.club/api/matches/${targetMatch.id}/results?length=100&offset=0`,
       LIVE
     );
-    console.log("Match results response:");
-    console.log(JSON.stringify(results).slice(0, 1500));
-
-    // sanity check: is our test player actually in this result set at the
-    // rank cache.json says (divrank)?
     const list = Array.isArray(results) ? results : (results && (results.results || results.players)) || [];
-    console.log(`\nResult rows: ${list.length}. Looking for our player (expected divrank ${sample.cup.divrank})...`);
-    console.log(JSON.stringify(list.slice(0, 3)).slice(0, 600));
+    console.log(`Result rows: ${list.length} (should reach at least divrank ${sample.cup.divrank}, ideally up to ~64)`);
+
+    const atExpectedRank = list.find((r) => r.rank === sample.cup.divrank);
+    console.log(`\nRow at expected divrank ${sample.cup.divrank}:`, JSON.stringify(atExpectedRank));
+    console.log(`\nFirst 5 rows:`, JSON.stringify(list.slice(0, 5)));
+    console.log(`Last 5 rows:`, JSON.stringify(list.slice(-5)));
   } catch (err) {
     console.log("FAILED:", err.message.slice(0, 300));
     console.log("\nThis likely means trackmania.io's cup id is NOT the same as Nadeo's competition id.");
