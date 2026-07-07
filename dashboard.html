@@ -188,6 +188,7 @@
     <button data-tab="styles">Styles</button>
     <button data-tab="trends">Trends</button>
     <button data-tab="authors">Author medals</button>
+    <button data-tab="rivals">Rivals</button>
   </nav>
 
   <div class="tab-panel active" id="tab-overview">
@@ -330,6 +331,15 @@
     <div class="range-row" id="authorSortRow"></div>
     <div class="scroll-table" id="authorTable"></div>
   </div>
+
+  <div class="tab-panel" id="tab-rivals">
+    <p class="section-title">Rivals</p>
+    <p class="section-note">Who you've shared a division with most, judged by final division rank on cups both played. "Beaten" and "Lost to" only count division-mates, not the whole field.</p>
+    <div class="chip-row" id="rivalsPlayerChips"></div>
+    <div class="range-row" id="rivalsSortRow"></div>
+    <div id="rivalsStatus" style="font-size:13px; color:var(--text-muted); margin-bottom:1rem;"></div>
+    <div class="scroll-table" id="rivalsTable"></div>
+  </div>
 </main>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
@@ -347,7 +357,7 @@
 
   const statusEl = document.getElementById('status');
   let divChart = null, divHistChart = null, divRankHistChart = null;
-  let CACHE = null, MAPTAGS = null, AUTHORS = null, NAMES = [];
+  let CACHE = null, MAPTAGS = null, AUTHORS = null, OPPONENTS = null, NAMES = [];
   let selectedPlayer = null;
   let selectedRange = 'all';
 
@@ -527,6 +537,11 @@
       if (res3.ok) AUTHORS = await res3.json();
     } catch(e){ /* optional */ }
 
+    try {
+      const res4 = await fetch('./opponents.json', { cache: 'no-store' });
+      if (res4.ok) OPPONENTS = await res4.json();
+    } catch(e){ /* optional */ }
+
     setStatus(`Data updated ${new Date(CACHE.generatedAt).toLocaleString()}.`);
 
     const totalValid = NAMES.reduce((a, n) => a + validCups(CACHE.players[n].cups).length, 0);
@@ -557,6 +572,7 @@
     renderStyleOwnership();
     renderProjection();
     renderAuthorsTab();
+    renderRivalsTab();
   }
 
   function renderPills(totalValid){
@@ -1936,6 +1952,81 @@
         html += `<td style="color:${has ? 'var(--good)' : 'var(--text-muted)'};">${has ? '✓' : '—'}</td>`;
       });
       html += '</tr>';
+    });
+    html += '</table>';
+    tableEl.innerHTML = html;
+  }
+
+  // --- Rivals tab: per-player division-mate leaderboard from opponents.json ---
+  let selectedRivalPlayer = null;
+  let rivalsSort = 'faced_desc';
+  const RIVALS_SORTS = [
+    { key: 'faced_desc', label: 'Most faced' },
+    { key: 'beaten_desc', label: 'Most beaten' },
+    { key: 'lostto_desc', label: 'Lost to most' },
+    { key: 'winrate_desc', label: 'Best win rate' },
+    { key: 'winrate_asc', label: 'Worst win rate' },
+  ];
+
+  function shortAccountId(id){ return id ? id.slice(0, 8) : '?'; }
+
+  function renderRivalsTab(){
+    const statusEl = document.getElementById('rivalsStatus');
+    const chipsEl = document.getElementById('rivalsPlayerChips');
+    const sortEl = document.getElementById('rivalsSortRow');
+    const tableEl = document.getElementById('rivalsTable');
+
+    if (!OPPONENTS || !OPPONENTS.players){
+      statusEl.textContent = 'Rivals data isn\'t available yet — it\'ll appear once the opponents backfill/daily job has run.';
+      chipsEl.innerHTML = ''; sortEl.innerHTML = ''; tableEl.innerHTML = '';
+      return;
+    }
+
+    if (!selectedRivalPlayer || !OPPONENTS.players[selectedRivalPlayer]) selectedRivalPlayer = NAMES[0];
+
+    chipsEl.innerHTML = '';
+    NAMES.forEach(name => {
+      const chip = document.createElement('div');
+      chip.className = 'chip' + (name === selectedRivalPlayer ? ' active' : '');
+      chip.style.setProperty('--chip-color', colorOf(name));
+      chip.innerHTML = `<span class="dot" style="background:${colorOf(name)};"></span>${shortOf(name)}`;
+      chip.onclick = () => { selectedRivalPlayer = name; renderRivalsTab(); };
+      chipsEl.appendChild(chip);
+    });
+
+    sortEl.innerHTML = '';
+    RIVALS_SORTS.forEach(s => {
+      const btn = document.createElement('button');
+      btn.className = 'range-btn' + (s.key === rivalsSort ? ' active' : '');
+      btn.textContent = s.label;
+      btn.onclick = () => { rivalsSort = s.key; renderRivalsTab(); };
+      sortEl.appendChild(btn);
+    });
+
+    const rivalMap = OPPONENTS.players[selectedRivalPlayer] || {};
+    let rows = Object.entries(rivalMap).map(([accountId, v]) => {
+      const name = (OPPONENTS.names && OPPONENTS.names[accountId]) || null;
+      const winrate = v.faced > 0 ? v.beaten / v.faced : 0;
+      return { accountId, name, faced: v.faced, beaten: v.beaten, lostTo: v.lostTo, winrate };
+    });
+
+    statusEl.textContent = `${rows.length} opponent${rows.length === 1 ? '' : 's'} faced across division-mate cups. Names are resolved only for the top 20 by faced-count per player; others show a shortened account ID.`;
+
+    rows.sort((a, b) => {
+      switch (rivalsSort){
+        case 'beaten_desc': return b.beaten - a.beaten;
+        case 'lostto_desc': return b.lostTo - a.lostTo;
+        case 'winrate_desc': return b.winrate - a.winrate || b.faced - a.faced;
+        case 'winrate_asc': return a.winrate - b.winrate || b.faced - a.faced;
+        case 'faced_desc': default: return b.faced - a.faced;
+      }
+    });
+
+    let html = '<table class="data"><tr><th>Opponent</th><th>Faced</th><th>Beaten</th><th>Lost to</th><th>Win rate</th></tr>';
+    rows.forEach(r => {
+      const label = r.name || shortAccountId(r.accountId);
+      const pct = Math.round(r.winrate * 1000) / 10;
+      html += `<tr><td>${label}</td><td>${r.faced}</td><td>${r.beaten}</td><td>${r.lostTo}</td><td>${pct}%</td></tr>`;
     });
     html += '</table>';
     tableEl.innerHTML = html;
