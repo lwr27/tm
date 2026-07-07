@@ -1,16 +1,12 @@
-// Resolves a display name for every unique accountId we've ever seen
-// sitting in a division with one of the three tracked players — pulled
-// from opponents.json's existing tallies, so this needs no fresh Nadeo
-// calls, just trackmania.io's public player-profile lookup.
+// Resolves a display name AND clan/club tag for every unique accountId
+// we've ever seen sitting in a division with one of the three tracked
+// players — pulled from opponents.json's existing tallies, so this needs
+// no fresh Nadeo calls, just trackmania.io's public player-profile lookup.
 //
-// NOTE: confirmed via a live raw-response check that this endpoint does
-// NOT include a clan/club tag (only accountid, displayname, trophies,
-// matchmaking). Getting real clan tags would need Nadeo's clubTags
-// endpoint, which requires Ubisoft-account OAuth rather than the
-// dedicated-server credentials used elsewhere in this pipeline — a
-// separate piece of work, not something this script can do. The
-// clanTag field below is left in defensively in case that changes, but
-// expect it to always come back null for now.
+// CONFIRMED via live sampling: the field is "clubtag" (all lowercase),
+// pre-formatted with Maniaplanet $-color codes same as map names — so
+// formatTMName() in the dashboard can render it directly. Not every
+// player has one (comes back null/absent if they don't).
 //
 // This is deliberately a STANDALONE, reusable lookup file (players.json),
 // separate from opponents.json — the idea is other features can just
@@ -25,6 +21,11 @@
 // STATS_ONLY=1 to just print the cutoff distribution without resolving
 // anything, so you can pick a sensible MIN_FACED first.
 //
+// Speed: requests run through a small concurrent worker pool (see
+// CONCURRENCY/TARGET_RATE_PER_SEC below) instead of one-at-a-time with a
+// fixed delay — same overall courtesy rate ceiling, less wasted idle time
+// per request, so noticeably faster wall-clock for a big backfill.
+//
 // Run with: npm run names
 // No Nadeo credentials required — trackmania.io's player endpoint is public.
 
@@ -35,8 +36,30 @@ const OPPONENTS_PATH = path.join(__dirname, "opponents.json");
 const OUT_PATH = path.join(__dirname, "players.json");
 const TMIO_BASE = "https://trackmania.io/api";
 const USER_AGENT = process.env.TM_USER_AGENT || "tm-cotd-tracker player-names / contact: lewis (github.com/lwr27/tm)";
-const REQUEST_DELAY_MS = 550; // stay comfortably under the ~2 req/s community guideline
 const SAVE_EVERY = 50; // write to disk periodically, not on every single request
+
+// Rate limiting: a shared "next available slot" reserved by whichever
+// concurrent worker asks first, so total throughput across ALL workers
+// stays under the limit — same idea as a fixed delay, just without the
+// wasted idle time sequential requests had baked in.
+//
+// CONFIRMED (via TrackmaniaIo.ApiClient docs, screenshot check): the
+// real limit without an API key is 40 requests/minute (~0.67/sec) — much
+// stricter than the vague "~2/sec" community guideline this was
+// originally set to. Exceeding it throws an exception per that doc, so
+// this errs on the safe side of 40/min rather than pushing right up to it.
+// An API key can raise this to 150/min, but it's not self-serve — you'd
+// need to request one from "Miss" on the Openplanet Discord.
+const TARGET_RATE_PER_SEC = 35 / 60; // slightly under 40/min for headroom
+const INTERVAL_MS = 1000 / TARGET_RATE_PER_SEC;
+const CONCURRENCY = 3;
+let nextSlot = Date.now();
+function reserveSlot() {
+  const now = Date.now();
+  const slot = Math.max(nextSlot, now);
+  nextSlot = slot + INTERVAL_MS;
+  return new Promise((resolve) => setTimeout(resolve, Math.max(0, slot - now)));
+}
 
 let rawResponsesLogged = 0;
 let sampledWithTag = 0;
@@ -45,6 +68,7 @@ const RAW_LOG_SAMPLE_SIZE = 15; // one response can't tell us whether a missing 
 // Fetches trackmania.io's player-profile endpoint for one accountId.
 // Returns { name, clanTag } — either can be null if not present/resolvable.
 async function resolvePlayer(accountId) {
+  await reserveSlot();
   try {
     const controller = new AbortController();
     const timer = setTimeout(() => controller.abort(), 15000);
@@ -57,27 +81,26 @@ async function resolvePlayer(accountId) {
     }
     if (!res.ok || !body) return { name: null, clanTag: null };
 
-    const hasTagField = !!(body.tag || body.clubTag || (body.player && body.player.tag) || (body.player && body.player.clubTag));
+    // Confirmed via live sampling: the field is "clubtag" (all lowercase,
+    // one word), matching "displayname" also being all-lowercase on this
+    // endpoint — NOT "tag"/"clubTag" as first assumed. It comes pre-
+    // formatted with Maniaplanet $-color codes, same as map names, so
+    // formatTMName() in the dashboard can render it directly.
+    const hasTagField = body.clubtag != null && body.clubtag !== "";
 
-    // Log the first several successful responses so we can eyeball whether
-    // ANY of them carry a tag/clubTag field — one sample can't distinguish
-    // "this endpoint never has it" from "this particular player has none".
     if (rawResponsesLogged < RAW_LOG_SAMPLE_SIZE) {
       rawResponsesLogged++;
       if (hasTagField) sampledWithTag++;
-      console.log(`\n--- Raw response #${rawResponsesLogged}/${RAW_LOG_SAMPLE_SIZE} (${body.displayname || accountId}) — tag field present: ${hasTagField} ---`);
+      console.log(`\n--- Raw response #${rawResponsesLogged}/${RAW_LOG_SAMPLE_SIZE} (${body.displayname || accountId}) — clubtag present: ${hasTagField} ---`);
       console.log(JSON.stringify(body, null, 2));
       console.log("--- end raw response ---\n");
       if (rawResponsesLogged === RAW_LOG_SAMPLE_SIZE) {
-        console.log(`\n>>> SAMPLE SUMMARY: ${sampledWithTag}/${RAW_LOG_SAMPLE_SIZE} sampled players had a tag/clubTag field on this endpoint. <<<\n`);
+        console.log(`\n>>> SAMPLE SUMMARY: ${sampledWithTag}/${RAW_LOG_SAMPLE_SIZE} sampled players had a clubtag. <<<\n`);
       }
     }
 
-    // Defensive extraction — trackmania.io's player object shape isn't
-    // formally documented, and may nest fields under `player`, or use
-    // `tag` vs `clubTag` depending on endpoint. Try the plausible spots.
     const name = body.displayname || body.name || (body.player && body.player.name) || null;
-    const clanTag = body.tag || body.clubTag || (body.player && body.player.tag) || (body.player && body.player.clubTag) || null;
+    const clanTag = body.clubtag || (body.player && body.player.clubtag) || null;
     return { name, clanTag };
   } catch (e) {
     return { name: null, clanTag: null };
@@ -138,21 +161,36 @@ async function main() {
     return;
   }
 
+  console.log(`\nResolving with ${CONCURRENCY} concurrent workers, capped at ~${TARGET_RATE_PER_SEC} requests/sec total.`);
+
   let processed = 0;
-  for (const accountId of idsNeeded) {
-    const { name, clanTag } = await resolvePlayer(accountId);
-    out[accountId] = { name, clanTag, resolvedAt: new Date().toISOString() };
-    processed++;
+  let cursor = 0;
+  let savePending = false;
 
-    if (processed % SAVE_EVERY === 0 || processed === idsNeeded.length) {
-      fs.writeFileSync(OUT_PATH, JSON.stringify(out, null, 2));
-      console.log(`[${processed}/${idsNeeded.length}] saved checkpoint...`);
-    }
-
-    await new Promise((r) => setTimeout(r, REQUEST_DELAY_MS));
+  function maybeCheckpoint(force) {
+    if (!force && processed % SAVE_EVERY !== 0) return;
+    if (savePending) return; // avoid overlapping writes from concurrent workers
+    savePending = true;
+    fs.writeFileSync(OUT_PATH, JSON.stringify(out, null, 2));
+    console.log(`[${processed}/${idsNeeded.length}] saved checkpoint...`);
+    savePending = false;
   }
 
-  fs.writeFileSync(OUT_PATH, JSON.stringify(out, null, 2));
+  async function worker() {
+    while (true) {
+      const i = cursor++;
+      if (i >= idsNeeded.length) return;
+      const accountId = idsNeeded[i];
+      const { name, clanTag } = await resolvePlayer(accountId);
+      out[accountId] = { name, clanTag, resolvedAt: new Date().toISOString() };
+      processed++;
+      maybeCheckpoint(false);
+    }
+  }
+
+  await Promise.all(Array.from({ length: CONCURRENCY }, () => worker()));
+
+  maybeCheckpoint(true);
   console.log(`\nDone. ${processed} player(s) resolved this run, ${Object.keys(out).length} total in players.json.`);
 }
 
