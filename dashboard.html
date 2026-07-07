@@ -1048,11 +1048,9 @@
           html += `<td><span class="badge" style="background:${bc.bg}; color:${bc.fg};">div ${c.div}</span> <span style="color:var(--text-muted); font-size:12px;">qualified, didn't play rounds</span></td>`;
           return;
         }
-        const medalColor = c.rank === 1 ? '#d4af37' : c.rank === 2 ? '#9aa4b2' : c.rank === 3 ? '#b3703a' : null;
-        const medalHtml = medalColor
-          ? ` <span style="font-size:11px; color:${medalColor}; opacity:0.85;">rank ${c.rank} of ${c.totalplayers}</span>`
-          : '';
-        html += `<td><span class="badge" style="background:${bc.bg}; color:${bc.fg};">div ${c.div}</span> <span style="font-size:12px; color:var(--text-muted);">rank ${c.divrank ?? '-'}/64 &middot; #${c.rank}</span>${medalHtml}</td>`;
+        const medalColor = c.divrank === 1 ? '#d4af37' : c.divrank === 2 ? '#9aa4b2' : c.divrank === 3 ? '#b3703a' : null;
+        const divRankStyle = medalColor ? `color:${medalColor}; opacity:0.9; font-weight:600;` : 'color:var(--text-muted);';
+        html += `<td><span class="badge" style="background:${bc.bg}; color:${bc.fg};">div ${c.div}</span> <span style="font-size:12px;"><span style="${divRankStyle}">rank ${c.divrank ?? '-'}/64</span><span style="color:var(--text-muted);"> &middot; #${c.rank}</span></span></td>`;
       });
       html += '</tr>';
     });
