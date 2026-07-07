@@ -1,0 +1,42 @@
+name: Backfill player names and clan tags
+
+# Manual only. Reads every unique accountId already sitting in
+# opponents.json and resolves a display name + clan tag for each via
+# trackmania.io's public player endpoint — no Nadeo credentials needed.
+# Resumable: safe to re-run any time (e.g. after opponents.json gains new
+# ids from a future backfill or the daily job), it'll only fetch names
+# for whatever's new.
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Resolve player names and clan tags
+        run: npm run names
+
+      - name: Commit players data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add players.json
+          if git diff --cached --quiet; then
+            echo "No data changes."
+          else
+            git commit -m "data: player names/clan tags backfill $(date -u +%F)"
+            git pull --rebase --autostash origin main
+            git push
+          fi
