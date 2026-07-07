@@ -74,10 +74,6 @@ function reserveSlot() {
   return new Promise((resolve) => setTimeout(resolve, Math.max(0, slot - now)));
 }
 
-let rawResponsesLogged = 0;
-let sampledWithTag = 0;
-const RAW_LOG_SAMPLE_SIZE = 15; // one response can't tell us whether a missing tag means "this player has none" vs "the field never exists" — need several to be confident
-
 // Fetches trackmania.io's player-profile endpoint for one accountId.
 // Returns { name, clanTag } — either can be null if not present/resolvable.
 async function resolvePlayer(accountId) {
@@ -94,24 +90,10 @@ async function resolvePlayer(accountId) {
     }
     if (!res.ok || !body) return { name: null, clanTag: null };
 
-    // Confirmed via live sampling: the field is "clubtag" (all lowercase,
-    // one word), matching "displayname" also being all-lowercase on this
-    // endpoint — NOT "tag"/"clubTag" as first assumed. It comes pre-
-    // formatted with Maniaplanet $-color codes, same as map names, so
-    // formatTMName() in the dashboard can render it directly.
-    const hasTagField = body.clubtag != null && body.clubtag !== "";
-
-    if (rawResponsesLogged < RAW_LOG_SAMPLE_SIZE) {
-      rawResponsesLogged++;
-      if (hasTagField) sampledWithTag++;
-      console.log(`\n--- Raw response #${rawResponsesLogged}/${RAW_LOG_SAMPLE_SIZE} (${body.displayname || accountId}) — clubtag present: ${hasTagField} ---`);
-      console.log(JSON.stringify(body, null, 2));
-      console.log("--- end raw response ---\n");
-      if (rawResponsesLogged === RAW_LOG_SAMPLE_SIZE) {
-        console.log(`\n>>> SAMPLE SUMMARY: ${sampledWithTag}/${RAW_LOG_SAMPLE_SIZE} sampled players had a clubtag. <<<\n`);
-      }
-    }
-
+    // Confirmed field: "clubtag" (all lowercase, one word), matching
+    // "displayname" also being all-lowercase on this endpoint. Comes
+    // pre-formatted with Maniaplanet $-color codes, same as map names,
+    // so formatTMName() in the dashboard can render it directly.
     const name = body.displayname || body.name || (body.player && body.player.name) || null;
     const clanTag = body.clubtag || (body.player && body.player.clubtag) || null;
     return { name, clanTag };
