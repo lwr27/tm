@@ -1033,11 +1033,11 @@
       const rep = cupByLabel[label];
       const info = rep && rep.mapuid && MAPTAGS && MAPTAGS.maps && MAPTAGS.maps[rep.mapuid];
       let mapLine = '';
-      if (info && info.found && info.name){
-        const href = info.mxid
+      if (rep && rep.mapname){
+        const href = info && info.found && info.mxid
           ? `https://trackmania.exchange/maps/${info.mxid}`
           : `https://trackmania.io/#/leaderboard/${rep.mapuid}`;
-        mapLine = `<br><a class="maplink" href="${href}" target="_blank" rel="noopener" style="font-size:11px; color:var(--text-muted);">${formatTMName(info.name)}</a>`;
+        mapLine = `<br><a class="maplink" href="${href}" target="_blank" rel="noopener" style="font-size:11px; color:var(--text-muted);">${formatTMName(rep.mapname)}</a>`;
       }
       html += `<tr><td style="color:var(--text-secondary);">${label}${mapLine}</td>`;
       NAMES.forEach(name => {
