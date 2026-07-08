@@ -2255,6 +2255,20 @@
       bucket.beaten += v.beaten;
     });
 
+    // DIAGNOSTIC: find country names in our data that don't match any name
+    // in the map dataset at all — this is exactly the "shows as grey even
+    // though I definitely faced people from there" symptom. Logged to
+    // console with the raw strings so a mismatch (e.g. "Russia" vs
+    // "Russian Federation") is visible side by side instead of guessed at.
+    const mapNames = new Set(Object.values(WORLD_ID_TO_NAME));
+    const unmatched = Object.entries(byCountry)
+      .filter(([name]) => !mapNames.has(name))
+      .sort((a, b) => b[1].faced - a[1].faced);
+    if (unmatched.length){
+      console.warn(`[world map] ${unmatched.length} country name(s) from your data don't match the map dataset:`,
+        unmatched.map(([name, c]) => `"${name}" (${c.faced} faced)`));
+    }
+
     const MIN_FACED_FOR_COLOR = 3;
     function colorFor(name){
       const c = byCountry[name];
@@ -2311,7 +2325,8 @@
 
     const countriesWithData = Object.keys(byCountry).filter(n => byCountry[n].faced >= MIN_FACED_FOR_COLOR).length;
     statusEl.textContent = `${countriesWithData} countries with enough data to colour (${MIN_FACED_FOR_COLOR}+ faced).` +
-      (unresolvedCountry > 0 ? ` ${unresolvedCountry} faced-count from opponents with no resolved location yet.` : '');
+      (unresolvedCountry > 0 ? ` ${unresolvedCountry} faced-count from opponents with no resolved location yet.` : '') +
+      (unmatched.length ? ` ${unmatched.length} countries in your data don't match the map's names (showing as grey) — see browser console for the exact list.` : '');
 
     legendEl.innerHTML = `
       <span>Lose more</span>
