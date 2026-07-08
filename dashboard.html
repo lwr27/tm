@@ -2182,18 +2182,50 @@
   let WORLD_ID_TO_NAME = null; // cached ISO numeric id -> English country name
   let worldAssetsLoading = null;
 
-  // trackmania.io's zone names occasionally differ from the Natural
-  // Earth / ISO name list used by the map data below (e.g. official vs
-  // common names). Add entries here as mismatches are spotted — anything
-  // not in this list is tried as an exact (case-insensitive) match first.
+  // trackmania.io mostly uses short/common country names, while the map
+  // dataset (an older ISO-style list) often uses longer official/formal
+  // names. Every entry below was checked against the real dataset content
+  // (not guessed) — key is trackmania.io's raw name lowercased, value is
+  // the exact string the map dataset uses.
   const COUNTRY_NAME_ALIASES = {
-    "united states": "United States of America",
-    "usa": "United States of America",
+    "usa": "United States",
+    "us": "United States",
     "uk": "United Kingdom",
-    "south korea": "South Korea",
-    "russia": "Russia",
-    "czechia": "Czechia",
-    "czech republic": "Czechia",
+    "russia": "Russian Federation",
+    "czechia": "Czech Republic",
+    "türkiye": "Turkey",
+    "turkiye": "Turkey",
+    "micronesia": "Micronesia, Federated States of",
+    "mainland china": "China",
+    "vietnam": "Viet Nam",
+    "south korea": "Korea, Republic of",
+    "korea, south": "Korea, Republic of",
+    "north korea": "Korea, Democratic People's Republic of",
+    "korea, north": "Korea, Democratic People's Republic of",
+    "north macedonia": "Macedonia, the former Yugoslav Republic of",
+    "venezuela": "Venezuela, Bolivarian Republic of",
+    "taiwan": "Taiwan, Province of China",
+    "moldova": "Moldova, Republic of",
+    "dr congo": "Congo, the Democratic Republic of the",
+    "democratic republic of the congo": "Congo, the Democratic Republic of the",
+    "cabo verde": "Cape Verde",
+    "iran": "Iran, Islamic Republic of",
+    "syria": "Syrian Arab Republic",
+    // Proactive fixes for the same "short name vs official name" pattern,
+    // not yet seen as a live mismatch but predictable from the dataset:
+    "bolivia": "Bolivia, Plurinational State of",
+    "tanzania": "Tanzania, United Republic of",
+    "laos": "Lao People's Democratic Republic",
+    "palestine": "Palestinian Territory, Occupied",
+    "vatican": "Holy See (Vatican City State)",
+    "vatican city": "Holy See (Vatican City State)",
+    "brunei": "Brunei Darussalam",
+    "falkland islands": "Falkland Islands (Malvinas)",
+    "eswatini": "Swaziland",
+    "macau": "Macao",
+    "myanmar (burma)": "Myanmar",
+    "burma": "Myanmar",
+    "ivory coast": "Côte d'Ivoire",
   };
 
   async function loadWorldMapAssets(){
