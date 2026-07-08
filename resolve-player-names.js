@@ -88,7 +88,7 @@ async function resolvePlayer(accountId) {
     } finally {
       clearTimeout(timer);
     }
-    if (!res.ok || !body) return { name: null, clanTag: null, country: null, countryFlag: null };
+    if (!res.ok || !body) return { name: null, clanTag: null, country: null, countryFlag: null, region: null };
 
     // Confirmed field: "clubtag" (all lowercase, one word), matching
     // "displayname" also being all-lowercase on this endpoint. Comes
@@ -103,7 +103,12 @@ async function resolvePlayer(accountId) {
     // set). Walk the chain to the top, then take the node two steps below
     // World — that's reliably the country regardless of how many finer
     // sub-levels exist below it.
-    let country = null, countryFlag = null;
+    //
+    // Region: the level immediately below country in that same chain
+    // (e.g. England/Scotland/Wales for the UK, or a US state) — only
+    // present if the player's zone data goes deeper than country level,
+    // which not everyone's does.
+    let country = null, countryFlag = null, region = null;
     const leafZone = body.trophies && body.trophies.zone;
     if (leafZone) {
       const chain = [leafZone];
@@ -115,11 +120,14 @@ async function resolvePlayer(accountId) {
         country = countryNode.name || null;
         countryFlag = countryNode.flag || null;
       }
+      if (chain.length >= 4) {
+        region = chain[chain.length - 4].name || null;
+      }
     }
 
-    return { name, clanTag, country, countryFlag };
+    return { name, clanTag, country, countryFlag, region };
   } catch (e) {
-    return { name: null, clanTag: null, country: null, countryFlag: null };
+    return { name: null, clanTag: null, country: null, countryFlag: null, region: null };
   }
 }
 
@@ -170,7 +178,23 @@ async function main() {
     console.log(`Loaded ${Object.keys(out).length} already-resolved players from players.json.`);
   }
 
-  const idsNeeded = allIds.filter((id) => !out[id] || !("country" in out[id]));
+  // Region backfill can be scoped to just one country (e.g. only re-fetch
+  // the ~handful of UK players to get their region, rather than dragging
+  // all 31k+ through a second full pass just for a field only one
+  // country's sub-map currently uses). Set REGION_COUNTRY_FILTER to the
+  // exact country string as stored in players.json (case-insensitive) —
+  // leave unset to backfill region for everyone regardless of country.
+  const REGION_COUNTRY_FILTER = process.env.REGION_COUNTRY_FILTER || null;
+  function matchesRegionFilter(entry){
+    if (!REGION_COUNTRY_FILTER) return true;
+    return !!(entry && entry.country && entry.country.trim().toLowerCase() === REGION_COUNTRY_FILTER.trim().toLowerCase());
+  }
+
+  const idsNeeded = allIds.filter((id) => {
+    if (!out[id] || !("country" in out[id])) return true; // never resolved at all — still needs a full resolve regardless of filter
+    if (!("region" in out[id]) && matchesRegionFilter(out[id])) return true; // has country, matches filter, just needs region
+    return false;
+  });
   const backfillCount = idsNeeded.filter((id) => out[id]).length;
   console.log(`${idsNeeded.length} still need (re-)resolving (of ${allIds.length} matching the MIN_FACED filter).`);
   if (backfillCount > 0) {
@@ -204,8 +228,8 @@ async function main() {
       const i = cursor++;
       if (i >= idsNeeded.length) return;
       const accountId = idsNeeded[i];
-      const { name, clanTag, country, countryFlag } = await resolvePlayer(accountId);
-      out[accountId] = { name, clanTag, country, countryFlag, resolvedAt: new Date().toISOString() };
+      const { name, clanTag, country, countryFlag, region } = await resolvePlayer(accountId);
+      out[accountId] = { name, clanTag, country, countryFlag, region, resolvedAt: new Date().toISOString() };
       processed++;
       maybeCheckpoint(false);
     }
