@@ -81,6 +81,7 @@
   .card table td.val { text-align: right; color: var(--text-primary); font-family: var(--mono); font-weight: 600; font-variant-numeric: tabular-nums; }
 
   .chip-row { display: flex; gap: 8px; margin-bottom: 1.5rem; flex-wrap: wrap; }
+  .chip-row.sticky-chips { position: sticky; top: 0; z-index: 20; background: var(--bg); padding: 10px 0 10px; margin-bottom: 1rem; border-bottom: 1px solid var(--border); }
   .chip {
     display: flex; align-items: center; gap: 8px; background: var(--surface); border: 1px solid var(--border);
     border-radius: 999px; padding: 8px 16px; cursor: pointer; font-size: 13px; font-weight: 500; color: var(--text-secondary);
@@ -335,13 +336,14 @@
   <div class="tab-panel" id="tab-rivals">
     <p class="section-title">Rivals</p>
     <p class="section-note">Who you've shared a division with most, judged by final division rank on cups both played. "Beaten" and "Lost to" only count division-mates, not the whole field.</p>
-    <div class="chip-row" id="rivalsPlayerChips"></div>
+    <div class="chip-row sticky-chips" id="rivalsPlayerChips"></div>
 
     <p class="section-title">Where your rivals come from</p>
     <p class="section-note">Green countries are ones you tend to beat, red ones tend to beat you — shaded by win rate across every shared-division opponent from that country. Grey means not enough data yet (fewer than 3 faced) or no resolved location.</p>
     <div id="rivalMapStatus" style="font-size:13px; color:var(--text-muted); margin-bottom:0.75rem;"></div>
     <div id="rivalWorldMap" style="width:100%; margin-bottom:0.5rem;"></div>
-    <div id="rivalMapLegend" style="display:flex; align-items:center; gap:10px; font-size:11px; color:var(--text-muted); margin-bottom:1.5rem;"></div>
+    <div id="rivalMapLegend" style="display:flex; align-items:center; gap:10px; font-size:11px; color:var(--text-muted); margin-bottom:1rem;"></div>
+    <div id="rivalCountryDetail" style="margin-bottom:1.5rem;"></div>
 
     <p class="section-title">Clan tag leaderboard</p>
     <p class="section-note">Which clans you cross paths with most often in shared divisions, and how you do against them.</p>
@@ -533,6 +535,8 @@
     });
   });
 
+  let COUNTRY_TO_ALPHA2 = null;
+
   async function loadOpponentsAndRender(){
     const statusEl = document.getElementById('rivalsStatus');
     statusEl.textContent = 'Loading opponents data (this file is large, may take a moment)...';
@@ -544,7 +548,31 @@
       const res2 = await fetch('./players.json', { cache: 'no-store' });
       if (res2.ok) PLAYERS_LOOKUP = await res2.json();
     } catch(e){ /* optional — falls back to shortened accountIds if missing */ }
+    try {
+      const res3 = await fetch('https://cdn.jsdelivr.net/gh/lukes/ISO-3166-Countries-with-Regional-Codes/all/all.json', { cache: 'force-cache' });
+      if (res3.ok) {
+        const list = await res3.json();
+        COUNTRY_TO_ALPHA2 = {};
+        list.forEach(c => { if (c.name && c['alpha-2']) COUNTRY_TO_ALPHA2[c.name.trim().toLowerCase()] = c['alpha-2']; });
+      }
+    } catch(e){ /* optional — falls back to no flag if missing */ }
     renderRivalsTab();
+  }
+
+  // Builds a flag emoji from an ISO 3166-1 alpha-2 code by converting each
+  // letter to its Unicode regional indicator symbol (standard technique —
+  // no image assets needed, renders as a real flag in any modern font).
+  function emojiFlag(alpha2){
+    if (!alpha2 || alpha2.length !== 2) return '';
+    const codePoints = [...alpha2.toUpperCase()].map(c => 0x1F1E6 + (c.charCodeAt(0) - 65));
+    return String.fromCodePoint(...codePoints);
+  }
+
+  function flagForCountry(rawCountryName){
+    if (!rawCountryName || !COUNTRY_TO_ALPHA2) return '';
+    const normalized = normalizeCountryName(rawCountryName);
+    const alpha2 = COUNTRY_TO_ALPHA2[normalized.trim().toLowerCase()];
+    return alpha2 ? emojiFlag(alpha2) : '';
   }
 
   async function load(){
@@ -1991,6 +2019,7 @@
 
   // --- Rivals tab: per-player division-mate leaderboard from opponents.json ---
   let selectedRivalPlayer = null;
+  let selectedMapCountry = null;
   let rivalsSort = 'faced_desc';
   const RIVALS_SORTS = [
     { key: 'faced_desc', label: 'Most faced' },
@@ -2025,7 +2054,7 @@
       chip.className = 'chip' + (name === selectedRivalPlayer ? ' active' : '');
       chip.style.setProperty('--chip-color', colorOf(name));
       chip.innerHTML = `<span class="dot" style="background:${colorOf(name)};"></span>${shortOf(name)}`;
-      chip.onclick = () => { selectedRivalPlayer = name; renderRivalsTab(); };
+      chip.onclick = () => { selectedRivalPlayer = name; selectedMapCountry = null; renderRivalsTab(); };
       chipsEl.appendChild(chip);
     });
 
@@ -2043,8 +2072,9 @@
       const lookup = (PLAYERS_LOOKUP && PLAYERS_LOOKUP[accountId]) || null;
       const name = (lookup && lookup.name) || null;
       const clanTag = (lookup && lookup.clanTag) || null;
+      const country = (lookup && lookup.country) || null;
       const winrate = v.faced > 0 ? v.beaten / v.faced : 0;
-      return { accountId, name, clanTag, faced: v.faced, beaten: v.beaten, lostTo: v.lostTo, winrate };
+      return { accountId, name, clanTag, country, faced: v.faced, beaten: v.beaten, lostTo: v.lostTo, winrate };
     });
 
     const resolvedCount = rows.filter(r => r.name).length;
@@ -2070,8 +2100,9 @@
 
     let html = '<table class="data"><tr><th>Opponent</th><th>Faced</th><th>Beaten</th><th>Lost to</th><th>Win rate</th></tr>';
     shown.forEach(r => {
+      const flagHtml = flagForCountry(r.country) ? `${flagForCountry(r.country)} ` : '';
       const tagHtml = r.clanTag ? `<span style="color:var(--text-muted);">${formatTMName(r.clanTag)}</span> ` : '';
-      const label = r.name ? `${tagHtml}${r.name}` : shortAccountId(r.accountId);
+      const label = r.name ? `${flagHtml}${tagHtml}${r.name}` : shortAccountId(r.accountId);
       const pct = Math.round(r.winrate * 1000) / 10;
       html += `<tr><td>${label}</td><td>${r.faced}</td><td>${r.beaten}</td><td>${r.lostTo}</td><td>${pct}%</td></tr>`;
     });
@@ -2232,20 +2263,33 @@
       .attr('height', 'auto')
       .style('display', 'block');
 
-    svg.selectAll('path')
+    function strokeFor(name){ return name === selectedMapCountry ? '#e8ecf5' : '#0b0e14'; }
+    function strokeWidthFor(name){ return name === selectedMapCountry ? 1.75 : 0.5; }
+
+    const paths = svg.selectAll('path')
       .data(WORLD_GEO)
       .join('path')
       .attr('d', path)
       .attr('fill', d => colorFor(WORLD_ID_TO_NAME[Number(d.id)] || ''))
-      .attr('stroke', '#0b0e14')
-      .attr('stroke-width', 0.5)
-      .append('title')
+      .attr('stroke', d => strokeFor(WORLD_ID_TO_NAME[Number(d.id)] || ''))
+      .attr('stroke-width', d => strokeWidthFor(WORLD_ID_TO_NAME[Number(d.id)] || ''))
+      .style('cursor', 'pointer')
+      .on('click', (event, d) => {
+        const name = WORLD_ID_TO_NAME[Number(d.id)] || null;
+        if (!name) return;
+        selectedMapCountry = (selectedMapCountry === name) ? null : name;
+        paths.attr('stroke', dd => strokeFor(WORLD_ID_TO_NAME[Number(dd.id)] || ''))
+             .attr('stroke-width', dd => strokeWidthFor(WORLD_ID_TO_NAME[Number(dd.id)] || ''));
+        renderCountryDetailPanel(rivalMap, byCountry);
+      });
+
+    paths.append('title')
       .text(d => {
         const name = WORLD_ID_TO_NAME[Number(d.id)] || 'Unknown';
         const c = byCountry[name];
         if (!c) return name;
         const pct = Math.round((c.beaten / c.faced) * 1000) / 10;
-        return `${name}: ${c.beaten}/${c.faced} beaten (${pct}%)`;
+        return `${name}: ${c.beaten}/${c.faced} beaten (${pct}%) — click for player list`;
       });
 
     const countriesWithData = Object.keys(byCountry).filter(n => byCountry[n].faced >= MIN_FACED_FOR_COLOR).length;
@@ -2257,7 +2301,61 @@
       <span style="display:inline-block; width:120px; height:10px; border-radius:4px; background:linear-gradient(90deg, rgb(239,68,68), rgb(148,163,184), rgb(34,197,94));"></span>
       <span>Win more</span>
       <span style="margin-left:12px; display:inline-flex; align-items:center; gap:5px;"><span style="display:inline-block; width:10px; height:10px; border-radius:2px; background:#2a3040;"></span> not enough data</span>
+      <span style="margin-left:12px;">Click a country for its player list</span>
     `;
+
+    renderCountryDetailPanel(rivalMap, byCountry);
+  }
+
+  function renderCountryDetailPanel(rivalMap, byCountry){
+    const el = document.getElementById('rivalCountryDetail');
+    if (!selectedMapCountry){ el.innerHTML = ''; return; }
+
+    const players = Object.entries(rivalMap)
+      .map(([accountId, v]) => {
+        const lookup = PLAYERS_LOOKUP && PLAYERS_LOOKUP[accountId];
+        const country = lookup && normalizeCountryName(lookup.country);
+        if (country !== selectedMapCountry) return null;
+        return {
+          accountId,
+          name: (lookup && lookup.name) || null,
+          clanTag: (lookup && lookup.clanTag) || null,
+          faced: v.faced, beaten: v.beaten, lostTo: v.lostTo,
+          winrate: v.faced > 0 ? v.beaten / v.faced : 0,
+        };
+      })
+      .filter(Boolean)
+      .sort((a, b) => b.faced - a.faced);
+
+    const c = byCountry[selectedMapCountry];
+    const summary = c ? `${c.beaten}/${c.faced} beaten overall (${Math.round((c.beaten / c.faced) * 1000) / 10}%)` : `${players.reduce((s, p) => s + p.faced, 0)} faced`;
+
+    let html = `<div style="border:1px solid var(--border); border-radius:8px; padding:14px 16px;">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+        <strong style="font-size:14px;">${flagForCountry(selectedMapCountry)} ${selectedMapCountry} <span style="color:var(--text-muted); font-weight:400;">— ${summary}</span></strong>
+        <a href="#" id="clearCountrySelection" style="font-size:12px; color:var(--text-muted);">clear</a>
+      </div>`;
+
+    if (!players.length){
+      html += `<p style="font-size:13px; color:var(--text-muted);">No individually-tallied opponents from here (may be below the resolved top-list, or country-only data with no per-opponent breakdown).</p>`;
+    } else {
+      html += '<table class="data"><tr><th>Opponent</th><th>Faced</th><th>Beaten</th><th>Lost to</th><th>Win rate</th></tr>';
+      players.forEach(p => {
+        const tagHtml = p.clanTag ? `<span style="color:var(--text-muted);">${formatTMName(p.clanTag)}</span> ` : '';
+        const label = p.name ? `${tagHtml}${p.name}` : shortAccountId(p.accountId);
+        const pct = Math.round(p.winrate * 1000) / 10;
+        html += `<tr><td>${label}</td><td>${p.faced}</td><td>${p.beaten}</td><td>${p.lostTo}</td><td>${pct}%</td></tr>`;
+      });
+      html += '</table>';
+    }
+    html += '</div>';
+    el.innerHTML = html;
+
+    document.getElementById('clearCountrySelection').onclick = (e) => {
+      e.preventDefault();
+      selectedMapCountry = null;
+      renderRivalWorldMap(rivalMap);
+    };
   }
 
   load();
