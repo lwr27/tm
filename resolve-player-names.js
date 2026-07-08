@@ -88,7 +88,7 @@ async function resolvePlayer(accountId) {
     } finally {
       clearTimeout(timer);
     }
-    if (!res.ok || !body) return { name: null, clanTag: null, country: null, countryFlag: null, region: null };
+    if (!res.ok || !body) return { name: null, clanTag: null, country: null, countryFlag: null, region: null, subregion: null, subregionFlag: null };
 
     // Confirmed field: "clubtag" (all lowercase, one word), matching
     // "displayname" also being all-lowercase on this endpoint. Comes
@@ -108,7 +108,13 @@ async function resolvePlayer(accountId) {
     // (e.g. England/Scotland/Wales for the UK, or a US state) — only
     // present if the player's zone data goes deeper than country level,
     // which not everyone's does.
-    let country = null, countryFlag = null, region = null;
+    //
+    // Subregion: the actual leaf of the chain — for a UK player this is
+    // typically a proper sub-national region (e.g. "South West England"),
+    // confirmed via a real raw response, but for other players it might
+    // just be a city, since not everyone's zone data goes equally deep.
+    // Equals country itself if the player has no finer data set at all.
+    let country = null, countryFlag = null, region = null, subregion = null, subregionFlag = null;
     const leafZone = body.trophies && body.trophies.zone;
     if (leafZone) {
       const chain = [leafZone];
@@ -123,11 +129,13 @@ async function resolvePlayer(accountId) {
       if (chain.length >= 4) {
         region = chain[chain.length - 4].name || null;
       }
+      subregion = chain[0].name || null;
+      subregionFlag = chain[0].flag || null;
     }
 
-    return { name, clanTag, country, countryFlag, region };
+    return { name, clanTag, country, countryFlag, region, subregion, subregionFlag };
   } catch (e) {
-    return { name: null, clanTag: null, country: null, countryFlag: null, region: null };
+    return { name: null, clanTag: null, country: null, countryFlag: null, region: null, subregion: null, subregionFlag: null };
   }
 }
 
@@ -192,7 +200,7 @@ async function main() {
 
   const idsNeeded = allIds.filter((id) => {
     if (!out[id] || !("country" in out[id])) return true; // never resolved at all — still needs a full resolve regardless of filter
-    if (!("region" in out[id]) && matchesRegionFilter(out[id])) return true; // has country, matches filter, just needs region
+    if (!("subregion" in out[id]) && matchesRegionFilter(out[id])) return true; // has country, matches filter, just needs region/subregion
     return false;
   });
   const backfillCount = idsNeeded.filter((id) => out[id]).length;
@@ -228,8 +236,8 @@ async function main() {
       const i = cursor++;
       if (i >= idsNeeded.length) return;
       const accountId = idsNeeded[i];
-      const { name, clanTag, country, countryFlag, region } = await resolvePlayer(accountId);
-      out[accountId] = { name, clanTag, country, countryFlag, region, resolvedAt: new Date().toISOString() };
+      const { name, clanTag, country, countryFlag, region, subregion, subregionFlag } = await resolvePlayer(accountId);
+      out[accountId] = { name, clanTag, country, countryFlag, region, subregion, subregionFlag, resolvedAt: new Date().toISOString() };
       processed++;
       maybeCheckpoint(false);
     }
