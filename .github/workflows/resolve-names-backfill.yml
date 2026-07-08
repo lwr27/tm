@@ -1,4 +1,4 @@
-name: Backfill player names and clan tags
+name: Backfill player names, clan tags and region
 
 # Manual only. Reads every unique accountId already sitting in
 # opponents.json and resolves a display name + clan tag for each via
@@ -7,10 +7,23 @@ name: Backfill player names and clan tags
 # ids from a future backfill or the daily job), it'll only fetch names
 # for whatever's new.
 on:
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      region_country_filter:
+        description: 'Only backfill region for players from this exact country (leave blank for everyone). e.g. "United Kingdom"'
+        required: false
+        default: ''
 
 permissions:
   contents: write
+
+# Shares the same concurrency group as the daily update-data.yml workflow
+# — both write to players.json, so this makes them queue one after the
+# other instead of ever running simultaneously and racing on the same
+# file/commit. Whichever started first finishes before the other begins.
+concurrency:
+  group: update-data
+  cancel-in-progress: false
 
 jobs:
   backfill:
@@ -27,6 +40,8 @@ jobs:
 
       - name: Resolve player names and clan tags
         run: npm run names
+        env:
+          REGION_COUNTRY_FILTER: ${{ inputs.region_country_filter }}
 
       - name: Commit players data
         run: |
