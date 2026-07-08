@@ -571,9 +571,51 @@
     return `<span class="fi fi-${alpha2.toLowerCase()}" style="margin-right:4px; vertical-align:middle;"></span>`;
   }
 
+  // The flag dataset (lukes/ISO-3166-Countries-with-Regional-Codes) uses
+  // its own official-name conventions, DIFFERENT from the map dataset
+  // above in several confirmed cases (checked against real data, not
+  // guessed) — e.g. it wants "United States of America" where the map
+  // wants plain "United States". Kept as a fully separate table rather
+  // than trying to share one, since the two disagree often enough that
+  // sharing caused real bugs (flags showing the wrong country entirely).
+  const FLAG_COUNTRY_ALIASES = {
+    "usa": "United States of America",
+    "us": "United States of America",
+    "united states": "United States of America",
+    "uk": "United Kingdom of Great Britain and Northern Ireland",
+    "united kingdom": "United Kingdom of Great Britain and Northern Ireland",
+    "netherlands": "Netherlands, Kingdom of the",
+    "russia": "Russian Federation",
+    "dr congo": "Congo, Democratic Republic of the",
+    "democratic republic of the congo": "Congo, Democratic Republic of the",
+    "vietnam": "Viet Nam",
+    "laos": "Lao People's Democratic Republic",
+    "iran": "Iran, Islamic Republic of",
+    "syria": "Syrian Arab Republic",
+    "moldova": "Moldova, Republic of",
+    "venezuela": "Venezuela, Bolivarian Republic of",
+    "bolivia": "Bolivia, Plurinational State of",
+    "tanzania": "Tanzania, United Republic of",
+    "taiwan": "Taiwan, Province of China",
+    "south korea": "Korea, Republic of",
+    "korea, south": "Korea, Republic of",
+    "north korea": "Korea, Democratic People's Republic of",
+    "korea, north": "Korea, Democratic People's Republic of",
+    // Deliberately NOT aliased here (unlike the map table) because this
+    // dataset already uses these forms natively — confirmed by checking
+    // the real data, not assumed: Czechia, North Macedonia, Türkiye.
+  };
+
+  function normalizeCountryNameForFlag(raw){
+    if (!raw) return null;
+    const trimmed = raw.trim();
+    const key = stripDiacritics(trimmed.toLowerCase());
+    return FLAG_COUNTRY_ALIASES[key] || trimmed;
+  }
+
   function flagForCountry(rawCountryName){
     if (!rawCountryName || !COUNTRY_TO_ALPHA2) return '';
-    const normalized = normalizeCountryName(rawCountryName);
+    const normalized = normalizeCountryNameForFlag(rawCountryName);
     const alpha2 = COUNTRY_TO_ALPHA2[normalized.trim().toLowerCase()];
     return alpha2 ? flagIconHtml(alpha2) : '';
   }
@@ -2411,7 +2453,7 @@
     if (!players.length){
       html += `<p style="font-size:13px; color:var(--text-muted);">No individually-tallied opponents from here (may be below the resolved top-list, or country-only data with no per-opponent breakdown).</p>`;
     } else {
-      html += '<table class="data"><tr><th>Opponent</th><th>Faced</th><th>Beaten</th><th>Lost to</th><th>Win rate</th></tr>';
+      html += '<div class="scroll-table" style="max-height:320px; overflow-y:auto;"><table class="data"><tr><th>Opponent</th><th>Faced</th><th>Beaten</th><th>Lost to</th><th>Win rate</th></tr>';
       players.forEach(p => {
         const tagHtml = p.clanTag ? `<span style="color:var(--text-muted);">${formatTMName(p.clanTag)}</span> ` : '';
         const nameHtml = p.name
@@ -2421,7 +2463,7 @@
         const pct = Math.round(p.winrate * 1000) / 10;
         html += `<tr><td>${label}</td><td>${p.faced}</td><td>${p.beaten}</td><td>${p.lostTo}</td><td>${pct}%</td></tr>`;
       });
-      html += '</table>';
+      html += '</table></div>';
     }
     html += '</div>';
     el.innerHTML = html;
