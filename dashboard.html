@@ -2250,10 +2250,18 @@
     return worldAssetsLoading;
   }
 
+  // Strips accents/diacritics (e.g. "Taïwan" -> "Taiwan") so alias lookups
+  // aren't defeated by a stray accent trackmania.io's zone data sometimes
+  // includes inconsistently — found via a real mismatch, not a guess.
+  function stripDiacritics(str){
+    return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  }
+
   function normalizeCountryName(raw){
     if (!raw) return null;
-    const key = raw.trim().toLowerCase();
-    return COUNTRY_NAME_ALIASES[key] || raw.trim();
+    const trimmed = raw.trim();
+    const key = stripDiacritics(trimmed.toLowerCase());
+    return COUNTRY_NAME_ALIASES[key] || trimmed;
   }
 
   async function renderRivalWorldMap(rivalMap){
