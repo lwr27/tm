@@ -167,6 +167,7 @@
     * { transition: none !important; }
   }
 </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/7.5.0/css/flag-icons.min.css">
 </head>
 <body>
 <header>
@@ -351,6 +352,7 @@
     <div class="scroll-table" id="clanTagTable" style="margin-bottom:1.5rem;"></div>
 
     <div class="range-row" id="rivalsSortRow"></div>
+    <input type="text" id="rivalsSearchBox" placeholder="Filter by name..." style="width:100%; max-width:280px; padding:8px 12px; margin-bottom:1rem; background:var(--surface); border:1px solid var(--border); border-radius:6px; color:var(--text-primary); font-size:13px;">
     <div id="rivalsStatus" style="font-size:13px; color:var(--text-muted); margin-bottom:1rem;"></div>
     <div class="scroll-table" id="rivalsTable"></div>
   </div>
@@ -559,20 +561,19 @@
     renderRivalsTab();
   }
 
-  // Builds a flag emoji from an ISO 3166-1 alpha-2 code by converting each
-  // letter to its Unicode regional indicator symbol (standard technique —
-  // no image assets needed, renders as a real flag in any modern font).
-  function emojiFlag(alpha2){
-    if (!alpha2 || alpha2.length !== 2) return '';
-    const codePoints = [...alpha2.toUpperCase()].map(c => 0x1F1E6 + (c.charCodeAt(0) - 65));
-    return String.fromCodePoint(...codePoints);
+  // Renders a real SVG flag via the flag-icons library (letters-not-flag
+  // was a Windows font limitation with emoji regional-indicator flags —
+  // this uses actual flag images instead, so it's not font-dependent.
+  function flagIconHtml(alpha2){
+    if (!alpha2) return '';
+    return `<span class="fi fi-${alpha2.toLowerCase()}" style="margin-right:4px; vertical-align:middle;"></span>`;
   }
 
   function flagForCountry(rawCountryName){
     if (!rawCountryName || !COUNTRY_TO_ALPHA2) return '';
     const normalized = normalizeCountryName(rawCountryName);
     const alpha2 = COUNTRY_TO_ALPHA2[normalized.trim().toLowerCase()];
-    return alpha2 ? emojiFlag(alpha2) : '';
+    return alpha2 ? flagIconHtml(alpha2) : '';
   }
 
   async function load(){
@@ -2020,7 +2021,9 @@
   // --- Rivals tab: per-player division-mate leaderboard from opponents.json ---
   let selectedRivalPlayer = null;
   let selectedMapCountry = null;
+  let rivalsSearchQuery = '';
   let rivalsSort = 'faced_desc';
+  const HOME_COUNTRY = 'United Kingdom'; // subtle default outline on the map, since that's where you are
   const RIVALS_SORTS = [
     { key: 'faced_desc', label: 'Most faced' },
     { key: 'beaten_desc', label: 'Most beaten' },
@@ -2067,6 +2070,10 @@
       sortEl.appendChild(btn);
     });
 
+    const searchEl = document.getElementById('rivalsSearchBox');
+    searchEl.value = rivalsSearchQuery;
+    searchEl.oninput = (e) => { rivalsSearchQuery = e.target.value; renderRivalsTab(); };
+
     const rivalMap = (OPPONENTS.players && OPPONENTS.players[shortOf(selectedRivalPlayer)]) || {};
     let rows = Object.entries(rivalMap).map(([accountId, v]) => {
       const lookup = (PLAYERS_LOOKUP && PLAYERS_LOOKUP[accountId]) || null;
@@ -2081,6 +2088,12 @@
     statusEl.textContent = PLAYERS_LOOKUP
       ? `${rows.length} opponent${rows.length === 1 ? '' : 's'} faced across division-mate cups. ${resolvedCount} names resolved so far (players.json backfill may still be in progress); others show a shortened account ID.`
       : `${rows.length} opponent${rows.length === 1 ? '' : 's'} faced across division-mate cups. players.json hasn't loaded — showing shortened account IDs only.`;
+
+    const query = rivalsSearchQuery.trim().toLowerCase();
+    if (query){
+      rows = rows.filter(r => r.name && r.name.toLowerCase().includes(query));
+      statusEl.textContent = `${rows.length} match${rows.length === 1 ? '' : 'es'} for "${rivalsSearchQuery.trim()}" (names only — unresolved accountIds can't be searched).`;
+    }
 
     rows.sort((a, b) => {
       switch (rivalsSort){
@@ -2102,7 +2115,10 @@
     shown.forEach(r => {
       const flagHtml = flagForCountry(r.country) ? `${flagForCountry(r.country)} ` : '';
       const tagHtml = r.clanTag ? `<span style="color:var(--text-muted);">${formatTMName(r.clanTag)}</span> ` : '';
-      const label = r.name ? `${flagHtml}${tagHtml}${r.name}` : shortAccountId(r.accountId);
+      const nameHtml = r.name
+        ? `<a href="https://trackmania.io/#/player/${r.accountId}" target="_blank" rel="noopener" style="color:inherit; text-decoration:none;">${r.name}</a>`
+        : shortAccountId(r.accountId);
+      const label = `${flagHtml}${tagHtml}${nameHtml}`;
       const pct = Math.round(r.winrate * 1000) / 10;
       html += `<tr><td>${label}</td><td>${r.faced}</td><td>${r.beaten}</td><td>${r.lostTo}</td><td>${pct}%</td></tr>`;
     });
@@ -2263,8 +2279,16 @@
       .attr('height', 'auto')
       .style('display', 'block');
 
-    function strokeFor(name){ return name === selectedMapCountry ? '#e8ecf5' : '#0b0e14'; }
-    function strokeWidthFor(name){ return name === selectedMapCountry ? 1.75 : 0.5; }
+    function strokeFor(name){
+      if (name === selectedMapCountry) return '#e8ecf5';
+      if (name === HOME_COUNTRY) return '#6d7891';
+      return '#0b0e14';
+    }
+    function strokeWidthFor(name){
+      if (name === selectedMapCountry) return 1.75;
+      if (name === HOME_COUNTRY) return 1.25;
+      return 0.5;
+    }
 
     const paths = svg.selectAll('path')
       .data(WORLD_GEO)
@@ -2302,6 +2326,7 @@
       <span>Win more</span>
       <span style="margin-left:12px; display:inline-flex; align-items:center; gap:5px;"><span style="display:inline-block; width:10px; height:10px; border-radius:2px; background:#2a3040;"></span> not enough data</span>
       <span style="margin-left:12px;">Click a country for its player list</span>
+      <span style="margin-left:12px; color:#6d7891;">— outlined: your home country</span>
     `;
 
     renderCountryDetailPanel(rivalMap, byCountry);
@@ -2342,7 +2367,10 @@
       html += '<table class="data"><tr><th>Opponent</th><th>Faced</th><th>Beaten</th><th>Lost to</th><th>Win rate</th></tr>';
       players.forEach(p => {
         const tagHtml = p.clanTag ? `<span style="color:var(--text-muted);">${formatTMName(p.clanTag)}</span> ` : '';
-        const label = p.name ? `${tagHtml}${p.name}` : shortAccountId(p.accountId);
+        const nameHtml = p.name
+          ? `<a href="https://trackmania.io/#/player/${p.accountId}" target="_blank" rel="noopener" style="color:inherit; text-decoration:none;">${p.name}</a>`
+          : shortAccountId(p.accountId);
+        const label = `${tagHtml}${nameHtml}`;
         const pct = Math.round(p.winrate * 1000) / 10;
         html += `<tr><td>${label}</td><td>${p.faced}</td><td>${p.beaten}</td><td>${p.lostTo}</td><td>${pct}%</td></tr>`;
       });
