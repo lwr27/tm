@@ -2435,8 +2435,16 @@
   function normalizeUKRegionName(raw){
     if (!raw) return null;
     const trimmed = raw.trim();
+    const lower = trimmed.toLowerCase();
+    // Confirmed via real console mismatch data (not guessed):
+    // "Yorkshire and the Humber" (no " England" suffix, lowercase "the")
+    // needs to become the ONS dataset's exact "Yorkshire and The Humber".
+    if (lower.includes('yorkshire') && lower.includes('humber')) return 'Yorkshire and The Humber';
+    // "East of England" was being wrongly caught by the generic " England"
+    // suffix-strip below (producing the bogus "East of") — it's already
+    // the correct ONS name and must be left alone.
+    if (lower === 'east of england' || lower === 'east of') return 'East of England';
     if (trimmed.endsWith(' England')) return trimmed.slice(0, -' England'.length);
-    if (trimmed.toLowerCase() === 'yorkshire and the humber england') return 'Yorkshire and The Humber';
     return trimmed;
   }
 
