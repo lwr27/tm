@@ -2100,7 +2100,7 @@
       chip.className = 'chip' + (name === selectedRivalPlayer ? ' active' : '');
       chip.style.setProperty('--chip-color', colorOf(name));
       chip.innerHTML = `<span class="dot" style="background:${colorOf(name)};"></span>${shortOf(name)}`;
-      chip.onclick = () => { selectedRivalPlayer = name; selectedMapCountry = 'United Kingdom'; renderRivalsTab(); };
+      chip.onclick = () => { selectedRivalPlayer = name; selectedMapCountry = 'United Kingdom'; selectedUKRegion = null; renderRivalsTab(); };
       chipsEl.appendChild(chip);
     });
 
@@ -2391,6 +2391,7 @@
         const name = WORLD_ID_TO_NAME[Number(d.id)] || null;
         if (!name) return;
         selectedMapCountry = (selectedMapCountry === name) ? null : name;
+        selectedUKRegion = null;
         paths.attr('stroke', dd => strokeFor(WORLD_ID_TO_NAME[Number(dd.id)] || ''))
              .attr('stroke-width', dd => strokeWidthFor(WORLD_ID_TO_NAME[Number(dd.id)] || ''));
         renderCountryDetailPanel(rivalMap, byCountry);
@@ -2421,6 +2422,121 @@
     renderCountryDetailPanel(rivalMap, byCountry);
   }
 
+  // --- UK sub-map: the 9 English regions + Scotland/Wales/NI ---
+  let selectedUKRegion = null;
+  let UK_GEO = null; // cached array of {name, geometry} features
+  let ukAssetsLoading = null;
+
+  // Confirmed via a real raw response: trackmania.io's English regions
+  // come back as "<Region> England" (e.g. "South West England"), while
+  // the boundary dataset just has the bare region name ("South West").
+  // Scotland/Wales/Northern Ireland aren't confirmed to need this same
+  // treatment yet, but pass through unchanged if they don't match.
+  function normalizeUKRegionName(raw){
+    if (!raw) return null;
+    const trimmed = raw.trim();
+    if (trimmed.endsWith(' England')) return trimmed.slice(0, -' England'.length);
+    if (trimmed.toLowerCase() === 'yorkshire and the humber england') return 'Yorkshire and The Humber';
+    return trimmed;
+  }
+
+  async function loadUKMapAssets(){
+    if (UK_GEO) return;
+    if (ukAssetsLoading) return ukAssetsLoading;
+    ukAssetsLoading = (async () => {
+      const res = await fetch('https://cdn.jsdelivr.net/gh/ONSvisual/topojson_boundaries/geogUKregion.json');
+      const topo = await res.json();
+      // Coordinates in this file are pre-projected (Web Mercator), not
+      // spherical lat/lon like the world map's dataset — rendered with
+      // geoIdentity below instead of a geographic projection.
+      UK_GEO = topojson.feature(topo, topo.objects.UKregionmerc).features;
+    })();
+    return ukAssetsLoading;
+  }
+
+  async function renderUKSubmap(players, rivalMap, byCountry){
+    const container = document.getElementById('ukSubmapContainer');
+    if (!container) return;
+    container.innerHTML = '<p style="font-size:12px; color:var(--text-muted); margin:8px 0;">Loading UK map...</p>';
+
+    try {
+      await loadUKMapAssets();
+    } catch (e){
+      container.innerHTML = '<p style="font-size:12px; color:var(--text-muted); margin:8px 0;">Could not load the UK map (network issue).</p>';
+      return;
+    }
+
+    const byRegion = {}; // normalized region name -> { faced, beaten }
+    let unresolvedRegion = 0;
+    players.forEach(p => {
+      const region = normalizeUKRegionName(p.subregion);
+      if (!region){ unresolvedRegion += p.faced; return; }
+      const bucket = (byRegion[region] = byRegion[region] || { faced: 0, beaten: 0 });
+      bucket.faced += p.faced;
+      bucket.beaten += p.beaten;
+    });
+
+    // Same diagnostic pattern as the world map — only 1 of the 9 English
+    // region names is confirmed against real data so far, so surface any
+    // others that don't match instead of silently showing them as grey.
+    const mapNames = new Set(UK_GEO.map(f => f.properties.AREANM));
+    const unmatched = Object.entries(byRegion).filter(([name]) => !mapNames.has(name));
+    if (unmatched.length){
+      console.warn(`[UK map] ${unmatched.length} region name(s) from your data don't match the map dataset:`,
+        unmatched.map(([name, c]) => `"${name}" (${c.faced} faced)`));
+    }
+
+    const MIN_FACED_FOR_COLOR = 2; // UK-only subset is naturally smaller volume than the whole-world map
+    function colorFor(name){
+      const c = byRegion[name];
+      if (!c || c.faced < MIN_FACED_FOR_COLOR) return '#2a3040';
+      const winrate = c.beaten / c.faced;
+      const t = Math.max(0, Math.min(1, winrate));
+      const lo = t < 0.5 ? [239, 68, 68] : [148, 163, 184];
+      const hi = t < 0.5 ? [148, 163, 184] : [34, 197, 94];
+      const localT = t < 0.5 ? t / 0.5 : (t - 0.5) / 0.5;
+      const rgb = lo.map((c0, i) => Math.round(c0 + (hi[i] - c0) * localT));
+      return `rgb(${rgb[0]},${rgb[1]},${rgb[2]})`;
+    }
+
+    const width = container.clientWidth || 420, height = Math.round(width * 1.15);
+    const projection = d3.geoIdentity().reflectY(true).fitSize([width, height], { type: 'FeatureCollection', features: UK_GEO });
+    const path = d3.geoPath(projection);
+
+    container.innerHTML = '';
+    const svg = d3.select(container).append('svg')
+      .attr('viewBox', `0 0 ${width} ${height}`)
+      .attr('width', '100%').attr('height', 'auto')
+      .style('display', 'block').style('margin', '8px 0');
+
+    function strokeFor(name){ return name === selectedUKRegion ? '#e8ecf5' : '#0b0e14'; }
+    function strokeWidthFor(name){ return name === selectedUKRegion ? 1.75 : 0.5; }
+
+    const paths = svg.selectAll('path')
+      .data(UK_GEO)
+      .join('path')
+      .attr('d', path)
+      .attr('fill', d => colorFor(d.properties.AREANM))
+      .attr('stroke', d => strokeFor(d.properties.AREANM))
+      .attr('stroke-width', d => strokeWidthFor(d.properties.AREANM))
+      .style('cursor', 'pointer')
+      .on('click', (event, d) => {
+        const name = d.properties.AREANM;
+        selectedUKRegion = (selectedUKRegion === name) ? null : name;
+        paths.attr('stroke', dd => strokeFor(dd.properties.AREANM))
+             .attr('stroke-width', dd => strokeWidthFor(dd.properties.AREANM));
+        renderCountryDetailPanel(rivalMap, byCountry);
+      });
+
+    paths.append('title').text(d => {
+      const name = d.properties.AREANM;
+      const c = byRegion[name];
+      if (!c) return name;
+      const pct = Math.round((c.beaten / c.faced) * 1000) / 10;
+      return `${name}: ${c.beaten}/${c.faced} beaten (${pct}%)`;
+    });
+  }
+
   function renderCountryDetailPanel(rivalMap, byCountry){
     const el = document.getElementById('rivalCountryDetail');
     if (!selectedMapCountry){ el.innerHTML = ''; return; }
@@ -2434,6 +2550,7 @@
           accountId,
           name: (lookup && lookup.name) || null,
           clanTag: (lookup && lookup.clanTag) || null,
+          subregion: (lookup && lookup.subregion) || null,
           faced: v.faced, beaten: v.beaten, lostTo: v.lostTo,
           winrate: v.faced > 0 ? v.beaten / v.faced : 0,
         };
@@ -2448,13 +2565,22 @@
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
         <strong style="font-size:14px;">${flagForCountry(selectedMapCountry)} ${selectedMapCountry} <span style="color:var(--text-muted); font-weight:400;">— ${summary}</span></strong>
         <a href="#" id="clearCountrySelection" style="font-size:12px; color:var(--text-muted);">clear</a>
-      </div>`;
+      </div>
+      <div id="ukSubmapContainer"></div>`;
 
-    if (!players.length){
+    const shownPlayers = selectedUKRegion
+      ? players.filter(p => normalizeUKRegionName(p.subregion) === selectedUKRegion)
+      : players;
+
+    if (selectedMapCountry === 'United Kingdom' && selectedUKRegion){
+      html += `<p style="font-size:12px; color:var(--text-muted); margin:8px 0;">Showing just <strong style="color:var(--text-secondary);">${selectedUKRegion}</strong> — <a href="#" id="clearUKRegion" style="color:var(--text-secondary);">show all UK</a></p>`;
+    }
+
+    if (!shownPlayers.length){
       html += `<p style="font-size:13px; color:var(--text-muted);">No individually-tallied opponents from here (may be below the resolved top-list, or country-only data with no per-opponent breakdown).</p>`;
     } else {
       html += '<div class="scroll-table" style="max-height:320px; overflow-y:auto;"><table class="data"><tr><th>Opponent</th><th>Faced</th><th>Beaten</th><th>Lost to</th><th>Win rate</th></tr>';
-      players.forEach(p => {
+      shownPlayers.forEach(p => {
         const tagHtml = p.clanTag ? `<span style="color:var(--text-muted);">${formatTMName(p.clanTag)}</span> ` : '';
         const nameHtml = p.name
           ? `<a href="https://trackmania.io/#/player/${p.accountId}" target="_blank" rel="noopener" style="color:inherit; text-decoration:none;">${p.name}</a>`
@@ -2471,8 +2597,19 @@
     document.getElementById('clearCountrySelection').onclick = (e) => {
       e.preventDefault();
       selectedMapCountry = null;
+      selectedUKRegion = null;
       renderRivalWorldMap(rivalMap);
     };
+    const clearUKEl = document.getElementById('clearUKRegion');
+    if (clearUKEl) clearUKEl.onclick = (e) => {
+      e.preventDefault();
+      selectedUKRegion = null;
+      renderCountryDetailPanel(rivalMap, byCountry);
+    };
+
+    if (selectedMapCountry === 'United Kingdom'){
+      renderUKSubmap(players, rivalMap, byCountry);
+    }
   }
 
   load();
