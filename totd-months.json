@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-07-06T22:08:29.166Z",
+  "fetchedAt": "2026-07-08T21:39:51.646Z",
   "maps": [
     {
       "mapUid": "pjCB31IwUZgVsBUP9IF81lx7eh4",
@@ -54,6 +54,24 @@
       "day": 6,
       "monthYear": "2026-07",
       "leaderboardUid": "438da995-0b22-44ce-aeaf-38bf53a78922"
+    },
+    {
+      "mapUid": "KoRDcekinBkMwQhzQrCKH4Zu2O4",
+      "mapId": "e8d904b1-244a-45f3-9600-0213e44af5e6",
+      "name": "$060P$fffalm$060Q$fffueen",
+      "authorTimeMs": 36162,
+      "day": 7,
+      "monthYear": "2026-07",
+      "leaderboardUid": "2131ae0f-b5ff-4ee5-9c07-b3460a84f3e7"
+    },
+    {
+      "mapUid": "Cmyu3ppPy546wJm03Ech66ouI3l",
+      "mapId": "5f94d6bd-9394-4858-ac4f-021807948c35",
+      "name": "$i$o$555U$444t$AAAa$CCCx $gft' Artroy666",
+      "authorTimeMs": 44381,
+      "day": 8,
+      "monthYear": "2026-07",
+      "leaderboardUid": "0ac9c328-e470-4fd4-b18f-423f8b3e8f7c"
     },
     {
       "mapUid": "eXBJaLi77IQlmn97nGSUDliJbM5",

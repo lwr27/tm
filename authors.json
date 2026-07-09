@@ -2749,7 +2749,7 @@
       "totalFinishers": 12221,
       "pct": 21.4,
       "playerHasAuthor": {
-        "XV27": false,
+        "XV27": true,
         "TheBreaker0": false,
         "Pho3nix_.": true
       }
@@ -29932,7 +29932,7 @@
       "totalFinishers": 12858,
       "pct": 21.6,
       "playerHasAuthor": {
-        "XV27": false,
+        "XV27": true,
         "TheBreaker0": false,
         "Pho3nix_.": true
       }
@@ -34301,7 +34301,7 @@
       "totalFinishers": 12286,
       "pct": 26.4,
       "playerHasAuthor": {
-        "XV27": false,
+        "XV27": true,
         "TheBreaker0": false,
         "Pho3nix_.": true
       }
@@ -37482,10 +37482,48 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "KoRDcekinBkMwQhzQrCKH4Zu2O4",
+      "mapId": "e8d904b1-244a-45f3-9600-0213e44af5e6",
+      "name": "$060P$fffalm$060Q$fffueen",
+      "authorTimeMs": 36162,
+      "day": 7,
+      "monthYear": "2026-07",
+      "leaderboardUid": "2131ae0f-b5ff-4ee5-9c07-b3460a84f3e7",
+      "authorCount": 977,
+      "totalFinishers": 7009,
+      "pct": 13.9,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
+    },
+    {
+      "mapUid": "Cmyu3ppPy546wJm03Ech66ouI3l",
+      "mapId": "5f94d6bd-9394-4858-ac4f-021807948c35",
+      "name": "$i$o$555U$444t$AAAa$CCCx $gft' Artroy666",
+      "authorTimeMs": 44381,
+      "day": 8,
+      "monthYear": "2026-07",
+      "leaderboardUid": "0ac9c328-e470-4fd4-b18f-423f8b3e8f7c",
+      "authorCount": 121,
+      "totalFinishers": 3977,
+      "pct": 3,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-07-06T18:07:49.874Z",
-  "medalsRefreshedAt": "2026-07-06T22:37:20.260Z",
+  "generatedAt": "2026-07-08T21:40:35.143Z",
+  "medalsRefreshedAt": "2026-07-08T22:11:44.765Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",
@@ -37494,6 +37532,30 @@
       "mapName": "$dffMy $bffL$dffo$fffv$dffe $bffIs $dffWi$fffn$dffte$bffr",
       "achievedAt": "2026-07-06T18:06:44+00:00",
       "detectedAt": "2026-07-06T18:35:42.411Z"
+    },
+    {
+      "key": "XV27|3zRnELVgSn6ikfBWQoAjlZwyDuk",
+      "player": "XV27",
+      "mapUid": "3zRnELVgSn6ikfBWQoAjlZwyDuk",
+      "mapName": "$iVICTIM TO MY $fe0BRAIN $000ft' $fffCotton",
+      "achievedAt": "2026-07-07T19:26:01+00:00",
+      "detectedAt": "2026-07-08T21:42:55.515Z"
+    },
+    {
+      "key": "XV27|1vella1EQSOH3xHy6anwafloXG8",
+      "player": "XV27",
+      "mapUid": "1vella1EQSOH3xHy6anwafloXG8",
+      "mapName": "$F93 Cold Warmth!",
+      "achievedAt": "2026-07-07T19:06:15+00:00",
+      "detectedAt": "2026-07-08T22:05:33.155Z"
+    },
+    {
+      "key": "XV27|5G1WTldWDF810zEiS5dxiS2DtMj",
+      "player": "XV27",
+      "mapUid": "5G1WTldWDF810zEiS5dxiS2DtMj",
+      "mapName": "$wWest",
+      "achievedAt": "2026-07-07T19:04:27+00:00",
+      "detectedAt": "2026-07-08T22:09:10.382Z"
     }
   ]
 }

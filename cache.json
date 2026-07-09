@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-06T22:08:22.831Z",
+  "generatedAt": "2026-07-08T21:39:44.965Z",
   "players": {
     "XV27 & Whidot": {
       "cups": [
@@ -14716,10 +14716,38 @@
           "score": 29,
           "qualificationrank": 512,
           "totalplayers": 1795
+        },
+        {
+          "id": 44014,
+          "timestamp": "2026-07-07T17:16:30Z",
+          "name": "COTD 2026-07-07 #1",
+          "mapuid": "KoRDcekinBkMwQhzQrCKH4Zu2O4",
+          "mapgroup": "2131ae0f-b5ff-4ee5-9c07-b3460a84f3e7",
+          "mapname": "$060P$fffalm$060Q$fffueen",
+          "div": 15,
+          "rank": 960,
+          "divrank": 0,
+          "score": 0,
+          "qualificationrank": 947,
+          "totalplayers": 1623
+        },
+        {
+          "id": 44029,
+          "timestamp": "2026-07-08T17:16:30Z",
+          "name": "COTD 2026-07-08 #1",
+          "mapuid": "Cmyu3ppPy546wJm03Ech66ouI3l",
+          "mapgroup": "0ac9c328-e470-4fd4-b18f-423f8b3e8f7c",
+          "mapname": "$i$o$555U$444t$AAAa$CCCx $gft' Artroy666",
+          "div": 9,
+          "rank": 526,
+          "divrank": 14,
+          "score": 30,
+          "qualificationrank": 521,
+          "totalplayers": 1677
         }
       ],
       "stats": {
-        "total": 1051,
+        "total": 1053,
         "bestrank": 72,
         "avgrank": 791,
         "bestdiv": 2,
@@ -30073,10 +30101,24 @@
           "score": 17,
           "qualificationrank": 733,
           "totalplayers": 1795
+        },
+        {
+          "id": 44029,
+          "timestamp": "2026-07-08T17:16:30Z",
+          "name": "COTD 2026-07-08 #1",
+          "mapuid": "Cmyu3ppPy546wJm03Ech66ouI3l",
+          "mapgroup": "0ac9c328-e470-4fd4-b18f-423f8b3e8f7c",
+          "mapname": "$i$o$555U$444t$AAAa$CCCx $gft' Artroy666",
+          "div": 16,
+          "rank": 1007,
+          "divrank": 47,
+          "score": 1,
+          "qualificationrank": 968,
+          "totalplayers": 1677
         }
       ],
       "stats": {
-        "total": 1096,
+        "total": 1097,
         "bestrank": 160,
         "avgrank": 1047,
         "bestdiv": 3,
@@ -43750,15 +43792,29 @@
           "score": 14,
           "qualificationrank": 545,
           "totalplayers": 1795
+        },
+        {
+          "id": 44029,
+          "timestamp": "2026-07-08T17:16:30Z",
+          "name": "COTD 2026-07-08 #1",
+          "mapuid": "Cmyu3ppPy546wJm03Ech66ouI3l",
+          "mapgroup": "0ac9c328-e470-4fd4-b18f-423f8b3e8f7c",
+          "mapname": "$i$o$555U$444t$AAAa$CCCx $gft' Artroy666",
+          "div": 8,
+          "rank": 449,
+          "divrank": 1,
+          "score": 50,
+          "qualificationrank": 499,
+          "totalplayers": 1677
         }
       ],
       "stats": {
-        "total": 976,
+        "total": 977,
         "bestrank": 2,
-        "avgrank": 854,
+        "avgrank": 853,
         "bestdiv": 1,
         "totalwins": 0,
-        "totaldivwins": 28,
+        "totaldivwins": 29,
         "winstreak": 0
       }
     }
