@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-08T21:39:44.965Z",
+  "generatedAt": "2026-07-09T22:26:34.672Z",
   "players": {
     "XV27 & Whidot": {
       "cups": [
@@ -14744,12 +14744,26 @@
           "score": 30,
           "qualificationrank": 521,
           "totalplayers": 1677
+        },
+        {
+          "id": 44048,
+          "timestamp": "2026-07-09T17:16:30Z",
+          "name": "COTD 2026-07-09 #1",
+          "mapuid": "IV3A_Lxh_6CcEGiw3HAqeKkJUvk",
+          "mapgroup": "32150a61-8ce0-492a-ac23-22cfedbc5402",
+          "mapname": "$F00U$F88T$FFFR - De Rode Gladiool",
+          "div": 6,
+          "rank": 342,
+          "divrank": 22,
+          "score": 34,
+          "qualificationrank": 378,
+          "totalplayers": 1664
         }
       ],
       "stats": {
-        "total": 1053,
+        "total": 1054,
         "bestrank": 72,
-        "avgrank": 791,
+        "avgrank": 790,
         "bestdiv": 2,
         "totalwins": 0,
         "totaldivwins": 27,

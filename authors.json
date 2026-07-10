@@ -163,7 +163,7 @@
       "totalFinishers": 10943,
       "pct": 21,
       "playerHasAuthor": {
-        "XV27": false,
+        "XV27": true,
         "TheBreaker0": true,
         "Pho3nix_.": true
       },
@@ -29643,7 +29643,7 @@
       "totalFinishers": 12583,
       "pct": 21.1,
       "playerHasAuthor": {
-        "XV27": false,
+        "XV27": true,
         "TheBreaker0": false,
         "Pho3nix_.": true
       }
@@ -37520,10 +37520,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "IV3A_Lxh_6CcEGiw3HAqeKkJUvk",
+      "mapId": "f90301d4-d521-4571-9792-0e289f890344",
+      "name": "$F00U$F88T$FFFR - De Rode Gladiool",
+      "authorTimeMs": 54847,
+      "day": 9,
+      "monthYear": "2026-07",
+      "leaderboardUid": "32150a61-8ce0-492a-ac23-22cfedbc5402",
+      "authorCount": 5,
+      "totalFinishers": 3981,
+      "pct": 0.1,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-07-08T21:40:35.143Z",
-  "medalsRefreshedAt": "2026-07-08T22:11:44.765Z",
+  "generatedAt": "2026-07-09T22:26:50.760Z",
+  "medalsRefreshedAt": "2026-07-09T22:58:15.359Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",
@@ -37556,6 +37575,22 @@
       "mapName": "$wWest",
       "achievedAt": "2026-07-07T19:04:27+00:00",
       "detectedAt": "2026-07-08T22:09:10.382Z"
+    },
+    {
+      "key": "XV27|gmcDMkOTcgZ5ZHxYVYtk9gSK1h2",
+      "player": "XV27",
+      "mapUid": "gmcDMkOTcgZ5ZHxYVYtk9gSK1h2",
+      "mapName": "$d44Thats B*mping Awesome! [COTD Edition]",
+      "achievedAt": "2026-07-09T21:49:25+00:00",
+      "detectedAt": "2026-07-09T22:27:01.725Z"
+    },
+    {
+      "key": "XV27|7PrYDGpgELsLkQr1lOaOtjMF6te",
+      "player": "XV27",
+      "mapUid": "7PrYDGpgELsLkQr1lOaOtjMF6te",
+      "mapName": "$000 Black Mamba",
+      "achievedAt": "2026-07-09T21:18:58+00:00",
+      "detectedAt": "2026-07-09T22:51:45.367Z"
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-07-08T21:39:51.646Z",
+  "fetchedAt": "2026-07-09T22:26:41.537Z",
   "maps": [
     {
       "mapUid": "pjCB31IwUZgVsBUP9IF81lx7eh4",
@@ -72,6 +72,15 @@
       "day": 8,
       "monthYear": "2026-07",
       "leaderboardUid": "0ac9c328-e470-4fd4-b18f-423f8b3e8f7c"
+    },
+    {
+      "mapUid": "IV3A_Lxh_6CcEGiw3HAqeKkJUvk",
+      "mapId": "f90301d4-d521-4571-9792-0e289f890344",
+      "name": "$F00U$F88T$FFFR - De Rode Gladiool",
+      "authorTimeMs": 54847,
+      "day": 9,
+      "monthYear": "2026-07",
+      "leaderboardUid": "32150a61-8ce0-492a-ac23-22cfedbc5402"
     },
     {
       "mapUid": "eXBJaLi77IQlmn97nGSUDliJbM5",
