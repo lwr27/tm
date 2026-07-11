@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-10T22:09:49.041Z",
+  "generatedAt": "2026-07-11T21:55:17.985Z",
   "players": {
     "XV27 & Whidot": {
       "cups": [
@@ -14772,10 +14772,24 @@
           "score": 7,
           "qualificationrank": 701,
           "totalplayers": 1537
+        },
+        {
+          "id": 44089,
+          "timestamp": "2026-07-11T17:16:30Z",
+          "name": "COTD 2026-07-11 #1",
+          "mapuid": "6xhQOkNn42x_yCrz0QLRh8w0yVg",
+          "mapgroup": "b8faa9d4-351c-43ad-92fd-10352c6c7020",
+          "mapname": "Tarka Rise",
+          "div": 10,
+          "rank": 640,
+          "divrank": 0,
+          "score": 0,
+          "qualificationrank": 617,
+          "totalplayers": 1583
         }
       ],
       "stats": {
-        "total": 1055,
+        "total": 1056,
         "bestrank": 72,
         "avgrank": 790,
         "bestdiv": 2,

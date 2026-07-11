@@ -31156,7 +31156,7 @@
       "totalFinishers": 14037,
       "pct": 20.2,
       "playerHasAuthor": {
-        "XV27": false,
+        "XV27": true,
         "TheBreaker0": false,
         "Pho3nix_.": true
       }
@@ -31190,7 +31190,7 @@
       "totalFinishers": 14121,
       "pct": 20.8,
       "playerHasAuthor": {
-        "XV27": false,
+        "XV27": true,
         "TheBreaker0": false,
         "Pho3nix_.": true
       }
@@ -37558,10 +37558,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "6xhQOkNn42x_yCrz0QLRh8w0yVg",
+      "mapId": "868ff6b1-330c-4af2-af07-920f902941f4",
+      "name": "Tarka Rise",
+      "authorTimeMs": 42187,
+      "day": 11,
+      "monthYear": "2026-07",
+      "leaderboardUid": "b8faa9d4-351c-43ad-92fd-10352c6c7020",
+      "authorCount": 629,
+      "totalFinishers": 4025,
+      "pct": 15.6,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-07-10T22:10:06.569Z",
-  "medalsRefreshedAt": "2026-07-10T22:39:02.317Z",
+  "generatedAt": "2026-07-11T21:55:48.754Z",
+  "medalsRefreshedAt": "2026-07-11T22:25:27.496Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",
@@ -37610,6 +37629,22 @@
       "mapName": "$000 Black Mamba",
       "achievedAt": "2026-07-09T21:18:58+00:00",
       "detectedAt": "2026-07-09T22:51:45.367Z"
+    },
+    {
+      "key": "XV27|8953Udd1qIpvSZr3l02seKk03d0",
+      "player": "XV27",
+      "mapUid": "8953Udd1qIpvSZr3l02seKk03d0",
+      "mapName": "$eee[NotRPG] $2e5The Sheepments",
+      "achievedAt": "2026-07-11T20:41:55+00:00",
+      "detectedAt": "2026-07-11T22:20:30.706Z"
+    },
+    {
+      "key": "XV27|v3YJgrB3dOc3t6z_WcYIiv1bel6",
+      "player": "XV27",
+      "mapUid": "v3YJgrB3dOc3t6z_WcYIiv1bel6",
+      "mapName": "green belt",
+      "achievedAt": "2026-07-11T20:31:06+00:00",
+      "detectedAt": "2026-07-11T22:20:32.307Z"
     }
   ]
 }

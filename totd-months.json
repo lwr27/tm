@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-07-10T22:09:55.384Z",
+  "fetchedAt": "2026-07-11T21:55:24.599Z",
   "maps": [
     {
       "mapUid": "pjCB31IwUZgVsBUP9IF81lx7eh4",
@@ -90,6 +90,15 @@
       "day": 10,
       "monthYear": "2026-07",
       "leaderboardUid": "0f3a1739-daa0-45cd-939e-2e3a77c64296"
+    },
+    {
+      "mapUid": "6xhQOkNn42x_yCrz0QLRh8w0yVg",
+      "mapId": "868ff6b1-330c-4af2-af07-920f902941f4",
+      "name": "Tarka Rise",
+      "authorTimeMs": 42187,
+      "day": 11,
+      "monthYear": "2026-07",
+      "leaderboardUid": "b8faa9d4-351c-43ad-92fd-10352c6c7020"
     },
     {
       "mapUid": "eXBJaLi77IQlmn97nGSUDliJbM5",
