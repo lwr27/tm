@@ -22195,6 +22195,17 @@
       ],
       "env": "Stadium",
       "mxid": 329921
+    },
+    "MJa8BAifx_cFJW39VaHUMqYyHo4": {
+      "found": true,
+      "name": "Meridian Emery",
+      "tags": [
+        "Dirt",
+        "Scenery",
+        "SpeedMapping"
+      ],
+      "env": "Stadium",
+      "mxid": 330475
     }
   }
 }
