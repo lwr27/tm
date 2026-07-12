@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-07-11T21:55:24.599Z",
+  "fetchedAt": "2026-07-12T21:56:26.785Z",
   "maps": [
     {
       "mapUid": "pjCB31IwUZgVsBUP9IF81lx7eh4",
@@ -99,6 +99,15 @@
       "day": 11,
       "monthYear": "2026-07",
       "leaderboardUid": "b8faa9d4-351c-43ad-92fd-10352c6c7020"
+    },
+    {
+      "mapUid": "zEMpnBk25dUlxu3T9xtmz_v2Aw1",
+      "mapId": "cbcc60e0-256d-412c-8bb0-4bdcc9039549",
+      "name": "SONday Funyay",
+      "authorTimeMs": 54847,
+      "day": 12,
+      "monthYear": "2026-07",
+      "leaderboardUid": "f9e4b02f-cbea-4979-8644-31d098a9be66"
     },
     {
       "mapUid": "eXBJaLi77IQlmn97nGSUDliJbM5",

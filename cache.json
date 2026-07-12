@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-11T21:55:17.985Z",
+  "generatedAt": "2026-07-12T21:56:20.160Z",
   "players": {
     "XV27 & Whidot": {
       "cups": [
@@ -30157,12 +30157,26 @@
           "score": 1,
           "qualificationrank": 968,
           "totalplayers": 1677
+        },
+        {
+          "id": 44109,
+          "timestamp": "2026-07-12T17:16:30Z",
+          "name": "COTD 2026-07-12 #1",
+          "mapuid": "zEMpnBk25dUlxu3T9xtmz_v2Aw1",
+          "mapgroup": "f9e4b02f-cbea-4979-8644-31d098a9be66",
+          "mapname": "SONday Funyay",
+          "div": 15,
+          "rank": 915,
+          "divrank": 19,
+          "score": 28,
+          "qualificationrank": 960,
+          "totalplayers": 1804
         }
       ],
       "stats": {
-        "total": 1097,
+        "total": 1098,
         "bestrank": 160,
-        "avgrank": 1047,
+        "avgrank": 1046,
         "bestdiv": 3,
         "totalwins": 0,
         "totaldivwins": 18,
@@ -43862,12 +43876,26 @@
           "score": 9,
           "qualificationrank": 320,
           "totalplayers": 1537
+        },
+        {
+          "id": 44109,
+          "timestamp": "2026-07-12T17:16:30Z",
+          "name": "COTD 2026-07-12 #1",
+          "mapuid": "zEMpnBk25dUlxu3T9xtmz_v2Aw1",
+          "mapgroup": "f9e4b02f-cbea-4979-8644-31d098a9be66",
+          "mapname": "SONday Funyay",
+          "div": 7,
+          "rank": 423,
+          "divrank": 39,
+          "score": 16,
+          "qualificationrank": 418,
+          "totalplayers": 1804
         }
       ],
       "stats": {
-        "total": 978,
+        "total": 979,
         "bestrank": 2,
-        "avgrank": 853,
+        "avgrank": 852,
         "bestdiv": 1,
         "totalwins": 0,
         "totaldivwins": 29,

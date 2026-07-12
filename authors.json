@@ -37577,10 +37577,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "zEMpnBk25dUlxu3T9xtmz_v2Aw1",
+      "mapId": "cbcc60e0-256d-412c-8bb0-4bdcc9039549",
+      "name": "SONday Funyay",
+      "authorTimeMs": 54847,
+      "day": 12,
+      "monthYear": "2026-07",
+      "leaderboardUid": "f9e4b02f-cbea-4979-8644-31d098a9be66",
+      "authorCount": 73,
+      "totalFinishers": 4212,
+      "pct": 1.7,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-07-11T21:55:48.754Z",
-  "medalsRefreshedAt": "2026-07-11T22:25:27.496Z",
+  "generatedAt": "2026-07-12T21:56:35.774Z",
+  "medalsRefreshedAt": "2026-07-12T22:27:00.686Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",
