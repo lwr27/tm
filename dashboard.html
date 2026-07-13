@@ -210,6 +210,8 @@
     <div id="chartModal" class="chart-modal" hidden>
       <div class="chart-modal-bar">
         <span class="chart-modal-title">Glicko-2 qualifier rating — full history</span>
+        <span style="font-size:11px; color:var(--text-muted); margin-left:auto; margin-right:12px;">Scroll to zoom · drag to pan</span>
+        <button id="chartResetZoomBtn" class="range-btn">⟲ Reset zoom</button>
         <button id="chartModalClose" class="range-btn">✕ Close</button>
       </div>
       <div class="chart-modal-body"><canvas id="divChartFull"></canvas></div>
@@ -361,10 +363,13 @@
 </main>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-zoom/2.0.1/chartjs-plugin-zoom.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
 <script>
 (function(){
+  if (window.ChartZoom) Chart.register(window.ChartZoom);
   const PLAYER_META = {
     'XV27 & Whidot': { color: '#f5a623', short: 'XV27' },
     'TheBreaker0':   { color: '#ef4444', short: 'TheBreaker0' },
@@ -955,7 +960,21 @@
       options: {
         responsive: true, maintainAspectRatio: false,
         layout: { padding: { right: 120 } },
-        plugins: { legend: { display: false } },
+        plugins: {
+          legend: { display: false },
+          // Scroll wheel / pinch to zoom, click-drag to pan. X-axis only
+          // (time), since that's what "zoom in on a stretch of history"
+          // means here — zooming the rating axis wouldn't be useful.
+          zoom: {
+            pan: { enabled: true, mode: 'x' },
+            zoom: {
+              wheel: { enabled: true },
+              pinch: { enabled: true },
+              mode: 'x',
+            },
+            limits: { x: { min: 'original', max: 'original' } }
+          }
+        },
         scales: {
           y: { ticks: { color: '#a8b0c3', font: { family: "'JetBrains Mono', monospace", size: 11 } }, grid: { color: 'rgba(255,255,255,0.07)' } },
           x: { ticks: { autoSkip: true, maxTicksLimit: 12, color: '#a8b0c3', maxRotation: 0, autoSkipPadding: 24, callback: function(v){ const l = this.getLabelForValue(v); const m = l && l.match(/\d{4}-\d{2}-\d{2}/); return m ? m[0] : l; } }, grid: { display: false } }
@@ -969,6 +988,7 @@
   }
   document.getElementById('chartFullscreenBtn').onclick = openChartFullscreen;
   document.getElementById('chartModalClose').onclick = closeChartFullscreen;
+  document.getElementById('chartResetZoomBtn').onclick = () => { if (divChartFull) divChartFull.resetZoom(); };
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeChartFullscreen(); });
 
   // Draws the y-axis rating numbers on a slim fixed canvas beside the
