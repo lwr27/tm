@@ -37615,10 +37615,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "dasm3lJIt4jzbHOB9ObDEmvI9pc",
+      "mapId": "443f6d93-5cf8-4353-a1ca-4a7a3cae80df",
+      "name": "$s$i$FECCalvert Drain",
+      "authorTimeMs": 40729,
+      "day": 14,
+      "monthYear": "2026-07",
+      "leaderboardUid": "cc74bd02-183f-4c5f-bdd6-2365eeb423d0",
+      "authorCount": 119,
+      "totalFinishers": 2784,
+      "pct": 4.3,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-07-13T22:01:14.527Z",
-  "medalsRefreshedAt": "2026-07-14T08:11:48.267Z",
+  "generatedAt": "2026-07-14T18:31:39.470Z",
+  "medalsRefreshedAt": "2026-07-14T19:01:40.778Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",

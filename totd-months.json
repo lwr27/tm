@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-07-14T07:42:45.796Z",
+  "fetchedAt": "2026-07-14T18:31:27.931Z",
   "maps": [
     {
       "mapUid": "pjCB31IwUZgVsBUP9IF81lx7eh4",
@@ -117,6 +117,15 @@
       "day": 13,
       "monthYear": "2026-07",
       "leaderboardUid": "10ee4b8a-6956-4a50-a32d-8ec7109a9ee3"
+    },
+    {
+      "mapUid": "dasm3lJIt4jzbHOB9ObDEmvI9pc",
+      "mapId": "443f6d93-5cf8-4353-a1ca-4a7a3cae80df",
+      "name": "$s$i$FECCalvert Drain",
+      "authorTimeMs": 40729,
+      "day": 14,
+      "monthYear": "2026-07",
+      "leaderboardUid": "cc74bd02-183f-4c5f-bdd6-2365eeb423d0"
     },
     {
       "mapUid": "eXBJaLi77IQlmn97nGSUDliJbM5",
