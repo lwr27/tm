@@ -1,9 +1,5 @@
 name: Update TOTD data
 on:
-  schedule:
-    # Daily at 21:00 UTC — comfortably after the day's new TOTD is live.
-    # and its leaderboard has some finishers on it.
-    - cron: '0 21 * * *'
   workflow_dispatch: {}
 permissions:
   contents: write
