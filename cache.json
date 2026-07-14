@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-14T18:31:21.286Z",
+  "generatedAt": "2026-07-14T21:22:51.746Z",
   "players": {
     "XV27 & Whidot": {
       "cups": [
@@ -14800,10 +14800,24 @@
           "score": 28,
           "qualificationrank": 811,
           "totalplayers": 1818
+        },
+        {
+          "id": 44139,
+          "timestamp": "2026-07-14T17:16:30Z",
+          "name": "COTD 2026-07-14 #1",
+          "mapuid": "dasm3lJIt4jzbHOB9ObDEmvI9pc",
+          "mapgroup": "cc74bd02-183f-4c5f-bdd6-2365eeb423d0",
+          "mapname": "$s$i$FECCalvert Drain",
+          "div": 10,
+          "rank": 611,
+          "divrank": 35,
+          "score": 20,
+          "qualificationrank": 623,
+          "totalplayers": 1827
         }
       ],
       "stats": {
-        "total": 1057,
+        "total": 1058,
         "bestrank": 72,
         "avgrank": 790,
         "bestdiv": 2,
