@@ -22245,6 +22245,16 @@
       "tags": [],
       "env": null,
       "mxid": null
+    },
+    "IBzcGg0IcbtNP7VjzxJ8mmg46qh": {
+      "found": true,
+      "name": "despair",
+      "tags": [
+        "Dirt",
+        "Scenery"
+      ],
+      "env": "Stadium",
+      "mxid": 223608
     }
   }
 }
