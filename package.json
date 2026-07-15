@@ -11,7 +11,8 @@
     "authors": "node fetch-authors.js",
     "medals": "node refresh-medals.js",
     "opponents": "node fetch-opponents.js",
-    "names": "node resolve-player-names.js"
+    "names": "node resolve-player-names.js",
+    "wipe-author-stats": "node wipe-author-stats.js"
   },
   "engines": {
     "node": ">=18"
