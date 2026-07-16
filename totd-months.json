@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-07-15T20:09:38.465Z",
+  "fetchedAt": "2026-07-16T19:31:10.700Z",
   "maps": [
     {
       "mapUid": "pjCB31IwUZgVsBUP9IF81lx7eh4",
@@ -135,6 +135,15 @@
       "day": 15,
       "monthYear": "2026-07",
       "leaderboardUid": "87f68d2f-dc8c-4b16-a85a-f257570d62f5"
+    },
+    {
+      "mapUid": "0pLD7M4oMRfPK8BiZH5Gatf7hR4",
+      "mapId": "69a95fc1-56e6-45ff-b671-ea5584c6a908",
+      "name": "$z$s$db0G$eeeOLDEN SKANS FT' $db0M$eeeAP",
+      "authorTimeMs": 43010,
+      "day": 16,
+      "monthYear": "2026-07",
+      "leaderboardUid": "96133f1e-d0de-4ad3-98d9-e01381ffc6cf"
     },
     {
       "mapUid": "eXBJaLi77IQlmn97nGSUDliJbM5",
