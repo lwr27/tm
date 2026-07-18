@@ -22271,6 +22271,18 @@
       "tags": [],
       "env": null,
       "mxid": null
+    },
+    "mZsLnwB2l16EY7a2RG3kOcE2Xb4": {
+      "found": true,
+      "name": "Flamingo Flamenco",
+      "tags": [
+        "Plastic",
+        "Reactor",
+        "SpeedFun",
+        "Scenery"
+      ],
+      "env": "Stadium",
+      "mxid": 338756
     }
   }
 }

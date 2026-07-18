@@ -21636,7 +21636,7 @@
       "totalFinishers": 15067,
       "pct": 19.8,
       "playerHasAuthor": {
-        "XV27": false,
+        "XV27": true,
         "TheBreaker0": true,
         "Pho3nix_.": true
       }
@@ -37730,10 +37730,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "mZsLnwB2l16EY7a2RG3kOcE2Xb4",
+      "mapId": "fa853ecc-2b7d-406f-b146-afc46f68ab27",
+      "name": "$i$o$n$F6BFlam$F6Cingo $0BFFlam$0CFenco",
+      "authorTimeMs": 38107,
+      "day": 18,
+      "monthYear": "2026-07",
+      "leaderboardUid": "d63f1670-5d17-4648-a4ae-463249247eb5",
+      "authorCount": 546,
+      "totalFinishers": 3297,
+      "pct": 16.6,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-07-17T19:31:20.154Z",
-  "medalsRefreshedAt": "2026-07-17T20:00:27.145Z",
+  "generatedAt": "2026-07-18T20:01:37.069Z",
+  "medalsRefreshedAt": "2026-07-18T20:31:54.321Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",
@@ -37798,6 +37817,14 @@
       "mapName": "green belt",
       "achievedAt": "2026-07-11T20:31:06+00:00",
       "detectedAt": "2026-07-11T22:20:32.307Z"
+    },
+    {
+      "key": "XV27|GKrc7D2XhmygqyZCSfUnbjH7Qj8",
+      "player": "XV27",
+      "mapUid": "GKrc7D2XhmygqyZCSfUnbjH7Qj8",
+      "mapName": "Formula Surf",
+      "achievedAt": "2026-07-18T14:02:32+00:00",
+      "detectedAt": "2026-07-18T20:19:05.617Z"
     }
   ]
 }
