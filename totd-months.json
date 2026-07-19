@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-07-19T09:46:32.566Z",
+  "fetchedAt": "2026-07-19T20:31:04.789Z",
   "maps": [
     {
       "mapUid": "pjCB31IwUZgVsBUP9IF81lx7eh4",
@@ -162,6 +162,15 @@
       "day": 18,
       "monthYear": "2026-07",
       "leaderboardUid": "d63f1670-5d17-4648-a4ae-463249247eb5"
+    },
+    {
+      "mapUid": "OdcDrL6AR20PCOmKt7e6pvX9n8i",
+      "mapId": "b74bffc3-6e5c-4ba4-9a13-b5144dad9534",
+      "name": "what i would've built in 2020 if i wasnt playing fortnite",
+      "authorTimeMs": 36355,
+      "day": 19,
+      "monthYear": "2026-07",
+      "leaderboardUid": "27469e05-f38a-471c-84fc-0687950a3f16"
     },
     {
       "mapUid": "eXBJaLi77IQlmn97nGSUDliJbM5",

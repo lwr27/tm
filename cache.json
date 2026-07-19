@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-19T09:46:26.184Z",
+  "generatedAt": "2026-07-19T20:30:58.230Z",
   "players": {
     "XV27 & Whidot": {
       "cups": [
@@ -30227,12 +30227,26 @@
           "score": 0,
           "qualificationrank": 395,
           "totalplayers": 1694
+        },
+        {
+          "id": 44242,
+          "timestamp": "2026-07-19T17:16:30Z",
+          "name": "COTD 2026-07-19 #1",
+          "mapuid": "OdcDrL6AR20PCOmKt7e6pvX9n8i",
+          "mapgroup": "27469e05-f38a-471c-84fc-0687950a3f16",
+          "mapname": "what i would've built in 2020 if i wasnt playing fortnite",
+          "div": 10,
+          "rank": 608,
+          "divrank": 32,
+          "score": 18,
+          "qualificationrank": 578,
+          "totalplayers": 1852
         }
       ],
       "stats": {
-        "total": 1099,
+        "total": 1100,
         "bestrank": 160,
-        "avgrank": 1046,
+        "avgrank": 1045,
         "bestdiv": 3,
         "totalwins": 0,
         "totaldivwins": 18,
@@ -43988,10 +44002,24 @@
           "score": 3,
           "qualificationrank": 756,
           "totalplayers": 1607
+        },
+        {
+          "id": 44242,
+          "timestamp": "2026-07-19T17:16:30Z",
+          "name": "COTD 2026-07-19 #1",
+          "mapuid": "OdcDrL6AR20PCOmKt7e6pvX9n8i",
+          "mapgroup": "27469e05-f38a-471c-84fc-0687950a3f16",
+          "mapname": "what i would've built in 2020 if i wasnt playing fortnite",
+          "div": 7,
+          "rank": 429,
+          "divrank": 45,
+          "score": 5,
+          "qualificationrank": 421,
+          "totalplayers": 1852
         }
       ],
       "stats": {
-        "total": 982,
+        "total": 983,
         "bestrank": 2,
         "avgrank": 851,
         "bestdiv": 1,

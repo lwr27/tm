@@ -37749,10 +37749,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "OdcDrL6AR20PCOmKt7e6pvX9n8i",
+      "mapId": "b74bffc3-6e5c-4ba4-9a13-b5144dad9534",
+      "name": "what i would've built in 2020 if i wasnt playing fortnite",
+      "authorTimeMs": 36355,
+      "day": 19,
+      "monthYear": "2026-07",
+      "leaderboardUid": "27469e05-f38a-471c-84fc-0687950a3f16",
+      "authorCount": 652,
+      "totalFinishers": 3606,
+      "pct": 18.1,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": true,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-07-18T20:01:37.069Z",
-  "medalsRefreshedAt": "2026-07-19T10:15:29.420Z",
+  "generatedAt": "2026-07-19T20:31:30.142Z",
+  "medalsRefreshedAt": "2026-07-19T21:02:34.526Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",
@@ -37825,6 +37844,14 @@
       "mapName": "Formula Surf",
       "achievedAt": "2026-07-18T14:02:32+00:00",
       "detectedAt": "2026-07-18T20:19:05.617Z"
+    },
+    {
+      "key": "TheBreaker0|OdcDrL6AR20PCOmKt7e6pvX9n8i",
+      "player": "TheBreaker0",
+      "mapUid": "OdcDrL6AR20PCOmKt7e6pvX9n8i",
+      "mapName": "what i would've built in 2020 if i wasnt playing fortnite",
+      "achievedAt": "2026-07-19T17:46:30+00:00",
+      "detectedAt": "2026-07-19T20:31:30.142Z"
     }
   ]
 }
