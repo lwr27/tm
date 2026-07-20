@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-07-19T20:31:04.789Z",
+  "fetchedAt": "2026-07-20T20:31:00.826Z",
   "maps": [
     {
       "mapUid": "pjCB31IwUZgVsBUP9IF81lx7eh4",
@@ -171,6 +171,15 @@
       "day": 19,
       "monthYear": "2026-07",
       "leaderboardUid": "27469e05-f38a-471c-84fc-0687950a3f16"
+    },
+    {
+      "mapUid": "kSlLtUYpdu9IJkGg4mUTy3eE6nj",
+      "mapId": "3823afb9-8b51-4b08-a691-cf8fbdba88a0",
+      "name": "mantis",
+      "authorTimeMs": 47301,
+      "day": 20,
+      "monthYear": "2026-07",
+      "leaderboardUid": "d6ddd73f-bc3f-40ea-a44a-48f556898590"
     },
     {
       "mapUid": "eXBJaLi77IQlmn97nGSUDliJbM5",

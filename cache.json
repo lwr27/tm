@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-19T20:30:58.230Z",
+  "generatedAt": "2026-07-20T20:30:54.421Z",
   "players": {
     "XV27 & Whidot": {
       "cups": [
@@ -14828,10 +14828,24 @@
           "score": 20,
           "qualificationrank": 916,
           "totalplayers": 1694
+        },
+        {
+          "id": 44257,
+          "timestamp": "2026-07-20T17:16:30Z",
+          "name": "COTD 2026-07-20 #1",
+          "mapuid": "kSlLtUYpdu9IJkGg4mUTy3eE6nj",
+          "mapgroup": "d6ddd73f-bc3f-40ea-a44a-48f556898590",
+          "mapname": "mantis",
+          "div": 13,
+          "rank": 787,
+          "divrank": 19,
+          "score": 24,
+          "qualificationrank": 772,
+          "totalplayers": 1762
         }
       ],
       "stats": {
-        "total": 1059,
+        "total": 1060,
         "bestrank": 72,
         "avgrank": 790,
         "bestdiv": 2,
@@ -30241,10 +30255,24 @@
           "score": 18,
           "qualificationrank": 578,
           "totalplayers": 1852
+        },
+        {
+          "id": 44257,
+          "timestamp": "2026-07-20T17:16:30Z",
+          "name": "COTD 2026-07-20 #1",
+          "mapuid": "kSlLtUYpdu9IJkGg4mUTy3eE6nj",
+          "mapgroup": "d6ddd73f-bc3f-40ea-a44a-48f556898590",
+          "mapname": "mantis",
+          "div": 15,
+          "rank": 919,
+          "divrank": 23,
+          "score": 30,
+          "qualificationrank": 938,
+          "totalplayers": 1762
         }
       ],
       "stats": {
-        "total": 1100,
+        "total": 1101,
         "bestrank": 160,
         "avgrank": 1045,
         "bestdiv": 3,
@@ -44016,12 +44044,26 @@
           "score": 5,
           "qualificationrank": 421,
           "totalplayers": 1852
+        },
+        {
+          "id": 44257,
+          "timestamp": "2026-07-20T17:16:30Z",
+          "name": "COTD 2026-07-20 #1",
+          "mapuid": "kSlLtUYpdu9IJkGg4mUTy3eE6nj",
+          "mapgroup": "d6ddd73f-bc3f-40ea-a44a-48f556898590",
+          "mapname": "mantis",
+          "div": 5,
+          "rank": 264,
+          "divrank": 8,
+          "score": 40,
+          "qualificationrank": 291,
+          "totalplayers": 1762
         }
       ],
       "stats": {
-        "total": 983,
+        "total": 984,
         "bestrank": 2,
-        "avgrank": 851,
+        "avgrank": 850,
         "bestdiv": 1,
         "totalwins": 0,
         "totaldivwins": 29,

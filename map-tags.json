@@ -22294,6 +22294,16 @@
       ],
       "env": "Stadium",
       "mxid": 340404
+    },
+    "kSlLtUYpdu9IJkGg4mUTy3eE6nj": {
+      "found": true,
+      "name": "mantis",
+      "tags": [
+        "SpeedFun",
+        "Grass"
+      ],
+      "env": "Stadium",
+      "mxid": 334296
     }
   }
 }

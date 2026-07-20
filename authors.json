@@ -37768,10 +37768,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "kSlLtUYpdu9IJkGg4mUTy3eE6nj",
+      "mapId": "3823afb9-8b51-4b08-a691-cf8fbdba88a0",
+      "name": "mantis",
+      "authorTimeMs": 47301,
+      "day": 20,
+      "monthYear": "2026-07",
+      "leaderboardUid": "d6ddd73f-bc3f-40ea-a44a-48f556898590",
+      "authorCount": 93,
+      "totalFinishers": 3498,
+      "pct": 2.7,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-07-19T23:08:26.273Z",
-  "medalsRefreshedAt": "2026-07-19T21:02:34.526Z",
+  "generatedAt": "2026-07-20T20:31:09.294Z",
+  "medalsRefreshedAt": "2026-07-20T21:00:11.244Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",
