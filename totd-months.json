@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-07-20T20:31:00.826Z",
+  "fetchedAt": "2026-07-21T20:30:56.022Z",
   "maps": [
     {
       "mapUid": "pjCB31IwUZgVsBUP9IF81lx7eh4",
@@ -180,6 +180,15 @@
       "day": 20,
       "monthYear": "2026-07",
       "leaderboardUid": "d6ddd73f-bc3f-40ea-a44a-48f556898590"
+    },
+    {
+      "mapUid": "a2WRgwXqGvzGwpO4E4ZFaMHWQIg",
+      "mapId": "617891e3-1c62-4d1d-a965-0de571d0c890",
+      "name": "splash that",
+      "authorTimeMs": 43544,
+      "day": 21,
+      "monthYear": "2026-07",
+      "leaderboardUid": "980909ac-1ac9-46a2-9c88-072e3f4cfee6"
     },
     {
       "mapUid": "eXBJaLi77IQlmn97nGSUDliJbM5",

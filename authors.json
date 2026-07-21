@@ -37787,10 +37787,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "a2WRgwXqGvzGwpO4E4ZFaMHWQIg",
+      "mapId": "617891e3-1c62-4d1d-a965-0de571d0c890",
+      "name": "splash that",
+      "authorTimeMs": 43544,
+      "day": 21,
+      "monthYear": "2026-07",
+      "leaderboardUid": "980909ac-1ac9-46a2-9c88-072e3f4cfee6",
+      "authorCount": 48,
+      "totalFinishers": 3231,
+      "pct": 1.5,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-07-20T20:31:09.294Z",
-  "medalsRefreshedAt": "2026-07-20T21:00:11.244Z",
+  "generatedAt": "2026-07-21T20:31:04.394Z",
+  "medalsRefreshedAt": "2026-07-21T21:00:05.639Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",
