@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-21T20:30:49.496Z",
+  "generatedAt": "2026-07-22T20:30:53.060Z",
   "players": {
     "XV27 & Whidot": {
       "cups": [
@@ -14842,10 +14842,24 @@
           "score": 24,
           "qualificationrank": 772,
           "totalplayers": 1762
+        },
+        {
+          "id": 44291,
+          "timestamp": "2026-07-22T17:16:30Z",
+          "name": "COTD 2026-07-22 #1",
+          "mapuid": "CwCsrPfPeAPMZr_MiBmISdEmuMb",
+          "mapgroup": "c9290125-b4fb-4d54-bac7-5b4a116412ba",
+          "mapname": "$i$39Fl a$2AE k e $2BEc$1BD r e $0CCs t$fff ft'Prizzly",
+          "div": 8,
+          "rank": 465,
+          "divrank": 17,
+          "score": 31,
+          "qualificationrank": 464,
+          "totalplayers": 1711
         }
       ],
       "stats": {
-        "total": 1060,
+        "total": 1061,
         "bestrank": 72,
         "avgrank": 790,
         "bestdiv": 2,
@@ -30269,10 +30283,24 @@
           "score": 30,
           "qualificationrank": 938,
           "totalplayers": 1762
+        },
+        {
+          "id": 44291,
+          "timestamp": "2026-07-22T17:16:30Z",
+          "name": "COTD 2026-07-22 #1",
+          "mapuid": "CwCsrPfPeAPMZr_MiBmISdEmuMb",
+          "mapgroup": "c9290125-b4fb-4d54-bac7-5b4a116412ba",
+          "mapname": "$i$39Fl a$2AE k e $2BEc$1BD r e $0CCs t$fff ft'Prizzly",
+          "div": 14,
+          "rank": 866,
+          "divrank": 34,
+          "score": 17,
+          "qualificationrank": 843,
+          "totalplayers": 1711
         }
       ],
       "stats": {
-        "total": 1101,
+        "total": 1102,
         "bestrank": 160,
         "avgrank": 1045,
         "bestdiv": 3,
@@ -44058,10 +44086,24 @@
           "score": 40,
           "qualificationrank": 291,
           "totalplayers": 1762
+        },
+        {
+          "id": 44291,
+          "timestamp": "2026-07-22T17:16:30Z",
+          "name": "COTD 2026-07-22 #1",
+          "mapuid": "CwCsrPfPeAPMZr_MiBmISdEmuMb",
+          "mapgroup": "c9290125-b4fb-4d54-bac7-5b4a116412ba",
+          "mapname": "$i$39Fl a$2AE k e $2BEc$1BD r e $0CCs t$fff ft'Prizzly",
+          "div": 7,
+          "rank": 410,
+          "divrank": 26,
+          "score": 25,
+          "qualificationrank": 417,
+          "totalplayers": 1711
         }
       ],
       "stats": {
-        "total": 984,
+        "total": 985,
         "bestrank": 2,
         "avgrank": 850,
         "bestdiv": 1,

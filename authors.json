@@ -29371,7 +29371,7 @@
       "totalFinishers": 13646,
       "pct": 19.7,
       "playerHasAuthor": {
-        "XV27": false,
+        "XV27": true,
         "TheBreaker0": false,
         "Pho3nix_.": true
       }
@@ -37806,10 +37806,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "CwCsrPfPeAPMZr_MiBmISdEmuMb",
+      "mapId": "c7938c79-94b5-488f-ab06-c7ac23d91421",
+      "name": "$i$39Fl a$2AE k e $2BEc$1BD r e $0CCs t$fff ft'Prizzly",
+      "authorTimeMs": 54083,
+      "day": 22,
+      "monthYear": "2026-07",
+      "leaderboardUid": "c9290125-b4fb-4d54-bac7-5b4a116412ba",
+      "authorCount": 241,
+      "totalFinishers": 3884,
+      "pct": 6.2,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-07-21T20:31:04.394Z",
-  "medalsRefreshedAt": "2026-07-21T21:00:05.639Z",
+  "generatedAt": "2026-07-22T20:31:14.792Z",
+  "medalsRefreshedAt": "2026-07-22T21:02:36.862Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",
@@ -37890,6 +37909,14 @@
       "mapName": "what i would've built in 2020 if i wasnt playing fortnite",
       "achievedAt": "2026-07-19T17:46:30+00:00",
       "detectedAt": "2026-07-19T20:31:30.142Z"
+    },
+    {
+      "key": "XV27|3hwmTFJk8EyVLqxYxqQxJai4Uz2",
+      "player": "XV27",
+      "mapUid": "3hwmTFJk8EyVLqxYxqQxJai4Uz2",
+      "mapName": "$0af$o$i$nPlastic Arena",
+      "achievedAt": "2026-07-22T19:23:49+00:00",
+      "detectedAt": "2026-07-22T20:55:45.413Z"
     }
   ]
 }
