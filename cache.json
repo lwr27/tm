@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-22T20:30:53.060Z",
+  "generatedAt": "2026-07-23T20:30:50.075Z",
   "players": {
     "XV27 & Whidot": {
       "cups": [
@@ -14856,12 +14856,26 @@
           "score": 31,
           "qualificationrank": 464,
           "totalplayers": 1711
+        },
+        {
+          "id": 44312,
+          "timestamp": "2026-07-23T17:16:30Z",
+          "name": "COTD 2026-07-23 #1",
+          "mapuid": "1PYndWG_ce7bYa3NTY_APFre8h2",
+          "mapgroup": "33a6207a-9d7a-4c47-8044-0f89a3c1fe4a",
+          "mapname": "$s$f95Dripping Sun $fffft' Lackadal",
+          "div": 6,
+          "rank": 339,
+          "divrank": 19,
+          "score": 31,
+          "qualificationrank": 369,
+          "totalplayers": 1657
         }
       ],
       "stats": {
-        "total": 1061,
+        "total": 1062,
         "bestrank": 72,
-        "avgrank": 790,
+        "avgrank": 789,
         "bestdiv": 2,
         "totalwins": 0,
         "totaldivwins": 27,

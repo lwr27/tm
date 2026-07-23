@@ -10212,7 +10212,7 @@
       "totalFinishers": 14097,
       "pct": 18.8,
       "playerHasAuthor": {
-        "XV27": false,
+        "XV27": true,
         "TheBreaker0": false,
         "Pho3nix_.": true
       }
@@ -35049,7 +35049,7 @@
       "totalFinishers": 15051,
       "pct": 19.6,
       "playerHasAuthor": {
-        "XV27": false,
+        "XV27": true,
         "TheBreaker0": false,
         "Pho3nix_.": true
       }
@@ -35627,7 +35627,7 @@
       "totalFinishers": 16776,
       "pct": 19.3,
       "playerHasAuthor": {
-        "XV27": false,
+        "XV27": true,
         "TheBreaker0": false,
         "Pho3nix_.": true
       }
@@ -37825,10 +37825,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "1PYndWG_ce7bYa3NTY_APFre8h2",
+      "mapId": "f3d16bae-f30d-487f-b191-b42f445a845a",
+      "name": "$s$f95Dripping Sun $fffft' Lackadal",
+      "authorTimeMs": 48000,
+      "day": 23,
+      "monthYear": "2026-07",
+      "leaderboardUid": "33a6207a-9d7a-4c47-8044-0f89a3c1fe4a",
+      "authorCount": 12,
+      "totalFinishers": 3552,
+      "pct": 0.3,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-07-22T20:31:14.792Z",
-  "medalsRefreshedAt": "2026-07-22T21:02:36.862Z",
+  "generatedAt": "2026-07-23T20:31:05.608Z",
+  "medalsRefreshedAt": "2026-07-23T21:01:27.546Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",
@@ -37917,6 +37936,30 @@
       "mapName": "$0af$o$i$nPlastic Arena",
       "achievedAt": "2026-07-22T19:23:49+00:00",
       "detectedAt": "2026-07-22T20:55:45.413Z"
+    },
+    {
+      "key": "XV27|XsHczkgw23kqHH7Q1s_wnyhGfkd",
+      "player": "XV27",
+      "mapUid": "XsHczkgw23kqHH7Q1s_wnyhGfkd",
+      "mapName": "$s$cccCROCIERA $s$z$n$s$o$09fblu",
+      "achievedAt": "2026-07-23T20:07:57+00:00",
+      "detectedAt": "2026-07-23T20:39:21.427Z"
+    },
+    {
+      "key": "XV27|1fNvWU6I4nPQKzoC_RmSfUpoaDf",
+      "player": "XV27",
+      "mapUid": "1fNvWU6I4nPQKzoC_RmSfUpoaDf",
+      "mapName": "$oDesert Fest",
+      "achievedAt": "2026-07-23T19:49:24+00:00",
+      "detectedAt": "2026-07-23T20:59:22.052Z"
+    },
+    {
+      "key": "XV27|O0ZRI336EY8b2MS3PLfmjau6vAa",
+      "player": "XV27",
+      "mapUid": "O0ZRI336EY8b2MS3PLfmjau6vAa",
+      "mapName": "$n$o$s$5a0G$4a1r$3a2e$2a3e$1a4n $5a0C$4a1i$3a2t$2a3y",
+      "achievedAt": "2026-07-23T19:57:37+00:00",
+      "detectedAt": "2026-07-23T20:59:49.922Z"
     }
   ]
 }

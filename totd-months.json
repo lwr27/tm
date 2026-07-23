@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-07-22T20:31:00.131Z",
+  "fetchedAt": "2026-07-23T20:30:56.788Z",
   "maps": [
     {
       "mapUid": "pjCB31IwUZgVsBUP9IF81lx7eh4",
@@ -198,6 +198,15 @@
       "day": 22,
       "monthYear": "2026-07",
       "leaderboardUid": "c9290125-b4fb-4d54-bac7-5b4a116412ba"
+    },
+    {
+      "mapUid": "1PYndWG_ce7bYa3NTY_APFre8h2",
+      "mapId": "f3d16bae-f30d-487f-b191-b42f445a845a",
+      "name": "$s$f95Dripping Sun $fffft' Lackadal",
+      "authorTimeMs": 48000,
+      "day": 23,
+      "monthYear": "2026-07",
+      "leaderboardUid": "33a6207a-9d7a-4c47-8044-0f89a3c1fe4a"
     },
     {
       "mapUid": "eXBJaLi77IQlmn97nGSUDliJbM5",
