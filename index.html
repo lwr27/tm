@@ -295,7 +295,6 @@
     <p class="section-note">Only counts cups two players both played. Better division wins that cup; equal division is a tie.</p>
     <div class="range-row">
       <button class="range-btn active" id="h2hToggleAll">All shared cups</button>
-      <button class="range-btn" id="h2hToggleSameMap">Same map only</button>
     </div>
     <div id="h2hTable" style="overflow-x:auto; margin-bottom:1.5rem;"></div>
 
@@ -1387,13 +1386,7 @@
   }
   document.getElementById('h2hToggleAll').onclick = () => {
     document.getElementById('h2hToggleAll').classList.add('active');
-    document.getElementById('h2hToggleSameMap').classList.remove('active');
     renderHeadToHead(false);
-  };
-  document.getElementById('h2hToggleSameMap').onclick = () => {
-    document.getElementById('h2hToggleSameMap').classList.add('active');
-    document.getElementById('h2hToggleAll').classList.remove('active');
-    renderHeadToHead(true);
   };
 
   // --- 1b. Shared division log: days 2+ players landed in the exact same division ---
