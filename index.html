@@ -293,9 +293,6 @@
   <div class="tab-panel" id="tab-trends">
     <p class="section-title">Head-to-head</p>
     <p class="section-note">Only counts cups two players both played. Better division wins that cup; equal division is a tie.</p>
-    <div class="range-row">
-      <button class="range-btn active" id="h2hToggleAll">All shared cups</button>
-    </div>
     <div id="h2hTable" style="overflow-x:auto; margin-bottom:1.5rem;"></div>
 
     <p class="section-title">Shared division log</p>
@@ -1384,10 +1381,6 @@
   function renderHeadToHead(restrictToSameMap){
     renderH2hInto('h2hTable', !!restrictToSameMap);
   }
-  document.getElementById('h2hToggleAll').onclick = () => {
-    document.getElementById('h2hToggleAll').classList.add('active');
-    renderHeadToHead(false);
-  };
 
   // --- 1b. Shared division log: days 2+ players landed in the exact same division ---
   function computeSameDivDays(){
