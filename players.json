@@ -317828,5 +317828,365 @@
     "subregion": "Quebec",
     "subregionFlag": "Quebec",
     "resolvedAt": "2026-07-23T21:01:33.255Z"
+  },
+  "d763e4ad-8f03-4d21-83be-1609ad9ead94": {
+    "name": "guest-xMPCVngl",
+    "clanTag": "TMD",
+    "country": "United Kingdom",
+    "countryFlag": "GBR",
+    "region": "England",
+    "subregion": "South East England",
+    "subregionFlag": "ENG",
+    "resolvedAt": "2026-07-24T21:01:50.943Z"
+  },
+  "9c321a09-ba76-4477-88ca-a7b10278d8a7": {
+    "name": "Ma.toss",
+    "clanTag": "$F001$A003$5001$0002",
+    "country": "France",
+    "countryFlag": "FRA",
+    "region": "Occitanie",
+    "subregion": "Haute-Garonne",
+    "subregionFlag": "Haute-Garonne",
+    "resolvedAt": "2026-07-24T21:01:52.541Z"
+  },
+  "1a9f1416-51fc-4fa3-92bf-bc94d717d9e1": {
+    "name": "woj.TECH",
+    "clanTag": null,
+    "country": "Hungary",
+    "countryFlag": "HUN",
+    "region": "Zala",
+    "subregion": "Zala",
+    "subregionFlag": "Zala",
+    "resolvedAt": "2026-07-24T21:01:53.856Z"
+  },
+  "39e76133-7798-4984-a45b-7cf2c4177fb2": {
+    "name": "Radriar568",
+    "clanTag": "RAD",
+    "country": "United States",
+    "countryFlag": "USA",
+    "region": "Alaska",
+    "subregion": "Alaska",
+    "subregionFlag": "Alaska",
+    "resolvedAt": "2026-07-24T21:01:55.537Z"
+  },
+  "a2da7795-4693-49bc-aba0-1a0beab20a4d": {
+    "name": "Konaxs1",
+    "clanTag": "$0CDV$2DDI$5EDB$7FDE",
+    "country": "Finland",
+    "countryFlag": "FIN",
+    "region": null,
+    "subregion": "Finland",
+    "subregionFlag": "FIN",
+    "resolvedAt": "2026-07-24T21:01:57.285Z"
+  },
+  "fc7d895a-b90a-429d-9956-8b0fb1abdac4": {
+    "name": "Atomic_Moses",
+    "clanTag": null,
+    "country": "Hungary",
+    "countryFlag": "HUN",
+    "region": "Fejér",
+    "subregion": "Fejér",
+    "subregionFlag": "Fejér",
+    "resolvedAt": "2026-07-24T21:01:58.996Z"
+  },
+  "e4f2105a-8af9-4d59-b405-db04f31301b7": {
+    "name": "TheDarkHero77",
+    "clanTag": "$D51S$E62AB",
+    "country": "United States",
+    "countryFlag": "USA",
+    "region": "North Carolina",
+    "subregion": "North Carolina",
+    "subregionFlag": "North_Carolina",
+    "resolvedAt": "2026-07-24T21:02:00.711Z"
+  },
+  "92f7a8a7-f2ec-48b4-a157-bb303980eb7a": {
+    "name": "eHdV.",
+    "clanTag": null,
+    "country": "Brazil",
+    "countryFlag": "BRA",
+    "region": "Paraná",
+    "subregion": "Paraná",
+    "subregionFlag": "parana",
+    "resolvedAt": "2026-07-24T21:02:02.396Z"
+  },
+  "0fa55c53-4597-44cb-b13f-f76068fe4499": {
+    "name": "bobbythewiz44",
+    "clanTag": "$04FBIG",
+    "country": "Australia",
+    "countryFlag": "AUS",
+    "region": "Queensland",
+    "subregion": "Queensland",
+    "subregionFlag": "Queensland",
+    "resolvedAt": "2026-07-24T21:02:04.112Z"
+  },
+  "359f391e-e002-4369-9002-b270ad37e3a5": {
+    "name": "LynetLinus",
+    "clanTag": "TORTU",
+    "country": "Denmark",
+    "countryFlag": "DEN",
+    "region": null,
+    "subregion": "Denmark",
+    "subregionFlag": "DEN",
+    "resolvedAt": "2026-07-24T21:02:05.856Z"
+  },
+  "b4588eb1-8c77-4cbc-b804-5011b3d6dfe8": {
+    "name": "sayyessirenize",
+    "clanTag": "SAYYE",
+    "country": "Ukraine",
+    "countryFlag": "UKR",
+    "region": null,
+    "subregion": "Ukraine",
+    "subregionFlag": "UKR",
+    "resolvedAt": "2026-07-24T21:02:07.572Z"
+  },
+  "c3d86551-b234-44a9-9fc4-2ffa45b0dd8e": {
+    "name": "Inj3nsta8",
+    "clanTag": null,
+    "country": "Belgium",
+    "countryFlag": "BEL",
+    "region": "Vlaams-Brabant",
+    "subregion": "Vlaams-Brabant",
+    "subregionFlag": "Flemmish_Brabant",
+    "resolvedAt": "2026-07-24T21:02:09.256Z"
+  },
+  "b40d028c-c1cd-4799-a3c1-ed0a8a2ac134": {
+    "name": "DancingBovine",
+    "clanTag": "$S$O$ADESPLOB",
+    "country": "United States",
+    "countryFlag": "USA",
+    "region": "Tennessee",
+    "subregion": "Tennessee",
+    "subregionFlag": "Tennessee",
+    "resolvedAt": "2026-07-24T21:02:10.971Z"
+  },
+  "01ae7121-9bd0-4902-aff1-6e37b99d5e15": {
+    "name": "Mark4live1995",
+    "clanTag": "$F90K$FB0O$FD0O$FF0T",
+    "country": "Netherlands",
+    "countryFlag": "NED",
+    "region": "Gelderland",
+    "subregion": "Gelderland",
+    "subregionFlag": "Gelderland",
+    "resolvedAt": "2026-07-24T21:02:12.713Z"
+  },
+  "b50739eb-4760-4a3d-9745-e848154d3e22": {
+    "name": "x44TM",
+    "clanTag": "$FFFF$06FI$FFFN",
+    "country": "Finland",
+    "countryFlag": "FIN",
+    "region": null,
+    "subregion": "Finland",
+    "subregionFlag": "FIN",
+    "resolvedAt": "2026-07-24T21:02:14.417Z"
+  },
+  "976ddc5d-3138-4b7f-ad0d-a429f4066c54": {
+    "name": "Killua767",
+    "clanTag": null,
+    "country": "Austria",
+    "countryFlag": "AUT",
+    "region": "Upper Austria",
+    "subregion": "Upper Austria",
+    "subregionFlag": "Upper_Austria",
+    "resolvedAt": "2026-07-24T21:02:16.133Z"
+  },
+  "9d8ff02c-e26c-4e7f-9fb6-ed5cb3f51bae": {
+    "name": "Noah.Ritter",
+    "clanTag": null,
+    "country": "Germany",
+    "countryFlag": "GER",
+    "region": "Brandenburg",
+    "subregion": "Potsdam",
+    "subregionFlag": "Potsdam",
+    "resolvedAt": "2026-07-24T21:02:17.828Z"
+  },
+  "f71d6060-8f7a-4e13-80ab-2fe720397d2e": {
+    "name": "Mig_rant",
+    "clanTag": "$F6FN$F9FA$FCFC",
+    "country": "France",
+    "countryFlag": "FRA",
+    "region": "Normandie",
+    "subregion": "Seine-Maritime",
+    "subregionFlag": "Seine-Maritime",
+    "resolvedAt": "2026-07-24T21:02:19.564Z"
+  },
+  "fb23f691-9190-473d-9916-ff91e7b4a90d": {
+    "name": "HARMONY_TM",
+    "clanTag": null,
+    "country": "Switzerland",
+    "countryFlag": "SUI",
+    "region": "Neuchâtel",
+    "subregion": "Neuchâtel",
+    "subregionFlag": "Neuchatel",
+    "resolvedAt": "2026-07-24T21:02:21.280Z"
+  },
+  "e4c50081-306f-4005-a260-aa9aca400b32": {
+    "name": "Hypnotiik-Ice",
+    "clanTag": "OOO",
+    "country": "France",
+    "countryFlag": "FRA",
+    "region": "Auvergne-Rhône-Alpes",
+    "subregion": "Haute-Savoie",
+    "subregionFlag": "Haute-Savoie",
+    "resolvedAt": "2026-07-24T21:02:22.999Z"
+  },
+  "b255ce5b-6c83-4d3d-bf27-e94e33c62209": {
+    "name": "Rostabunny",
+    "clanTag": null,
+    "country": "United States",
+    "countryFlag": "USA",
+    "region": "North Carolina",
+    "subregion": "North Carolina",
+    "subregionFlag": "North_Carolina",
+    "resolvedAt": "2026-07-24T21:02:24.710Z"
+  },
+  "0090f27f-bcd8-440d-8e8e-e86f40c4e9b3": {
+    "name": "Lio320",
+    "clanTag": "MOFO",
+    "country": "Italy",
+    "countryFlag": "ITA",
+    "region": "Marche",
+    "subregion": "Marche",
+    "subregionFlag": "Marche",
+    "resolvedAt": "2026-07-24T21:02:26.416Z"
+  },
+  "9695b188-f2d3-40e6-9385-a2836cfb9184": {
+    "name": "PiCoLo651",
+    "clanTag": "$O$S$36FP$CCFE$FCCR$F03F",
+    "country": "France",
+    "countryFlag": "FRA",
+    "region": "Occitanie",
+    "subregion": "Hautes-Pyrénées",
+    "subregionFlag": "Hautes-Pyrenees",
+    "resolvedAt": "2026-07-24T21:02:28.115Z"
+  },
+  "06d6f207-fec1-4a0f-8210-f2b147586d6a": {
+    "name": "TunaAdapter",
+    "clanTag": "$FC0AYAYA",
+    "country": "Germany",
+    "countryFlag": "GER",
+    "region": "Nordrhein-Westfalen",
+    "subregion": "Bonn",
+    "subregionFlag": "Bonn",
+    "resolvedAt": "2026-07-24T21:02:29.851Z"
+  },
+  "93153983-2261-4ab8-9942-07a510a697ba": {
+    "name": "menk27",
+    "clanTag": null,
+    "country": "Switzerland",
+    "countryFlag": "SUI",
+    "region": "Solothurn",
+    "subregion": "Solothurn",
+    "subregionFlag": "Solothurn",
+    "resolvedAt": "2026-07-24T21:02:31.564Z"
+  },
+  "59fc998f-24e5-434d-851d-d465a7795dc2": {
+    "name": "stevenreggie",
+    "clanTag": "MRL",
+    "country": "United Kingdom",
+    "countryFlag": "GBR",
+    "region": "England",
+    "subregion": "East of England",
+    "subregionFlag": "East_of_England_",
+    "resolvedAt": "2026-07-24T21:02:33.295Z"
+  },
+  "2c693583-748e-4941-beba-6fac9a319e0b": {
+    "name": "Antowane",
+    "clanTag": null,
+    "country": "France",
+    "countryFlag": "FRA",
+    "region": "Île-de-France",
+    "subregion": "Essonne",
+    "subregionFlag": "Essonne",
+    "resolvedAt": "2026-07-24T21:02:34.974Z"
+  },
+  "c2f88617-b1c4-4daa-8c93-27878a5bd66a": {
+    "name": "Furyen151",
+    "clanTag": null,
+    "country": "United States",
+    "countryFlag": "USA",
+    "region": "Michigan",
+    "subregion": "Michigan",
+    "subregionFlag": "Michigan",
+    "resolvedAt": "2026-07-24T21:02:36.704Z"
+  },
+  "4fcc6718-ba1e-4e2c-b3c9-282753bf85d4": {
+    "name": "mr3en",
+    "clanTag": null,
+    "country": "France",
+    "countryFlag": "FRA",
+    "region": "Auvergne-Rhône-Alpes",
+    "subregion": "Isère",
+    "subregionFlag": "Isere",
+    "resolvedAt": "2026-07-24T21:02:38.399Z"
+  },
+  "6aa2a076-7655-495c-90b3-3827fd7ee789": {
+    "name": "nestorpingoo",
+    "clanTag": null,
+    "country": "France",
+    "countryFlag": "FRA",
+    "region": "Occitanie",
+    "subregion": "Hérault",
+    "subregionFlag": "Herault",
+    "resolvedAt": "2026-07-24T21:02:40.105Z"
+  },
+  "5469f9c5-295e-4d2c-876c-5f58c5de821a": {
+    "name": "Belgian_potato",
+    "clanTag": "KFC",
+    "country": "Belgium",
+    "countryFlag": "BEL",
+    "region": "Antwerpen",
+    "subregion": "Antwerpen",
+    "subregionFlag": "Antwerp",
+    "resolvedAt": "2026-07-24T21:02:41.848Z"
+  },
+  "959cf5ef-1628-4b6f-ae92-ae25e44ba48d": {
+    "name": "Fabr1l",
+    "clanTag": null,
+    "country": "Brazil",
+    "countryFlag": "BRA",
+    "region": "Rio de Janeiro",
+    "subregion": "Rio de Janeiro",
+    "subregionFlag": "rio-de-janeiro",
+    "resolvedAt": "2026-07-24T21:02:43.564Z"
+  },
+  "63ae3ef2-a202-4aa3-9041-9f6d9964c3fd": {
+    "name": "nobbynordmann",
+    "clanTag": "TOBIR",
+    "country": "Germany",
+    "countryFlag": "GER",
+    "region": "Niedersachsen",
+    "subregion": "Hannover",
+    "subregionFlag": "Hannover",
+    "resolvedAt": "2026-07-24T21:02:45.279Z"
+  },
+  "86153164-123e-4515-9fc5-0c1c97667700": {
+    "name": "appoireland",
+    "clanTag": null,
+    "country": "Ireland",
+    "countryFlag": "IRL",
+    "region": null,
+    "subregion": "Ireland",
+    "subregionFlag": "IRL",
+    "resolvedAt": "2026-07-24T21:02:46.991Z"
+  },
+  "34e960f7-fe40-418f-852b-7e520c0f4f7f": {
+    "name": "Neo47475",
+    "clanTag": "$S$24C4W$FC6: :",
+    "country": "Poland",
+    "countryFlag": "POL",
+    "region": "Kujawsko-Pomorskie",
+    "subregion": "Kujawsko-Pomorskie",
+    "subregionFlag": "Kujawsko-Pomorskie",
+    "resolvedAt": "2026-07-24T21:02:48.678Z"
+  },
+  "942beefb-7bd7-4786-912d-6c178cc95db6": {
+    "name": "Trunkwin",
+    "clanTag": null,
+    "country": "France",
+    "countryFlag": "FRA",
+    "region": "Hauts-de-France",
+    "subregion": "Oise",
+    "subregionFlag": "Oise",
+    "resolvedAt": "2026-07-24T21:02:50.405Z"
   }
 }
