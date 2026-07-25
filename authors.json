@@ -622,7 +622,7 @@
       "totalFinishers": 9872,
       "pct": 15.2,
       "playerHasAuthor": {
-        "XV27": false,
+        "XV27": true,
         "TheBreaker0": false,
         "Pho3nix_.": true
       },
@@ -33808,7 +33808,7 @@
       "totalFinishers": 19550,
       "pct": 16,
       "playerHasAuthor": {
-        "XV27": false,
+        "XV27": true,
         "TheBreaker0": false,
         "Pho3nix_.": true
       }
@@ -37863,10 +37863,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "3QQWjXn3Gq_b0dDAFcrZwe_gdR6",
+      "mapId": "136bf630-1ead-48eb-9cf9-92c9375a7a16",
+      "name": "Dustline 2099",
+      "authorTimeMs": 39017,
+      "day": 25,
+      "monthYear": "2026-07",
+      "leaderboardUid": "596057ff-f506-4f9d-a962-03d0e299a895",
+      "authorCount": 63,
+      "totalFinishers": 3122,
+      "pct": 2,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-07-24T20:31:19.528Z",
-  "medalsRefreshedAt": "2026-07-24T21:01:43.122Z",
+  "generatedAt": "2026-07-25T20:31:05.777Z",
+  "medalsRefreshedAt": "2026-07-25T21:02:27.491Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",
@@ -37979,6 +37998,22 @@
       "mapName": "$n$o$s$5a0G$4a1r$3a2e$2a3e$1a4n $5a0C$4a1i$3a2t$2a3y",
       "achievedAt": "2026-07-23T19:57:37+00:00",
       "detectedAt": "2026-07-23T20:59:49.922Z"
+    },
+    {
+      "key": "XV27|pz8KoF3du8JLj3eqLglRKRphlGk",
+      "player": "XV27",
+      "mapUid": "pz8KoF3du8JLj3eqLglRKRphlGk",
+      "mapName": "$FC3Mou$FB3nt F$FA3ishm$F93ore",
+      "achievedAt": "2026-07-24T22:14:41+00:00",
+      "detectedAt": "2026-07-25T20:31:40.023Z"
+    },
+    {
+      "key": "XV27|xsWo6akdNVjAGiISOKXaeXyTC_b",
+      "player": "XV27",
+      "mapUid": "xsWo6akdNVjAGiISOKXaeXyTC_b",
+      "mapName": "$s$f00Redwood $fffNascar",
+      "achievedAt": "2026-07-24T22:06:48+00:00",
+      "detectedAt": "2026-07-25T20:59:14.680Z"
     }
   ]
 }

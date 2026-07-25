@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-24T20:30:48.251Z",
+  "generatedAt": "2026-07-25T20:30:49.683Z",
   "players": {
     "XV27 & Whidot": {
       "cups": [
@@ -14884,12 +14884,26 @@
           "score": 36,
           "qualificationrank": 784,
           "totalplayers": 1500
+        },
+        {
+          "id": 44359,
+          "timestamp": "2026-07-25T17:16:30Z",
+          "name": "COTD 2026-07-25 #1",
+          "mapuid": "3QQWjXn3Gq_b0dDAFcrZwe_gdR6",
+          "mapgroup": "596057ff-f506-4f9d-a962-03d0e299a895",
+          "mapname": "Dustline 2099",
+          "div": 2,
+          "rank": 98,
+          "divrank": 34,
+          "score": 18,
+          "qualificationrank": 103,
+          "totalplayers": 1410
         }
       ],
       "stats": {
-        "total": 1063,
+        "total": 1064,
         "bestrank": 72,
-        "avgrank": 789,
+        "avgrank": 788,
         "bestdiv": 2,
         "totalwins": 0,
         "totaldivwins": 27,

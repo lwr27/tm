@@ -318188,5 +318188,35 @@
     "subregion": "Oise",
     "subregionFlag": "Oise",
     "resolvedAt": "2026-07-24T21:02:50.405Z"
+  },
+  "99164954-f113-4b54-a941-f37ade1bddbb": {
+    "name": "Yitharja",
+    "clanTag": "$46F3$46B1$4684",
+    "country": "Netherlands",
+    "countryFlag": "NED",
+    "region": "Noord-Brabant",
+    "subregion": "Noord-Brabant",
+    "subregionFlag": "Noord-Brabant",
+    "resolvedAt": "2026-07-25T21:02:32.432Z"
+  },
+  "522e881a-ac9d-442a-acdf-903db7d0a1c3": {
+    "name": "bananaapplee",
+    "clanTag": "$FFFĊ$000Ħ",
+    "country": "United Kingdom",
+    "countryFlag": "GBR",
+    "region": "England",
+    "subregion": "London",
+    "subregionFlag": "London",
+    "resolvedAt": "2026-07-25T21:02:33.388Z"
+  },
+  "f23d2024-095d-460c-afe7-3258c6e1f217": {
+    "name": "Sh0yo34",
+    "clanTag": "$S$08CW$FF0I$08CZ",
+    "country": "United States",
+    "countryFlag": "USA",
+    "region": "Arizona",
+    "subregion": "Arizona",
+    "subregionFlag": "Arizona",
+    "resolvedAt": "2026-07-25T21:02:35.205Z"
   }
 }
