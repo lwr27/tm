@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-25T20:30:49.683Z",
+  "generatedAt": "2026-07-26T20:30:46.268Z",
   "players": {
     "XV27 & Whidot": {
       "cups": [
@@ -44156,12 +44156,26 @@
           "score": 25,
           "qualificationrank": 417,
           "totalplayers": 1711
+        },
+        {
+          "id": 44379,
+          "timestamp": "2026-07-26T17:16:30Z",
+          "name": "COTD 2026-07-26 #1",
+          "mapuid": "zPmmpgb2kS69vVUZQvozUkaluw4",
+          "mapgroup": "1efb22bd-5aee-4b3e-867f-873fa78f00cb",
+          "mapname": "$o$fc3T$gwistful",
+          "div": 12,
+          "rank": 706,
+          "divrank": 2,
+          "score": 41,
+          "qualificationrank": 728,
+          "totalplayers": 1612
         }
       ],
       "stats": {
-        "total": 985,
+        "total": 986,
         "bestrank": 2,
-        "avgrank": 850,
+        "avgrank": 849,
         "bestdiv": 1,
         "totalwins": 0,
         "totaldivwins": 29,

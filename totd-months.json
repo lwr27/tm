@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-07-25T20:30:56.522Z",
+  "fetchedAt": "2026-07-26T20:30:52.732Z",
   "maps": [
     {
       "mapUid": "pjCB31IwUZgVsBUP9IF81lx7eh4",
@@ -225,6 +225,15 @@
       "day": 25,
       "monthYear": "2026-07",
       "leaderboardUid": "596057ff-f506-4f9d-a962-03d0e299a895"
+    },
+    {
+      "mapUid": "zPmmpgb2kS69vVUZQvozUkaluw4",
+      "mapId": "d0c49d84-6be5-4f96-8609-f60fddad123e",
+      "name": "$o$fc3T$gwistful",
+      "authorTimeMs": 43552,
+      "day": 26,
+      "monthYear": "2026-07",
+      "leaderboardUid": "1efb22bd-5aee-4b3e-867f-873fa78f00cb"
     },
     {
       "mapUid": "eXBJaLi77IQlmn97nGSUDliJbM5",
