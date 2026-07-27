@@ -318308,5 +318308,135 @@
     "subregion": "Ukraine",
     "subregionFlag": "UKR",
     "resolvedAt": "2026-07-26T21:00:21.193Z"
+  },
+  "3a4a4aab-927c-47a1-a650-592cfc94bdd2": {
+    "name": "toriancarconn",
+    "clanTag": null,
+    "country": "Croatia",
+    "countryFlag": "CRO",
+    "region": null,
+    "subregion": "Croatia",
+    "subregionFlag": "CRO",
+    "resolvedAt": "2026-07-27T21:02:31.802Z"
+  },
+  "bdfa9d30-6478-4cd7-9183-8725cd5578e4": {
+    "name": "cuckooboi",
+    "clanTag": null,
+    "country": "Finland",
+    "countryFlag": "FIN",
+    "region": null,
+    "subregion": "Finland",
+    "subregionFlag": "FIN",
+    "resolvedAt": "2026-07-27T21:02:32.974Z"
+  },
+  "92919705-187b-4f72-ac08-f2bffca66e20": {
+    "name": "SchlaG1e",
+    "clanTag": null,
+    "country": "Denmark",
+    "countryFlag": "DEN",
+    "region": null,
+    "subregion": "Denmark",
+    "subregionFlag": "DEN",
+    "resolvedAt": "2026-07-27T21:02:34.688Z"
+  },
+  "41788628-45bc-450c-aace-ad2706f5b639": {
+    "name": "Pulsar.TM",
+    "clanTag": null,
+    "country": "Russia",
+    "countryFlag": "RUS",
+    "region": "Центральный федеральный округ",
+    "subregion": "Москва",
+    "subregionFlag": "Moscow",
+    "resolvedAt": "2026-07-27T21:02:36.409Z"
+  },
+  "fd58f7d7-4cb2-4507-917b-ef8de55a7a25": {
+    "name": "Doudadada4578",
+    "clanTag": "$SS$0F0Q$000N $0F0",
+    "country": "France",
+    "countryFlag": "FRA",
+    "region": "Bretagne",
+    "subregion": "Finistère",
+    "subregionFlag": "Finistere",
+    "resolvedAt": "2026-07-27T21:02:38.137Z"
+  },
+  "639158b8-4cdc-4514-8d6e-0d117ded5627": {
+    "name": "SenorJiggs",
+    "clanTag": null,
+    "country": "Mexico",
+    "countryFlag": "MEX",
+    "region": null,
+    "subregion": "Mexico",
+    "subregionFlag": "MEX",
+    "resolvedAt": "2026-07-27T21:02:39.828Z"
+  },
+  "8cc68a54-df32-4a61-84bb-7ef1a0221de8": {
+    "name": "Damnofey",
+    "clanTag": "$S$N$F33S$N$F33H$N$F33R$S$W$F03U$S$N$F33D",
+    "country": "Russia",
+    "countryFlag": "RUS",
+    "region": "Уральский федеральный округ",
+    "subregion": "Свердловская область",
+    "subregionFlag": "Sverdlovsk_Oblast",
+    "resolvedAt": "2026-07-27T21:02:41.541Z"
+  },
+  "0b2540cd-94a0-4f08-a586-6757723a450f": {
+    "name": "TheMPKev",
+    "clanTag": null,
+    "country": "Luxembourg",
+    "countryFlag": "LUX",
+    "region": null,
+    "subregion": "Luxembourg",
+    "subregionFlag": "LUX",
+    "resolvedAt": "2026-07-27T21:02:43.270Z"
+  },
+  "d9eb6972-1e12-45c1-8855-c9013fc50c62": {
+    "name": "Ch4rlotte_Katak",
+    "clanTag": null,
+    "country": "Germany",
+    "countryFlag": "GER",
+    "region": "Thüringen",
+    "subregion": "Weimar",
+    "subregionFlag": "Weimar",
+    "resolvedAt": "2026-07-27T21:02:44.973Z"
+  },
+  "c2906378-72e6-4a72-b36a-3520b5e37c5f": {
+    "name": "criggoh",
+    "clanTag": "$000SN$FF0US",
+    "country": "Italy",
+    "countryFlag": "ITA",
+    "region": "Trentino-Alto Adige",
+    "subregion": "Trentino-Alto Adige",
+    "subregionFlag": "Trentino-Alto_Adige",
+    "resolvedAt": "2026-07-27T21:02:46.683Z"
+  },
+  "57d32c55-eb99-4a55-94ef-67505ac2d9a8": {
+    "name": "ribanTM",
+    "clanTag": null,
+    "country": "Germany",
+    "countryFlag": "GER",
+    "region": "Nordrhein-Westfalen",
+    "subregion": "Dortmund",
+    "subregionFlag": "Dortmund",
+    "resolvedAt": "2026-07-27T21:02:48.412Z"
+  },
+  "3d75b1ee-85ea-435f-a534-a310c3d18cc0": {
+    "name": "sike.derBeste",
+    "clanTag": "$900G$C00R$F80A$FC3S$FF3S",
+    "country": "United States",
+    "countryFlag": "USA",
+    "region": "Georgia",
+    "subregion": "Georgia",
+    "subregionFlag": "Georgia",
+    "resolvedAt": "2026-07-27T21:02:50.121Z"
+  },
+  "2630bc07-ba18-4802-a1b7-7b426c2166f6": {
+    "name": "Braten000",
+    "clanTag": "$FC0AYAYA",
+    "country": "Germany",
+    "countryFlag": "GER",
+    "region": "Hamburg",
+    "subregion": "Hamburg",
+    "subregionFlag": "Hamburg",
+    "resolvedAt": "2026-07-27T21:02:51.828Z"
   }
 }
