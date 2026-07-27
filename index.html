@@ -260,6 +260,10 @@
     <p class="section-note">Standard deviation of division over their last 30 cups. Lower means steadier — two players can have the same average division but very different reliability.</p>
     <div class="cards" id="consistencyCards"></div>
 
+    <p class="section-title">Solo day performance</p>
+    <p class="section-note">Days where you were the only one of the three tracked players who played that day, compared against your own form on shared days — using your divrank on the nearest 20 shared cups before and 20 after each solo day, so this tracks against your skill level around that time rather than an all-time average. Negative = better than your usual form on solo days.</p>
+    <div class="cards" id="soloCards"></div>
+
     <p class="section-title">Best and worst result ever</p>
     <div class="cards" id="extremesCards"></div>
 
@@ -665,6 +669,7 @@
     renderSameDivLog();
     renderDayOfWeek();
     renderConsistency();
+    renderSoloPerformance();
     renderPbTimeline();
     renderNoShowTable();
     renderScatter();
@@ -1531,6 +1536,82 @@
       el.appendChild(card);
     });
   }
+
+  // --- 3b. Solo day performance: divrank on days you played alone, vs your
+  // own nearby form on shared days (nearest 20 shared cups before/after).
+  function renderSoloPerformance(){
+    const el = document.getElementById('soloCards');
+    el.innerHTML = '';
+
+    // label -> Set of player names who have a valid cup that day
+    const playersByLabel = {};
+    NAMES.forEach(name => {
+      validCups(CACHE.players[name].cups).forEach(c => {
+        const label = cupLabel(c);
+        if (!playersByLabel[label]) playersByLabel[label] = new Set();
+        playersByLabel[label].add(name);
+      });
+    });
+
+    NAMES.forEach(name => {
+      const cups = validCups(CACHE.players[name].cups).slice().sort((a,b) => new Date(a.timestamp) - new Date(b.timestamp));
+
+      // This player's own cups, split into solo-day and shared-day buckets,
+      // restricted to cups with a real divrank (excludes the divrank:0
+      // sentinel, same as everywhere else this matters).
+      const soloCups = [];
+      const sharedCups = [];
+      cups.forEach(c => {
+        if (!hasValidDivRank(c)) return;
+        const label = cupLabel(c);
+        const others = playersByLabel[label] || new Set();
+        if (others.size === 1) soloCups.push(c);
+        else if (others.size >= 2) sharedCups.push(c);
+      });
+
+      let deltas = [];
+      let usedSoloAvg = [];
+      let usedBaselineAvg = [];
+      soloCups.forEach(sc => {
+        const t = new Date(sc.timestamp);
+        const before = sharedCups.filter(x => new Date(x.timestamp) < t).slice(-20);
+        const after = sharedCups.filter(x => new Date(x.timestamp) > t).slice(0, 20);
+        const window = before.concat(after);
+        if (window.length < 5) return; // not enough nearby baseline to compare fairly
+        const baselineAvg = window.reduce((a,x) => a + x.divrank, 0) / window.length;
+        deltas.push(sc.divrank - baselineAvg);
+        usedSoloAvg.push(sc.divrank);
+        usedBaselineAvg.push(baselineAvg);
+      });
+
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.style.borderLeftColor = colorOf(name);
+      if (!deltas.length){
+        card.innerHTML = `
+          <div class="name"><span class="dot" style="background:${colorOf(name)};"></span>${name}</div>
+          <table><tr><td colspan="2">Not enough solo days with a nearby baseline yet.</td></tr></table>
+        `;
+        el.appendChild(card);
+        return;
+      }
+      const avgDelta = Math.round((deltas.reduce((a,b)=>a+b,0) / deltas.length) * 10) / 10;
+      const avgSolo = Math.round((usedSoloAvg.reduce((a,b)=>a+b,0) / usedSoloAvg.length) * 10) / 10;
+      const avgBaseline = Math.round((usedBaselineAvg.reduce((a,b)=>a+b,0) / usedBaselineAvg.length) * 10) / 10;
+      const deltaColor = avgDelta < 0 ? '#22c55e' : (avgDelta > 0 ? '#ef4444' : '#a8b0c3');
+      card.innerHTML = `
+        <div class="name"><span class="dot" style="background:${colorOf(name)};"></span>${name}</div>
+        <table>
+          <tr><td>Solo days used</td><td class="val">${deltas.length}</td></tr>
+          <tr><td>Avg divrank (solo)</td><td class="val">${avgSolo}</td></tr>
+          <tr><td>Avg divrank (nearby shared)</td><td class="val">${avgBaseline}</td></tr>
+          <tr><td>Delta</td><td class="val" style="color:${deltaColor};">${avgDelta > 0 ? '+' : ''}${avgDelta}</td></tr>
+        </table>
+      `;
+      el.appendChild(card);
+    });
+  }
+
 
   // --- 4 & 10. Personal bests timeline / PB-division appearances ---
   function computePersonalBests(name){
