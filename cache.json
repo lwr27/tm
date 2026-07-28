@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-27T20:30:50.412Z",
+  "generatedAt": "2026-07-28T20:30:47.920Z",
   "players": {
     "XV27 & Whidot": {
       "cups": [
@@ -14912,12 +14912,26 @@
           "score": 15,
           "qualificationrank": 866,
           "totalplayers": 1715
+        },
+        {
+          "id": 44411,
+          "timestamp": "2026-07-28T17:16:30Z",
+          "name": "COTD 2026-07-28 #1",
+          "mapuid": "9HikgP2B_gSvu8aWI4X3KSGvdyf",
+          "mapgroup": "003e0d04-2b84-4e04-83cb-0b5a6b4e8b7b",
+          "mapname": "$C60Reborn",
+          "div": 11,
+          "rank": 678,
+          "divrank": 38,
+          "score": 12,
+          "qualificationrank": 657,
+          "totalplayers": 1690
         }
       ],
       "stats": {
-        "total": 1065,
+        "total": 1066,
         "bestrank": 72,
-        "avgrank": 789,
+        "avgrank": 788,
         "bestdiv": 2,
         "totalwins": 0,
         "totaldivwins": 27,

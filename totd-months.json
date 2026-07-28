@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-07-27T20:30:57.267Z",
+  "fetchedAt": "2026-07-28T20:30:54.342Z",
   "maps": [
     {
       "mapUid": "pjCB31IwUZgVsBUP9IF81lx7eh4",
@@ -243,6 +243,15 @@
       "day": 27,
       "monthYear": "2026-07",
       "leaderboardUid": "26f544b5-97d1-4594-a540-fffb8092a3a2"
+    },
+    {
+      "mapUid": "9HikgP2B_gSvu8aWI4X3KSGvdyf",
+      "mapId": "8a338404-fbe9-448b-810d-1a055b34da9f",
+      "name": "$C60Reborn",
+      "authorTimeMs": 46078,
+      "day": 28,
+      "monthYear": "2026-07",
+      "leaderboardUid": "003e0d04-2b84-4e04-83cb-0b5a6b4e8b7b"
     },
     {
       "mapUid": "eXBJaLi77IQlmn97nGSUDliJbM5",

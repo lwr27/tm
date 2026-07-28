@@ -318438,5 +318438,85 @@
     "subregion": "Hamburg",
     "subregionFlag": "Hamburg",
     "resolvedAt": "2026-07-27T21:02:51.828Z"
+  },
+  "c39da241-3da2-44ba-81ca-8f6fe74fa9f5": {
+    "name": "MixtoMektref",
+    "clanTag": "$FB0CRIAS",
+    "country": "Brazil",
+    "countryFlag": "BRA",
+    "region": "Paraná",
+    "subregion": "Paraná",
+    "subregionFlag": "parana",
+    "resolvedAt": "2026-07-28T21:00:31.147Z"
+  },
+  "e595c144-32e1-4663-8632-bac894db61e6": {
+    "name": "Lukester180",
+    "clanTag": "$0CDV$2DDI$5EDB$7FDE",
+    "country": "United Kingdom",
+    "countryFlag": "GBR",
+    "region": "Northern Ireland",
+    "subregion": "Northern Ireland",
+    "subregionFlag": "Nothern_Ireland",
+    "resolvedAt": "2026-07-28T21:00:32.438Z"
+  },
+  "279da8e2-c3f4-4185-a5f8-8140d722f1f4": {
+    "name": "SensaiGaia1",
+    "clanTag": "$S$C33L$FF6G$3C0B$66FT$93FQ",
+    "country": "United Kingdom",
+    "countryFlag": "GBR",
+    "region": "England",
+    "subregion": "North West England",
+    "subregionFlag": "North_West_England_",
+    "resolvedAt": "2026-07-28T21:00:34.135Z"
+  },
+  "cebd0fab-048a-4315-b95e-5a7509be2b5b": {
+    "name": "Taei.",
+    "clanTag": "$W$S$C60F$F90L$F96O$FC9W~",
+    "country": "United States",
+    "countryFlag": "USA",
+    "region": "Florida",
+    "subregion": "Florida",
+    "subregionFlag": "Florida",
+    "resolvedAt": "2026-07-28T21:00:35.800Z"
+  },
+  "56b7d3fc-1ef0-4f26-93cf-52629d662a21": {
+    "name": "dynefps",
+    "clanTag": "$SLTD$F31°",
+    "country": "Germany",
+    "countryFlag": "GER",
+    "region": "Bayern",
+    "subregion": "Augsburg",
+    "subregionFlag": "Augsburg",
+    "resolvedAt": "2026-07-28T21:00:37.621Z"
+  },
+  "f1ff4599-6091-49b9-9a39-523d302e3d13": {
+    "name": "kasparr.",
+    "clanTag": "$F00",
+    "country": "Czechia",
+    "countryFlag": "CZE",
+    "region": "Pardubický kraj",
+    "subregion": "Pardubický kraj",
+    "subregionFlag": "Pardubický kraj",
+    "resolvedAt": "2026-07-28T21:00:39.286Z"
+  },
+  "48140d56-5c54-4f9a-ba08-d5cc7057c39d": {
+    "name": "K1tty_Wh1t3",
+    "clanTag": "$N $Z$S$F39$N $S",
+    "country": "United States",
+    "countryFlag": "USA",
+    "region": "Alaska",
+    "subregion": "Alaska",
+    "subregionFlag": "Alaska",
+    "resolvedAt": "2026-07-28T21:00:40.995Z"
+  },
+  "cae43485-939f-40e4-9ebe-22469ad409ca": {
+    "name": "Gokupr1me",
+    "clanTag": null,
+    "country": "Germany",
+    "countryFlag": "GER",
+    "region": "Nordrhein-Westfalen",
+    "subregion": "Essen",
+    "subregionFlag": "Essen",
+    "resolvedAt": "2026-07-28T21:00:42.715Z"
   }
 }
