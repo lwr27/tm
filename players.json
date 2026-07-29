@@ -318518,5 +318518,15 @@
     "subregion": "Essen",
     "subregionFlag": "Essen",
     "resolvedAt": "2026-07-28T21:00:42.715Z"
+  },
+  "74d502b5-0044-4380-8b01-42c898d22bfc": {
+    "name": "kesoo.",
+    "clanTag": null,
+    "country": "Sweden",
+    "countryFlag": "SWE",
+    "region": null,
+    "subregion": "Sweden",
+    "subregionFlag": "SWE",
+    "resolvedAt": "2026-07-29T21:02:46.254Z"
   }
 }

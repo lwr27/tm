@@ -2057,8 +2057,8 @@
         "lostTo": 2
       },
       "38d74b28-26b2-4d5f-b746-8087ddb1d9b2": {
-        "faced": 10,
-        "beaten": 4,
+        "faced": 11,
+        "beaten": 5,
         "lostTo": 6
       },
       "7f31dee8-5838-43a9-b04d-a76a908735a3": {
@@ -3432,8 +3432,8 @@
         "lostTo": 1
       },
       "dcc5cad8-5622-4bd3-9589-76603eac4775": {
-        "faced": 6,
-        "beaten": 3,
+        "faced": 7,
+        "beaten": 4,
         "lostTo": 3
       },
       "72bb3fe6-50c3-4415-9cd7-a24af1074c68": {
@@ -5922,8 +5922,8 @@
         "lostTo": 0
       },
       "bc0c3339-6dd2-4f42-ae74-8f87c7be3d38": {
-        "faced": 45,
-        "beaten": 25,
+        "faced": 46,
+        "beaten": 26,
         "lostTo": 20
       },
       "1e78532c-d0db-4c60-a55e-8a9d6aec6b14": {
@@ -6827,8 +6827,8 @@
         "lostTo": 10
       },
       "74932c7d-d1f6-44e7-b487-3dbcd80fd136": {
-        "faced": 13,
-        "beaten": 10,
+        "faced": 14,
+        "beaten": 11,
         "lostTo": 3
       },
       "a7f6e5bd-2f1e-49d3-8024-c0c8453499dd": {
@@ -8457,8 +8457,8 @@
         "lostTo": 1
       },
       "ede8dd52-dc02-4abc-a864-eb6e3934bc2b": {
-        "faced": 85,
-        "beaten": 43,
+        "faced": 86,
+        "beaten": 44,
         "lostTo": 42
       },
       "e19598e3-0fc3-49b1-8b72-aeb2f65b8214": {
@@ -11382,8 +11382,8 @@
         "lostTo": 1
       },
       "ee724fac-7764-47e1-a1e5-4b46b25e1f56": {
-        "faced": 47,
-        "beaten": 24,
+        "faced": 48,
+        "beaten": 25,
         "lostTo": 23
       },
       "ae8f8cf4-8429-47de-821f-a1e840b3740d": {
@@ -13092,8 +13092,8 @@
         "lostTo": 1
       },
       "2093e43a-764a-4258-b9a5-3c1b6f9ffca4": {
-        "faced": 11,
-        "beaten": 7,
+        "faced": 12,
+        "beaten": 8,
         "lostTo": 4
       },
       "a42afa53-6b2c-4f9e-8098-4d7800932b78": {
@@ -15717,8 +15717,8 @@
         "lostTo": 0
       },
       "66794235-8aa2-4cac-8ff3-753f7e6edbcb": {
-        "faced": 10,
-        "beaten": 7,
+        "faced": 11,
+        "beaten": 8,
         "lostTo": 3
       },
       "a27a927a-d540-47f9-8599-380817de5ee4": {
@@ -21847,9 +21847,9 @@
         "lostTo": 2
       },
       "e732ba16-cee5-4aa5-bfb1-3e367e212ff2": {
-        "faced": 36,
+        "faced": 37,
         "beaten": 17,
-        "lostTo": 19
+        "lostTo": 20
       },
       "ea4bb869-7925-4044-a2bd-64f6f45012b4": {
         "faced": 1,
@@ -25232,8 +25232,8 @@
         "lostTo": 1
       },
       "cbe0a25f-4c60-4cbc-b1d2-b3d57d74e4b5": {
-        "faced": 4,
-        "beaten": 0,
+        "faced": 5,
+        "beaten": 1,
         "lostTo": 4
       },
       "1d37826f-51ac-49af-9151-c3a13d77f369": {
@@ -29752,8 +29752,8 @@
         "lostTo": 1
       },
       "ca2185a7-41ac-4a09-a75f-461674dad23a": {
-        "faced": 4,
-        "beaten": 0,
+        "faced": 5,
+        "beaten": 1,
         "lostTo": 4
       },
       "aaae15ed-ab4d-4292-ab70-48b0b3d75517": {
@@ -32977,8 +32977,8 @@
         "lostTo": 1
       },
       "29805d71-62de-4110-8f48-8b6effc2ca8a": {
-        "faced": 3,
-        "beaten": 3,
+        "faced": 4,
+        "beaten": 4,
         "lostTo": 0
       },
       "131f50ca-c321-444d-b0c1-1c4003290e8d": {
@@ -38132,8 +38132,8 @@
         "lostTo": 0
       },
       "4470fed2-deff-47de-af3c-b0f0395b85bf": {
-        "faced": 3,
-        "beaten": 2,
+        "faced": 4,
+        "beaten": 3,
         "lostTo": 1
       },
       "d1cc679e-920c-4101-9b33-10fb711c10f0": {
@@ -44212,7 +44212,7 @@
         "lostTo": 3
       },
       "df4b0114-d8f7-45c9-a95d-fb4000749fe1": {
-        "faced": 55,
+        "faced": 56,
         "beaten": 0,
         "lostTo": 0
       },
@@ -45462,8 +45462,8 @@
         "lostTo": 0
       },
       "6a2aa087-297f-430d-a2c6-7164cbb05454": {
-        "faced": 14,
-        "beaten": 12,
+        "faced": 15,
+        "beaten": 13,
         "lostTo": 2
       },
       "009b509f-46fd-452d-be27-ee0ff7191abc": {
@@ -45787,8 +45787,8 @@
         "lostTo": 1
       },
       "38fc5fd1-652b-4812-af4f-c2057803b3b5": {
-        "faced": 39,
-        "beaten": 21,
+        "faced": 40,
+        "beaten": 22,
         "lostTo": 18
       },
       "b68f370d-e716-4557-9b98-18b9cdcb9b9b": {
@@ -47367,8 +47367,8 @@
         "lostTo": 0
       },
       "15fa746a-d31f-4b04-9486-18c0cddeec47": {
-        "faced": 6,
-        "beaten": 2,
+        "faced": 7,
+        "beaten": 3,
         "lostTo": 4
       },
       "7afc4168-acb3-4b28-af62-bd1ac13617d4": {
@@ -50357,8 +50357,8 @@
         "lostTo": 1
       },
       "6e818ca8-6e4f-4891-a995-115a0b0d027c": {
-        "faced": 1,
-        "beaten": 1,
+        "faced": 2,
+        "beaten": 2,
         "lostTo": 0
       },
       "32ed64a8-79ce-4eae-9b67-8db769b3ab17": {
@@ -54032,8 +54032,8 @@
         "lostTo": 2
       },
       "5ffb29e3-8ce4-4713-8af9-9500861e6c3f": {
-        "faced": 4,
-        "beaten": 3,
+        "faced": 5,
+        "beaten": 4,
         "lostTo": 1
       },
       "7c02bdeb-92dc-4435-b07b-647e0d5699a9": {
@@ -55202,9 +55202,9 @@
         "lostTo": 1
       },
       "ec4c3c53-161f-4732-b78a-d99b33ae212c": {
-        "faced": 15,
+        "faced": 16,
         "beaten": 7,
-        "lostTo": 8
+        "lostTo": 9
       },
       "3b2167aa-7c22-422f-bd89-3180deaaef46": {
         "faced": 1,
@@ -56482,8 +56482,8 @@
         "lostTo": 2
       },
       "c18a9a31-47e3-4ca4-a9a3-7a8e960dfe8d": {
-        "faced": 3,
-        "beaten": 1,
+        "faced": 4,
+        "beaten": 2,
         "lostTo": 2
       },
       "fba85c24-bef4-4df2-9c96-ed9915f298e3": {
@@ -64082,8 +64082,8 @@
         "lostTo": 0
       },
       "4aa12d0d-3abc-4ba8-a1b9-e8dca654f278": {
-        "faced": 4,
-        "beaten": 3,
+        "faced": 5,
+        "beaten": 4,
         "lostTo": 1
       },
       "fe77bb3e-adf3-42bc-adb4-b9212cf972f5": {
@@ -65867,8 +65867,8 @@
         "lostTo": 1
       },
       "19fb726a-2220-4d69-8a45-a120f71e5c12": {
-        "faced": 1,
-        "beaten": 0,
+        "faced": 2,
+        "beaten": 1,
         "lostTo": 1
       },
       "12377694-4eca-4ac7-9cf7-a722883c31c6": {
@@ -67112,8 +67112,8 @@
         "lostTo": 1
       },
       "e1323a39-f817-48ed-ac40-09968bbe9458": {
-        "faced": 6,
-        "beaten": 3,
+        "faced": 7,
+        "beaten": 4,
         "lostTo": 3
       },
       "889a4d82-9ab0-4d88-8572-9420dcc50fa1": {
@@ -68082,9 +68082,9 @@
         "lostTo": 1
       },
       "aa6665c0-9f38-4c85-8bc9-9b531b490bd6": {
-        "faced": 16,
+        "faced": 17,
         "beaten": 7,
-        "lostTo": 9
+        "lostTo": 10
       },
       "7f1d885f-b708-4853-b6b1-bdccd16b2e16": {
         "faced": 1,
@@ -68657,9 +68657,9 @@
         "lostTo": 0
       },
       "4f56d262-92d2-46b7-ae4e-ba30a3933089": {
-        "faced": 11,
+        "faced": 12,
         "beaten": 5,
-        "lostTo": 6
+        "lostTo": 7
       },
       "c84649ed-9827-49af-b02e-673c2b2c6686": {
         "faced": 4,
@@ -70212,8 +70212,8 @@
         "lostTo": 5
       },
       "ac5b2c30-f81a-4917-b4d5-1b1a932825cc": {
-        "faced": 13,
-        "beaten": 8,
+        "faced": 14,
+        "beaten": 9,
         "lostTo": 5
       },
       "2bda5dc1-018d-4650-b36f-6cb9d1bb429d": {
@@ -70577,8 +70577,8 @@
         "lostTo": 1
       },
       "da146a67-8e9d-4254-852d-6b407cb6cdea": {
-        "faced": 3,
-        "beaten": 1,
+        "faced": 4,
+        "beaten": 2,
         "lostTo": 2
       },
       "bbcdb560-3cc1-4875-b113-d9452595270c": {
@@ -70932,8 +70932,8 @@
         "lostTo": 0
       },
       "08fad58b-c7e8-4d52-83fc-49d3f8757a7b": {
-        "faced": 4,
-        "beaten": 2,
+        "faced": 5,
+        "beaten": 3,
         "lostTo": 2
       },
       "157e526f-e1bc-42c8-961f-2aa27e836cbe": {
@@ -71187,8 +71187,8 @@
         "lostTo": 1
       },
       "4525fa87-2ffc-4ce3-b457-6b79a6e04605": {
-        "faced": 4,
-        "beaten": 3,
+        "faced": 5,
+        "beaten": 4,
         "lostTo": 1
       },
       "115ee845-0ead-40dc-a384-521d5daa36c1": {
@@ -71532,9 +71532,9 @@
         "lostTo": 1
       },
       "d4aeee08-a406-4c86-a6b2-4844d013e0d3": {
-        "faced": 3,
+        "faced": 4,
         "beaten": 3,
-        "lostTo": 0
+        "lostTo": 1
       },
       "625040dc-683c-4502-88f8-bb6650d4168b": {
         "faced": 1,
@@ -72602,8 +72602,8 @@
         "lostTo": 0
       },
       "daf38b43-9b6a-457a-8893-737ddc5177ae": {
-        "faced": 6,
-        "beaten": 5,
+        "faced": 7,
+        "beaten": 6,
         "lostTo": 1
       },
       "087d2993-ec73-4643-8355-d85ad4ce8e33": {
@@ -73122,8 +73122,8 @@
         "lostTo": 2
       },
       "886df86b-002e-4ba6-b847-d3512e3a7678": {
-        "faced": 10,
-        "beaten": 7,
+        "faced": 11,
+        "beaten": 8,
         "lostTo": 3
       },
       "a1b9ac05-4f70-4480-8242-6d2304bddc48": {
@@ -74242,8 +74242,8 @@
         "lostTo": 0
       },
       "dead8c34-0248-4a1e-a0e8-edb309e27634": {
-        "faced": 3,
-        "beaten": 2,
+        "faced": 4,
+        "beaten": 3,
         "lostTo": 1
       },
       "fefa1452-7ce5-4c50-9fc2-09ad3dccf7c8": {
@@ -74827,8 +74827,8 @@
         "lostTo": 1
       },
       "92d564d6-3c48-49e4-869a-e5eef185ba4d": {
-        "faced": 2,
-        "beaten": 2,
+        "faced": 3,
+        "beaten": 3,
         "lostTo": 0
       },
       "aa7fba03-10f5-4bd9-aab4-7ab623f214d8": {
@@ -79957,9 +79957,9 @@
         "lostTo": 1
       },
       "dc940b6d-f80e-4b90-a76f-2dcc48bb8b89": {
-        "faced": 4,
+        "faced": 5,
         "beaten": 2,
-        "lostTo": 2
+        "lostTo": 3
       },
       "ec2d80d0-3c57-446d-aaa3-31ea738367f0": {
         "faced": 1,
@@ -80742,8 +80742,8 @@
         "lostTo": 1
       },
       "f4037c21-f1ce-469c-8994-1bddad6b7c7b": {
-        "faced": 4,
-        "beaten": 1,
+        "faced": 5,
+        "beaten": 2,
         "lostTo": 3
       },
       "6cdf8644-652b-4bd2-ad1b-0b3fcaeac5e3": {
@@ -81377,9 +81377,9 @@
         "lostTo": 1
       },
       "a2878c73-f871-4e54-b369-af584e949eea": {
-        "faced": 1,
+        "faced": 2,
         "beaten": 0,
-        "lostTo": 1
+        "lostTo": 2
       },
       "5b04a38e-05cd-45d9-a0ba-42e9b79d1d75": {
         "faced": 1,
@@ -81652,8 +81652,8 @@
         "lostTo": 0
       },
       "6e663b10-64d1-4103-8900-1d4609d05461": {
-        "faced": 1,
-        "beaten": 0,
+        "faced": 2,
+        "beaten": 1,
         "lostTo": 1
       },
       "1e688f59-b2a5-4e9b-98b1-4aca1e84fb92": {
@@ -81757,13 +81757,13 @@
         "lostTo": 2
       },
       "82da13fe-eb0b-47b4-b8e1-38bc92c6e0f5": {
-        "faced": 1,
-        "beaten": 1,
+        "faced": 2,
+        "beaten": 2,
         "lostTo": 0
       },
       "99997410-0cb4-4e6b-891c-2f1cb44d0612": {
-        "faced": 1,
-        "beaten": 1,
+        "faced": 2,
+        "beaten": 2,
         "lostTo": 0
       },
       "092483fd-b56c-4d27-bd94-9dade080a3a4": {
@@ -82627,8 +82627,8 @@
         "lostTo": 0
       },
       "a7faa56f-fecb-4669-bfab-fab33db461af": {
-        "faced": 2,
-        "beaten": 2,
+        "faced": 3,
+        "beaten": 3,
         "lostTo": 0
       },
       "68f8cd45-c2c1-48c2-8f72-3a85d85b38c1": {
@@ -84092,8 +84092,8 @@
         "lostTo": 0
       },
       "8d875eeb-413a-4b1e-bf6d-2cf0c19746a3": {
-        "faced": 2,
-        "beaten": 1,
+        "faced": 3,
+        "beaten": 2,
         "lostTo": 1
       },
       "f9a1dae4-8feb-412b-8dc4-6a7a926e7220": {
@@ -85322,8 +85322,8 @@
         "lostTo": 0
       },
       "1a9f1416-51fc-4fa3-92bf-bc94d717d9e1": {
-        "faced": 2,
-        "beaten": 1,
+        "faced": 3,
+        "beaten": 2,
         "lostTo": 1
       },
       "39e76133-7798-4984-a45b-7cf2c4177fb2": {
@@ -85542,8 +85542,8 @@
         "lostTo": 0
       },
       "c39da241-3da2-44ba-81ca-8f6fe74fa9f5": {
-        "faced": 1,
-        "beaten": 0,
+        "faced": 2,
+        "beaten": 1,
         "lostTo": 1
       },
       "e595c144-32e1-4663-8632-bac894db61e6": {
@@ -85597,6 +85597,41 @@
         "lostTo": 0
       },
       "cae43485-939f-40e4-9ebe-22469ad409ca": {
+        "faced": 1,
+        "beaten": 1,
+        "lostTo": 0
+      },
+      "36dc9dc9-9776-4c81-ba37-b3acf2fc1a57": {
+        "faced": 1,
+        "beaten": 0,
+        "lostTo": 1
+      },
+      "3db88910-ddba-4db9-9c9d-1f8b20b208ca": {
+        "faced": 1,
+        "beaten": 0,
+        "lostTo": 1
+      },
+      "9bb3b366-ba5c-4d51-8e56-3485e5755781": {
+        "faced": 1,
+        "beaten": 1,
+        "lostTo": 0
+      },
+      "192f2149-2272-422f-bab0-294158154da2": {
+        "faced": 1,
+        "beaten": 1,
+        "lostTo": 0
+      },
+      "74d502b5-0044-4380-8b01-42c898d22bfc": {
+        "faced": 1,
+        "beaten": 1,
+        "lostTo": 0
+      },
+      "12584a43-7ee0-4c60-888f-e433a170e6d2": {
+        "faced": 1,
+        "beaten": 1,
+        "lostTo": 0
+      },
+      "cb34065e-f91b-4b9e-8096-b1c00b3579b5": {
         "faced": 1,
         "beaten": 1,
         "lostTo": 0
@@ -189066,9 +189101,9 @@
         "lostTo": 0
       },
       "38d74b28-26b2-4d5f-b746-8087ddb1d9b2": {
-        "faced": 13,
+        "faced": 14,
         "beaten": 11,
-        "lostTo": 2
+        "lostTo": 3
       },
       "37a8f331-76c0-490b-9eef-6dd18db88ba0": {
         "faced": 3,
@@ -190951,8 +190986,8 @@
         "lostTo": 0
       },
       "4aa12d0d-3abc-4ba8-a1b9-e8dca654f278": {
-        "faced": 11,
-        "beaten": 10,
+        "faced": 12,
+        "beaten": 11,
         "lostTo": 1
       },
       "ddeb2ca9-9f01-4b0b-be3e-490cf5a86613": {
@@ -191691,9 +191726,9 @@
         "lostTo": 2
       },
       "bc0c3339-6dd2-4f42-ae74-8f87c7be3d38": {
-        "faced": 35,
+        "faced": 36,
         "beaten": 18,
-        "lostTo": 17
+        "lostTo": 18
       },
       "1f5b041d-c374-42a0-b26a-1c6cebc49ae1": {
         "faced": 4,
@@ -192666,9 +192701,9 @@
         "lostTo": 1
       },
       "e732ba16-cee5-4aa5-bfb1-3e367e212ff2": {
-        "faced": 30,
+        "faced": 31,
         "beaten": 19,
-        "lostTo": 11
+        "lostTo": 12
       },
       "7035c742-2a0d-4e5c-8e66-07fc540a939d": {
         "faced": 1,
@@ -195656,9 +195691,9 @@
         "lostTo": 0
       },
       "ca2185a7-41ac-4a09-a75f-461674dad23a": {
-        "faced": 3,
+        "faced": 4,
         "beaten": 3,
-        "lostTo": 0
+        "lostTo": 1
       },
       "28af9530-9e04-47ad-b9ab-24fce3093fff": {
         "faced": 1,
@@ -196411,9 +196446,9 @@
         "lostTo": 2
       },
       "66794235-8aa2-4cac-8ff3-753f7e6edbcb": {
-        "faced": 6,
+        "faced": 7,
         "beaten": 4,
-        "lostTo": 2
+        "lostTo": 3
       },
       "a27a927a-d540-47f9-8599-380817de5ee4": {
         "faced": 1,
@@ -201226,8 +201261,8 @@
         "lostTo": 0
       },
       "2093e43a-764a-4258-b9a5-3c1b6f9ffca4": {
-        "faced": 9,
-        "beaten": 5,
+        "faced": 10,
+        "beaten": 6,
         "lostTo": 4
       },
       "2d7bf0b6-bac6-40df-a6b7-c8caf4d5b619": {
@@ -203321,8 +203356,8 @@
         "lostTo": 1
       },
       "74932c7d-d1f6-44e7-b487-3dbcd80fd136": {
-        "faced": 12,
-        "beaten": 7,
+        "faced": 13,
+        "beaten": 8,
         "lostTo": 5
       },
       "0f77f21d-6e62-46ad-9724-b627cd4e1b44": {
@@ -203621,9 +203656,9 @@
         "lostTo": 0
       },
       "29805d71-62de-4110-8f48-8b6effc2ca8a": {
-        "faced": 5,
+        "faced": 6,
         "beaten": 3,
-        "lostTo": 2
+        "lostTo": 3
       },
       "98e90cf7-0efd-4692-827e-98dea59131b9": {
         "faced": 2,
@@ -206651,9 +206686,9 @@
         "lostTo": 1
       },
       "ee724fac-7764-47e1-a1e5-4b46b25e1f56": {
-        "faced": 32,
+        "faced": 33,
         "beaten": 18,
-        "lostTo": 14
+        "lostTo": 15
       },
       "2eafc57e-08c2-4dba-b568-21faba8ba49a": {
         "faced": 2,
@@ -208001,9 +208036,9 @@
         "lostTo": 2
       },
       "d4aeee08-a406-4c86-a6b2-4844d013e0d3": {
-        "faced": 3,
+        "faced": 4,
         "beaten": 2,
-        "lostTo": 1
+        "lostTo": 2
       },
       "3380c5d9-8dea-4a2f-b6f1-88c168df8f24": {
         "faced": 1,
@@ -214621,9 +214656,9 @@
         "lostTo": 0
       },
       "6e818ca8-6e4f-4891-a995-115a0b0d027c": {
-        "faced": 9,
+        "faced": 10,
         "beaten": 7,
-        "lostTo": 2
+        "lostTo": 3
       },
       "1b1adcba-9148-4973-893c-7124fbb382cd": {
         "faced": 1,
@@ -215566,8 +215601,8 @@
         "lostTo": 1
       },
       "4470fed2-deff-47de-af3c-b0f0395b85bf": {
-        "faced": 3,
-        "beaten": 3,
+        "faced": 4,
+        "beaten": 4,
         "lostTo": 0
       },
       "2001fe47-88fa-463d-850c-e49ca1985d87": {
@@ -219796,8 +219831,8 @@
         "lostTo": 1
       },
       "15fa746a-d31f-4b04-9486-18c0cddeec47": {
-        "faced": 5,
-        "beaten": 3,
+        "faced": 6,
+        "beaten": 4,
         "lostTo": 2
       },
       "247d5e11-23b9-4150-bb43-8caa0bf32e1f": {
@@ -227366,9 +227401,9 @@
         "lostTo": 0
       },
       "38fc5fd1-652b-4812-af4f-c2057803b3b5": {
-        "faced": 32,
+        "faced": 33,
         "beaten": 20,
-        "lostTo": 12
+        "lostTo": 13
       },
       "9714f9ab-8ff4-41a3-ba4e-01ed2a5e26a0": {
         "faced": 3,
@@ -230026,9 +230061,9 @@
         "lostTo": 1
       },
       "6a2aa087-297f-430d-a2c6-7164cbb05454": {
-        "faced": 20,
+        "faced": 21,
         "beaten": 11,
-        "lostTo": 9
+        "lostTo": 10
       },
       "8be979d1-0849-43ea-a02e-52c3ef9d40de": {
         "faced": 2,
@@ -245126,9 +245161,9 @@
         "lostTo": 0
       },
       "e1323a39-f817-48ed-ac40-09968bbe9458": {
-        "faced": 5,
+        "faced": 6,
         "beaten": 3,
-        "lostTo": 2
+        "lostTo": 3
       },
       "53482258-350a-48e6-8eff-114c49e37b1a": {
         "faced": 1,
@@ -245866,8 +245901,8 @@
         "lostTo": 1
       },
       "c18a9a31-47e3-4ca4-a9a3-7a8e960dfe8d": {
-        "faced": 2,
-        "beaten": 1,
+        "faced": 3,
+        "beaten": 2,
         "lostTo": 1
       },
       "5948db32-3289-43d9-b1ab-b35c2bc7dab3": {
@@ -246391,9 +246426,9 @@
         "lostTo": 0
       },
       "ec4c3c53-161f-4732-b78a-d99b33ae212c": {
-        "faced": 11,
+        "faced": 12,
         "beaten": 7,
-        "lostTo": 4
+        "lostTo": 5
       },
       "ede32437-88d3-4afb-b80c-c3585c856549": {
         "faced": 1,
@@ -248991,8 +249026,8 @@
         "lostTo": 0
       },
       "cbe0a25f-4c60-4cbc-b1d2-b3d57d74e4b5": {
-        "faced": 1,
-        "beaten": 0,
+        "faced": 2,
+        "beaten": 1,
         "lostTo": 1
       },
       "70fe0864-72db-44dd-8272-6071304b1863": {
@@ -250331,8 +250366,8 @@
         "lostTo": 0
       },
       "ac5b2c30-f81a-4917-b4d5-1b1a932825cc": {
-        "faced": 16,
-        "beaten": 9,
+        "faced": 17,
+        "beaten": 10,
         "lostTo": 7
       },
       "87e03714-9cce-4011-b3d2-9f6df720aa80": {
@@ -251526,9 +251561,9 @@
         "lostTo": 1
       },
       "aa6665c0-9f38-4c85-8bc9-9b531b490bd6": {
-        "faced": 7,
+        "faced": 8,
         "beaten": 3,
-        "lostTo": 4
+        "lostTo": 5
       },
       "fefa1452-7ce5-4c50-9fc2-09ad3dccf7c8": {
         "faced": 2,
@@ -253121,9 +253156,9 @@
         "lostTo": 1
       },
       "4f56d262-92d2-46b7-ae4e-ba30a3933089": {
-        "faced": 8,
+        "faced": 9,
         "beaten": 3,
-        "lostTo": 5
+        "lostTo": 6
       },
       "b489209f-dd37-481a-946d-8fa86bade011": {
         "faced": 1,
@@ -259631,8 +259666,8 @@
         "lostTo": 0
       },
       "886df86b-002e-4ba6-b847-d3512e3a7678": {
-        "faced": 5,
-        "beaten": 3,
+        "faced": 6,
+        "beaten": 4,
         "lostTo": 2
       },
       "7409125d-516e-4346-8444-3b1274b72227": {
@@ -259851,8 +259886,8 @@
         "lostTo": 0
       },
       "daf38b43-9b6a-457a-8893-737ddc5177ae": {
-        "faced": 3,
-        "beaten": 2,
+        "faced": 4,
+        "beaten": 3,
         "lostTo": 1
       },
       "1d105afa-f103-469a-85f3-cc38694ce0e6": {
@@ -260601,9 +260636,9 @@
         "lostTo": 1
       },
       "dcc5cad8-5622-4bd3-9589-76603eac4775": {
-        "faced": 2,
+        "faced": 3,
         "beaten": 1,
-        "lostTo": 1
+        "lostTo": 2
       },
       "09488c86-b7dd-46a8-87c7-a3ba6b1252f7": {
         "faced": 18,
@@ -261776,8 +261811,8 @@
         "lostTo": 1
       },
       "92d564d6-3c48-49e4-869a-e5eef185ba4d": {
-        "faced": 2,
-        "beaten": 0,
+        "faced": 3,
+        "beaten": 1,
         "lostTo": 2
       },
       "68a6d46a-ea28-4fdb-a2af-407224745776": {
@@ -263011,8 +263046,8 @@
         "lostTo": 2
       },
       "dead8c34-0248-4a1e-a0e8-edb309e27634": {
-        "faced": 2,
-        "beaten": 1,
+        "faced": 3,
+        "beaten": 2,
         "lostTo": 1
       },
       "f6758fab-a4c1-4ef6-a601-41c67d971bb5": {
@@ -265781,9 +265816,9 @@
         "lostTo": 0
       },
       "36dc9dc9-9776-4c81-ba37-b3acf2fc1a57": {
-        "faced": 1,
+        "faced": 2,
         "beaten": 1,
-        "lostTo": 0
+        "lostTo": 1
       },
       "4044d795-c0c3-4528-b349-79005d95f322": {
         "faced": 1,
@@ -268131,8 +268166,8 @@
         "lostTo": 1
       },
       "f4037c21-f1ce-469c-8994-1bddad6b7c7b": {
-        "faced": 4,
-        "beaten": 2,
+        "faced": 5,
+        "beaten": 3,
         "lostTo": 2
       },
       "47d13a55-f53b-411c-a996-4b2a993ef449": {
@@ -268156,9 +268191,9 @@
         "lostTo": 1
       },
       "dc940b6d-f80e-4b90-a76f-2dcc48bb8b89": {
-        "faced": 6,
+        "faced": 7,
         "beaten": 1,
-        "lostTo": 5
+        "lostTo": 6
       },
       "10815633-91c3-4b5c-aca9-18eabfeef25d": {
         "faced": 1,
@@ -268271,9 +268306,9 @@
         "lostTo": 2
       },
       "82da13fe-eb0b-47b4-b8e1-38bc92c6e0f5": {
-        "faced": 1,
+        "faced": 2,
         "beaten": 1,
-        "lostTo": 0
+        "lostTo": 1
       },
       "bc7fff07-cdf6-471f-baed-15d5304ed170": {
         "faced": 3,
@@ -269256,8 +269291,8 @@
         "lostTo": 2
       },
       "4525fa87-2ffc-4ce3-b457-6b79a6e04605": {
-        "faced": 2,
-        "beaten": 0,
+        "faced": 3,
+        "beaten": 1,
         "lostTo": 2
       },
       "3a2fd98c-0710-45e8-aca7-ca2d64c60ff7": {
@@ -269616,9 +269651,9 @@
         "lostTo": 0
       },
       "df4b0114-d8f7-45c9-a95d-fb4000749fe1": {
-        "faced": 3,
+        "faced": 4,
         "beaten": 2,
-        "lostTo": 1
+        "lostTo": 2
       },
       "f4afed42-0d53-4b10-a034-366c56e06a31": {
         "faced": 1,
@@ -269796,8 +269831,8 @@
         "lostTo": 0
       },
       "192f2149-2272-422f-bab0-294158154da2": {
-        "faced": 1,
-        "beaten": 1,
+        "faced": 2,
+        "beaten": 2,
         "lostTo": 0
       },
       "5ca614fa-d2f8-495c-a0ce-c3e863280f02": {
@@ -269866,9 +269901,9 @@
         "lostTo": 0
       },
       "99997410-0cb4-4e6b-891c-2f1cb44d0612": {
-        "faced": 1,
+        "faced": 2,
         "beaten": 0,
-        "lostTo": 1
+        "lostTo": 2
       },
       "f3dc6b6a-86ca-4124-89e1-2f73bbea5620": {
         "faced": 1,
@@ -270041,8 +270076,8 @@
         "lostTo": 1
       },
       "da146a67-8e9d-4254-852d-6b407cb6cdea": {
-        "faced": 2,
-        "beaten": 1,
+        "faced": 3,
+        "beaten": 2,
         "lostTo": 1
       },
       "01ae3582-e042-4568-9aae-937683d7961b": {
@@ -270956,9 +270991,9 @@
         "lostTo": 0
       },
       "08fad58b-c7e8-4d52-83fc-49d3f8757a7b": {
-        "faced": 1,
+        "faced": 2,
         "beaten": 1,
-        "lostTo": 0
+        "lostTo": 1
       },
       "1794812f-b43d-474c-9c8c-b1ec22ee6145": {
         "faced": 1,
@@ -271576,6 +271611,71 @@
         "lostTo": 0
       },
       "f56fca69-de69-45bd-94fd-fbf94b08cae3": {
+        "faced": 1,
+        "beaten": 1,
+        "lostTo": 0
+      },
+      "a2878c73-f871-4e54-b369-af584e949eea": {
+        "faced": 1,
+        "beaten": 0,
+        "lostTo": 1
+      },
+      "3db88910-ddba-4db9-9c9d-1f8b20b208ca": {
+        "faced": 1,
+        "beaten": 0,
+        "lostTo": 1
+      },
+      "9bb3b366-ba5c-4d51-8e56-3485e5755781": {
+        "faced": 1,
+        "beaten": 0,
+        "lostTo": 1
+      },
+      "a7faa56f-fecb-4669-bfab-fab33db461af": {
+        "faced": 1,
+        "beaten": 0,
+        "lostTo": 1
+      },
+      "6e663b10-64d1-4103-8900-1d4609d05461": {
+        "faced": 1,
+        "beaten": 0,
+        "lostTo": 1
+      },
+      "c39da241-3da2-44ba-81ca-8f6fe74fa9f5": {
+        "faced": 1,
+        "beaten": 0,
+        "lostTo": 1
+      },
+      "1a9f1416-51fc-4fa3-92bf-bc94d717d9e1": {
+        "faced": 1,
+        "beaten": 1,
+        "lostTo": 0
+      },
+      "8d875eeb-413a-4b1e-bf6d-2cf0c19746a3": {
+        "faced": 1,
+        "beaten": 1,
+        "lostTo": 0
+      },
+      "74d502b5-0044-4380-8b01-42c898d22bfc": {
+        "faced": 1,
+        "beaten": 1,
+        "lostTo": 0
+      },
+      "12584a43-7ee0-4c60-888f-e433a170e6d2": {
+        "faced": 1,
+        "beaten": 1,
+        "lostTo": 0
+      },
+      "19fb726a-2220-4d69-8a45-a120f71e5c12": {
+        "faced": 1,
+        "beaten": 1,
+        "lostTo": 0
+      },
+      "cb34065e-f91b-4b9e-8096-b1c00b3579b5": {
+        "faced": 1,
+        "beaten": 1,
+        "lostTo": 0
+      },
+      "5ffb29e3-8ce4-4713-8af9-9500861e6c3f": {
         "faced": 1,
         "beaten": 1,
         "lostTo": 0
@@ -273010,7 +273110,8 @@
     "44359",
     "44379",
     "44394",
-    "44411"
+    "44411",
+    "44436"
   ],
-  "generatedAt": "2026-07-28T21:00:29.113Z"
+  "generatedAt": "2026-07-29T21:02:43.838Z"
 }

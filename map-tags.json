@@ -22373,6 +22373,15 @@
       "tags": [],
       "env": null,
       "mxid": null
+    },
+    "VTvFFbxLBYKxTZnkZBFhyt1C_3g": {
+      "found": true,
+      "name": "Duplicity",
+      "tags": [
+        "SpeedTech"
+      ],
+      "env": "Stadium",
+      "mxid": 318363
     }
   }
 }
