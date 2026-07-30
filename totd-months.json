@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-07-29T20:30:58.858Z",
+  "fetchedAt": "2026-07-30T20:31:03.092Z",
   "maps": [
     {
       "mapUid": "pjCB31IwUZgVsBUP9IF81lx7eh4",
@@ -261,6 +261,15 @@
       "day": 29,
       "monthYear": "2026-07",
       "leaderboardUid": "1f49f447-8a83-4ed7-8b5a-10dd3340d3bf"
+    },
+    {
+      "mapUid": "Zey28ykUObGaUvcecrlqQiM2BEa",
+      "mapId": "81f9b8bf-ef48-429e-b06b-ed0b6d19c1da",
+      "name": "$s$690Emerald Eyes $fffft' Mitra",
+      "authorTimeMs": 45692,
+      "day": 30,
+      "monthYear": "2026-07",
+      "leaderboardUid": "487428c8-1a32-4306-8510-1c01b46303a7"
     },
     {
       "mapUid": "eXBJaLi77IQlmn97nGSUDliJbM5",

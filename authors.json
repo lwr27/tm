@@ -37958,10 +37958,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "Zey28ykUObGaUvcecrlqQiM2BEa",
+      "mapId": "81f9b8bf-ef48-429e-b06b-ed0b6d19c1da",
+      "name": "$s$690Emerald Eyes $fffft' Mitra",
+      "authorTimeMs": 45692,
+      "day": 30,
+      "monthYear": "2026-07",
+      "leaderboardUid": "487428c8-1a32-4306-8510-1c01b46303a7",
+      "authorCount": 61,
+      "totalFinishers": 3058,
+      "pct": 2,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-07-29T20:31:07.922Z",
-  "medalsRefreshedAt": "2026-07-29T21:02:41.406Z",
+  "generatedAt": "2026-07-30T20:31:11.660Z",
+  "medalsRefreshedAt": "2026-07-30T21:01:13.732Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",

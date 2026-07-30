@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-29T20:30:51.995Z",
+  "generatedAt": "2026-07-30T20:30:56.307Z",
   "players": {
     "XV27 & Whidot": {
       "cups": [
@@ -14940,10 +14940,24 @@
           "score": 42,
           "qualificationrank": 624,
           "totalplayers": 1671
+        },
+        {
+          "id": 44451,
+          "timestamp": "2026-07-30T17:16:30Z",
+          "name": "COTD 2026-07-30 #1",
+          "mapuid": "Zey28ykUObGaUvcecrlqQiM2BEa",
+          "mapgroup": "487428c8-1a32-4306-8510-1c01b46303a7",
+          "mapname": "$s$690Emerald Eyes $fffft' Mitra",
+          "div": 4,
+          "rank": 256,
+          "divrank": 0,
+          "score": 0,
+          "qualificationrank": 242,
+          "totalplayers": 1527
         }
       ],
       "stats": {
-        "total": 1067,
+        "total": 1068,
         "bestrank": 72,
         "avgrank": 788,
         "bestdiv": 2,
