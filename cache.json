@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-31T20:30:53.809Z",
+  "generatedAt": "2026-08-01T20:30:47.149Z",
   "players": {
     "XV27 & Whidot": {
       "cups": [
@@ -14968,10 +14968,24 @@
           "score": 23,
           "qualificationrank": 711,
           "totalplayers": 1529
+        },
+        {
+          "id": 44498,
+          "timestamp": "2026-08-01T17:16:30Z",
+          "name": "COTD 2026-08-01 #1",
+          "mapuid": "Et1IVfZ6A59U6G_Bqx2UZ8pFw_g",
+          "mapgroup": "fa938d72-fbb7-4422-bc2e-8c93f521a6e0",
+          "mapname": "$o$e40Bear's $c40Valley",
+          "div": 17,
+          "rank": 1088,
+          "divrank": 0,
+          "score": 0,
+          "qualificationrank": 1067,
+          "totalplayers": 1669
         }
       ],
       "stats": {
-        "total": 1069,
+        "total": 1070,
         "bestrank": 72,
         "avgrank": 788,
         "bestdiv": 2,
@@ -44282,10 +44296,24 @@
           "score": 25,
           "qualificationrank": 347,
           "totalplayers": 1529
+        },
+        {
+          "id": 44498,
+          "timestamp": "2026-08-01T17:16:30Z",
+          "name": "COTD 2026-08-01 #1",
+          "mapuid": "Et1IVfZ6A59U6G_Bqx2UZ8pFw_g",
+          "mapgroup": "fa938d72-fbb7-4422-bc2e-8c93f521a6e0",
+          "mapname": "$o$e40Bear's $c40Valley",
+          "div": 5,
+          "rank": 320,
+          "divrank": 0,
+          "score": 0,
+          "qualificationrank": 309,
+          "totalplayers": 1669
         }
       ],
       "stats": {
-        "total": 989,
+        "total": 990,
         "bestrank": 2,
         "avgrank": 848,
         "bestdiv": 1,

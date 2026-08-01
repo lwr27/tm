@@ -1,6 +1,15 @@
 {
-  "fetchedAt": "2026-07-31T20:31:00.652Z",
+  "fetchedAt": "2026-08-01T20:30:54.624Z",
   "maps": [
+    {
+      "mapUid": "Et1IVfZ6A59U6G_Bqx2UZ8pFw_g",
+      "mapId": "d39df09e-1a44-4e18-bc02-8b2d4a1680b1",
+      "name": "$o$e40Bear's $c40Valley",
+      "authorTimeMs": 45224,
+      "day": 1,
+      "monthYear": "2026-08",
+      "leaderboardUid": "fa938d72-fbb7-4422-bc2e-8c93f521a6e0"
+    },
     {
       "mapUid": "pjCB31IwUZgVsBUP9IF81lx7eh4",
       "mapId": "ee0efcc7-9861-4f5c-8770-eefdb9c99193",
