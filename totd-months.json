@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-01T20:30:54.624Z",
+  "fetchedAt": "2026-08-02T20:30:55.152Z",
   "maps": [
     {
       "mapUid": "Et1IVfZ6A59U6G_Bqx2UZ8pFw_g",
@@ -9,6 +9,15 @@
       "day": 1,
       "monthYear": "2026-08",
       "leaderboardUid": "fa938d72-fbb7-4422-bc2e-8c93f521a6e0"
+    },
+    {
+      "mapUid": "sHpoZAvf7kmtpbg8hZT7BAaHzx9",
+      "mapId": "81e25087-84b6-422b-860e-61534c1c1db3",
+      "name": "$z$s$n$o$3beLost Umbrella $fff",
+      "authorTimeMs": 38784,
+      "day": 2,
+      "monthYear": "2026-08",
+      "leaderboardUid": "8a9e2c3a-6361-4ce4-a8ba-a6528b4599a8"
     },
     {
       "mapUid": "pjCB31IwUZgVsBUP9IF81lx7eh4",

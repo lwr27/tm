@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-01T20:30:47.149Z",
+  "generatedAt": "2026-08-02T20:30:47.361Z",
   "players": {
     "XV27 & Whidot": {
       "cups": [
@@ -30437,10 +30437,24 @@
           "score": 22,
           "qualificationrank": 1050,
           "totalplayers": 1500
+        },
+        {
+          "id": 44518,
+          "timestamp": "2026-08-02T17:16:30Z",
+          "name": "COTD 2026-08-02 #1",
+          "mapuid": "sHpoZAvf7kmtpbg8hZT7BAaHzx9",
+          "mapgroup": "8a9e2c3a-6361-4ce4-a8ba-a6528b4599a8",
+          "mapname": "$z$s$n$o$3beLost Umbrella $fff",
+          "div": 16,
+          "rank": 1024,
+          "divrank": 0,
+          "score": 0,
+          "qualificationrank": 1011,
+          "totalplayers": 1775
         }
       ],
       "stats": {
-        "total": 1103,
+        "total": 1104,
         "bestrank": 160,
         "avgrank": 1045,
         "bestdiv": 3,

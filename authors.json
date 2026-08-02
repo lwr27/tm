@@ -38015,10 +38015,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "sHpoZAvf7kmtpbg8hZT7BAaHzx9",
+      "mapId": "81e25087-84b6-422b-860e-61534c1c1db3",
+      "name": "$z$s$n$o$3beLost Umbrella $fff",
+      "authorTimeMs": 38784,
+      "day": 2,
+      "monthYear": "2026-08",
+      "leaderboardUid": "8a9e2c3a-6361-4ce4-a8ba-a6528b4599a8",
+      "authorCount": 429,
+      "totalFinishers": 3863,
+      "pct": 11.1,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-08-01T20:31:02.994Z",
-  "medalsRefreshedAt": "2026-08-01T21:01:07.138Z",
+  "generatedAt": "2026-08-02T20:31:15.197Z",
+  "medalsRefreshedAt": "2026-08-02T21:02:35.685Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",
