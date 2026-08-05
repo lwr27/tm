@@ -318698,5 +318698,95 @@
     "subregion": "West Midlands",
     "subregionFlag": "West Midlands",
     "resolvedAt": "2026-07-31T21:01:45.639Z"
+  },
+  "ac0a2d1b-f6cd-46c4-ad51-9972fbf0a6c9": {
+    "name": "h4wkks",
+    "clanTag": "CJR",
+    "country": "Italy",
+    "countryFlag": "ITA",
+    "region": "Veneto",
+    "subregion": "Veneto",
+    "subregionFlag": "Veneto",
+    "resolvedAt": "2026-08-05T21:00:47.241Z"
+  },
+  "d70e0bc6-fc38-4619-a0c9-cc637bc58b35": {
+    "name": "XONix.",
+    "clanTag": "$0FA❄$BFFB$8ECO$4CAB$0B7❄",
+    "country": "United States",
+    "countryFlag": "USA",
+    "region": "Georgia",
+    "subregion": "Georgia",
+    "subregionFlag": "Georgia",
+    "resolvedAt": "2026-08-05T21:00:48.496Z"
+  },
+  "9c81b1ef-7984-4335-a70e-0e598cd57ec5": {
+    "name": "Tweny-",
+    "clanTag": "$700KTNM!",
+    "country": "France",
+    "countryFlag": "FRA",
+    "region": "Hauts-de-France",
+    "subregion": "Nord",
+    "subregionFlag": "Nord",
+    "resolvedAt": "2026-08-05T21:00:50.209Z"
+  },
+  "2ec42977-65e6-4bb2-bcef-0240340e2729": {
+    "name": "SlyGuava",
+    "clanTag": null,
+    "country": "United Kingdom",
+    "countryFlag": "GBR",
+    "region": "England",
+    "subregion": "West Midlands",
+    "subregionFlag": "West Midlands",
+    "resolvedAt": "2026-08-05T21:00:51.879Z"
+  },
+  "4dbb5b4a-05e7-4168-8e22-2c56085adbb2": {
+    "name": "Chocdude99",
+    "clanTag": null,
+    "country": "United Kingdom",
+    "countryFlag": "GBR",
+    "region": "England",
+    "subregion": "Yorkshire and the Humber",
+    "subregionFlag": "yorkshire",
+    "resolvedAt": "2026-08-05T21:00:53.633Z"
+  },
+  "e24ad419-126d-41af-bcb4-7e3317401d3a": {
+    "name": "Lightning-XL",
+    "clanTag": "$S$FB0TM$5A5ZA",
+    "country": "South Africa",
+    "countryFlag": "RSA",
+    "region": null,
+    "subregion": "South Africa",
+    "subregionFlag": "RSA",
+    "resolvedAt": "2026-08-05T21:00:55.342Z"
+  },
+  "8765b3bd-5c1a-416a-9ad1-f47cb58e1c5d": {
+    "name": "liddelxu",
+    "clanTag": null,
+    "country": "Germany",
+    "countryFlag": "GER",
+    "region": "Niedersachsen",
+    "subregion": "Hannover",
+    "subregionFlag": "Hannover",
+    "resolvedAt": "2026-08-05T21:00:57.060Z"
+  },
+  "b316a9c5-b122-45db-839a-88b6a8e59ac6": {
+    "name": "Rubikscuber202",
+    "clanTag": null,
+    "country": "Germany",
+    "countryFlag": "GER",
+    "region": "Nordrhein-Westfalen",
+    "subregion": "Essen",
+    "subregionFlag": "Essen",
+    "resolvedAt": "2026-08-05T21:00:58.777Z"
+  },
+  "bacf0fde-9dbf-4e2c-85dd-9988dbab09a1": {
+    "name": "noob.tm",
+    "clanTag": "FASTR",
+    "country": "Hungary",
+    "countryFlag": "HUN",
+    "region": "Budapest",
+    "subregion": "Budapest",
+    "subregionFlag": "Budapest",
+    "resolvedAt": "2026-08-05T21:01:00.485Z"
   }
 }
