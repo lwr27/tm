@@ -38091,10 +38091,48 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "DumIEZw6qxDIfVdO6bU0Q0vXzml",
+      "mapId": "19ae21e5-7900-410f-b1dd-7e3d79124130",
+      "name": "$FFFP$888r$000o$000j$060 $0C0G",
+      "authorTimeMs": 46960,
+      "day": 6,
+      "monthYear": "2026-08",
+      "leaderboardUid": "c1bc19d9-5144-468d-ac70-9f22a60a70da",
+      "authorCount": 1690,
+      "totalFinishers": 8106,
+      "pct": 20.8,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
+    },
+    {
+      "mapUid": "5PAoVGz3AE7dVBxwz3IJJitRUT3",
+      "mapId": "de44e11b-520c-40cc-829f-7abe53debeb3",
+      "name": "Gute Käse ft' Artroy",
+      "authorTimeMs": 46960,
+      "day": 7,
+      "monthYear": "2026-08",
+      "leaderboardUid": "e1622f3c-f5db-4cb7-bde9-8dd11ce89432",
+      "authorCount": 290,
+      "totalFinishers": 3635,
+      "pct": 8,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-08-05T20:31:12.622Z",
-  "medalsRefreshedAt": "2026-08-05T21:00:41.936Z",
+  "generatedAt": "2026-08-07T20:31:42.814Z",
+  "medalsRefreshedAt": "2026-08-07T21:00:56.619Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",

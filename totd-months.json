@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-05T20:31:04.117Z",
+  "fetchedAt": "2026-08-07T20:30:59.580Z",
   "maps": [
     {
       "mapUid": "Et1IVfZ6A59U6G_Bqx2UZ8pFw_g",
@@ -45,6 +45,24 @@
       "day": 5,
       "monthYear": "2026-08",
       "leaderboardUid": "6ac5475a-7540-46f4-8c13-32f2812c647e"
+    },
+    {
+      "mapUid": "DumIEZw6qxDIfVdO6bU0Q0vXzml",
+      "mapId": "19ae21e5-7900-410f-b1dd-7e3d79124130",
+      "name": "$FFFP$888r$000o$000j$060 $0C0G",
+      "authorTimeMs": 46960,
+      "day": 6,
+      "monthYear": "2026-08",
+      "leaderboardUid": "c1bc19d9-5144-468d-ac70-9f22a60a70da"
+    },
+    {
+      "mapUid": "5PAoVGz3AE7dVBxwz3IJJitRUT3",
+      "mapId": "de44e11b-520c-40cc-829f-7abe53debeb3",
+      "name": "Gute Käse ft' Artroy",
+      "authorTimeMs": 46960,
+      "day": 7,
+      "monthYear": "2026-08",
+      "leaderboardUid": "e1622f3c-f5db-4cb7-bde9-8dd11ce89432"
     },
     {
       "mapUid": "pjCB31IwUZgVsBUP9IF81lx7eh4",
