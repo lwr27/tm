@@ -384,7 +384,7 @@
       "totalFinishers": 12487,
       "pct": 14.4,
       "playerHasAuthor": {
-        "XV27": false,
+        "XV27": true,
         "TheBreaker0": false,
         "Pho3nix_.": true
       },
@@ -8359,7 +8359,7 @@
       "totalFinishers": 13279,
       "pct": 15.2,
       "playerHasAuthor": {
-        "XV27": false,
+        "XV27": true,
         "TheBreaker0": false,
         "Pho3nix_.": true
       }
@@ -38148,10 +38148,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "vvhlhmA50Lt90ShUVE8tss5deKc",
+      "mapId": "c0789f8c-6215-462e-a19e-c6ff74bdf3f8",
+      "name": "$o$0F0Ci$5F5rcu$DFDi$FFFt $FFFDe $9F9Bo$6F6un$2F2ce",
+      "authorTimeMs": 56264,
+      "day": 9,
+      "monthYear": "2026-08",
+      "leaderboardUid": "b14920d3-3084-4b58-979c-061c0dbf9eda",
+      "authorCount": 374,
+      "totalFinishers": 3653,
+      "pct": 10.2,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-08-08T20:31:07.091Z",
-  "medalsRefreshedAt": "2026-08-08T21:01:52.098Z",
+  "generatedAt": "2026-08-09T20:31:14.765Z",
+  "medalsRefreshedAt": "2026-08-09T21:02:42.908Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",
@@ -38280,6 +38299,22 @@
       "mapName": "$s$f00Redwood $fffNascar",
       "achievedAt": "2026-07-24T22:06:48+00:00",
       "detectedAt": "2026-07-25T20:59:14.680Z"
+    },
+    {
+      "key": "XV27|2w080nv7pMA9BF9dT4CslKJTIEk",
+      "player": "XV27",
+      "mapUid": "2w080nv7pMA9BF9dT4CslKJTIEk",
+      "mapName": "$z[SPLB’26 - #04] | $z$F63$iLos$F73t in$F83 Thou$F93ght",
+      "achievedAt": "2026-08-08T22:30:56+00:00",
+      "detectedAt": "2026-08-09T20:31:36.738Z"
+    },
+    {
+      "key": "XV27|ZJkCNf0qfIf3Av8fEVPG0ERLOTl",
+      "player": "XV27",
+      "mapUid": "ZJkCNf0qfIf3Av8fEVPG0ERLOTl",
+      "mapName": "$s$400O$s$600B$s$700I$s$800S$s$900S",
+      "achievedAt": "2026-08-08T22:02:04+00:00",
+      "detectedAt": "2026-08-09T20:38:12.888Z"
     }
   ]
 }

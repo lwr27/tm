@@ -22482,6 +22482,17 @@
       ],
       "env": "Stadium",
       "mxid": 338469
+    },
+    "vvhlhmA50Lt90ShUVE8tss5deKc": {
+      "found": true,
+      "name": "Circuit De Bounce",
+      "tags": [
+        "LOL",
+        "Reactor",
+        "Signature"
+      ],
+      "env": "Stadium",
+      "mxid": 264709
     }
   }
 }
