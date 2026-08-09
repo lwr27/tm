@@ -37466,44 +37466,6 @@
       "verified": true
     },
     {
-      "mapUid": "Et1IVfZ6A59U6G_Bqx2UZ8pFw_g",
-      "mapId": "d39df09e-1a44-4e18-bc02-8b2d4a1680b1",
-      "name": "$o$e40Bear's $c40Valley",
-      "authorTimeMs": 45224,
-      "day": 1,
-      "monthYear": "2026-08",
-      "leaderboardUid": "fa938d72-fbb7-4422-bc2e-8c93f521a6e0",
-      "authorCount": 58,
-      "totalFinishers": 7237,
-      "pct": 0.8,
-      "playerHasAuthor": {
-        "XV27": false,
-        "TheBreaker0": false,
-        "Pho3nix_.": false
-      },
-      "authorCapped": false,
-      "verified": true
-    },
-    {
-      "mapUid": "sHpoZAvf7kmtpbg8hZT7BAaHzx9",
-      "mapId": "81e25087-84b6-422b-860e-61534c1c1db3",
-      "name": "$z$s$n$o$3beLost Umbrella $fff",
-      "authorTimeMs": 38784,
-      "day": 2,
-      "monthYear": "2026-08",
-      "leaderboardUid": "8a9e2c3a-6361-4ce4-a8ba-a6528b4599a8",
-      "authorCount": 482,
-      "totalFinishers": 4710,
-      "pct": 10.2,
-      "playerHasAuthor": {
-        "XV27": false,
-        "TheBreaker0": false,
-        "Pho3nix_.": false
-      },
-      "authorCapped": false,
-      "verified": true
-    },
-    {
       "mapUid": "7kE3VeDK0jdSUYfbI_IYBmfuAKl",
       "mapId": "29ea02e5-78ca-4a6b-bac7-1b34b2a358c9",
       "name": "$s$i$oYou Bet $000Yon Can!",
@@ -37637,6 +37599,177 @@
       "verified": true
     },
     {
+      "mapUid": "Et1IVfZ6A59U6G_Bqx2UZ8pFw_g",
+      "mapId": "d39df09e-1a44-4e18-bc02-8b2d4a1680b1",
+      "name": "$o$e40Bear's $c40Valley",
+      "authorTimeMs": 45224,
+      "day": 1,
+      "monthYear": "2026-08",
+      "leaderboardUid": "fa938d72-fbb7-4422-bc2e-8c93f521a6e0",
+      "authorCount": 65,
+      "totalFinishers": 9343,
+      "pct": 0.7,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
+    },
+    {
+      "mapUid": "sHpoZAvf7kmtpbg8hZT7BAaHzx9",
+      "mapId": "81e25087-84b6-422b-860e-61534c1c1db3",
+      "name": "$z$s$n$o$3beLost Umbrella $fff",
+      "authorTimeMs": 38784,
+      "day": 2,
+      "monthYear": "2026-08",
+      "leaderboardUid": "8a9e2c3a-6361-4ce4-a8ba-a6528b4599a8",
+      "authorCount": 737,
+      "totalFinishers": 9936,
+      "pct": 7.4,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
+    },
+    {
+      "mapUid": "fr7XjNo1hDFMeK0ITmXks102BFe",
+      "mapId": "15286872-5e63-40cd-b15b-4e8c34679f59",
+      "name": "$8eeE$9eeq$bffui$dffval$bffen$9eec$8eee",
+      "authorTimeMs": 44548,
+      "day": 3,
+      "monthYear": "2026-08",
+      "leaderboardUid": "8f211c16-9dd7-4811-938f-e838349eefff",
+      "authorCount": 682,
+      "totalFinishers": 10125,
+      "pct": 6.7,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
+    },
+    {
+      "mapUid": "3Fy7oUXKVF2CiSkNPzA6nHOpmM7",
+      "mapId": "edb23b45-6ac4-420a-99e1-177b2351a0b9",
+      "name": "$f00U$znreachable",
+      "authorTimeMs": 47586,
+      "day": 4,
+      "monthYear": "2026-08",
+      "leaderboardUid": "fbafd2e6-458d-4a4b-9dbc-7dffd5a210ff",
+      "authorCount": 117,
+      "totalFinishers": 8755,
+      "pct": 1.3,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
+    },
+    {
+      "mapUid": "EUpykA2NX3mQE5RtLSpEsME8Ckd",
+      "mapId": "d7dcd721-586b-4e13-a123-5e1a57ef7c37",
+      "name": "$i$s$3b0N$7c5o$bear$fffa $fffA$decl$ad9a$8d6r$6c3m$3b0a",
+      "authorTimeMs": 37638,
+      "day": 5,
+      "monthYear": "2026-08",
+      "leaderboardUid": "6ac5475a-7540-46f4-8c13-32f2812c647e",
+      "authorCount": 3,
+      "totalFinishers": 9213,
+      "pct": 0,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
+    },
+    {
+      "mapUid": "DumIEZw6qxDIfVdO6bU0Q0vXzml",
+      "mapId": "19ae21e5-7900-410f-b1dd-7e3d79124130",
+      "name": "$FFFP$888r$000o$000j$060 $0C0G",
+      "authorTimeMs": 46960,
+      "day": 6,
+      "monthYear": "2026-08",
+      "leaderboardUid": "c1bc19d9-5144-468d-ac70-9f22a60a70da",
+      "authorCount": 1769,
+      "totalFinishers": 9280,
+      "pct": 19.1,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
+    },
+    {
+      "mapUid": "5PAoVGz3AE7dVBxwz3IJJitRUT3",
+      "mapId": "de44e11b-520c-40cc-829f-7abe53debeb3",
+      "name": "Gute Käse ft' Artroy",
+      "authorTimeMs": 46960,
+      "day": 7,
+      "monthYear": "2026-08",
+      "leaderboardUid": "e1622f3c-f5db-4cb7-bde9-8dd11ce89432",
+      "authorCount": 560,
+      "totalFinishers": 8634,
+      "pct": 6.5,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
+    },
+    {
+      "mapUid": "kVcCPBGhvjoFaTsc7u_ec9Y_Z5d",
+      "mapId": "8e449810-dd0c-4cb5-a22e-4598b87f4d0d",
+      "name": "$iteaspoon reflection",
+      "authorTimeMs": 45967,
+      "day": 8,
+      "monthYear": "2026-08",
+      "leaderboardUid": "6ef3c0d2-ddd6-42b9-9430-4f73cf07b8d4",
+      "authorCount": 204,
+      "totalFinishers": 5914,
+      "pct": 3.4,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
+    },
+    {
+      "mapUid": "vvhlhmA50Lt90ShUVE8tss5deKc",
+      "mapId": "c0789f8c-6215-462e-a19e-c6ff74bdf3f8",
+      "name": "$o$0F0Ci$5F5rcu$DFDi$FFFt $FFFDe $9F9Bo$6F6un$2F2ce",
+      "authorTimeMs": 56264,
+      "day": 9,
+      "monthYear": "2026-08",
+      "leaderboardUid": "b14920d3-3084-4b58-979c-061c0dbf9eda",
+      "authorCount": 418,
+      "totalFinishers": 4526,
+      "pct": 9.2,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
+    },
+    {
       "mapUid": "6xhQOkNn42x_yCrz0QLRh8w0yVg",
       "mapId": "868ff6b1-330c-4af2-af07-920f902941f4",
       "name": "Tarka Rise",
@@ -37644,8 +37777,8 @@
       "day": 11,
       "monthYear": "2026-07",
       "leaderboardUid": "b8faa9d4-351c-43ad-92fd-10352c6c7020",
-      "authorCount": 1077,
-      "totalFinishers": 9996,
+      "authorCount": 1088,
+      "totalFinishers": 10113,
       "pct": 10.8,
       "playerHasAuthor": {
         "XV27": false,
@@ -37663,8 +37796,8 @@
       "day": 12,
       "monthYear": "2026-07",
       "leaderboardUid": "f9e4b02f-cbea-4979-8644-31d098a9be66",
-      "authorCount": 126,
-      "totalFinishers": 9152,
+      "authorCount": 127,
+      "totalFinishers": 9251,
       "pct": 1.4,
       "playerHasAuthor": {
         "XV27": false,
@@ -37682,8 +37815,8 @@
       "day": 13,
       "monthYear": "2026-07",
       "leaderboardUid": "10ee4b8a-6956-4a50-a32d-8ec7109a9ee3",
-      "authorCount": 656,
-      "totalFinishers": 10281,
+      "authorCount": 660,
+      "totalFinishers": 10370,
       "pct": 6.4,
       "playerHasAuthor": {
         "XV27": false,
@@ -37702,7 +37835,7 @@
       "monthYear": "2026-07",
       "leaderboardUid": "cc74bd02-183f-4c5f-bdd6-2365eeb423d0",
       "authorCount": 273,
-      "totalFinishers": 9586,
+      "totalFinishers": 9679,
       "pct": 2.8,
       "playerHasAuthor": {
         "XV27": false,
@@ -37720,8 +37853,8 @@
       "day": 15,
       "monthYear": "2026-07",
       "leaderboardUid": "87f68d2f-dc8c-4b16-a85a-f257570d62f5",
-      "authorCount": 304,
-      "totalFinishers": 9532,
+      "authorCount": 306,
+      "totalFinishers": 9631,
       "pct": 3.2,
       "playerHasAuthor": {
         "XV27": false,
@@ -37739,8 +37872,8 @@
       "day": 16,
       "monthYear": "2026-07",
       "leaderboardUid": "96133f1e-d0de-4ad3-98d9-e01381ffc6cf",
-      "authorCount": 306,
-      "totalFinishers": 9257,
+      "authorCount": 308,
+      "totalFinishers": 9365,
       "pct": 3.3,
       "playerHasAuthor": {
         "XV27": false,
@@ -37758,8 +37891,8 @@
       "day": 17,
       "monthYear": "2026-07",
       "leaderboardUid": "ec9be213-664a-458d-83a5-99145a7da5bb",
-      "authorCount": 52,
-      "totalFinishers": 9405,
+      "authorCount": 53,
+      "totalFinishers": 9527,
       "pct": 0.6,
       "playerHasAuthor": {
         "XV27": false,
@@ -37777,9 +37910,9 @@
       "day": 18,
       "monthYear": "2026-07",
       "leaderboardUid": "d63f1670-5d17-4648-a4ae-463249247eb5",
-      "authorCount": 1118,
-      "totalFinishers": 9122,
-      "pct": 12.3,
+      "authorCount": 1133,
+      "totalFinishers": 9252,
+      "pct": 12.2,
       "playerHasAuthor": {
         "XV27": false,
         "TheBreaker0": false,
@@ -37796,8 +37929,8 @@
       "day": 19,
       "monthYear": "2026-07",
       "leaderboardUid": "27469e05-f38a-471c-84fc-0687950a3f16",
-      "authorCount": 1238,
-      "totalFinishers": 9019,
+      "authorCount": 1251,
+      "totalFinishers": 9153,
       "pct": 13.7,
       "playerHasAuthor": {
         "XV27": false,
@@ -37816,7 +37949,7 @@
       "monthYear": "2026-07",
       "leaderboardUid": "d6ddd73f-bc3f-40ea-a44a-48f556898590",
       "authorCount": 179,
-      "totalFinishers": 8805,
+      "totalFinishers": 8927,
       "pct": 2,
       "playerHasAuthor": {
         "XV27": false,
@@ -37835,7 +37968,7 @@
       "monthYear": "2026-07",
       "leaderboardUid": "980909ac-1ac9-46a2-9c88-072e3f4cfee6",
       "authorCount": 112,
-      "totalFinishers": 7622,
+      "totalFinishers": 7714,
       "pct": 1.5,
       "playerHasAuthor": {
         "XV27": false,
@@ -37854,8 +37987,8 @@
       "monthYear": "2026-07",
       "leaderboardUid": "c9290125-b4fb-4d54-bac7-5b4a116412ba",
       "authorCount": 445,
-      "totalFinishers": 9890,
-      "pct": 4.5,
+      "totalFinishers": 10051,
+      "pct": 4.4,
       "playerHasAuthor": {
         "XV27": false,
         "TheBreaker0": false,
@@ -37872,8 +38005,8 @@
       "day": 23,
       "monthYear": "2026-07",
       "leaderboardUid": "33a6207a-9d7a-4c47-8044-0f89a3c1fe4a",
-      "authorCount": 36,
-      "totalFinishers": 8565,
+      "authorCount": 37,
+      "totalFinishers": 8709,
       "pct": 0.4,
       "playerHasAuthor": {
         "XV27": false,
@@ -37891,9 +38024,9 @@
       "day": 24,
       "monthYear": "2026-07",
       "leaderboardUid": "fad4534e-e8f4-417a-a697-2c915a004da7",
-      "authorCount": 1355,
-      "totalFinishers": 8891,
-      "pct": 15.2,
+      "authorCount": 1386,
+      "totalFinishers": 9068,
+      "pct": 15.3,
       "playerHasAuthor": {
         "XV27": false,
         "TheBreaker0": false,
@@ -37910,8 +38043,8 @@
       "day": 25,
       "monthYear": "2026-07",
       "leaderboardUid": "596057ff-f506-4f9d-a962-03d0e299a895",
-      "authorCount": 130,
-      "totalFinishers": 7497,
+      "authorCount": 131,
+      "totalFinishers": 7627,
       "pct": 1.7,
       "playerHasAuthor": {
         "XV27": false,
@@ -37929,8 +38062,8 @@
       "day": 26,
       "monthYear": "2026-07",
       "leaderboardUid": "1efb22bd-5aee-4b3e-867f-873fa78f00cb",
-      "authorCount": 150,
-      "totalFinishers": 6499,
+      "authorCount": 152,
+      "totalFinishers": 6631,
       "pct": 2.3,
       "playerHasAuthor": {
         "XV27": false,
@@ -37948,8 +38081,8 @@
       "day": 27,
       "monthYear": "2026-07",
       "leaderboardUid": "26f544b5-97d1-4594-a540-fffb8092a3a2",
-      "authorCount": 98,
-      "totalFinishers": 7995,
+      "authorCount": 99,
+      "totalFinishers": 8217,
       "pct": 1.2,
       "playerHasAuthor": {
         "XV27": false,
@@ -37967,8 +38100,8 @@
       "day": 28,
       "monthYear": "2026-07",
       "leaderboardUid": "003e0d04-2b84-4e04-83cb-0b5a6b4e8b7b",
-      "authorCount": 80,
-      "totalFinishers": 8590,
+      "authorCount": 81,
+      "totalFinishers": 8893,
       "pct": 0.9,
       "playerHasAuthor": {
         "XV27": false,
@@ -37986,8 +38119,8 @@
       "day": 29,
       "monthYear": "2026-07",
       "leaderboardUid": "1f49f447-8a83-4ed7-8b5a-10dd3340d3bf",
-      "authorCount": 16,
-      "totalFinishers": 9121,
+      "authorCount": 21,
+      "totalFinishers": 9470,
       "pct": 0.2,
       "playerHasAuthor": {
         "XV27": false,
@@ -38005,9 +38138,9 @@
       "day": 30,
       "monthYear": "2026-07",
       "leaderboardUid": "487428c8-1a32-4306-8510-1c01b46303a7",
-      "authorCount": 121,
-      "totalFinishers": 6441,
-      "pct": 1.9,
+      "authorCount": 124,
+      "totalFinishers": 6767,
+      "pct": 1.8,
       "playerHasAuthor": {
         "XV27": false,
         "TheBreaker0": false,
@@ -38024,142 +38157,9 @@
       "day": 31,
       "monthYear": "2026-07",
       "leaderboardUid": "fbfe5d2a-cd6c-43ce-ba34-fa59c8e08189",
-      "authorCount": 176,
-      "totalFinishers": 6927,
-      "pct": 2.5,
-      "playerHasAuthor": {
-        "XV27": false,
-        "TheBreaker0": false,
-        "Pho3nix_.": false
-      },
-      "authorCapped": false,
-      "verified": true
-    },
-    {
-      "mapUid": "fr7XjNo1hDFMeK0ITmXks102BFe",
-      "mapId": "15286872-5e63-40cd-b15b-4e8c34679f59",
-      "name": "$8eeE$9eeq$bffui$dffval$bffen$9eec$8eee",
-      "authorTimeMs": 44548,
-      "day": 3,
-      "monthYear": "2026-08",
-      "leaderboardUid": "8f211c16-9dd7-4811-938f-e838349eefff",
-      "authorCount": 379,
-      "totalFinishers": 4055,
-      "pct": 9.3,
-      "playerHasAuthor": {
-        "XV27": false,
-        "TheBreaker0": false,
-        "Pho3nix_.": false
-      },
-      "authorCapped": false,
-      "verified": true
-    },
-    {
-      "mapUid": "3Fy7oUXKVF2CiSkNPzA6nHOpmM7",
-      "mapId": "edb23b45-6ac4-420a-99e1-177b2351a0b9",
-      "name": "$f00U$znreachable",
-      "authorTimeMs": 47586,
-      "day": 4,
-      "monthYear": "2026-08",
-      "leaderboardUid": "fbafd2e6-458d-4a4b-9dbc-7dffd5a210ff",
-      "authorCount": 63,
-      "totalFinishers": 3660,
-      "pct": 1.7,
-      "playerHasAuthor": {
-        "XV27": false,
-        "TheBreaker0": false,
-        "Pho3nix_.": false
-      },
-      "authorCapped": false,
-      "verified": true
-    },
-    {
-      "mapUid": "EUpykA2NX3mQE5RtLSpEsME8Ckd",
-      "mapId": "d7dcd721-586b-4e13-a123-5e1a57ef7c37",
-      "name": "$i$s$3b0N$7c5o$bear$fffa $fffA$decl$ad9a$8d6r$6c3m$3b0a",
-      "authorTimeMs": 37638,
-      "day": 5,
-      "monthYear": "2026-08",
-      "leaderboardUid": "6ac5475a-7540-46f4-8c13-32f2812c647e",
-      "authorCount": 0,
-      "totalFinishers": 3708,
-      "pct": 0,
-      "playerHasAuthor": {
-        "XV27": false,
-        "TheBreaker0": false,
-        "Pho3nix_.": false
-      },
-      "authorCapped": false,
-      "verified": true
-    },
-    {
-      "mapUid": "DumIEZw6qxDIfVdO6bU0Q0vXzml",
-      "mapId": "19ae21e5-7900-410f-b1dd-7e3d79124130",
-      "name": "$FFFP$888r$000o$000j$060 $0C0G",
-      "authorTimeMs": 46960,
-      "day": 6,
-      "monthYear": "2026-08",
-      "leaderboardUid": "c1bc19d9-5144-468d-ac70-9f22a60a70da",
-      "authorCount": 1690,
-      "totalFinishers": 8106,
-      "pct": 20.8,
-      "playerHasAuthor": {
-        "XV27": false,
-        "TheBreaker0": false,
-        "Pho3nix_.": false
-      },
-      "authorCapped": false,
-      "verified": true
-    },
-    {
-      "mapUid": "5PAoVGz3AE7dVBxwz3IJJitRUT3",
-      "mapId": "de44e11b-520c-40cc-829f-7abe53debeb3",
-      "name": "Gute Käse ft' Artroy",
-      "authorTimeMs": 46960,
-      "day": 7,
-      "monthYear": "2026-08",
-      "leaderboardUid": "e1622f3c-f5db-4cb7-bde9-8dd11ce89432",
-      "authorCount": 290,
-      "totalFinishers": 3635,
-      "pct": 8,
-      "playerHasAuthor": {
-        "XV27": false,
-        "TheBreaker0": false,
-        "Pho3nix_.": false
-      },
-      "authorCapped": false,
-      "verified": true
-    },
-    {
-      "mapUid": "kVcCPBGhvjoFaTsc7u_ec9Y_Z5d",
-      "mapId": "8e449810-dd0c-4cb5-a22e-4598b87f4d0d",
-      "name": "$iteaspoon reflection",
-      "authorTimeMs": 45967,
-      "day": 8,
-      "monthYear": "2026-08",
-      "leaderboardUid": "6ef3c0d2-ddd6-42b9-9430-4f73cf07b8d4",
-      "authorCount": 100,
-      "totalFinishers": 2799,
-      "pct": 3.6,
-      "playerHasAuthor": {
-        "XV27": false,
-        "TheBreaker0": false,
-        "Pho3nix_.": false
-      },
-      "authorCapped": false,
-      "verified": true
-    },
-    {
-      "mapUid": "vvhlhmA50Lt90ShUVE8tss5deKc",
-      "mapId": "c0789f8c-6215-462e-a19e-c6ff74bdf3f8",
-      "name": "$o$0F0Ci$5F5rcu$DFDi$FFFt $FFFDe $9F9Bo$6F6un$2F2ce",
-      "authorTimeMs": 56264,
-      "day": 9,
-      "monthYear": "2026-08",
-      "leaderboardUid": "b14920d3-3084-4b58-979c-061c0dbf9eda",
-      "authorCount": 374,
-      "totalFinishers": 3653,
-      "pct": 10.2,
+      "authorCount": 179,
+      "totalFinishers": 7444,
+      "pct": 2.4,
       "playerHasAuthor": {
         "XV27": false,
         "TheBreaker0": false,
@@ -38169,7 +38169,7 @@
       "verified": true
     }
   ],
-  "generatedAt": "2026-08-09T20:31:14.765Z",
+  "generatedAt": "2026-08-09T23:08:18.951Z",
   "medalsRefreshedAt": "2026-08-09T21:02:42.908Z",
   "medalEvents": [
     {
