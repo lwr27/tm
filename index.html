@@ -1817,7 +1817,7 @@
 
     if (!rows.length){ el.innerHTML = '<p style="font-size:13px; color:var(--text-muted);">No cups in the last 30 days.</p>'; return; }
     el.innerHTML = '<div class="style-list">' + rows.map((r, i) =>
-      `<div class="style-row"><span class="tag">#${i+1} <span style="color:${colorOf(r.name)};">${r.name}</span></span><span class="figure">avg div ${Math.round(r.avg*10)/10} (${r.count} cups)</span></div>`
+      `<div class="style-row"><span class="tag">#${i+1} <span style="color:${colorOf(r.name)};">${shortOf(r.name)}</span></span><span class="figure">avg div ${Math.round(r.avg*10)/10} (${r.count} cups)</span></div>`
     ).join('') + '</div>';
   }
 
@@ -1897,7 +1897,7 @@
       return;
     }
     el.innerHTML = '<div class="style-list">' + rows.map(r =>
-      `<div class="style-row"><span class="tag">${r.tag}</span><span class="figure"><span style="color:${colorOf(r.winner.name)};">${r.winner.name}</span> (avg div ${Math.round(r.winner.avg*10)/10})</span></div>`
+      `<div class="style-row"><span class="tag">${r.tag}</span><span class="figure"><span style="color:${colorOf(r.winner.name)};">${shortOf(r.winner.name)}</span> (avg div ${Math.round(r.winner.avg*10)/10})</span></div>`
     ).join('') + '</div>';
   }
 
