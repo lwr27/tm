@@ -778,7 +778,7 @@
       card.style.borderLeftColor = colorOf(name);
       card.innerHTML = `
         ${plasticBadge}
-        <div class="name"><span class="dot" style="background:${colorOf(name)};"></span>${name}</div>
+        <div class="name"><span class="dot" style="background:${colorOf(name)};"></span>${shortOf(name)}</div>
         <table>
           <tr><td>Glicko-2 rating</td><td class="val">${currentRating ?? '-'}</td></tr>
           <tr><td>Cups tracked</td><td class="val">${s.total ?? '-'}</td></tr>
@@ -861,7 +861,7 @@
       history.forEach(h => { byLabel[h.label] = h.rating; });
 
       return {
-        label: name,
+        label: shortOf(name),
         data: labelArr.map(l => byLabel[l] == null ? null : Math.round(byLabel[l])),
         borderColor: colorOf(name),
         backgroundColor: colorOf(name),
@@ -870,7 +870,7 @@
     });
 
     document.getElementById('legend').innerHTML = NAMES.map(name =>
-      `<span><span class="dot" style="background:${colorOf(name)};"></span>${name}</span>`
+      `<span><span class="dot" style="background:${colorOf(name)};"></span>${shortOf(name)}</span>`
     ).join('');
 
     // Reference-graph signature: each line is labeled with the player's
@@ -930,7 +930,7 @@
       const byLabel = {};
       history.forEach(h => { byLabel[h.label] = h.rating; });
       return {
-        label: name,
+        label: shortOf(name),
         data: fullLabels.map(l => byLabel[l] == null ? null : Math.round(byLabel[l])),
         borderColor: colorOf(name), backgroundColor: colorOf(name),
         spanGaps: true, tension: 0, borderWidth: 1.5, pointRadius: 0, pointHitRadius: 6,
@@ -1031,7 +1031,7 @@
       const pct = counts.map(v => Math.round((v / total) * 1000) / 10);
       const col = colorOf(name);
       return {
-        label: name, data: pct,
+        label: shortOf(name), data: pct,
         borderColor: col, backgroundColor: col + '33',
         fill: true, tension: 0.4, borderWidth: 2, pointRadius: 0, pointHitRadius: 6,
       };
@@ -1072,7 +1072,7 @@
       const pct = counts.map(v => Math.round((v / total) * 1000) / 10);
       const col = colorOf(name);
       return {
-        label: name, data: pct,
+        label: shortOf(name), data: pct,
         borderColor: col, backgroundColor: col + '33',
         fill: true, tension: 0.4, borderWidth: 2, pointRadius: 0, pointHitRadius: 6,
       };
@@ -1228,7 +1228,7 @@
           }).join('') + '</table>';
       }
       block.innerHTML = `
-        <div class="player-style-header"><span class="dot" style="width:10px;height:10px;border-radius:50%;background:${colorOf(name)};display:inline-block;"></span>${name} <span style="color:var(--text-muted); font-weight:400; font-size:12px;">(personal avg division: ${personalAvg ?? '-'})</span></div>
+        <div class="player-style-header"><span class="dot" style="width:10px;height:10px;border-radius:50%;background:${colorOf(name)};display:inline-block;"></span>${shortOf(name)} <span style="color:var(--text-muted); font-weight:400; font-size:12px;">(personal avg division: ${personalAvg ?? '-'})</span></div>
         ${rowsHtml}
       `;
       el.appendChild(block);
@@ -1242,7 +1242,7 @@
       const chip = document.createElement('div');
       chip.className = 'chip' + (name === selectedPlayer ? ' active' : '');
       chip.style.setProperty('--chip-color', colorOf(name));
-      chip.innerHTML = `<span class="dot" style="background:${colorOf(name)};"></span>${name}`;
+      chip.innerHTML = `<span class="dot" style="background:${colorOf(name)};"></span>${shortOf(name)}`;
       chip.onclick = () => { selectedPlayer = name; renderPlayerChips(); renderPlayerDetail(); };
       el.appendChild(chip);
     });
@@ -1274,7 +1274,7 @@
     el.innerHTML = `
       <div class="cards" style="margin-bottom:1.5rem;">
         <div class="card" style="border-left-color:${colorOf(selectedPlayer)};">
-          <div class="name"><span class="dot" style="background:${colorOf(selectedPlayer)};"></span>${selectedPlayer}</div>
+          <div class="name"><span class="dot" style="background:${colorOf(selectedPlayer)};"></span>${shortOf(selectedPlayer)}</div>
           <table>
             <tr><td>Cups tracked</td><td class="val">${s.total ?? '-'}</td></tr>
             <tr><td>Best division</td><td class="val">${s.bestdiv ?? '-'}</td></tr>
@@ -1493,7 +1493,7 @@
         buckets[d.getDay()].push(c.div);
       });
       const avgs = buckets.map(b => b.length ? b.reduce((a,x)=>a+x,0)/b.length : null);
-      return { label: name, data: avgs, backgroundColor: colorOf(name), borderRadius: 3 };
+      return { label: shortOf(name), data: avgs, backgroundColor: colorOf(name), borderRadius: 3 };
     });
     if (dowChart) dowChart.destroy();
     dowChart = new Chart(ctx, {
@@ -1527,7 +1527,7 @@
       card.className = 'card';
       card.style.borderLeftColor = colorOf(name);
       card.innerHTML = `
-        <div class="name"><span class="dot" style="background:${colorOf(name)};"></span>${name}</div>
+        <div class="name"><span class="dot" style="background:${colorOf(name)};"></span>${shortOf(name)}</div>
         <table>
           <tr><td>Division std. dev</td><td class="val">${stddev ?? '-'}</td></tr>
           <tr><td>Based on</td><td class="val">${divs.length} cups</td></tr>
@@ -1589,7 +1589,7 @@
       card.style.borderLeftColor = colorOf(name);
       if (!deltas.length){
         card.innerHTML = `
-          <div class="name"><span class="dot" style="background:${colorOf(name)};"></span>${name}</div>
+          <div class="name"><span class="dot" style="background:${colorOf(name)};"></span>${shortOf(name)}</div>
           <table><tr><td colspan="2">Not enough solo days with a nearby baseline yet.</td></tr></table>
         `;
         el.appendChild(card);
@@ -1600,7 +1600,7 @@
       const avgBaseline = Math.round((usedBaselineAvg.reduce((a,b)=>a+b,0) / usedBaselineAvg.length) * 10) / 10;
       const deltaColor = avgDelta < 0 ? '#22c55e' : (avgDelta > 0 ? '#ef4444' : '#a8b0c3');
       card.innerHTML = `
-        <div class="name"><span class="dot" style="background:${colorOf(name)};"></span>${name}</div>
+        <div class="name"><span class="dot" style="background:${colorOf(name)};"></span>${shortOf(name)}</div>
         <table>
           <tr><td>Solo days used</td><td class="val">${deltas.length}</td></tr>
           <tr><td>Avg divrank (solo)</td><td class="val">${avgSolo}</td></tr>
@@ -1635,7 +1635,7 @@
     let html = '';
     NAMES.forEach(name => {
       const { events } = computePersonalBests(name);
-      html += `<div class="player-style-header"><span class="dot" style="width:10px;height:10px;border-radius:50%;background:${colorOf(name)};display:inline-block;"></span>${name}</div>`;
+      html += `<div class="player-style-header"><span class="dot" style="width:10px;height:10px;border-radius:50%;background:${colorOf(name)};display:inline-block;"></span>${shortOf(name)}</div>`;
       if (!events.length){
         html += '<p style="font-size:13px; color:var(--text-muted); margin-bottom:1rem;">No data yet.</p>';
       } else {
@@ -1653,7 +1653,7 @@
     NAMES.forEach(name => {
       const { matches, bestDiv } = computePersonalBests(name);
       const mostRecent = matches.length ? matches[matches.length - 1].label : '-';
-      html += `<tr><td><span style="color:${colorOf(name)};">${name}</span></td><td>${bestDiv ?? '-'}</td><td>${matches.length}</td><td style="color:var(--text-secondary);">${mostRecent}</td></tr>`;
+      html += `<tr><td><span style="color:${colorOf(name)};">${shortOf(name)}</span></td><td>${bestDiv ?? '-'}</td><td>${matches.length}</td><td style="color:var(--text-secondary);">${mostRecent}</td></tr>`;
     });
     html += '</table>';
     el.innerHTML = html;
@@ -1669,7 +1669,7 @@
       const noShows = cups.filter(isNoShow);
       total += noShows.length;
       const recent = noShows.length ? `div ${noShows[noShows.length-1].div} &middot; ${cupLabel(noShows[noShows.length-1])}` : '-';
-      html += `<tr><td><span style="color:${colorOf(name)};">${name}</span></td><td>${noShows.length}</td><td style="color:var(--text-secondary);">${recent}</td></tr>`;
+      html += `<tr><td><span style="color:${colorOf(name)};">${shortOf(name)}</span></td><td>${noShows.length}</td><td style="color:var(--text-secondary);">${recent}</td></tr>`;
     });
     html += '</table>';
     if (!total) html += '<p style="font-size:13px; color:var(--text-muted); margin-top:8px;">None found yet — everyone who qualified has completed their division rounds so far.</p>';
@@ -1686,7 +1686,7 @@
     const filt = document.getElementById('scatterFilter');
     const opts = ['all', ...NAMES];
     filt.innerHTML = opts.map(o =>
-      `<button class="range-btn${o === scatterFilter ? ' active' : ''}" data-sf="${o}">${o === 'all' ? 'All players' : o}</button>`
+      `<button class="range-btn${o === scatterFilter ? ' active' : ''}" data-sf="${o}">${o === 'all' ? 'All players' : shortOf(o)}</button>`
     ).join('');
     filt.querySelectorAll('button').forEach(b => {
       b.onclick = () => { scatterFilter = b.dataset.sf; renderScatter(); };
@@ -1694,7 +1694,7 @@
 
     const shown = scatterFilter === 'all' ? NAMES : [scatterFilter];
     const datasets = shown.map(name => ({
-      label: name,
+      label: shortOf(name),
       data: validCups(CACHE.players[name].cups).map(c => ({ x: c.totalplayers, y: c.div })),
       backgroundColor: colorOf(name) + (scatterFilter === 'all' ? 'aa' : 'cc'),
       pointRadius: 3,
@@ -1775,7 +1775,7 @@
           verdict = `${word}${word !== 'steady' ? ` ${Math.round(Math.abs(delta)*10)/10} divisions` : ''} vs the previous week (avg ${Math.round(a*10)/10} now, was ${Math.round(b*10)/10})`;
         }
       }
-      return `<div class="style-row"><span class="tag" style="color:${colorOf(name)};">${name}</span><span class="figure">${verdict}</span></div>`;
+      return `<div class="style-row"><span class="tag" style="color:${colorOf(name)};">${shortOf(name)}</span><span class="figure">${verdict}</span></div>`;
     });
     el.innerHTML = '<div class="style-list">' + rows.join('') + '</div>';
   }
@@ -1793,7 +1793,7 @@
       card.className = 'card';
       card.style.borderLeftColor = colorOf(name);
       card.innerHTML = `
-        <div class="name"><span class="dot" style="background:${colorOf(name)};"></span>${name}</div>
+        <div class="name"><span class="dot" style="background:${colorOf(name)};"></span>${shortOf(name)}</div>
         <table>
           <tr><td>Best ever</td><td class="val">div ${best.div}, #${best.rank}</td></tr>
           <tr><td></td><td class="val" style="font-weight:400; color:var(--text-muted); font-size:12px;">${cupLabel(best)}</td></tr>
@@ -1832,7 +1832,7 @@
         const days = Math.round((cupDate(cups[i]) - cupDate(cups[i-1])) / 86400000);
         if (days > maxGap){ maxGap = days; gapLabel = `${cupLabel(cups[i-1])} &rarr; ${cupLabel(cups[i])}`; }
       }
-      html += `<tr><td><span style="color:${colorOf(name)};">${name}</span></td><td>${maxGap} days</td><td style="color:var(--text-secondary);">${gapLabel}</td></tr>`;
+      html += `<tr><td><span style="color:${colorOf(name)};">${shortOf(name)}</span></td><td>${maxGap} days</td><td style="color:var(--text-secondary);">${gapLabel}</td></tr>`;
     });
     html += '</table>';
     el.innerHTML = html;
@@ -1849,7 +1849,7 @@
     if (!tagNames.length){ if (radarChart) radarChart.destroy(); return; }
 
     const datasets = NAMES.map(name => ({
-      label: name,
+      label: shortOf(name),
       data: tagNames.map(tag => {
         const v = byTag[tag][name];
         if (!v || v.count < MIN_STYLE_CUPS) return 0;
@@ -1909,7 +1909,7 @@
     NAMES.forEach(name => {
       const cups = validCups(CACHE.players[name].cups).filter(c => (now - cupDate(c)) / 86400000 <= 30);
       if (cups.length < 5){
-        html += `<tr><td><span style="color:${colorOf(name)};">${name}</span></td><td colspan="2" style="color:var(--text-muted);">Not enough recent cups (need 5+ in the last 30 days)</td></tr>`;
+        html += `<tr><td><span style="color:${colorOf(name)};">${shortOf(name)}</span></td><td colspan="2" style="color:var(--text-muted);">Not enough recent cups (need 5+ in the last 30 days)</td></tr>`;
         return;
       }
       // simple linear regression: x = days since first cup in window, y = division
@@ -1931,7 +1931,7 @@
         const daysToDrop = Math.round(1 / slope);
         projection = `at this rate, roughly 1 division worse in ~${daysToDrop} days`;
       }
-      html += `<tr><td><span style="color:${colorOf(name)};">${name}</span></td><td>${trendWord}</td><td style="color:var(--text-secondary);">${projection}</td></tr>`;
+      html += `<tr><td><span style="color:${colorOf(name)};">${shortOf(name)}</span></td><td>${trendWord}</td><td style="color:var(--text-secondary);">${projection}</td></tr>`;
     });
     html += '</table>';
     el.innerHTML = html;
