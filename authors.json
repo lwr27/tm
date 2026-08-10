@@ -38167,10 +38167,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "XT3pibgqwvv58Oly7Hy9lyxp_am",
+      "mapId": "1ba0b7bb-a1f4-4073-981a-35e8abdf38a4",
+      "name": "$o$888The $72fPark $5f6Tour",
+      "authorTimeMs": 39426,
+      "day": 10,
+      "monthYear": "2026-08",
+      "leaderboardUid": "416c8f86-0998-414f-9606-ba95af85ecac",
+      "authorCount": 210,
+      "totalFinishers": 3936,
+      "pct": 5.3,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-08-09T23:08:18.951Z",
-  "medalsRefreshedAt": "2026-08-09T21:02:42.908Z",
+  "generatedAt": "2026-08-10T20:31:08.586Z",
+  "medalsRefreshedAt": "2026-08-10T21:01:40.458Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",

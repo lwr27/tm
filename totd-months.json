@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-09T20:30:54.509Z",
+  "fetchedAt": "2026-08-10T20:30:54.593Z",
   "maps": [
     {
       "mapUid": "Et1IVfZ6A59U6G_Bqx2UZ8pFw_g",
@@ -81,6 +81,15 @@
       "day": 9,
       "monthYear": "2026-08",
       "leaderboardUid": "b14920d3-3084-4b58-979c-061c0dbf9eda"
+    },
+    {
+      "mapUid": "XT3pibgqwvv58Oly7Hy9lyxp_am",
+      "mapId": "1ba0b7bb-a1f4-4073-981a-35e8abdf38a4",
+      "name": "$o$888The $72fPark $5f6Tour",
+      "authorTimeMs": 39426,
+      "day": 10,
+      "monthYear": "2026-08",
+      "leaderboardUid": "416c8f86-0998-414f-9606-ba95af85ecac"
     },
     {
       "mapUid": "pjCB31IwUZgVsBUP9IF81lx7eh4",

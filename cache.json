@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-09T20:30:47.829Z",
+  "generatedAt": "2026-08-10T20:30:48.006Z",
   "players": {
     "XV27 & Whidot": {
       "cups": [
@@ -14996,10 +14996,24 @@
           "score": 9,
           "qualificationrank": 497,
           "totalplayers": 1753
+        },
+        {
+          "id": 44666,
+          "timestamp": "2026-08-10T17:16:30Z",
+          "name": "COTD 2026-08-10 #1",
+          "mapuid": "XT3pibgqwvv58Oly7Hy9lyxp_am",
+          "mapgroup": "416c8f86-0998-414f-9606-ba95af85ecac",
+          "mapname": "$o$888The $72fPark $5f6Tour",
+          "div": 18,
+          "rank": 1124,
+          "divrank": 36,
+          "score": 16,
+          "qualificationrank": 1138,
+          "totalplayers": 1905
         }
       ],
       "stats": {
-        "total": 1071,
+        "total": 1072,
         "bestrank": 72,
         "avgrank": 788,
         "bestdiv": 2,
@@ -44380,10 +44394,24 @@
           "score": 37,
           "qualificationrank": 488,
           "totalplayers": 1753
+        },
+        {
+          "id": 44666,
+          "timestamp": "2026-08-10T17:16:30Z",
+          "name": "COTD 2026-08-10 #1",
+          "mapuid": "XT3pibgqwvv58Oly7Hy9lyxp_am",
+          "mapgroup": "416c8f86-0998-414f-9606-ba95af85ecac",
+          "mapname": "$o$888The $72fPark $5f6Tour",
+          "div": 10,
+          "rank": 618,
+          "divrank": 42,
+          "score": 7,
+          "qualificationrank": 625,
+          "totalplayers": 1905
         }
       ],
       "stats": {
-        "total": 991,
+        "total": 992,
         "bestrank": 2,
         "avgrank": 847,
         "bestdiv": 1,
