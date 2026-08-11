@@ -38186,10 +38186,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "URvoAuSuOIjXac_faPndmz1BBOi",
+      "mapId": "1ceacb54-9b85-46f6-a1c5-612e029fca6a",
+      "name": "Sedona ft' Mime",
+      "authorTimeMs": 55037,
+      "day": 11,
+      "monthYear": "2026-08",
+      "leaderboardUid": "cba5ec11-9f21-4116-85ec-ca62d5042023",
+      "authorCount": 23,
+      "totalFinishers": 3990,
+      "pct": 0.6,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-08-10T20:31:08.586Z",
-  "medalsRefreshedAt": "2026-08-10T21:01:40.458Z",
+  "generatedAt": "2026-08-11T20:31:05.108Z",
+  "medalsRefreshedAt": "2026-08-11T21:01:42.338Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",
