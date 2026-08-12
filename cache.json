@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-11T20:30:49.639Z",
+  "generatedAt": "2026-08-12T20:30:49.263Z",
   "players": {
     "XV27 & Whidot": {
       "cups": [
@@ -15010,10 +15010,24 @@
           "score": 16,
           "qualificationrank": 1138,
           "totalplayers": 1905
+        },
+        {
+          "id": 44696,
+          "timestamp": "2026-08-12T17:16:30Z",
+          "name": "COTD 2026-08-12 #1",
+          "mapuid": "MaIA4ppPxHCSWJ2HTFo9l5XPAS4",
+          "mapgroup": "ffea1523-c682-4bec-a1f2-631d10caa221",
+          "mapname": "Aincrad ft Loso",
+          "div": 9,
+          "rank": 553,
+          "divrank": 41,
+          "score": 8,
+          "qualificationrank": 537,
+          "totalplayers": 1509
         }
       ],
       "stats": {
-        "total": 1072,
+        "total": 1073,
         "bestrank": 72,
         "avgrank": 788,
         "bestdiv": 2,
@@ -30507,10 +30521,24 @@
           "score": 20,
           "qualificationrank": 810,
           "totalplayers": 1753
+        },
+        {
+          "id": 44696,
+          "timestamp": "2026-08-12T17:16:30Z",
+          "name": "COTD 2026-08-12 #1",
+          "mapuid": "MaIA4ppPxHCSWJ2HTFo9l5XPAS4",
+          "mapgroup": "ffea1523-c682-4bec-a1f2-631d10caa221",
+          "mapname": "Aincrad ft Loso",
+          "div": 10,
+          "rank": 622,
+          "divrank": 46,
+          "score": 0,
+          "qualificationrank": 629,
+          "totalplayers": 1509
         }
       ],
       "stats": {
-        "total": 1106,
+        "total": 1107,
         "bestrank": 160,
         "avgrank": 1045,
         "bestdiv": 3,
@@ -44408,10 +44436,24 @@
           "score": 7,
           "qualificationrank": 625,
           "totalplayers": 1905
+        },
+        {
+          "id": 44696,
+          "timestamp": "2026-08-12T17:16:30Z",
+          "name": "COTD 2026-08-12 #1",
+          "mapuid": "MaIA4ppPxHCSWJ2HTFo9l5XPAS4",
+          "mapgroup": "ffea1523-c682-4bec-a1f2-631d10caa221",
+          "mapname": "Aincrad ft Loso",
+          "div": 7,
+          "rank": 429,
+          "divrank": 45,
+          "score": 7,
+          "qualificationrank": 416,
+          "totalplayers": 1509
         }
       ],
       "stats": {
-        "total": 992,
+        "total": 993,
         "bestrank": 2,
         "avgrank": 847,
         "bestdiv": 1,

@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-11T20:30:56.281Z",
+  "fetchedAt": "2026-08-12T20:30:56.022Z",
   "maps": [
     {
       "mapUid": "Et1IVfZ6A59U6G_Bqx2UZ8pFw_g",
@@ -99,6 +99,15 @@
       "day": 11,
       "monthYear": "2026-08",
       "leaderboardUid": "cba5ec11-9f21-4116-85ec-ca62d5042023"
+    },
+    {
+      "mapUid": "MaIA4ppPxHCSWJ2HTFo9l5XPAS4",
+      "mapId": "5658f62a-ea4e-4ede-8b38-4e043eaa5d6d",
+      "name": "Aincrad ft Loso",
+      "authorTimeMs": 43720,
+      "day": 12,
+      "monthYear": "2026-08",
+      "leaderboardUid": "ffea1523-c682-4bec-a1f2-631d10caa221"
     },
     {
       "mapUid": "pjCB31IwUZgVsBUP9IF81lx7eh4",
