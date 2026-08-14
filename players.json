@@ -319228,5 +319228,185 @@
     "subregion": "Hawaii",
     "subregionFlag": "Hawaii",
     "resolvedAt": "2026-08-12T21:03:15.215Z"
+  },
+  "7f780eea-b7a5-47a7-a8a4-3495b2e974f1": {
+    "name": "TallKhorne",
+    "clanTag": null,
+    "country": "Canada",
+    "countryFlag": "CAN",
+    "region": "Alberta",
+    "subregion": "Alberta",
+    "subregionFlag": "Alberta",
+    "resolvedAt": "2026-08-14T21:02:03.216Z"
+  },
+  "30ec6b62-1a0a-4b17-86fc-de857d5cb256": {
+    "name": "Quall-",
+    "clanTag": null,
+    "country": "Netherlands",
+    "countryFlag": "NED",
+    "region": "Utrecht",
+    "subregion": "Utrecht",
+    "subregionFlag": "Utrecht",
+    "resolvedAt": "2026-08-14T21:02:04.542Z"
+  },
+  "499b5626-e1b0-4c8a-929c-7d8a68d4e307": {
+    "name": "Tsunorai",
+    "clanTag": "$O$FF0HACK",
+    "country": "Switzerland",
+    "countryFlag": "SUI",
+    "region": "Basel-Landschaft",
+    "subregion": "Basel-Landschaft",
+    "subregionFlag": "Basel-Landschaft",
+    "resolvedAt": "2026-08-14T21:02:06.240Z"
+  },
+  "31c4bde4-dd66-42cb-a8f4-abef83f86790": {
+    "name": "WoozyMender.B4J",
+    "clanTag": "GOON",
+    "country": "United States",
+    "countryFlag": "USA",
+    "region": "Texas",
+    "subregion": "Texas",
+    "subregionFlag": "Texas",
+    "resolvedAt": "2026-08-14T21:02:07.951Z"
+  },
+  "84294fe2-53c1-4874-9949-d22cfaf50ec8": {
+    "name": "Jyrnibis",
+    "clanTag": null,
+    "country": "United States",
+    "countryFlag": "USA",
+    "region": "Wisconsin",
+    "subregion": "Wisconsin",
+    "subregionFlag": "Wisconsin",
+    "resolvedAt": "2026-08-14T21:02:09.660Z"
+  },
+  "3d5244eb-c432-46eb-baa6-2292d80295ef": {
+    "name": "CommendantK",
+    "clanTag": "$FF0B$FC0E$F90E$F60S",
+    "country": "United Kingdom",
+    "countryFlag": "GBR",
+    "region": "Scotland",
+    "subregion": "Scotland",
+    "subregionFlag": "SCO",
+    "resolvedAt": "2026-08-14T21:02:11.347Z"
+  },
+  "b970561d-25db-4a0b-bb15-2a0d8435975d": {
+    "name": "SenserXd",
+    "clanTag": "$6FCM$4ECI$2DCK$0CCU",
+    "country": "Bulgaria",
+    "countryFlag": "BUL",
+    "region": null,
+    "subregion": "Bulgaria",
+    "subregionFlag": "BUL",
+    "resolvedAt": "2026-08-14T21:02:13.089Z"
+  },
+  "b650d011-ed65-4769-b6bc-1ba1df6e80c9": {
+    "name": "jayjay_55",
+    "clanTag": "$5CF♥$EAB♥$FFF♥$EAB♥$5CF♥",
+    "country": "United States",
+    "countryFlag": "USA",
+    "region": "Texas",
+    "subregion": "Texas",
+    "subregionFlag": "Texas",
+    "resolvedAt": "2026-08-14T21:02:14.810Z"
+  },
+  "4db047a6-b12a-4314-852f-d8aa684bfc7d": {
+    "name": "EOSLUNA.",
+    "clanTag": "$S$03CA$16DL$29ET$2CER$3FFD$Z$I$W",
+    "country": "France",
+    "countryFlag": "FRA",
+    "region": "Pays-de-la-Loire",
+    "subregion": "Sarthe",
+    "subregionFlag": "Sarthe",
+    "resolvedAt": "2026-08-14T21:02:16.526Z"
+  },
+  "cb686c06-9301-420c-b609-907ea9e0d0f6": {
+    "name": "TocheCS",
+    "clanTag": null,
+    "country": "France",
+    "countryFlag": "FRA",
+    "region": "Hauts-de-France",
+    "subregion": "Nord",
+    "subregionFlag": "Nord",
+    "resolvedAt": "2026-08-14T21:02:18.159Z"
+  },
+  "98049761-b6bb-4894-8e8c-0fc2809e49da": {
+    "name": "an-na-ma",
+    "clanTag": null,
+    "country": "Ukraine",
+    "countryFlag": "UKR",
+    "region": null,
+    "subregion": "Ukraine",
+    "subregionFlag": "UKR",
+    "resolvedAt": "2026-08-14T21:02:19.952Z"
+  },
+  "c3bbc9f9-43ae-49b7-a535-789d399ae331": {
+    "name": "GillaMonkey2",
+    "clanTag": null,
+    "country": "United States",
+    "countryFlag": "USA",
+    "region": "Florida",
+    "subregion": "Florida",
+    "subregionFlag": "Florida",
+    "resolvedAt": "2026-08-14T21:02:21.658Z"
+  },
+  "3fa19b64-5484-4913-b39f-8c6f425e6014": {
+    "name": "Hexplorer",
+    "clanTag": "$0CDV$2DDI$5EDB$7FDE",
+    "country": "Netherlands",
+    "countryFlag": "NED",
+    "region": "Utrecht",
+    "subregion": "Utrecht",
+    "subregionFlag": "Utrecht",
+    "resolvedAt": "2026-08-14T21:02:23.390Z"
+  },
+  "94bbdfde-7c8c-4b1b-8405-e916f9d19b0c": {
+    "name": "TheSaucyV",
+    "clanTag": null,
+    "country": "United States",
+    "countryFlag": "USA",
+    "region": "New Jersey",
+    "subregion": "New Jersey",
+    "subregionFlag": "New_Jersey",
+    "resolvedAt": "2026-08-14T21:02:25.118Z"
+  },
+  "72122b26-7856-4e15-9222-2b87ecdcd2fe": {
+    "name": "BadmintonCoach",
+    "clanTag": "$F001$F809$FF02",
+    "country": "Sweden",
+    "countryFlag": "SWE",
+    "region": null,
+    "subregion": "Sweden",
+    "subregionFlag": "SWE",
+    "resolvedAt": "2026-08-14T21:02:26.816Z"
+  },
+  "27eb2c29-7da0-4b28-b042-bd212872745a": {
+    "name": "Al-villas",
+    "clanTag": null,
+    "country": "Spain",
+    "countryFlag": "ESP",
+    "region": "Euskadi",
+    "subregion": "Euskadi",
+    "subregionFlag": "Euskadi",
+    "resolvedAt": "2026-08-14T21:02:28.522Z"
+  },
+  "8f920494-5abf-4a1e-9353-7964974e7a74": {
+    "name": "SINTERCLAES09",
+    "clanTag": "$000T$FF0M$F00B",
+    "country": "Belgium",
+    "countryFlag": "BEL",
+    "region": "Antwerpen",
+    "subregion": "Antwerpen",
+    "subregionFlag": "Antwerp",
+    "resolvedAt": "2026-08-14T21:02:30.242Z"
+  },
+  "0a5d149f-0540-4985-9157-67c542e54ff0": {
+    "name": "YsynTi",
+    "clanTag": "$S$333ⓐ$FFFⓓ$F60ⓗ$333ⓓ$FFFッ",
+    "country": "Portugal",
+    "countryFlag": "POR",
+    "region": "Centro",
+    "subregion": "Centro",
+    "subregionFlag": "Centro",
+    "resolvedAt": "2026-08-14T21:02:31.948Z"
   }
 }

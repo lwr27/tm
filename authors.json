@@ -38243,10 +38243,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "7bbEpRt5SlJZbqSwcknNfRJta23",
+      "mapId": "fe600a78-7ef5-4e81-94cd-cb67dfd8b740",
+      "name": "$s$nSunscreen $000ft' $fffNumberplay",
+      "authorTimeMs": 45972,
+      "day": 14,
+      "monthYear": "2026-08",
+      "leaderboardUid": "2814445a-ca47-4ac9-ab3c-0bc55e35aa8d",
+      "authorCount": 347,
+      "totalFinishers": 3464,
+      "pct": 10,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-08-13T20:31:02.221Z",
-  "medalsRefreshedAt": "2026-08-13T21:01:36.903Z",
+  "generatedAt": "2026-08-14T20:31:14.817Z",
+  "medalsRefreshedAt": "2026-08-14T21:01:57.631Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",
