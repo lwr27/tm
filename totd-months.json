@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-14T20:30:55.929Z",
+  "fetchedAt": "2026-08-15T20:30:51.317Z",
   "maps": [
     {
       "mapUid": "Et1IVfZ6A59U6G_Bqx2UZ8pFw_g",
@@ -126,6 +126,15 @@
       "day": 14,
       "monthYear": "2026-08",
       "leaderboardUid": "2814445a-ca47-4ac9-ab3c-0bc55e35aa8d"
+    },
+    {
+      "mapUid": "Mml1U2d1bjCc09azZKfC2PoiCFf",
+      "mapId": "e06f06ce-4977-48fc-99c5-f2b401397a2a",
+      "name": "$0a4R$0a5e$0b6la$1b7x$1c7i$1c8ng G$2daa$2ear$2ebd$2fbe$2fcn",
+      "authorTimeMs": 48978,
+      "day": 15,
+      "monthYear": "2026-08",
+      "leaderboardUid": "040f65d0-d31f-41b7-b3b8-05a2c8116010"
     },
     {
       "mapUid": "pjCB31IwUZgVsBUP9IF81lx7eh4",

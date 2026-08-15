@@ -22542,6 +22542,17 @@
       ],
       "env": "Stadium",
       "mxid": 348379
+    },
+    "Mml1U2d1bjCc09azZKfC2PoiCFf": {
+      "found": true,
+      "name": "Relaxing Garden",
+      "tags": [
+        "SpeedTech",
+        "Mixed",
+        "Scenery"
+      ],
+      "env": "Stadium",
+      "mxid": 348744
     }
   }
 }
