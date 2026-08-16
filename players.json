@@ -319408,5 +319408,25 @@
     "subregion": "Centro",
     "subregionFlag": "Centro",
     "resolvedAt": "2026-08-14T21:02:31.948Z"
+  },
+  "841899f5-753b-45d6-9c9d-3eddad3cf72f": {
+    "name": "Joyboy_TM.",
+    "clanTag": null,
+    "country": "Algeria",
+    "countryFlag": "ALG",
+    "region": null,
+    "subregion": "Algeria",
+    "subregionFlag": "ALG",
+    "resolvedAt": "2026-08-16T21:01:38.779Z"
+  },
+  "700428de-b484-45eb-9b71-9f70e7db0ed4": {
+    "name": "Hurkex_TM",
+    "clanTag": "$F00P$C00I$900W$600O$300!",
+    "country": "Hungary",
+    "countryFlag": "HUN",
+    "region": "Szabolcs-Szatmár-Bereg",
+    "subregion": "Szabolcs-Szatmár-Bereg",
+    "subregionFlag": "Szabolcs-Szatmár-Bereg",
+    "resolvedAt": "2026-08-16T21:01:39.805Z"
   }
 }

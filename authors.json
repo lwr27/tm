@@ -38281,10 +38281,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "AGdexy0hASGn1OL1YhZ4KhlYgZj",
+      "mapId": "801eef3c-64c8-4fa9-a3c7-c979aee60cd0",
+      "name": "$o$f93A$fffnt$f93F$fffarm",
+      "authorTimeMs": 40696,
+      "day": 16,
+      "monthYear": "2026-08",
+      "leaderboardUid": "f985bcb8-88e7-4572-a29c-135c2c82a3dc",
+      "authorCount": 559,
+      "totalFinishers": 4065,
+      "pct": 13.8,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-08-15T20:31:09.687Z",
-  "medalsRefreshedAt": "2026-08-15T21:00:46.678Z",
+  "generatedAt": "2026-08-16T20:31:16.297Z",
+  "medalsRefreshedAt": "2026-08-16T21:01:34.311Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",
