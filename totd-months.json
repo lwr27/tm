@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-16T20:30:51.899Z",
+  "fetchedAt": "2026-08-17T20:30:52.198Z",
   "maps": [
     {
       "mapUid": "Et1IVfZ6A59U6G_Bqx2UZ8pFw_g",
@@ -144,6 +144,15 @@
       "day": 16,
       "monthYear": "2026-08",
       "leaderboardUid": "f985bcb8-88e7-4572-a29c-135c2c82a3dc"
+    },
+    {
+      "mapUid": "Sw0ljlUp3nNfFACLGBF4jZD_sue",
+      "mapId": "1a4ad95e-be48-4db4-bbc9-3c8d105128a6",
+      "name": "$s$F95TWL - $oArroyo Race",
+      "authorTimeMs": 47998,
+      "day": 17,
+      "monthYear": "2026-08",
+      "leaderboardUid": "0c084b9d-70eb-480b-9ad2-5f20035ccda9"
     },
     {
       "mapUid": "pjCB31IwUZgVsBUP9IF81lx7eh4",

@@ -38300,10 +38300,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "Sw0ljlUp3nNfFACLGBF4jZD_sue",
+      "mapId": "1a4ad95e-be48-4db4-bbc9-3c8d105128a6",
+      "name": "$s$F95TWL - $oArroyo Race",
+      "authorTimeMs": 47998,
+      "day": 17,
+      "monthYear": "2026-08",
+      "leaderboardUid": "0c084b9d-70eb-480b-9ad2-5f20035ccda9",
+      "authorCount": 177,
+      "totalFinishers": 4146,
+      "pct": 4.3,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-08-16T23:08:14.424Z",
-  "medalsRefreshedAt": "2026-08-16T21:01:34.311Z",
+  "generatedAt": "2026-08-17T20:31:03.071Z",
+  "medalsRefreshedAt": "2026-08-17T21:00:58.729Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",
