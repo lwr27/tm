@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-17T20:30:52.198Z",
+  "fetchedAt": "2026-08-18T20:30:51.823Z",
   "maps": [
     {
       "mapUid": "Et1IVfZ6A59U6G_Bqx2UZ8pFw_g",
@@ -153,6 +153,15 @@
       "day": 17,
       "monthYear": "2026-08",
       "leaderboardUid": "0c084b9d-70eb-480b-9ad2-5f20035ccda9"
+    },
+    {
+      "mapUid": "TMeN7eRguFfhUrcZ4Hb7KtDmwPb",
+      "mapId": "5648b21d-be07-48b2-bfa5-3767d2868cd0",
+      "name": "The $f80Illusion $gof $08fChoice",
+      "authorTimeMs": 42687,
+      "day": 18,
+      "monthYear": "2026-08",
+      "leaderboardUid": "6f9ea745-808b-42de-8b9b-5c54118b30ad"
     },
     {
       "mapUid": "pjCB31IwUZgVsBUP9IF81lx7eh4",

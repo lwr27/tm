@@ -38319,10 +38319,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "TMeN7eRguFfhUrcZ4Hb7KtDmwPb",
+      "mapId": "5648b21d-be07-48b2-bfa5-3767d2868cd0",
+      "name": "The $f80Illusion $gof $08fChoice",
+      "authorTimeMs": 42687,
+      "day": 18,
+      "monthYear": "2026-08",
+      "leaderboardUid": "6f9ea745-808b-42de-8b9b-5c54118b30ad",
+      "authorCount": 104,
+      "totalFinishers": 3511,
+      "pct": 3,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-08-17T20:31:03.071Z",
-  "medalsRefreshedAt": "2026-08-17T21:00:58.729Z",
+  "generatedAt": "2026-08-18T20:31:02.610Z",
+  "medalsRefreshedAt": "2026-08-18T21:00:43.996Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",
