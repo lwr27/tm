@@ -319828,5 +319828,25 @@
     "subregion": "Illinois",
     "subregionFlag": "Illinois",
     "resolvedAt": "2026-08-17T21:02:10.613Z"
+  },
+  "69ff440d-0eff-404f-909f-c1690f700217": {
+    "name": "TsunaTM",
+    "clanTag": null,
+    "country": "France",
+    "countryFlag": "FRA",
+    "region": "Hauts-de-France",
+    "subregion": "Nord",
+    "subregionFlag": "Nord",
+    "resolvedAt": "2026-08-19T21:02:48.877Z"
+  },
+  "19b8c469-e8a1-4f3b-b606-d1da250c5d3f": {
+    "name": "jayzeken",
+    "clanTag": null,
+    "country": "Philippines",
+    "countryFlag": "PHI",
+    "region": null,
+    "subregion": "Philippines",
+    "subregionFlag": "PHI",
+    "resolvedAt": "2026-08-19T21:02:49.201Z"
   }
 }
