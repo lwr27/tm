@@ -38357,10 +38357,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "IHGlG7dFsCCSXbVuirNVw18MIsg",
+      "mapId": "a3a4a9b8-29d4-48a1-b0e2-d63fc4e57716",
+      "name": "$141Voidreaper's Sanctuary",
+      "authorTimeMs": 42161,
+      "day": 20,
+      "monthYear": "2026-08",
+      "leaderboardUid": "9b3898bf-5bcf-45eb-a624-baa8a4bf52b4",
+      "authorCount": 90,
+      "totalFinishers": 3088,
+      "pct": 2.9,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-08-19T20:31:05.242Z",
-  "medalsRefreshedAt": "2026-08-19T21:02:41.806Z",
+  "generatedAt": "2026-08-20T20:31:03.288Z",
+  "medalsRefreshedAt": "2026-08-20T21:00:40.860Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",

@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-19T20:30:56.286Z",
+  "fetchedAt": "2026-08-20T20:30:54.987Z",
   "maps": [
     {
       "mapUid": "Et1IVfZ6A59U6G_Bqx2UZ8pFw_g",
@@ -171,6 +171,15 @@
       "day": 19,
       "monthYear": "2026-08",
       "leaderboardUid": "d69629bf-ced2-413f-bed8-9a26ded6ce03"
+    },
+    {
+      "mapUid": "IHGlG7dFsCCSXbVuirNVw18MIsg",
+      "mapId": "a3a4a9b8-29d4-48a1-b0e2-d63fc4e57716",
+      "name": "$141Voidreaper's Sanctuary",
+      "authorTimeMs": 42161,
+      "day": 20,
+      "monthYear": "2026-08",
+      "leaderboardUid": "9b3898bf-5bcf-45eb-a624-baa8a4bf52b4"
     },
     {
       "mapUid": "pjCB31IwUZgVsBUP9IF81lx7eh4",
