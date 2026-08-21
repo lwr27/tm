@@ -319848,5 +319848,115 @@
     "subregion": "Philippines",
     "subregionFlag": "PHI",
     "resolvedAt": "2026-08-19T21:02:49.201Z"
+  },
+  "5b79df8e-3d28-4019-9e38-f177499dd0a2": {
+    "name": "ballinnmiami",
+    "clanTag": null,
+    "country": "United States",
+    "countryFlag": "USA",
+    "region": "Virginia",
+    "subregion": "Virginia",
+    "subregionFlag": "Virginia",
+    "resolvedAt": "2026-08-21T21:03:12.204Z"
+  },
+  "33097c52-db1e-44ba-ad4f-0ac266aab1ab": {
+    "name": "ThosePandasTM",
+    "clanTag": null,
+    "country": "United States",
+    "countryFlag": "USA",
+    "region": "Virginia",
+    "subregion": "Virginia",
+    "subregionFlag": "Virginia",
+    "resolvedAt": "2026-08-21T21:03:13.325Z"
+  },
+  "56f83a02-d972-4ad4-9498-a22876812a2c": {
+    "name": "Breadnaughtt",
+    "clanTag": "$F81L$D71O$A62A$852F",
+    "country": "United States",
+    "countryFlag": "USA",
+    "region": "Minnesota",
+    "subregion": "Minnesota",
+    "subregionFlag": "Minnesota",
+    "resolvedAt": "2026-08-21T21:03:15.072Z"
+  },
+  "f985a54c-f186-4154-bce3-2b97d2924476": {
+    "name": "KHoristal",
+    "clanTag": null,
+    "country": "United States",
+    "countryFlag": "USA",
+    "region": "Maryland",
+    "subregion": "Maryland",
+    "subregionFlag": "Maryland",
+    "resolvedAt": "2026-08-21T21:03:16.762Z"
+  },
+  "7a54c90b-23b1-4201-9405-0cfe74c8f007": {
+    "name": "neropse",
+    "clanTag": null,
+    "country": "France",
+    "countryFlag": "FRA",
+    "region": "Île-de-France",
+    "subregion": "Paris",
+    "subregionFlag": "Paris",
+    "resolvedAt": "2026-08-21T21:03:18.469Z"
+  },
+  "05962d47-76d7-40dd-90d3-cee0f7888b9c": {
+    "name": "BlocH..",
+    "clanTag": "$FF0BOC",
+    "country": "Denmark",
+    "countryFlag": "DEN",
+    "region": null,
+    "subregion": "Denmark",
+    "subregionFlag": "DEN",
+    "resolvedAt": "2026-08-21T21:03:20.233Z"
+  },
+  "e92c7151-c138-4515-9145-b9060c5a7864": {
+    "name": "DeejayQuestBTW",
+    "clanTag": "$0CDV$2DDI$5EDB$7FDE",
+    "country": "United States",
+    "countryFlag": "USA",
+    "region": "Wisconsin",
+    "subregion": "Wisconsin",
+    "subregionFlag": "Wisconsin",
+    "resolvedAt": "2026-08-21T21:03:21.888Z"
+  },
+  "17716cf0-4681-411d-a651-7574aa2212a4": {
+    "name": "Stinga2012",
+    "clanTag": "$F60ÝØ",
+    "country": "Germany",
+    "countryFlag": "GER",
+    "region": "Baden-Württemberg",
+    "subregion": "Karlsruhe",
+    "subregionFlag": "Karlsruhe",
+    "resolvedAt": "2026-08-21T21:03:23.540Z"
+  },
+  "c707f98a-b206-46db-b87f-06bc3354fd27": {
+    "name": "Jonasssso",
+    "clanTag": null,
+    "country": "Germany",
+    "countryFlag": "GER",
+    "region": "Schleswig-Holstein",
+    "subregion": "Kiel",
+    "subregionFlag": "Kiel",
+    "resolvedAt": "2026-08-21T21:03:25.318Z"
+  },
+  "086584db-c376-4dcf-9abe-21141af6adc6": {
+    "name": "nordicTM",
+    "clanTag": "$3FC($6FC¬$6F9_$3F9¬$3F6)",
+    "country": "United Kingdom",
+    "countryFlag": "GBR",
+    "region": "England",
+    "subregion": "London",
+    "subregionFlag": "London",
+    "resolvedAt": "2026-08-21T21:03:27.046Z"
+  },
+  "a33816b0-70bc-41c6-b1e3-ce7e4c587802": {
+    "name": "DanGr3s",
+    "clanTag": "BOOB",
+    "country": "United Kingdom",
+    "countryFlag": "GBR",
+    "region": "England",
+    "subregion": "South East England",
+    "subregionFlag": "ENG",
+    "resolvedAt": "2026-08-21T21:03:28.746Z"
   }
 }
