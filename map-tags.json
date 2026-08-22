@@ -22606,6 +22606,16 @@
       "tags": [],
       "env": null,
       "mxid": null
+    },
+    "xMhP0WNOTISCNFicuTcFEd_I90f": {
+      "found": true,
+      "name": "Faruk",
+      "tags": [
+        "Mixed",
+        "Transitional"
+      ],
+      "env": "Stadium",
+      "mxid": 349983
     }
   }
 }
