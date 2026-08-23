@@ -38414,10 +38414,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "2AXKKG5QXcPIoSBL2BIekJk6Jef",
+      "mapId": "966cd0a0-9647-4405-b35d-f92b12d00905",
+      "name": "$s$IReactor? I Hardly Know Her",
+      "authorTimeMs": 40760,
+      "day": 23,
+      "monthYear": "2026-08",
+      "leaderboardUid": "14edd7f6-49ec-4ef3-8d61-9a8da8941a17",
+      "authorCount": 750,
+      "totalFinishers": 3877,
+      "pct": 19.3,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-08-22T20:31:01.184Z",
-  "medalsRefreshedAt": "2026-08-22T21:00:45.889Z",
+  "generatedAt": "2026-08-23T20:31:15.425Z",
+  "medalsRefreshedAt": "2026-08-23T21:00:47.781Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",

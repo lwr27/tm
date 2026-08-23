@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-22T20:30:52.586Z",
+  "fetchedAt": "2026-08-23T20:30:51.671Z",
   "maps": [
     {
       "mapUid": "Et1IVfZ6A59U6G_Bqx2UZ8pFw_g",
@@ -198,6 +198,15 @@
       "day": 22,
       "monthYear": "2026-08",
       "leaderboardUid": "33992f94-5c65-4d4c-bbba-11657f3f2a55"
+    },
+    {
+      "mapUid": "2AXKKG5QXcPIoSBL2BIekJk6Jef",
+      "mapId": "966cd0a0-9647-4405-b35d-f92b12d00905",
+      "name": "$s$IReactor? I Hardly Know Her",
+      "authorTimeMs": 40760,
+      "day": 23,
+      "monthYear": "2026-08",
+      "leaderboardUid": "14edd7f6-49ec-4ef3-8d61-9a8da8941a17"
     },
     {
       "mapUid": "pjCB31IwUZgVsBUP9IF81lx7eh4",

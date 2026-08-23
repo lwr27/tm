@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-22T20:30:46.084Z",
+  "generatedAt": "2026-08-23T20:30:44.984Z",
   "players": {
     "XV27 & Whidot": {
       "cups": [
@@ -30605,10 +30605,24 @@
           "score": 0,
           "qualificationrank": 629,
           "totalplayers": 1509
+        },
+        {
+          "id": 44907,
+          "timestamp": "2026-08-23T17:16:30Z",
+          "name": "COTD 2026-08-23 #1",
+          "mapuid": "2AXKKG5QXcPIoSBL2BIekJk6Jef",
+          "mapgroup": "14edd7f6-49ec-4ef3-8d61-9a8da8941a17",
+          "mapname": "$s$IReactor? I Hardly Know Her",
+          "div": 15,
+          "rank": 918,
+          "divrank": 22,
+          "score": 28,
+          "qualificationrank": 943,
+          "totalplayers": 1751
         }
       ],
       "stats": {
-        "total": 1107,
+        "total": 1108,
         "bestrank": 160,
         "avgrank": 1045,
         "bestdiv": 3,
@@ -44590,10 +44604,24 @@
           "score": 26,
           "qualificationrank": 416,
           "totalplayers": 1407
+        },
+        {
+          "id": 44907,
+          "timestamp": "2026-08-23T17:16:30Z",
+          "name": "COTD 2026-08-23 #1",
+          "mapuid": "2AXKKG5QXcPIoSBL2BIekJk6Jef",
+          "mapgroup": "14edd7f6-49ec-4ef3-8d61-9a8da8941a17",
+          "mapname": "$s$IReactor? I Hardly Know Her",
+          "div": 11,
+          "rank": 656,
+          "divrank": 16,
+          "score": 27,
+          "qualificationrank": 655,
+          "totalplayers": 1751
         }
       ],
       "stats": {
-        "total": 998,
+        "total": 999,
         "bestrank": 2,
         "avgrank": 845,
         "bestdiv": 1,
