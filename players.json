@@ -320208,5 +320208,85 @@
     "subregion": "Nebraska",
     "subregionFlag": "Nebraska",
     "resolvedAt": "2026-08-23T21:01:33.794Z"
+  },
+  "327a3da9-c378-4ede-b1c4-f245a0ab14d1": {
+    "name": "Psein_",
+    "clanTag": null,
+    "country": "Netherlands",
+    "countryFlag": "NED",
+    "region": "Zuid-Holland",
+    "subregion": "Zuid-Holland",
+    "subregionFlag": "Zuid-Holland",
+    "resolvedAt": "2026-08-24T21:00:49.366Z"
+  },
+  "2abf64f0-96a8-41a4-86a3-ce089352b4d7": {
+    "name": "J4YDEN.TM",
+    "clanTag": "$00FN$00FI$00FT$40FR$50FX",
+    "country": "Luxembourg",
+    "countryFlag": "LUX",
+    "region": null,
+    "subregion": "Luxembourg",
+    "subregionFlag": "LUX",
+    "resolvedAt": "2026-08-24T21:00:50.615Z"
+  },
+  "8f3e0e3d-eeba-4eda-b0f4-a5bea1d11672": {
+    "name": "Now59",
+    "clanTag": null,
+    "country": "United Kingdom",
+    "countryFlag": "GBR",
+    "region": "England",
+    "subregion": "South West England",
+    "subregionFlag": "South West England ",
+    "resolvedAt": "2026-08-24T21:00:52.326Z"
+  },
+  "41eccbf2-7b7d-4020-82e7-a87fc0b2105f": {
+    "name": "mdizzy55",
+    "clanTag": null,
+    "country": "United States",
+    "countryFlag": "USA",
+    "region": "Washington",
+    "subregion": "Washington",
+    "subregionFlag": "Washington",
+    "resolvedAt": "2026-08-24T21:00:54.013Z"
+  },
+  "74851bf5-5fe3-42e1-b7c2-026c5723c86d": {
+    "name": "Brainsgone4",
+    "clanTag": null,
+    "country": "Australia",
+    "countryFlag": "AUS",
+    "region": "Queensland",
+    "subregion": "Queensland",
+    "subregionFlag": "Queensland",
+    "resolvedAt": "2026-08-24T21:00:55.678Z"
+  },
+  "96a405a4-616b-47b4-baa2-7ff8aaf6074d": {
+    "name": "Cpt.Hardcore",
+    "clanTag": null,
+    "country": "Germany",
+    "countryFlag": "GER",
+    "region": "Baden-Württemberg",
+    "subregion": "Stuttgart",
+    "subregionFlag": "Stuttgart",
+    "resolvedAt": "2026-08-24T21:00:57.467Z"
+  },
+  "517ecc5b-745e-42b1-af88-1c70e537e98e": {
+    "name": "Chxcks2",
+    "clanTag": "$S$C30WA$FFFL$093ES",
+    "country": "United Kingdom",
+    "countryFlag": "GBR",
+    "region": "Wales",
+    "subregion": "Wales",
+    "subregionFlag": "WAL",
+    "resolvedAt": "2026-08-24T21:00:59.189Z"
+  },
+  "37f0142c-c603-4245-a0b3-c8e498de093d": {
+    "name": "Putxfsky",
+    "clanTag": null,
+    "country": "Mainland China",
+    "countryFlag": "CHN",
+    "region": "黑龙江省",
+    "subregion": "大兴安岭地区",
+    "subregionFlag": "CHN",
+    "resolvedAt": "2026-08-24T21:01:00.887Z"
   }
 }

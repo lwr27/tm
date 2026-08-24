@@ -19443,7 +19443,7 @@
       "totalFinishers": 13023,
       "pct": 13.2,
       "playerHasAuthor": {
-        "XV27": false,
+        "XV27": true,
         "TheBreaker0": false,
         "Pho3nix_.": true
       }
@@ -35508,7 +35508,7 @@
       "totalFinishers": 21925,
       "pct": 13.5,
       "playerHasAuthor": {
-        "XV27": false,
+        "XV27": true,
         "TheBreaker0": false,
         "Pho3nix_.": true
       }
@@ -38433,10 +38433,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "26bs4EKxkiQKhupKQCnGIMzXfMh",
+      "mapId": "271d6487-3628-45f4-8323-d018b9f95618",
+      "name": "$o$F90GENESIS",
+      "authorTimeMs": 42148,
+      "day": 24,
+      "monthYear": "2026-08",
+      "leaderboardUid": "b407ab2e-e9b0-40fe-9450-f6d827e32190",
+      "authorCount": 302,
+      "totalFinishers": 3536,
+      "pct": 8.5,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-08-23T23:07:27.161Z",
-  "medalsRefreshedAt": "2026-08-23T21:00:47.781Z",
+  "generatedAt": "2026-08-24T20:31:13.316Z",
+  "medalsRefreshedAt": "2026-08-24T21:00:43.972Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",
@@ -38581,6 +38600,22 @@
       "mapName": "$s$400O$s$600B$s$700I$s$800S$s$900S",
       "achievedAt": "2026-08-08T22:02:04+00:00",
       "detectedAt": "2026-08-09T20:38:12.888Z"
+    },
+    {
+      "key": "XV27|jsF0p9kNOJth6lcxAUzhBvfKxla",
+      "player": "XV27",
+      "mapUid": "jsF0p9kNOJth6lcxAUzhBvfKxla",
+      "mapName": "$s$FF9K$FFAa$FFCp $FFDT$EEBr$DD9e$CC8l$BB6a$994w$BB6n$CC8e$DD9y",
+      "achievedAt": "2026-08-23T21:50:21+00:00",
+      "detectedAt": "2026-08-24T20:46:17.987Z"
+    },
+    {
+      "key": "XV27|stObKDsQntPu2nIIb0yXC8rQ7o7",
+      "player": "XV27",
+      "mapUid": "stObKDsQntPu2nIIb0yXC8rQ7o7",
+      "mapName": "$F40$o$sM$F50an$F60go$F70 $F80Ta$F90ng$FA0o",
+      "achievedAt": "2026-08-23T21:00:05+00:00",
+      "detectedAt": "2026-08-24T20:58:39.825Z"
     }
   ]
 }

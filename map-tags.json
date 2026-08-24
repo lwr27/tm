@@ -22629,6 +22629,17 @@
       ],
       "env": "BlueBay",
       "mxid": 347896
+    },
+    "26bs4EKxkiQKhupKQCnGIMzXfMh": {
+      "found": true,
+      "name": "GENESIS",
+      "tags": [
+        "SpeedTech",
+        "Transitional",
+        "Scenery"
+      ],
+      "env": "Stadium",
+      "mxid": 350307
     }
   }
 }

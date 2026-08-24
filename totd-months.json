@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-23T20:30:51.671Z",
+  "fetchedAt": "2026-08-24T20:30:54.849Z",
   "maps": [
     {
       "mapUid": "Et1IVfZ6A59U6G_Bqx2UZ8pFw_g",
@@ -207,6 +207,15 @@
       "day": 23,
       "monthYear": "2026-08",
       "leaderboardUid": "14edd7f6-49ec-4ef3-8d61-9a8da8941a17"
+    },
+    {
+      "mapUid": "26bs4EKxkiQKhupKQCnGIMzXfMh",
+      "mapId": "271d6487-3628-45f4-8323-d018b9f95618",
+      "name": "$o$F90GENESIS",
+      "authorTimeMs": 42148,
+      "day": 24,
+      "monthYear": "2026-08",
+      "leaderboardUid": "b407ab2e-e9b0-40fe-9450-f6d827e32190"
     },
     {
       "mapUid": "pjCB31IwUZgVsBUP9IF81lx7eh4",
