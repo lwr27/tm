@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-24T20:30:54.849Z",
+  "fetchedAt": "2026-08-25T20:30:55.297Z",
   "maps": [
     {
       "mapUid": "Et1IVfZ6A59U6G_Bqx2UZ8pFw_g",
@@ -216,6 +216,15 @@
       "day": 24,
       "monthYear": "2026-08",
       "leaderboardUid": "b407ab2e-e9b0-40fe-9450-f6d827e32190"
+    },
+    {
+      "mapUid": "zi5YhQqUxGzUdiNU2cFiUgB6lQ1",
+      "mapId": "de7fb36d-f407-4148-b06c-8b8967eff454",
+      "name": "$o$333Quantum $0b3Collapse $333ft,Niels",
+      "authorTimeMs": 36633,
+      "day": 25,
+      "monthYear": "2026-08",
+      "leaderboardUid": "ea7057ec-82c1-48e0-9f30-8cf5b107a80a"
     },
     {
       "mapUid": "pjCB31IwUZgVsBUP9IF81lx7eh4",

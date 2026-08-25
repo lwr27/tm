@@ -38452,10 +38452,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "zi5YhQqUxGzUdiNU2cFiUgB6lQ1",
+      "mapId": "de7fb36d-f407-4148-b06c-8b8967eff454",
+      "name": "$o$333Quantum $0b3Collapse $333ft,Niels",
+      "authorTimeMs": 36633,
+      "day": 25,
+      "monthYear": "2026-08",
+      "leaderboardUid": "ea7057ec-82c1-48e0-9f30-8cf5b107a80a",
+      "authorCount": 1708,
+      "totalFinishers": 4103,
+      "pct": 41.6,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-08-24T20:31:13.316Z",
-  "medalsRefreshedAt": "2026-08-24T21:00:43.972Z",
+  "generatedAt": "2026-08-25T20:31:31.020Z",
+  "medalsRefreshedAt": "2026-08-25T21:02:07.578Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",
