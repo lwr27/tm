@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-25T20:30:48.483Z",
+  "generatedAt": "2026-08-26T20:30:48.577Z",
   "players": {
     "XV27 & Whidot": {
       "cups": [
@@ -15094,10 +15094,24 @@
           "score": 19,
           "qualificationrank": 524,
           "totalplayers": 1407
+        },
+        {
+          "id": 44979,
+          "timestamp": "2026-08-26T17:16:30Z",
+          "name": "COTD 2026-08-26 #1",
+          "mapuid": "VI54yPE_npe6EAH3NPbV0zo2m01",
+          "mapgroup": "bc6de290-20ef-4f61-8497-0fc78bab15c5",
+          "mapname": "$i$o$CF0Windswept $fff$i$oft' Seven",
+          "div": 10,
+          "rank": 609,
+          "divrank": 33,
+          "score": 16,
+          "qualificationrank": 592,
+          "totalplayers": 1842
         }
       ],
       "stats": {
-        "total": 1078,
+        "total": 1079,
         "bestrank": 72,
         "avgrank": 788,
         "bestdiv": 2,
@@ -30633,10 +30647,24 @@
           "score": 36,
           "qualificationrank": 850,
           "totalplayers": 1784
+        },
+        {
+          "id": 44979,
+          "timestamp": "2026-08-26T17:16:30Z",
+          "name": "COTD 2026-08-26 #1",
+          "mapuid": "VI54yPE_npe6EAH3NPbV0zo2m01",
+          "mapgroup": "bc6de290-20ef-4f61-8497-0fc78bab15c5",
+          "mapname": "$i$o$CF0Windswept $fff$i$oft' Seven",
+          "div": 19,
+          "rank": 1165,
+          "divrank": 13,
+          "score": 35,
+          "qualificationrank": 1189,
+          "totalplayers": 1842
         }
       ],
       "stats": {
-        "total": 1109,
+        "total": 1110,
         "bestrank": 160,
         "avgrank": 1045,
         "bestdiv": 3,
@@ -44646,10 +44674,24 @@
           "score": 29,
           "qualificationrank": 450,
           "totalplayers": 1784
+        },
+        {
+          "id": 44979,
+          "timestamp": "2026-08-26T17:16:30Z",
+          "name": "COTD 2026-08-26 #1",
+          "mapuid": "VI54yPE_npe6EAH3NPbV0zo2m01",
+          "mapgroup": "bc6de290-20ef-4f61-8497-0fc78bab15c5",
+          "mapname": "$i$o$CF0Windswept $fff$i$oft' Seven",
+          "div": 6,
+          "rank": 323,
+          "divrank": 3,
+          "score": 49,
+          "qualificationrank": 370,
+          "totalplayers": 1842
         }
       ],
       "stats": {
-        "total": 1000,
+        "total": 1001,
         "bestrank": 2,
         "avgrank": 844,
         "bestdiv": 1,

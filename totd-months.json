@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-25T20:30:55.297Z",
+  "fetchedAt": "2026-08-26T20:30:55.401Z",
   "maps": [
     {
       "mapUid": "Et1IVfZ6A59U6G_Bqx2UZ8pFw_g",
@@ -225,6 +225,15 @@
       "day": 25,
       "monthYear": "2026-08",
       "leaderboardUid": "ea7057ec-82c1-48e0-9f30-8cf5b107a80a"
+    },
+    {
+      "mapUid": "VI54yPE_npe6EAH3NPbV0zo2m01",
+      "mapId": "a372ba04-1382-42d0-b59b-b65991d0bf4d",
+      "name": "$i$o$CF0Windswept $fff$i$oft' Seven",
+      "authorTimeMs": 52378,
+      "day": 26,
+      "monthYear": "2026-08",
+      "leaderboardUid": "bc6de290-20ef-4f61-8497-0fc78bab15c5"
     },
     {
       "mapUid": "pjCB31IwUZgVsBUP9IF81lx7eh4",

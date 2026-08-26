@@ -38471,10 +38471,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "VI54yPE_npe6EAH3NPbV0zo2m01",
+      "mapId": "a372ba04-1382-42d0-b59b-b65991d0bf4d",
+      "name": "$i$o$CF0Windswept $fff$i$oft' Seven",
+      "authorTimeMs": 52378,
+      "day": 26,
+      "monthYear": "2026-08",
+      "leaderboardUid": "bc6de290-20ef-4f61-8497-0fc78bab15c5",
+      "authorCount": 0,
+      "totalFinishers": 3894,
+      "pct": 0,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-08-25T20:31:31.020Z",
-  "medalsRefreshedAt": "2026-08-25T21:02:07.578Z",
+  "generatedAt": "2026-08-26T20:31:04.308Z",
+  "medalsRefreshedAt": "2026-08-26T21:02:59.947Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",
