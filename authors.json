@@ -38509,10 +38509,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "G197ae7Z7kUW3sUyj6Yi65TIt57",
+      "mapId": "bffce2f2-3ee0-4dd5-b40d-68f87046ab0d",
+      "name": "$n$i$o$000XP$F09Evo26 $n$i$fff - DeutscheBahn Z",
+      "authorTimeMs": 54648,
+      "day": 28,
+      "monthYear": "2026-08",
+      "leaderboardUid": "549ffb45-2883-4d71-a0ee-6eb9f39346dc",
+      "authorCount": 64,
+      "totalFinishers": 3637,
+      "pct": 1.8,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-08-27T20:31:22.625Z",
-  "medalsRefreshedAt": "2026-08-27T21:03:11.356Z",
+  "generatedAt": "2026-08-28T20:31:06.391Z",
+  "medalsRefreshedAt": "2026-08-28T21:03:11.188Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",

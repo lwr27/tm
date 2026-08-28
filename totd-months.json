@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-27T20:30:56.904Z",
+  "fetchedAt": "2026-08-28T20:30:57.373Z",
   "maps": [
     {
       "mapUid": "Et1IVfZ6A59U6G_Bqx2UZ8pFw_g",
@@ -243,6 +243,15 @@
       "day": 27,
       "monthYear": "2026-08",
       "leaderboardUid": "e6c9296e-fba4-4ec5-9a9d-faa80cabbc17"
+    },
+    {
+      "mapUid": "G197ae7Z7kUW3sUyj6Yi65TIt57",
+      "mapId": "bffce2f2-3ee0-4dd5-b40d-68f87046ab0d",
+      "name": "$n$i$o$000XP$F09Evo26 $n$i$fff - DeutscheBahn Z",
+      "authorTimeMs": 54648,
+      "day": 28,
+      "monthYear": "2026-08",
+      "leaderboardUid": "549ffb45-2883-4d71-a0ee-6eb9f39346dc"
     },
     {
       "mapUid": "pjCB31IwUZgVsBUP9IF81lx7eh4",

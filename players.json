@@ -320598,5 +320598,75 @@
     "subregion": "Latvia",
     "subregionFlag": "LAT",
     "resolvedAt": "2026-08-26T21:03:58.176Z"
+  },
+  "b8681c79-982c-4de1-929d-901da3cad6a4": {
+    "name": "ZoleckTM",
+    "clanTag": "$FF0",
+    "country": "Germany",
+    "countryFlag": "GER",
+    "region": "Baden-Württemberg",
+    "subregion": "Heidelberg",
+    "subregionFlag": "Heidelberg",
+    "resolvedAt": "2026-08-28T21:03:17.565Z"
+  },
+  "7dc40703-0c43-4dbe-b478-fc77bd583da1": {
+    "name": "jevt06",
+    "clanTag": "$S$408TER$408P$438I",
+    "country": "Russia",
+    "countryFlag": "RUS",
+    "region": "Центральный федеральный округ",
+    "subregion": "Москва",
+    "subregionFlag": "Moscow",
+    "resolvedAt": "2026-08-28T21:03:18.773Z"
+  },
+  "4484cbb9-d4c1-41eb-bf3b-db75a758586d": {
+    "name": "Fb62d",
+    "clanTag": null,
+    "country": "United States",
+    "countryFlag": "USA",
+    "region": "California",
+    "subregion": "California",
+    "subregionFlag": "California",
+    "resolvedAt": "2026-08-28T21:03:20.504Z"
+  },
+  "1d7e230f-a8f7-4bc7-904a-8b9b3ccb6625": {
+    "name": "supergack",
+    "clanTag": null,
+    "country": "Italy",
+    "countryFlag": "ITA",
+    "region": "Toscana",
+    "subregion": "Toscana",
+    "subregionFlag": "Toscana",
+    "resolvedAt": "2026-08-28T21:03:22.203Z"
+  },
+  "db68f488-170d-4d73-9446-3081489fcc18": {
+    "name": "mad.less",
+    "clanTag": null,
+    "country": "Argentina",
+    "countryFlag": "ARG",
+    "region": null,
+    "subregion": "Argentina",
+    "subregionFlag": "ARG",
+    "resolvedAt": "2026-08-28T21:03:23.916Z"
+  },
+  "44be1458-388d-4a28-9b40-c762d72b88fa": {
+    "name": "Froz3n_Axe",
+    "clanTag": null,
+    "country": "France",
+    "countryFlag": "FRA",
+    "region": "Île-de-France",
+    "subregion": "Paris",
+    "subregionFlag": "Paris",
+    "resolvedAt": "2026-08-28T21:03:25.638Z"
+  },
+  "d595df63-a196-4cbd-be4e-0a2b92917dd8": {
+    "name": "SchniizTM",
+    "clanTag": "$S$I$I$F90🔥",
+    "country": "Austria",
+    "countryFlag": "AUT",
+    "region": "Upper Austria",
+    "subregion": "Upper Austria",
+    "subregionFlag": "Upper_Austria",
+    "resolvedAt": "2026-08-28T21:03:27.238Z"
   }
 }
