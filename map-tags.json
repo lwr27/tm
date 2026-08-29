@@ -22681,6 +22681,16 @@
       ],
       "env": "Stadium",
       "mxid": 350719
+    },
+    "36mERBY6QJaWI6ESjjtJdhB2EX3": {
+      "found": true,
+      "name": "Whiteout",
+      "tags": [
+        "Tech",
+        "Scenery"
+      ],
+      "env": "Stadium",
+      "mxid": 347838
     }
   }
 }
