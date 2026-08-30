@@ -320668,5 +320668,215 @@
     "subregion": "Upper Austria",
     "subregionFlag": "Upper_Austria",
     "resolvedAt": "2026-08-28T21:03:27.238Z"
+  },
+  "48fcd25c-6e51-4b3c-b99a-f8cd0fc7ab02": {
+    "name": "Neqativ",
+    "clanTag": null,
+    "country": "Germany",
+    "countryFlag": "GER",
+    "region": "Bayern",
+    "subregion": "München",
+    "subregionFlag": "Munchen",
+    "resolvedAt": "2026-08-30T21:00:56.148Z"
+  },
+  "0dcaad68-2f33-4782-b2c8-ed96531b9407": {
+    "name": "SaltyPasta",
+    "clanTag": null,
+    "country": "United States",
+    "countryFlag": "USA",
+    "region": "California",
+    "subregion": "California",
+    "subregionFlag": "California",
+    "resolvedAt": "2026-08-30T21:00:57.486Z"
+  },
+  "f6646c23-caa7-483a-9f4e-c61d4ed0e46f": {
+    "name": "hwhat.TM",
+    "clanTag": "アドさん$26E",
+    "country": "United States",
+    "countryFlag": "USA",
+    "region": "Tennessee",
+    "subregion": "Tennessee",
+    "subregionFlag": "Tennessee",
+    "resolvedAt": "2026-08-30T21:00:59.204Z"
+  },
+  "134401a6-b995-4522-a5f1-53c6e2a399b9": {
+    "name": "KenLurd",
+    "clanTag": null,
+    "country": "United Kingdom",
+    "countryFlag": "GBR",
+    "region": "England",
+    "subregion": "North West England",
+    "subregionFlag": "North_West_England_",
+    "resolvedAt": "2026-08-30T21:01:00.909Z"
+  },
+  "0730310d-681c-438d-938e-9c59bd98d466": {
+    "name": "MellowFellowTM",
+    "clanTag": null,
+    "country": "United States",
+    "countryFlag": "USA",
+    "region": "Indiana",
+    "subregion": "Indiana",
+    "subregionFlag": "Indiana",
+    "resolvedAt": "2026-08-30T21:01:02.640Z"
+  },
+  "e5022be2-a3fe-4ad4-8ec7-d0e6f1ee4c55": {
+    "name": "TENPTS",
+    "clanTag": "$0CDV$2DDI$5EDB$7FDE",
+    "country": "United States",
+    "countryFlag": "USA",
+    "region": "Virginia",
+    "subregion": "Virginia",
+    "subregionFlag": "Virginia",
+    "resolvedAt": "2026-08-30T21:01:04.366Z"
+  },
+  "9f11fd8b-39a1-49ac-8271-2bb57f55f27d": {
+    "name": "zCareyy",
+    "clanTag": "$O$I$S$FCFM$EDFE$DEFO$CFFW",
+    "country": "Ireland",
+    "countryFlag": "IRL",
+    "region": null,
+    "subregion": "Ireland",
+    "subregionFlag": "IRL",
+    "resolvedAt": "2026-08-30T21:01:06.056Z"
+  },
+  "6832b7b6-8928-40c8-a6cf-8194f3ce3a2e": {
+    "name": "mimithepanda",
+    "clanTag": "$0FCPIG",
+    "country": "France",
+    "countryFlag": "FRA",
+    "region": "Auvergne-Rhône-Alpes",
+    "subregion": "Rhône",
+    "subregionFlag": "Rhone",
+    "resolvedAt": "2026-08-30T21:01:07.789Z"
+  },
+  "326458d4-6d21-4610-b3a9-6527d32fae68": {
+    "name": "taytaytje",
+    "clanTag": null,
+    "country": "Netherlands",
+    "countryFlag": "NED",
+    "region": "Zuid-Holland",
+    "subregion": "Zuid-Holland",
+    "subregionFlag": "Zuid-Holland",
+    "resolvedAt": "2026-08-30T21:01:09.482Z"
+  },
+  "014c2f45-3dae-4f4a-a356-31d0457bd0f6": {
+    "name": "Mr.Jkr_TM",
+    "clanTag": "$90FJ$74BO$588K$2B4E$0F0R",
+    "country": "Japan",
+    "countryFlag": "JPN",
+    "region": "東京都",
+    "subregion": "東京都",
+    "subregionFlag": "Tokyo",
+    "resolvedAt": "2026-08-30T21:01:11.283Z"
+  },
+  "bf51a1c8-5638-4f8c-bac0-6c4b565b25cb": {
+    "name": "kagami_ftn",
+    "clanTag": null,
+    "country": "France",
+    "countryFlag": "FRA",
+    "region": "Île-de-France",
+    "subregion": "Seine-Saint-Denis",
+    "subregionFlag": "Seine-Saint-Denis",
+    "resolvedAt": "2026-08-30T21:01:12.960Z"
+  },
+  "fe3037a1-545f-4bff-b43e-e0286497c25a": {
+    "name": "Wbnn_RL",
+    "clanTag": "$O$S$709C$809A$909R$A09T$B09A",
+    "country": "United States",
+    "countryFlag": "USA",
+    "region": "California",
+    "subregion": "California",
+    "subregionFlag": "California",
+    "resolvedAt": "2026-08-30T21:01:14.624Z"
+  },
+  "8b55803b-8fa6-43b9-94fb-70dd1aa6ce13": {
+    "name": "gregounet",
+    "clanTag": null,
+    "country": "France",
+    "countryFlag": "FRA",
+    "region": "Bourgogne-Franche-Comté",
+    "subregion": "Jura",
+    "subregionFlag": "fr_jura",
+    "resolvedAt": "2026-08-30T21:01:16.343Z"
+  },
+  "6458ed52-e929-4441-a476-401b5eb4bc93": {
+    "name": "verbayer",
+    "clanTag": "$O$I$W$T$S\t\t\t\t$Z$N´",
+    "country": "Türkiye",
+    "countryFlag": "TUR",
+    "region": null,
+    "subregion": "Türkiye",
+    "subregionFlag": "TUR",
+    "resolvedAt": "2026-08-30T21:01:18.053Z"
+  },
+  "174fb447-f742-45b5-84b6-3fd8cf3def3c": {
+    "name": "CARBO.TM",
+    "clanTag": null,
+    "country": "Costa Rica",
+    "countryFlag": "CRC",
+    "region": null,
+    "subregion": "Costa Rica",
+    "subregionFlag": "CRC",
+    "resolvedAt": "2026-08-30T21:01:19.764Z"
+  },
+  "cb4a48e4-2aa3-4b34-a618-a7ffbfdd449a": {
+    "name": "BikzimusMaximuz",
+    "clanTag": null,
+    "country": "Denmark",
+    "countryFlag": "DEN",
+    "region": null,
+    "subregion": "Denmark",
+    "subregionFlag": "DEN",
+    "resolvedAt": "2026-08-30T21:01:21.487Z"
+  },
+  "75330df6-5826-441b-9fde-bf4ddb13ba34": {
+    "name": "BeepleYak",
+    "clanTag": "$O$205B$60BP$B0EA$F5FS",
+    "country": "Italy",
+    "countryFlag": "ITA",
+    "region": "Emilia-Romagna",
+    "subregion": "Emilia-Romagna",
+    "subregionFlag": "Emilia-Romagna",
+    "resolvedAt": "2026-08-30T21:01:23.218Z"
+  },
+  "c990d6d8-cf47-49f3-a904-03a140a68a55": {
+    "name": "garowski17",
+    "clanTag": null,
+    "country": "North Macedonia",
+    "countryFlag": "MKD",
+    "region": null,
+    "subregion": "North Macedonia",
+    "subregionFlag": "MKD",
+    "resolvedAt": "2026-08-30T21:01:24.907Z"
+  },
+  "b83b5006-8fb4-4446-9254-e6b4762bf68e": {
+    "name": "o0ogabo0oga",
+    "clanTag": null,
+    "country": "Cyprus",
+    "countryFlag": "CYP",
+    "region": null,
+    "subregion": "Cyprus",
+    "subregionFlag": "CYP",
+    "resolvedAt": "2026-08-30T21:01:26.622Z"
+  },
+  "9911f7fa-b43d-44b6-af71-31b1deba5c74": {
+    "name": "PR0NT000",
+    "clanTag": null,
+    "country": "Poland",
+    "countryFlag": "POL",
+    "region": "Lubelskie",
+    "subregion": "Lubelskie",
+    "subregionFlag": "Lubelskie",
+    "resolvedAt": "2026-08-30T21:01:28.334Z"
+  },
+  "497786b2-c761-4db9-a2f9-3bcaf0134fe6": {
+    "name": "xKaeshi.",
+    "clanTag": null,
+    "country": "Germany",
+    "countryFlag": "GER",
+    "region": "Baden-Württemberg",
+    "subregion": "Stuttgart",
+    "subregionFlag": "Stuttgart",
+    "resolvedAt": "2026-08-30T21:01:30.052Z"
   }
 }

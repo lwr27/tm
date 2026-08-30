@@ -22691,6 +22691,17 @@
       ],
       "env": "Stadium",
       "mxid": 347838
+    },
+    "OUXKhsbqx5waQEn7x5LoNCjwwe0": {
+      "found": true,
+      "name": "Onde Boisée",
+      "tags": [
+        "Wood",
+        "Tech",
+        "Plastic"
+      ],
+      "env": "Stadium",
+      "mxid": 350173
     }
   }
 }

@@ -38547,10 +38547,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "OUXKhsbqx5waQEn7x5LoNCjwwe0",
+      "mapId": "6f4ad596-239f-4251-9d89-dc1c9e09b6b1",
+      "name": "$03COnde B$03Coisée",
+      "authorTimeMs": 47306,
+      "day": 30,
+      "monthYear": "2026-08",
+      "leaderboardUid": "96a9b43b-fbe3-4a57-aff3-16a6b7e10f8e",
+      "authorCount": 206,
+      "totalFinishers": 4032,
+      "pct": 5.1,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-08-29T20:31:04.886Z",
-  "medalsRefreshedAt": "2026-08-29T21:01:26.228Z",
+  "generatedAt": "2026-08-30T20:31:09.779Z",
+  "medalsRefreshedAt": "2026-08-30T21:00:50.725Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",

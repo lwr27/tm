@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-29T20:30:56.519Z",
+  "fetchedAt": "2026-08-30T20:30:56.537Z",
   "maps": [
     {
       "mapUid": "Et1IVfZ6A59U6G_Bqx2UZ8pFw_g",
@@ -261,6 +261,15 @@
       "day": 29,
       "monthYear": "2026-08",
       "leaderboardUid": "13645da6-9c8e-4572-96b5-fb3734c1d977"
+    },
+    {
+      "mapUid": "OUXKhsbqx5waQEn7x5LoNCjwwe0",
+      "mapId": "6f4ad596-239f-4251-9d89-dc1c9e09b6b1",
+      "name": "$03COnde B$03Coisée",
+      "authorTimeMs": 47306,
+      "day": 30,
+      "monthYear": "2026-08",
+      "leaderboardUid": "96a9b43b-fbe3-4a57-aff3-16a6b7e10f8e"
     },
     {
       "mapUid": "pjCB31IwUZgVsBUP9IF81lx7eh4",
