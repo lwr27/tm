@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-30T20:30:56.537Z",
+  "fetchedAt": "2026-08-31T20:30:58.085Z",
   "maps": [
     {
       "mapUid": "Et1IVfZ6A59U6G_Bqx2UZ8pFw_g",
@@ -270,6 +270,15 @@
       "day": 30,
       "monthYear": "2026-08",
       "leaderboardUid": "96a9b43b-fbe3-4a57-aff3-16a6b7e10f8e"
+    },
+    {
+      "mapUid": "dASzlSVI1BSWjc1MH2QV8lKGlFm",
+      "mapId": "a7df8d03-4230-488d-927a-c32641df4375",
+      "name": "$s$FC0   Dark Hive $F Nightflow U&R",
+      "authorTimeMs": 53000,
+      "day": 31,
+      "monthYear": "2026-08",
+      "leaderboardUid": "aa9e1838-d653-4e49-ada3-edcf6d8b2db8"
     },
     {
       "mapUid": "pjCB31IwUZgVsBUP9IF81lx7eh4",

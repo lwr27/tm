@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-30T20:30:49.867Z",
+  "generatedAt": "2026-08-31T20:30:51.608Z",
   "players": {
     "XV27 & Whidot": {
       "cups": [
@@ -15136,10 +15136,24 @@
           "score": 16,
           "qualificationrank": 1104,
           "totalplayers": 1913
+        },
+        {
+          "id": 45156,
+          "timestamp": "2026-08-31T17:16:30Z",
+          "name": "COTD 2026-08-31 #1",
+          "mapuid": "dASzlSVI1BSWjc1MH2QV8lKGlFm",
+          "mapgroup": "aa9e1838-d653-4e49-ada3-edcf6d8b2db8",
+          "mapname": "$s$FC0   Dark Hive $F Nightflow U&R",
+          "div": 8,
+          "rank": 495,
+          "divrank": 47,
+          "score": 4,
+          "qualificationrank": 493,
+          "totalplayers": 1963
         }
       ],
       "stats": {
-        "total": 1081,
+        "total": 1082,
         "bestrank": 72,
         "avgrank": 788,
         "bestdiv": 2,
@@ -44744,12 +44758,26 @@
           "score": 33,
           "qualificationrank": 286,
           "totalplayers": 1913
+        },
+        {
+          "id": 45156,
+          "timestamp": "2026-08-31T17:16:30Z",
+          "name": "COTD 2026-08-31 #1",
+          "mapuid": "dASzlSVI1BSWjc1MH2QV8lKGlFm",
+          "mapgroup": "aa9e1838-d653-4e49-ada3-edcf6d8b2db8",
+          "mapname": "$s$FC0   Dark Hive $F Nightflow U&R",
+          "div": 6,
+          "rank": 364,
+          "divrank": 44,
+          "score": 3,
+          "qualificationrank": 364,
+          "totalplayers": 1963
         }
       ],
       "stats": {
-        "total": 1003,
+        "total": 1004,
         "bestrank": 2,
-        "avgrank": 843,
+        "avgrank": 842,
         "bestdiv": 1,
         "totalwins": 0,
         "totaldivwins": 29,

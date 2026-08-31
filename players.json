@@ -320878,5 +320878,75 @@
     "subregion": "Stuttgart",
     "subregionFlag": "Stuttgart",
     "resolvedAt": "2026-08-30T21:01:30.052Z"
+  },
+  "e48f31d1-bd4b-4147-950d-8411b4a1705f": {
+    "name": "ners-TM",
+    "clanTag": "$S$900L$FFFA$900T",
+    "country": "Latvia",
+    "countryFlag": "LAT",
+    "region": null,
+    "subregion": "Latvia",
+    "subregionFlag": "LAT",
+    "resolvedAt": "2026-08-31T21:01:11.114Z"
+  },
+  "daeb1eeb-f0a9-4244-891f-c9a9f4386a9f": {
+    "name": "Spinwolf6907",
+    "clanTag": null,
+    "country": "Poland",
+    "countryFlag": "POL",
+    "region": "Pomorskie",
+    "subregion": "Pomorskie",
+    "subregionFlag": "Pomorskie",
+    "resolvedAt": "2026-08-31T21:01:12.482Z"
+  },
+  "34571f0b-8f41-4a7b-b5c0-79b66d53cf73": {
+    "name": "lelololel",
+    "clanTag": "$W$O$FB0PASTA",
+    "country": "Sweden",
+    "countryFlag": "SWE",
+    "region": null,
+    "subregion": "Sweden",
+    "subregionFlag": "SWE",
+    "resolvedAt": "2026-08-31T21:01:14.190Z"
+  },
+  "fe3c23c1-8fb9-4b4d-b444-db6b21301015": {
+    "name": "Nyaomi_",
+    "clanTag": "$6CFP$F9CR$FFFI$F9CD$6CFE",
+    "country": "France",
+    "countryFlag": "FRA",
+    "region": "Hauts-de-France",
+    "subregion": "Nord",
+    "subregionFlag": "Nord",
+    "resolvedAt": "2026-08-31T21:01:15.907Z"
+  },
+  "7b738cb7-454c-496b-b439-e28d041ff4d9": {
+    "name": "LucaoG43",
+    "clanTag": "$S$FF0BR",
+    "country": "Brazil",
+    "countryFlag": "BRA",
+    "region": "Paraná",
+    "subregion": "Paraná",
+    "subregionFlag": "parana",
+    "resolvedAt": "2026-08-31T21:01:17.627Z"
+  },
+  "4ce40817-d53d-4c71-8e8b-87f3a4663547": {
+    "name": "jkzslo",
+    "clanTag": null,
+    "country": "Slovenia",
+    "countryFlag": "SLO",
+    "region": "Gorenjska",
+    "subregion": "Gorenjska",
+    "subregionFlag": "Gorenjska",
+    "resolvedAt": "2026-08-31T21:01:19.345Z"
+  },
+  "1f65d1ee-04c0-4336-aa10-071162e68a71": {
+    "name": "hyroant",
+    "clanTag": null,
+    "country": "France",
+    "countryFlag": "FRA",
+    "region": "Nouvelle-Aquitaine",
+    "subregion": "Gironde",
+    "subregionFlag": "Gironde",
+    "resolvedAt": "2026-08-31T21:01:21.059Z"
   }
 }
