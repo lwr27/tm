@@ -38585,10 +38585,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "DTxdk3q4kA52fMdkOOgaRANZODb",
+      "mapId": "182c3cbe-21de-4668-9dc2-fb58414a97b9",
+      "name": "Chilly Reception ft Ealipse",
+      "authorTimeMs": 54912,
+      "day": 1,
+      "monthYear": "2026-09",
+      "leaderboardUid": "2e43e804-3970-4e97-973c-c59b37b7638e",
+      "authorCount": 249,
+      "totalFinishers": 3886,
+      "pct": 6.4,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-08-31T20:31:26.575Z",
-  "medalsRefreshedAt": "2026-08-31T21:01:05.536Z",
+  "generatedAt": "2026-09-01T20:31:12.838Z",
+  "medalsRefreshedAt": "2026-09-01T21:00:50.602Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",

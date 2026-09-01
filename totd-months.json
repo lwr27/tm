@@ -1,6 +1,15 @@
 {
-  "fetchedAt": "2026-08-31T20:30:58.085Z",
+  "fetchedAt": "2026-09-01T20:30:59.539Z",
   "maps": [
+    {
+      "mapUid": "DTxdk3q4kA52fMdkOOgaRANZODb",
+      "mapId": "182c3cbe-21de-4668-9dc2-fb58414a97b9",
+      "name": "Chilly Reception ft Ealipse",
+      "authorTimeMs": 54912,
+      "day": 1,
+      "monthYear": "2026-09",
+      "leaderboardUid": "2e43e804-3970-4e97-973c-c59b37b7638e"
+    },
     {
       "mapUid": "Et1IVfZ6A59U6G_Bqx2UZ8pFw_g",
       "mapId": "d39df09e-1a44-4e18-bc02-8b2d4a1680b1",
