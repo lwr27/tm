@@ -38604,10 +38604,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "1JUJ1lL84YpM0s2Gm0xebSCWz99",
+      "mapId": "3aad0d2f-0a2c-4e0f-a8a5-d06eb99057b8",
+      "name": "$f70Amber $999Tide",
+      "authorTimeMs": 47956,
+      "day": 2,
+      "monthYear": "2026-09",
+      "leaderboardUid": "8ef7f17f-4961-4a7b-83e1-3c165f9d72ab",
+      "authorCount": 1103,
+      "totalFinishers": 4115,
+      "pct": 26.8,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": true
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-09-01T20:31:12.838Z",
-  "medalsRefreshedAt": "2026-09-01T21:00:50.602Z",
+  "generatedAt": "2026-09-02T20:31:37.112Z",
+  "medalsRefreshedAt": "2026-09-02T21:02:16.907Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",
@@ -38784,6 +38803,14 @@
       "mapName": "$s$FC0   Dark Hive $F Nightflow U&R",
       "achievedAt": "2026-08-31T17:15:02+00:00",
       "detectedAt": "2026-08-31T20:31:26.575Z"
+    },
+    {
+      "key": "Pho3nix_.|1JUJ1lL84YpM0s2Gm0xebSCWz99",
+      "player": "Pho3nix_.",
+      "mapUid": "1JUJ1lL84YpM0s2Gm0xebSCWz99",
+      "mapName": "$f70Amber $999Tide",
+      "achievedAt": "2026-09-02T17:13:55+00:00",
+      "detectedAt": "2026-09-02T20:31:37.112Z"
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-01T20:30:52.190Z",
+  "generatedAt": "2026-09-02T20:30:59.718Z",
   "players": {
     "XV27 & Whidot": {
       "cups": [
@@ -15150,10 +15150,24 @@
           "score": 4,
           "qualificationrank": 493,
           "totalplayers": 1963
+        },
+        {
+          "id": 45214,
+          "timestamp": "2026-09-02T17:16:30Z",
+          "name": "COTD 2026-09-02 #1",
+          "mapuid": "1JUJ1lL84YpM0s2Gm0xebSCWz99",
+          "mapgroup": "8ef7f17f-4961-4a7b-83e1-3c165f9d72ab",
+          "mapname": "$f70Amber $999Tide",
+          "div": 14,
+          "rank": 851,
+          "divrank": 19,
+          "score": 29,
+          "qualificationrank": 857,
+          "totalplayers": 1845
         }
       ],
       "stats": {
-        "total": 1082,
+        "total": 1083,
         "bestrank": 72,
         "avgrank": 788,
         "bestdiv": 2,
@@ -44772,10 +44786,24 @@
           "score": 3,
           "qualificationrank": 364,
           "totalplayers": 1963
+        },
+        {
+          "id": 45214,
+          "timestamp": "2026-09-02T17:16:30Z",
+          "name": "COTD 2026-09-02 #1",
+          "mapuid": "1JUJ1lL84YpM0s2Gm0xebSCWz99",
+          "mapgroup": "8ef7f17f-4961-4a7b-83e1-3c165f9d72ab",
+          "mapname": "$f70Amber $999Tide",
+          "div": 7,
+          "rank": 417,
+          "divrank": 33,
+          "score": 16,
+          "qualificationrank": 407,
+          "totalplayers": 1845
         }
       ],
       "stats": {
-        "total": 1004,
+        "total": 1005,
         "bestrank": 2,
         "avgrank": 842,
         "bestdiv": 1,

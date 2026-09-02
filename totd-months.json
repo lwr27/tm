@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-01T20:30:59.539Z",
+  "fetchedAt": "2026-09-02T20:31:07.211Z",
   "maps": [
     {
       "mapUid": "DTxdk3q4kA52fMdkOOgaRANZODb",
@@ -9,6 +9,15 @@
       "day": 1,
       "monthYear": "2026-09",
       "leaderboardUid": "2e43e804-3970-4e97-973c-c59b37b7638e"
+    },
+    {
+      "mapUid": "1JUJ1lL84YpM0s2Gm0xebSCWz99",
+      "mapId": "3aad0d2f-0a2c-4e0f-a8a5-d06eb99057b8",
+      "name": "$f70Amber $999Tide",
+      "authorTimeMs": 47956,
+      "day": 2,
+      "monthYear": "2026-09",
+      "leaderboardUid": "8ef7f17f-4961-4a7b-83e1-3c165f9d72ab"
     },
     {
       "mapUid": "Et1IVfZ6A59U6G_Bqx2UZ8pFw_g",

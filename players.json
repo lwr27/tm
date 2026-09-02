@@ -320948,5 +320948,115 @@
     "subregion": "Gironde",
     "subregionFlag": "Gironde",
     "resolvedAt": "2026-08-31T21:01:21.059Z"
+  },
+  "4c9f0aa9-7104-48db-accc-e226f7a899a7": {
+    "name": "Dutchstriker",
+    "clanTag": null,
+    "country": "Netherlands",
+    "countryFlag": "NED",
+    "region": "Overijssel",
+    "subregion": "Overijssel",
+    "subregionFlag": "Overijssel",
+    "resolvedAt": "2026-09-02T21:02:22.874Z"
+  },
+  "0481d2d5-491e-4773-b2ba-ca83e2cfa58d": {
+    "name": "Schnabulator.",
+    "clanTag": "$S$F00A$FFFU$F00T",
+    "country": "Austria",
+    "countryFlag": "AUT",
+    "region": "Lower Austria",
+    "subregion": "Lower Austria",
+    "subregionFlag": "Lower_Austria",
+    "resolvedAt": "2026-09-02T21:02:24.027Z"
+  },
+  "2cf79cad-3a52-4f40-82b4-627c055bd67e": {
+    "name": "jarzzoni",
+    "clanTag": "$FFFL$00FJ",
+    "country": "Finland",
+    "countryFlag": "FIN",
+    "region": null,
+    "subregion": "Finland",
+    "subregionFlag": "FIN",
+    "resolvedAt": "2026-09-02T21:02:25.771Z"
+  },
+  "c6642ff9-a4ed-4f94-80d4-b42a89ec23b7": {
+    "name": "Omm4d4wn",
+    "clanTag": null,
+    "country": "France",
+    "countryFlag": "FRA",
+    "region": "Hauts-de-France",
+    "subregion": "Nord",
+    "subregionFlag": "Nord",
+    "resolvedAt": "2026-09-02T21:02:27.492Z"
+  },
+  "e3e09194-ccc6-4cfd-a3e1-8ef5d9ac3220": {
+    "name": "CasKrebbers",
+    "clanTag": "$O$I$W$S$FB BOEF",
+    "country": "Netherlands",
+    "countryFlag": "NED",
+    "region": "Noord-Brabant",
+    "subregion": "Noord-Brabant",
+    "subregionFlag": "Noord-Brabant",
+    "resolvedAt": "2026-09-02T21:02:29.207Z"
+  },
+  "1fa2662c-f248-4905-9284-7967c0a0f9b3": {
+    "name": "chuck_the_bug",
+    "clanTag": null,
+    "country": "Germany",
+    "countryFlag": "GER",
+    "region": "Nordrhein-Westfalen",
+    "subregion": "Köln",
+    "subregionFlag": "Koln",
+    "resolvedAt": "2026-09-02T21:02:30.922Z"
+  },
+  "6cb98333-1d86-4b86-b516-4147143b6424": {
+    "name": "Spannukakku",
+    "clanTag": null,
+    "country": "Finland",
+    "countryFlag": "FIN",
+    "region": null,
+    "subregion": "Finland",
+    "subregionFlag": "FIN",
+    "resolvedAt": "2026-09-02T21:02:32.652Z"
+  },
+  "079f119a-3784-48df-9431-7c483da6603f": {
+    "name": "mingingham",
+    "clanTag": "$CFFN$9FFA$6FFV$0CCA",
+    "country": "United States",
+    "countryFlag": "USA",
+    "region": "Michigan",
+    "subregion": "Michigan",
+    "subregionFlag": "Michigan",
+    "resolvedAt": "2026-09-02T21:02:34.314Z"
+  },
+  "8fc888ba-9bec-48f8-ae08-17666cf484db": {
+    "name": "JakkTM",
+    "clanTag": "$O$S$F00WH$FF0OP",
+    "country": "Netherlands",
+    "countryFlag": "NED",
+    "region": "Utrecht",
+    "subregion": "Utrecht",
+    "subregionFlag": "Utrecht",
+    "resolvedAt": "2026-09-02T21:02:36.068Z"
+  },
+  "a8ed3ab9-1d39-40e2-bfcb-15de5cec439c": {
+    "name": "IsaacSmolDix",
+    "clanTag": null,
+    "country": "Czechia",
+    "countryFlag": "CZE",
+    "region": "Jihomoravský kraj",
+    "subregion": "Jihomoravský kraj",
+    "subregionFlag": "Jihomoravský kraj",
+    "resolvedAt": "2026-09-02T21:02:37.786Z"
+  },
+  "a5ee7f96-d331-4f18-9b5a-f068388ce40c": {
+    "name": "aptx_48",
+    "clanTag": null,
+    "country": "Germany",
+    "countryFlag": "GER",
+    "region": "Rheinland-Pfalz",
+    "subregion": "Mainz",
+    "subregionFlag": "Mainz",
+    "resolvedAt": "2026-09-02T21:02:39.496Z"
   }
 }
