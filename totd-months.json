@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-02T20:31:07.211Z",
+  "fetchedAt": "2026-09-03T20:31:03.372Z",
   "maps": [
     {
       "mapUid": "DTxdk3q4kA52fMdkOOgaRANZODb",
@@ -18,6 +18,15 @@
       "day": 2,
       "monthYear": "2026-09",
       "leaderboardUid": "8ef7f17f-4961-4a7b-83e1-3c165f9d72ab"
+    },
+    {
+      "mapUid": "D9PGWHRAYm45fA0aWP88WN61aJc",
+      "mapId": "8d4be180-4d40-42f4-a2ce-d12db180c350",
+      "name": "you're so golden",
+      "authorTimeMs": 42438,
+      "day": 3,
+      "monthYear": "2026-09",
+      "leaderboardUid": "fce5983d-7d6f-49cf-9334-34087be1213d"
     },
     {
       "mapUid": "Et1IVfZ6A59U6G_Bqx2UZ8pFw_g",

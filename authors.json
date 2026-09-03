@@ -38623,10 +38623,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "D9PGWHRAYm45fA0aWP88WN61aJc",
+      "mapId": "8d4be180-4d40-42f4-a2ce-d12db180c350",
+      "name": "you're so golden",
+      "authorTimeMs": 42438,
+      "day": 3,
+      "monthYear": "2026-09",
+      "leaderboardUid": "fce5983d-7d6f-49cf-9334-34087be1213d",
+      "authorCount": 210,
+      "totalFinishers": 4126,
+      "pct": 5.1,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-09-02T20:31:37.112Z",
-  "medalsRefreshedAt": "2026-09-02T21:02:16.907Z",
+  "generatedAt": "2026-09-03T20:31:16.489Z",
+  "medalsRefreshedAt": "2026-09-03T21:01:16.769Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",
