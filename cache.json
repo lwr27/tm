@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-03T20:30:55.837Z",
+  "generatedAt": "2026-09-04T20:31:04.629Z",
   "players": {
     "XV27 & Whidot": {
       "cups": [
@@ -15164,10 +15164,24 @@
           "score": 29,
           "qualificationrank": 857,
           "totalplayers": 1845
+        },
+        {
+          "id": 45256,
+          "timestamp": "2026-09-04T17:16:30Z",
+          "name": "COTD 2026-09-04 #1",
+          "mapuid": "pd6i0dIVha_9Q2oxrEeXJmE5Pz7",
+          "mapgroup": "17cb43c5-65c6-410c-9b38-2e3118049fe8",
+          "mapname": "Giga Drain",
+          "div": 14,
+          "rank": 860,
+          "divrank": 28,
+          "score": 22,
+          "qualificationrank": 855,
+          "totalplayers": 1784
         }
       ],
       "stats": {
-        "total": 1083,
+        "total": 1084,
         "bestrank": 72,
         "avgrank": 788,
         "bestdiv": 2,
@@ -30717,12 +30731,26 @@
           "score": 35,
           "qualificationrank": 1189,
           "totalplayers": 1842
+        },
+        {
+          "id": 45256,
+          "timestamp": "2026-09-04T17:16:30Z",
+          "name": "COTD 2026-09-04 #1",
+          "mapuid": "pd6i0dIVha_9Q2oxrEeXJmE5Pz7",
+          "mapgroup": "17cb43c5-65c6-410c-9b38-2e3118049fe8",
+          "mapname": "Giga Drain",
+          "div": 5,
+          "rank": 258,
+          "divrank": 2,
+          "score": 46,
+          "qualificationrank": 267,
+          "totalplayers": 1784
         }
       ],
       "stats": {
-        "total": 1110,
+        "total": 1111,
         "bestrank": 160,
-        "avgrank": 1045,
+        "avgrank": 1044,
         "bestdiv": 3,
         "totalwins": 0,
         "totaldivwins": 18,
@@ -44800,12 +44828,26 @@
           "score": 16,
           "qualificationrank": 407,
           "totalplayers": 1845
+        },
+        {
+          "id": 45256,
+          "timestamp": "2026-09-04T17:16:30Z",
+          "name": "COTD 2026-09-04 #1",
+          "mapuid": "pd6i0dIVha_9Q2oxrEeXJmE5Pz7",
+          "mapgroup": "17cb43c5-65c6-410c-9b38-2e3118049fe8",
+          "mapname": "Giga Drain",
+          "div": 5,
+          "rank": 293,
+          "divrank": 37,
+          "score": 11,
+          "qualificationrank": 258,
+          "totalplayers": 1784
         }
       ],
       "stats": {
-        "total": 1005,
+        "total": 1006,
         "bestrank": 2,
-        "avgrank": 842,
+        "avgrank": 841,
         "bestdiv": 1,
         "totalwins": 0,
         "totaldivwins": 29,

@@ -38642,10 +38642,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "pd6i0dIVha_9Q2oxrEeXJmE5Pz7",
+      "mapId": "fc0602fa-e0e7-4a7b-8455-97b3e0c692bb",
+      "name": "Giga Drain",
+      "authorTimeMs": 50452,
+      "day": 4,
+      "monthYear": "2026-09",
+      "leaderboardUid": "17cb43c5-65c6-410c-9b38-2e3118049fe8",
+      "authorCount": 592,
+      "totalFinishers": 4210,
+      "pct": 14.1,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": true,
+        "Pho3nix_.": true
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-09-03T20:31:16.489Z",
-  "medalsRefreshedAt": "2026-09-03T21:01:16.769Z",
+  "generatedAt": "2026-09-04T20:31:35.898Z",
+  "medalsRefreshedAt": "2026-09-04T21:02:59.590Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",
@@ -38830,6 +38849,22 @@
       "mapName": "$f70Amber $999Tide",
       "achievedAt": "2026-09-02T17:13:55+00:00",
       "detectedAt": "2026-09-02T20:31:37.112Z"
+    },
+    {
+      "key": "TheBreaker0|pd6i0dIVha_9Q2oxrEeXJmE5Pz7",
+      "player": "TheBreaker0",
+      "mapUid": "pd6i0dIVha_9Q2oxrEeXJmE5Pz7",
+      "mapName": "Giga Drain",
+      "achievedAt": "2026-09-04T17:42:48+00:00",
+      "detectedAt": "2026-09-04T20:31:35.898Z"
+    },
+    {
+      "key": "Pho3nix_.|pd6i0dIVha_9Q2oxrEeXJmE5Pz7",
+      "player": "Pho3nix_.",
+      "mapUid": "pd6i0dIVha_9Q2oxrEeXJmE5Pz7",
+      "mapName": "Giga Drain",
+      "achievedAt": "2026-09-04T17:52:24+00:00",
+      "detectedAt": "2026-09-04T20:31:35.898Z"
     }
   ]
 }

@@ -22736,6 +22736,17 @@
       ],
       "env": "Stadium",
       "mxid": 352414
+    },
+    "pd6i0dIVha_9Q2oxrEeXJmE5Pz7": {
+      "found": true,
+      "name": "Giga Drain",
+      "tags": [
+        "Scenery",
+        "Grass",
+        "Signature"
+      ],
+      "env": "Stadium",
+      "mxid": 124684
     }
   }
 }

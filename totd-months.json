@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-03T20:31:03.372Z",
+  "fetchedAt": "2026-09-04T20:31:11.115Z",
   "maps": [
     {
       "mapUid": "DTxdk3q4kA52fMdkOOgaRANZODb",
@@ -27,6 +27,15 @@
       "day": 3,
       "monthYear": "2026-09",
       "leaderboardUid": "fce5983d-7d6f-49cf-9334-34087be1213d"
+    },
+    {
+      "mapUid": "pd6i0dIVha_9Q2oxrEeXJmE5Pz7",
+      "mapId": "fc0602fa-e0e7-4a7b-8455-97b3e0c692bb",
+      "name": "Giga Drain",
+      "authorTimeMs": 50452,
+      "day": 4,
+      "monthYear": "2026-09",
+      "leaderboardUid": "17cb43c5-65c6-410c-9b38-2e3118049fe8"
     },
     {
       "mapUid": "Et1IVfZ6A59U6G_Bqx2UZ8pFw_g",
