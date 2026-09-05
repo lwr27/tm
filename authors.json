@@ -38661,10 +38661,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "QFnICsp1aJdQpIk001f1rcgIBC1",
+      "mapId": "c5776360-69f7-4cae-8430-9cabee6dd713",
+      "name": "$s$F96Walk On By $fffft$f96' $fffSampler",
+      "authorTimeMs": 43898,
+      "day": 5,
+      "monthYear": "2026-09",
+      "leaderboardUid": "dac2b9a2-233c-4273-a5bf-69336af61302",
+      "authorCount": 70,
+      "totalFinishers": 4138,
+      "pct": 1.7,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-09-04T20:31:35.898Z",
-  "medalsRefreshedAt": "2026-09-04T21:02:59.590Z",
+  "generatedAt": "2026-09-05T20:31:21.666Z",
+  "medalsRefreshedAt": "2026-09-05T21:05:15.448Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",
