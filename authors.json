@@ -38699,10 +38699,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "53pLPCrlRNzFCVcDVj9icz5WbC4",
+      "mapId": "7ee626c5-d4c1-4ed1-a08b-e1131391b4c2",
+      "name": "SCORIA",
+      "authorTimeMs": 47718,
+      "day": 7,
+      "monthYear": "2026-09",
+      "leaderboardUid": "492388c9-f721-4160-a8fe-8871b7225e34",
+      "authorCount": 105,
+      "totalFinishers": 4254,
+      "pct": 2.5,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-09-06T23:09:43.877Z",
-  "medalsRefreshedAt": "2026-09-06T21:02:54.732Z",
+  "generatedAt": "2026-09-07T20:31:16.625Z",
+  "medalsRefreshedAt": "2026-09-07T21:01:50.388Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",

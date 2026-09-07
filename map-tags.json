@@ -22765,6 +22765,16 @@
       ],
       "env": "Stadium",
       "mxid": 352895
+    },
+    "53pLPCrlRNzFCVcDVj9icz5WbC4": {
+      "found": true,
+      "name": "SCORIA",
+      "tags": [
+        "Tech",
+        "Scenery"
+      ],
+      "env": "Stadium",
+      "mxid": 347540
     }
   }
 }

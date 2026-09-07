@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-06T20:31:02.709Z",
+  "fetchedAt": "2026-09-07T20:31:05.713Z",
   "maps": [
     {
       "mapUid": "DTxdk3q4kA52fMdkOOgaRANZODb",
@@ -54,6 +54,15 @@
       "day": 6,
       "monthYear": "2026-09",
       "leaderboardUid": "7267c928-bf86-4a14-bde0-c4a1dccc23a2"
+    },
+    {
+      "mapUid": "53pLPCrlRNzFCVcDVj9icz5WbC4",
+      "mapId": "7ee626c5-d4c1-4ed1-a08b-e1131391b4c2",
+      "name": "SCORIA",
+      "authorTimeMs": 47718,
+      "day": 7,
+      "monthYear": "2026-09",
+      "leaderboardUid": "492388c9-f721-4160-a8fe-8871b7225e34"
     },
     {
       "mapUid": "Et1IVfZ6A59U6G_Bqx2UZ8pFw_g",

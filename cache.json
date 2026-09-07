@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-06T20:30:56.403Z",
+  "generatedAt": "2026-09-07T20:30:59.252Z",
   "players": {
     "XV27 & Whidot": {
       "cups": [
@@ -15178,10 +15178,24 @@
           "score": 22,
           "qualificationrank": 855,
           "totalplayers": 1784
+        },
+        {
+          "id": 45354,
+          "timestamp": "2026-09-07T17:16:30Z",
+          "name": "COTD 2026-09-07 #1",
+          "mapuid": "53pLPCrlRNzFCVcDVj9icz5WbC4",
+          "mapgroup": "492388c9-f721-4160-a8fe-8871b7225e34",
+          "mapname": "SCORIA",
+          "div": 12,
+          "rank": 739,
+          "divrank": 35,
+          "score": 8,
+          "qualificationrank": 739,
+          "totalplayers": 1985
         }
       ],
       "stats": {
-        "total": 1084,
+        "total": 1085,
         "bestrank": 72,
         "avgrank": 788,
         "bestdiv": 2,
@@ -44870,10 +44884,24 @@
           "score": 19,
           "qualificationrank": 476,
           "totalplayers": 1870
+        },
+        {
+          "id": 45354,
+          "timestamp": "2026-09-07T17:16:30Z",
+          "name": "COTD 2026-09-07 #1",
+          "mapuid": "53pLPCrlRNzFCVcDVj9icz5WbC4",
+          "mapgroup": "492388c9-f721-4160-a8fe-8871b7225e34",
+          "mapname": "SCORIA",
+          "div": 6,
+          "rank": 359,
+          "divrank": 39,
+          "score": 7,
+          "qualificationrank": 371,
+          "totalplayers": 1985
         }
       ],
       "stats": {
-        "total": 1007,
+        "total": 1008,
         "bestrank": 2,
         "avgrank": 841,
         "bestdiv": 1,
