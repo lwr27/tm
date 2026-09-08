@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-07T20:31:05.713Z",
+  "fetchedAt": "2026-09-08T20:31:09.105Z",
   "maps": [
     {
       "mapUid": "DTxdk3q4kA52fMdkOOgaRANZODb",
@@ -63,6 +63,15 @@
       "day": 7,
       "monthYear": "2026-09",
       "leaderboardUid": "492388c9-f721-4160-a8fe-8871b7225e34"
+    },
+    {
+      "mapUid": "Y9RlhNc820M4TMZ6K9AySGzeXOa",
+      "mapId": "9e2036b9-ebb2-425a-8385-97330dcdfaf6",
+      "name": "$888$sWear your Seat Belt",
+      "authorTimeMs": 44186,
+      "day": 8,
+      "monthYear": "2026-09",
+      "leaderboardUid": "b1a6434f-07fc-4a2a-a965-fcaa23cde874"
     },
     {
       "mapUid": "Et1IVfZ6A59U6G_Bqx2UZ8pFw_g",

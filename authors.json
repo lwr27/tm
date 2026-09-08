@@ -38718,10 +38718,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "Y9RlhNc820M4TMZ6K9AySGzeXOa",
+      "mapId": "9e2036b9-ebb2-425a-8385-97330dcdfaf6",
+      "name": "$888$sWear your Seat Belt",
+      "authorTimeMs": 44186,
+      "day": 8,
+      "monthYear": "2026-09",
+      "leaderboardUid": "b1a6434f-07fc-4a2a-a965-fcaa23cde874",
+      "authorCount": 92,
+      "totalFinishers": 3960,
+      "pct": 2.3,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-09-07T20:31:16.625Z",
-  "medalsRefreshedAt": "2026-09-07T21:01:50.388Z",
+  "generatedAt": "2026-09-08T20:31:17.880Z",
+  "medalsRefreshedAt": "2026-09-08T21:02:29.854Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",

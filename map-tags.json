@@ -22775,6 +22775,16 @@
       ],
       "env": "Stadium",
       "mxid": 347540
+    },
+    "Y9RlhNc820M4TMZ6K9AySGzeXOa": {
+      "found": true,
+      "name": "Wear your Seat Belt",
+      "tags": [
+        "Tech",
+        "Plastic"
+      ],
+      "env": "Stadium",
+      "mxid": 354160
     }
   }
 }
