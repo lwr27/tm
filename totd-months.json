@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-08T20:31:09.105Z",
+  "fetchedAt": "2026-09-09T20:31:06.473Z",
   "maps": [
     {
       "mapUid": "DTxdk3q4kA52fMdkOOgaRANZODb",
@@ -72,6 +72,15 @@
       "day": 8,
       "monthYear": "2026-09",
       "leaderboardUid": "b1a6434f-07fc-4a2a-a965-fcaa23cde874"
+    },
+    {
+      "mapUid": "IEESxNBIrvJmq3ZiGCwfZvA2np7",
+      "mapId": "32d011ca-2fe7-444a-acf2-7d1259d917b1",
+      "name": "MTC - Escaping Silence",
+      "authorTimeMs": 50384,
+      "day": 9,
+      "monthYear": "2026-09",
+      "leaderboardUid": "90e6c8f3-fbca-4ca3-8e86-59464d6971da"
     },
     {
       "mapUid": "Et1IVfZ6A59U6G_Bqx2UZ8pFw_g",

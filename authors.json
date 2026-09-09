@@ -38737,10 +38737,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "IEESxNBIrvJmq3ZiGCwfZvA2np7",
+      "mapId": "32d011ca-2fe7-444a-acf2-7d1259d917b1",
+      "name": "MTC - Escaping Silence",
+      "authorTimeMs": 50384,
+      "day": 9,
+      "monthYear": "2026-09",
+      "leaderboardUid": "90e6c8f3-fbca-4ca3-8e86-59464d6971da",
+      "authorCount": 1365,
+      "totalFinishers": 4063,
+      "pct": 33.6,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": true
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-09-08T20:31:17.880Z",
-  "medalsRefreshedAt": "2026-09-08T21:02:29.854Z",
+  "generatedAt": "2026-09-09T20:31:37.717Z",
+  "medalsRefreshedAt": "2026-09-09T21:03:30.360Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",
@@ -38941,6 +38960,14 @@
       "mapName": "Giga Drain",
       "achievedAt": "2026-09-04T17:52:24+00:00",
       "detectedAt": "2026-09-04T20:31:35.898Z"
+    },
+    {
+      "key": "Pho3nix_.|IEESxNBIrvJmq3ZiGCwfZvA2np7",
+      "player": "Pho3nix_.",
+      "mapUid": "IEESxNBIrvJmq3ZiGCwfZvA2np7",
+      "mapName": "MTC - Escaping Silence",
+      "achievedAt": "2026-09-09T17:24:51+00:00",
+      "detectedAt": "2026-09-09T20:31:37.717Z"
     }
   ]
 }

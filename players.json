@@ -321458,5 +321458,115 @@
     "subregion": "Vlaams-Brabant",
     "subregionFlag": "Flemmish_Brabant",
     "resolvedAt": "2026-09-06T21:03:47.950Z"
+  },
+  "a4133146-7b2c-40e2-bf7a-eb67cbf019df": {
+    "name": "DanDanDing",
+    "clanTag": "$S$O$W$FFF$F82$F64$F45$F08",
+    "country": "United States",
+    "countryFlag": "USA",
+    "region": "Georgia",
+    "subregion": "Georgia",
+    "subregionFlag": "Georgia",
+    "resolvedAt": "2026-09-09T21:03:36.370Z"
+  },
+  "660d1242-27d6-4023-bba3-6809dfcce187": {
+    "name": "Lhams_",
+    "clanTag": null,
+    "country": "France",
+    "countryFlag": "FRA",
+    "region": "Occitanie",
+    "subregion": "Lot",
+    "subregionFlag": "Lot",
+    "resolvedAt": "2026-09-09T21:03:37.594Z"
+  },
+  "e4343543-ef66-41e9-bf22-ed32d1dab871": {
+    "name": "Cheetxhz",
+    "clanTag": null,
+    "country": "United States",
+    "countryFlag": "USA",
+    "region": "Illinois",
+    "subregion": "Illinois",
+    "subregionFlag": "Illinois",
+    "resolvedAt": "2026-09-09T21:03:39.302Z"
+  },
+  "451ba1bf-cac4-41a7-974d-3948d36da17f": {
+    "name": "Sisiojunior",
+    "clanTag": "$00FN$05FO$0BFN$0BFV$0FFA",
+    "country": "Italy",
+    "countryFlag": "ITA",
+    "region": "Lombardia",
+    "subregion": "Lombardia",
+    "subregionFlag": "Lombardia",
+    "resolvedAt": "2026-09-09T21:03:40.989Z"
+  },
+  "af351c6f-14e9-4ffc-ac3e-91d3e87f0e1f": {
+    "name": "aaru_koko",
+    "clanTag": "$O$S$709C$809A$909R$A09T$B09A",
+    "country": "Poland",
+    "countryFlag": "POL",
+    "region": "Dolnośląskie",
+    "subregion": "Dolnośląskie",
+    "subregionFlag": "dolnoslaskie",
+    "resolvedAt": "2026-09-09T21:03:42.741Z"
+  },
+  "b75ef972-7aad-4802-a4c4-a0e82a02803c": {
+    "name": "lay_21y",
+    "clanTag": "$O$S$709C$809A$909R$A09T$B09A",
+    "country": "Austria",
+    "countryFlag": "AUT",
+    "region": "Salzburg",
+    "subregion": "Salzburg",
+    "subregionFlag": "Salzburg",
+    "resolvedAt": "2026-09-09T21:03:44.456Z"
+  },
+  "cdb81555-1879-424f-a349-7eb12a330c8f": {
+    "name": "VYLYN.",
+    "clanTag": "$F0F  ",
+    "country": "United States",
+    "countryFlag": "USA",
+    "region": "Arkansas",
+    "subregion": "Arkansas",
+    "subregionFlag": "Arkansas",
+    "resolvedAt": "2026-09-09T21:03:46.169Z"
+  },
+  "9b8e0bcf-65fa-470c-8f46-77c3d145bdc9": {
+    "name": "unknown.tw",
+    "clanTag": "$O$S$F00WH$FF0OP",
+    "country": "Taïwan",
+    "countryFlag": "TWN",
+    "region": null,
+    "subregion": "Taïwan",
+    "subregionFlag": "TWN",
+    "resolvedAt": "2026-09-09T21:03:47.828Z"
+  },
+  "9953dc83-ce16-44a1-9292-ca63cf62fdbd": {
+    "name": "Alejandro000000",
+    "clanTag": null,
+    "country": "Germany",
+    "countryFlag": "GER",
+    "region": "Bayern",
+    "subregion": "Regensburg",
+    "subregionFlag": "Regensburg",
+    "resolvedAt": "2026-09-09T21:03:49.603Z"
+  },
+  "a461becc-e8a5-430b-a72f-60815f23b71b": {
+    "name": "Stormz_TM",
+    "clanTag": "$04FBIG",
+    "country": "India",
+    "countryFlag": "IND",
+    "region": null,
+    "subregion": "India",
+    "subregionFlag": "IND",
+    "resolvedAt": "2026-09-09T21:03:51.313Z"
+  },
+  "c3ad6ba5-0c29-4d6a-a2d2-ca4f855ebfcd": {
+    "name": "Kirbo_1234",
+    "clanTag": "$F6C$W$I$O$S",
+    "country": "Spain",
+    "countryFlag": "ESP",
+    "region": "Catalunya",
+    "subregion": "Catalunya",
+    "subregionFlag": "Catalunya",
+    "resolvedAt": "2026-09-09T21:03:52.995Z"
   }
 }

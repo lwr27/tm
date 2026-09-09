@@ -22785,6 +22785,17 @@
       ],
       "env": "Stadium",
       "mxid": 354160
+    },
+    "IEESxNBIrvJmq3ZiGCwfZvA2np7": {
+      "found": true,
+      "name": "MTC - Escaping Silence",
+      "tags": [
+        "Scenery",
+        "Mixed",
+        "Engine Off"
+      ],
+      "env": "BlueBay",
+      "mxid": 352658
     }
   }
 }

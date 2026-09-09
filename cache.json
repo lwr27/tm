@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-08T20:31:02.552Z",
+  "generatedAt": "2026-09-09T20:30:59.940Z",
   "players": {
     "XV27 & Whidot": {
       "cups": [
@@ -15192,10 +15192,24 @@
           "score": 8,
           "qualificationrank": 739,
           "totalplayers": 1985
+        },
+        {
+          "id": 45428,
+          "timestamp": "2026-09-09T17:16:30Z",
+          "name": "COTD 2026-09-09 #1",
+          "mapuid": "IEESxNBIrvJmq3ZiGCwfZvA2np7",
+          "mapgroup": "90e6c8f3-fbca-4ca3-8e86-59464d6971da",
+          "mapname": "MTC - Escaping Silence",
+          "div": 13,
+          "rank": 810,
+          "divrank": 42,
+          "score": 7,
+          "qualificationrank": 776,
+          "totalplayers": 1865
         }
       ],
       "stats": {
-        "total": 1085,
+        "total": 1086,
         "bestrank": 72,
         "avgrank": 788,
         "bestdiv": 2,
@@ -44898,12 +44912,26 @@
           "score": 7,
           "qualificationrank": 371,
           "totalplayers": 1985
+        },
+        {
+          "id": 45428,
+          "timestamp": "2026-09-09T17:16:30Z",
+          "name": "COTD 2026-09-09 #1",
+          "mapuid": "IEESxNBIrvJmq3ZiGCwfZvA2np7",
+          "mapgroup": "90e6c8f3-fbca-4ca3-8e86-59464d6971da",
+          "mapname": "MTC - Escaping Silence",
+          "div": 11,
+          "rank": 669,
+          "divrank": 29,
+          "score": 28,
+          "qualificationrank": 663,
+          "totalplayers": 1865
         }
       ],
       "stats": {
-        "total": 1008,
+        "total": 1009,
         "bestrank": 2,
-        "avgrank": 841,
+        "avgrank": 840,
         "bestdiv": 1,
         "totalwins": 0,
         "totaldivwins": 29,
