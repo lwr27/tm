@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-09T20:31:06.473Z",
+  "fetchedAt": "2026-09-10T20:31:04.976Z",
   "maps": [
     {
       "mapUid": "DTxdk3q4kA52fMdkOOgaRANZODb",
@@ -81,6 +81,15 @@
       "day": 9,
       "monthYear": "2026-09",
       "leaderboardUid": "90e6c8f3-fbca-4ca3-8e86-59464d6971da"
+    },
+    {
+      "mapUid": "doAm6WqRinGWeQieDCgTtma3T01",
+      "mapId": "61c62513-6a47-4ba5-a071-e2fb58488a7c",
+      "name": " $C00$s$oPeak$g $o$3C3$iUnemployment$g $s$ift' Artroy",
+      "authorTimeMs": 44572,
+      "day": 10,
+      "monthYear": "2026-09",
+      "leaderboardUid": "3c180f3f-ffde-4189-ae34-f8ed4cd7fafa"
     },
     {
       "mapUid": "Et1IVfZ6A59U6G_Bqx2UZ8pFw_g",

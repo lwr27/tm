@@ -38756,10 +38756,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "doAm6WqRinGWeQieDCgTtma3T01",
+      "mapId": "61c62513-6a47-4ba5-a071-e2fb58488a7c",
+      "name": " $C00$s$oPeak$g $o$3C3$iUnemployment$g $s$ift' Artroy",
+      "authorTimeMs": 44572,
+      "day": 10,
+      "monthYear": "2026-09",
+      "leaderboardUid": "3c180f3f-ffde-4189-ae34-f8ed4cd7fafa",
+      "authorCount": 12,
+      "totalFinishers": 3884,
+      "pct": 0.3,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-09-09T20:31:37.717Z",
-  "medalsRefreshedAt": "2026-09-09T21:03:30.360Z",
+  "generatedAt": "2026-09-10T20:31:13.166Z",
+  "medalsRefreshedAt": "2026-09-10T21:00:58.588Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",
