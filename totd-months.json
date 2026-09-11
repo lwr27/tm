@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-10T20:31:04.976Z",
+  "fetchedAt": "2026-09-11T20:31:04.481Z",
   "maps": [
     {
       "mapUid": "DTxdk3q4kA52fMdkOOgaRANZODb",
@@ -90,6 +90,15 @@
       "day": 10,
       "monthYear": "2026-09",
       "leaderboardUid": "3c180f3f-ffde-4189-ae34-f8ed4cd7fafa"
+    },
+    {
+      "mapUid": "PN0MknK9aAeXzcIysVq_Qt00gu4",
+      "mapId": "18497f2f-f86c-4beb-93a4-84457d641df6",
+      "name": "$i$sBeauty At The Bottom Ft KrisTM",
+      "authorTimeMs": 42128,
+      "day": 11,
+      "monthYear": "2026-09",
+      "leaderboardUid": "a7b066d2-cc1f-4ca7-8cec-fbd68ebba652"
     },
     {
       "mapUid": "Et1IVfZ6A59U6G_Bqx2UZ8pFw_g",

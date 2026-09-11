@@ -321568,5 +321568,95 @@
     "subregion": "Catalunya",
     "subregionFlag": "Catalunya",
     "resolvedAt": "2026-09-09T21:03:52.995Z"
+  },
+  "11103b15-ff57-4202-bcf5-a23b143a03c9": {
+    "name": "Touplik",
+    "clanTag": null,
+    "country": "France",
+    "countryFlag": "FRA",
+    "region": "Bretagne",
+    "subregion": "Finistère",
+    "subregionFlag": "Finistere",
+    "resolvedAt": "2026-09-11T21:03:34.775Z"
+  },
+  "58566544-718f-4b03-b6e7-b3895469f582": {
+    "name": "headmonster29",
+    "clanTag": "$FC0AYAYA",
+    "country": "United States",
+    "countryFlag": "USA",
+    "region": "New York",
+    "subregion": "New York",
+    "subregionFlag": "New_York",
+    "resolvedAt": "2026-09-11T21:03:35.879Z"
+  },
+  "b1be2e86-7fcd-4218-95fd-75ea9a7b14d8": {
+    "name": "sintfar",
+    "clanTag": "$29FU$18FL",
+    "country": "Norway",
+    "countryFlag": "NOR",
+    "region": null,
+    "subregion": "Norway",
+    "subregionFlag": "NOR",
+    "resolvedAt": "2026-09-11T21:03:37.217Z"
+  },
+  "06a1fe43-897c-4ace-8995-2fe661f3493b": {
+    "name": "TheKrajn",
+    "clanTag": "HB",
+    "country": "Sweden",
+    "countryFlag": "SWE",
+    "region": null,
+    "subregion": "Sweden",
+    "subregionFlag": "SWE",
+    "resolvedAt": "2026-09-11T21:03:38.938Z"
+  },
+  "ca7827a5-89d3-4368-b0a5-4dcafbe8c50d": {
+    "name": "Mr_Whiffoo",
+    "clanTag": null,
+    "country": "Tuvalu",
+    "countryFlag": "TUV",
+    "region": null,
+    "subregion": "Tuvalu",
+    "subregionFlag": "TUV",
+    "resolvedAt": "2026-09-11T21:03:40.655Z"
+  },
+  "12f4cfdd-b7a2-4b76-a156-05de79f174be": {
+    "name": "GAvenue",
+    "clanTag": "CAR",
+    "country": "United States",
+    "countryFlag": "USA",
+    "region": "Illinois",
+    "subregion": "Illinois",
+    "subregionFlag": "Illinois",
+    "resolvedAt": "2026-09-11T21:03:42.363Z"
+  },
+  "8b216f09-dfda-4731-b82f-9ae60ad3e264": {
+    "name": "Jobeson123",
+    "clanTag": null,
+    "country": "United States",
+    "countryFlag": "USA",
+    "region": "North Carolina",
+    "subregion": "North Carolina",
+    "subregionFlag": "North_Carolina",
+    "resolvedAt": "2026-09-11T21:03:44.045Z"
+  },
+  "b6b67ee8-5f01-4c47-9354-aa55de099ce9": {
+    "name": "MGP_Unovaaa__",
+    "clanTag": null,
+    "country": "France",
+    "countryFlag": "FRA",
+    "region": "Bourgogne-Franche-Comté",
+    "subregion": "Yonne",
+    "subregionFlag": "Yonne",
+    "resolvedAt": "2026-09-11T21:03:45.764Z"
+  },
+  "686eb3d4-8bf7-4112-bc35-7f6040301e89": {
+    "name": "Pelle1108",
+    "clanTag": null,
+    "country": "Netherlands",
+    "countryFlag": "NED",
+    "region": "Utrecht",
+    "subregion": "Utrecht",
+    "subregionFlag": "Utrecht",
+    "resolvedAt": "2026-09-11T21:03:47.477Z"
   }
 }

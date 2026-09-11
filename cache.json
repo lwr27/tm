@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-10T20:30:58.440Z",
+  "generatedAt": "2026-09-11T20:30:58.079Z",
   "players": {
     "XV27 & Whidot": {
       "cups": [
@@ -15206,10 +15206,24 @@
           "score": 7,
           "qualificationrank": 776,
           "totalplayers": 1865
+        },
+        {
+          "id": 45471,
+          "timestamp": "2026-09-11T17:16:30Z",
+          "name": "COTD 2026-09-11 #1",
+          "mapuid": "PN0MknK9aAeXzcIysVq_Qt00gu4",
+          "mapgroup": "a7b066d2-cc1f-4ca7-8cec-fbd68ebba652",
+          "mapname": "$i$sBeauty At The Bottom Ft KrisTM",
+          "div": 10,
+          "rank": 595,
+          "divrank": 19,
+          "score": 31,
+          "qualificationrank": 613,
+          "totalplayers": 1539
         }
       ],
       "stats": {
-        "total": 1086,
+        "total": 1087,
         "bestrank": 72,
         "avgrank": 788,
         "bestdiv": 2,
@@ -44926,10 +44940,24 @@
           "score": 28,
           "qualificationrank": 663,
           "totalplayers": 1865
+        },
+        {
+          "id": 45471,
+          "timestamp": "2026-09-11T17:16:30Z",
+          "name": "COTD 2026-09-11 #1",
+          "mapuid": "PN0MknK9aAeXzcIysVq_Qt00gu4",
+          "mapgroup": "a7b066d2-cc1f-4ca7-8cec-fbd68ebba652",
+          "mapname": "$i$sBeauty At The Bottom Ft KrisTM",
+          "div": 10,
+          "rank": 610,
+          "divrank": 34,
+          "score": 16,
+          "qualificationrank": 605,
+          "totalplayers": 1539
         }
       ],
       "stats": {
-        "total": 1009,
+        "total": 1010,
         "bestrank": 2,
         "avgrank": 840,
         "bestdiv": 1,

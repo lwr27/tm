@@ -38775,10 +38775,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "PN0MknK9aAeXzcIysVq_Qt00gu4",
+      "mapId": "18497f2f-f86c-4beb-93a4-84457d641df6",
+      "name": "$i$sBeauty At The Bottom Ft KrisTM",
+      "authorTimeMs": 42128,
+      "day": 11,
+      "monthYear": "2026-09",
+      "leaderboardUid": "a7b066d2-cc1f-4ca7-8cec-fbd68ebba652",
+      "authorCount": 364,
+      "totalFinishers": 3423,
+      "pct": 10.6,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": true
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-09-10T20:31:13.166Z",
-  "medalsRefreshedAt": "2026-09-10T21:00:58.588Z",
+  "generatedAt": "2026-09-11T20:31:23.934Z",
+  "medalsRefreshedAt": "2026-09-11T21:03:28.044Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",
@@ -38987,6 +39006,14 @@
       "mapName": "MTC - Escaping Silence",
       "achievedAt": "2026-09-09T17:24:51+00:00",
       "detectedAt": "2026-09-09T20:31:37.717Z"
+    },
+    {
+      "key": "Pho3nix_.|PN0MknK9aAeXzcIysVq_Qt00gu4",
+      "player": "Pho3nix_.",
+      "mapUid": "PN0MknK9aAeXzcIysVq_Qt00gu4",
+      "mapName": "$i$sBeauty At The Bottom Ft KrisTM",
+      "achievedAt": "2026-09-11T17:44:55+00:00",
+      "detectedAt": "2026-09-11T20:31:23.934Z"
     }
   ]
 }
