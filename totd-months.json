@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-12T20:31:05.667Z",
+  "fetchedAt": "2026-09-13T20:31:06.458Z",
   "maps": [
     {
       "mapUid": "DTxdk3q4kA52fMdkOOgaRANZODb",
@@ -108,6 +108,15 @@
       "day": 12,
       "monthYear": "2026-09",
       "leaderboardUid": "1b4848b9-20c2-4bc2-a8c4-9559af96e061"
+    },
+    {
+      "mapUid": "Su0bIFSPmvtDU_2uuJ6IFJP7WCj",
+      "mapId": "a2083b4e-49b9-4171-9452-1d9d998ac575",
+      "name": "$600$o$S$IShadows of Abyss",
+      "authorTimeMs": 50596,
+      "day": 13,
+      "monthYear": "2026-09",
+      "leaderboardUid": "2da4f069-a37a-4bf1-91e1-9aac8ab32fba"
     },
     {
       "mapUid": "Et1IVfZ6A59U6G_Bqx2UZ8pFw_g",

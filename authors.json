@@ -38813,10 +38813,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "Su0bIFSPmvtDU_2uuJ6IFJP7WCj",
+      "mapId": "a2083b4e-49b9-4171-9452-1d9d998ac575",
+      "name": "$600$o$S$IShadows of Abyss",
+      "authorTimeMs": 50596,
+      "day": 13,
+      "monthYear": "2026-09",
+      "leaderboardUid": "2da4f069-a37a-4bf1-91e1-9aac8ab32fba",
+      "authorCount": 112,
+      "totalFinishers": 3599,
+      "pct": 3.1,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-09-12T20:31:15.041Z",
-  "medalsRefreshedAt": "2026-09-12T21:03:09.631Z",
+  "generatedAt": "2026-09-13T20:31:17.879Z",
+  "medalsRefreshedAt": "2026-09-13T21:02:51.448Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",
