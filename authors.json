@@ -38832,10 +38832,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "Bo4whqZZRDMM48vK2oe1LfdFfF7",
+      "mapId": "b03a5ef0-3023-4aa4-982e-a73f6e935c14",
+      "name": "$S$w$00fSapphire Expressway",
+      "authorTimeMs": 50140,
+      "day": 14,
+      "monthYear": "2026-09",
+      "leaderboardUid": "8d8d1fa3-8c49-4f2f-b7b9-4317bf9bdb2d",
+      "authorCount": 717,
+      "totalFinishers": 4282,
+      "pct": 16.7,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-09-13T23:09:36.436Z",
-  "medalsRefreshedAt": "2026-09-13T21:02:51.448Z",
+  "generatedAt": "2026-09-14T20:31:30.720Z",
+  "medalsRefreshedAt": "2026-09-14T21:02:12.044Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",

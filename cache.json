@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-13T20:30:59.817Z",
+  "generatedAt": "2026-09-14T20:31:00.129Z",
   "players": {
     "XV27 & Whidot": {
       "cups": [
@@ -15220,10 +15220,24 @@
           "score": 31,
           "qualificationrank": 613,
           "totalplayers": 1539
+        },
+        {
+          "id": 45528,
+          "timestamp": "2026-09-14T17:16:30Z",
+          "name": "COTD 2026-09-14 #1",
+          "mapuid": "Bo4whqZZRDMM48vK2oe1LfdFfF7",
+          "mapgroup": "8d8d1fa3-8c49-4f2f-b7b9-4317bf9bdb2d",
+          "mapname": "$S$w$00fSapphire Expressway",
+          "div": 19,
+          "rank": 1193,
+          "divrank": 41,
+          "score": 5,
+          "qualificationrank": 1191,
+          "totalplayers": 1951
         }
       ],
       "stats": {
-        "total": 1087,
+        "total": 1088,
         "bestrank": 72,
         "avgrank": 788,
         "bestdiv": 2,
@@ -30801,10 +30815,24 @@
           "score": 42,
           "qualificationrank": 1147,
           "totalplayers": 1870
+        },
+        {
+          "id": 45528,
+          "timestamp": "2026-09-14T17:16:30Z",
+          "name": "COTD 2026-09-14 #1",
+          "mapuid": "Bo4whqZZRDMM48vK2oe1LfdFfF7",
+          "mapgroup": "8d8d1fa3-8c49-4f2f-b7b9-4317bf9bdb2d",
+          "mapname": "$S$w$00fSapphire Expressway",
+          "div": 11,
+          "rank": 676,
+          "divrank": 36,
+          "score": 11,
+          "qualificationrank": 662,
+          "totalplayers": 1951
         }
       ],
       "stats": {
-        "total": 1112,
+        "total": 1113,
         "bestrank": 160,
         "avgrank": 1044,
         "bestdiv": 3,
@@ -44954,10 +44982,24 @@
           "score": 16,
           "qualificationrank": 605,
           "totalplayers": 1539
+        },
+        {
+          "id": 45528,
+          "timestamp": "2026-09-14T17:16:30Z",
+          "name": "COTD 2026-09-14 #1",
+          "mapuid": "Bo4whqZZRDMM48vK2oe1LfdFfF7",
+          "mapgroup": "8d8d1fa3-8c49-4f2f-b7b9-4317bf9bdb2d",
+          "mapname": "$S$w$00fSapphire Expressway",
+          "div": 7,
+          "rank": 424,
+          "divrank": 40,
+          "score": 9,
+          "qualificationrank": 436,
+          "totalplayers": 1951
         }
       ],
       "stats": {
-        "total": 1010,
+        "total": 1011,
         "bestrank": 2,
         "avgrank": 840,
         "bestdiv": 1,
