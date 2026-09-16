@@ -22848,6 +22848,17 @@
       "tags": [],
       "env": null,
       "mxid": null
+    },
+    "sUGHCUFlZ64mJDyfwnNBzbVq7Ik": {
+      "found": true,
+      "name": "Watermelon ft' mango",
+      "tags": [
+        "Ice",
+        "Scenery",
+        "Grass"
+      ],
+      "env": "Stadium",
+      "mxid": 356933
     }
   }
 }

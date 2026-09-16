@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-15T20:31:09.177Z",
+  "fetchedAt": "2026-09-16T20:31:06.300Z",
   "maps": [
     {
       "mapUid": "DTxdk3q4kA52fMdkOOgaRANZODb",
@@ -135,6 +135,15 @@
       "day": 15,
       "monthYear": "2026-09",
       "leaderboardUid": "24b6b0e4-8361-4e38-b2aa-ac750e252012"
+    },
+    {
+      "mapUid": "sUGHCUFlZ64mJDyfwnNBzbVq7Ik",
+      "mapId": "9e23b799-39a1-4602-8b7e-1bde2527e321",
+      "name": "$F00Watermelon $fffft' $090mango",
+      "authorTimeMs": 41870,
+      "day": 16,
+      "monthYear": "2026-09",
+      "leaderboardUid": "444dce96-345e-4e1d-b9e0-2630d8e78390"
     },
     {
       "mapUid": "Et1IVfZ6A59U6G_Bqx2UZ8pFw_g",
