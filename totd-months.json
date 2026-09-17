@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-16T20:31:06.300Z",
+  "fetchedAt": "2026-09-17T20:31:04.534Z",
   "maps": [
     {
       "mapUid": "DTxdk3q4kA52fMdkOOgaRANZODb",
@@ -144,6 +144,15 @@
       "day": 16,
       "monthYear": "2026-09",
       "leaderboardUid": "444dce96-345e-4e1d-b9e0-2630d8e78390"
+    },
+    {
+      "mapUid": "WlescH1BlExm0t4MDHEsaURFbf9",
+      "mapId": "3c03e232-cd30-425d-b38d-18c4018e3361",
+      "name": "$i$DDDmissing winter",
+      "authorTimeMs": 45252,
+      "day": 17,
+      "monthYear": "2026-09",
+      "leaderboardUid": "f44162d8-1620-43dd-8508-4571dd10fd5b"
     },
     {
       "mapUid": "Et1IVfZ6A59U6G_Bqx2UZ8pFw_g",

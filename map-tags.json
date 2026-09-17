@@ -22859,6 +22859,15 @@
       ],
       "env": "Stadium",
       "mxid": 356933
+    },
+    "WlescH1BlExm0t4MDHEsaURFbf9": {
+      "found": true,
+      "name": "missing winter",
+      "tags": [
+        "Dirt"
+      ],
+      "env": "Stadium",
+      "mxid": 252310
     }
   }
 }

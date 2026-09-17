@@ -38889,10 +38889,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "WlescH1BlExm0t4MDHEsaURFbf9",
+      "mapId": "3c03e232-cd30-425d-b38d-18c4018e3361",
+      "name": "$i$DDDmissing winter",
+      "authorTimeMs": 45252,
+      "day": 17,
+      "monthYear": "2026-09",
+      "leaderboardUid": "f44162d8-1620-43dd-8508-4571dd10fd5b",
+      "authorCount": 30,
+      "totalFinishers": 4135,
+      "pct": 0.7,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-09-16T20:31:15.223Z",
-  "medalsRefreshedAt": "2026-09-16T21:02:35.201Z",
+  "generatedAt": "2026-09-17T20:31:12.727Z",
+  "medalsRefreshedAt": "2026-09-17T21:01:07.737Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",
