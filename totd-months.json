@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-17T20:31:04.534Z",
+  "fetchedAt": "2026-09-18T20:31:05.446Z",
   "maps": [
     {
       "mapUid": "DTxdk3q4kA52fMdkOOgaRANZODb",
@@ -153,6 +153,15 @@
       "day": 17,
       "monthYear": "2026-09",
       "leaderboardUid": "f44162d8-1620-43dd-8508-4571dd10fd5b"
+    },
+    {
+      "mapUid": "Tb8awXKT8F6yZnFC6qwu6w6HG03",
+      "mapId": "9ca744d5-0dd5-4544-9095-c1cebf2e823d",
+      "name": "$smesopelagic ft' agrabou",
+      "authorTimeMs": 36646,
+      "day": 18,
+      "monthYear": "2026-09",
+      "leaderboardUid": "2c6f791b-7ec1-4e5a-989c-a0a082b2ca4a"
     },
     {
       "mapUid": "Et1IVfZ6A59U6G_Bqx2UZ8pFw_g",

@@ -38908,10 +38908,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "Tb8awXKT8F6yZnFC6qwu6w6HG03",
+      "mapId": "9ca744d5-0dd5-4544-9095-c1cebf2e823d",
+      "name": "$smesopelagic ft' agrabou",
+      "authorTimeMs": 36646,
+      "day": 18,
+      "monthYear": "2026-09",
+      "leaderboardUid": "2c6f791b-7ec1-4e5a-989c-a0a082b2ca4a",
+      "authorCount": 191,
+      "totalFinishers": 3783,
+      "pct": 5,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-09-17T20:31:12.727Z",
-  "medalsRefreshedAt": "2026-09-17T21:01:07.737Z",
+  "generatedAt": "2026-09-18T20:31:16.223Z",
+  "medalsRefreshedAt": "2026-09-18T21:01:08.246Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",
