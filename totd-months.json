@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-18T20:31:05.446Z",
+  "fetchedAt": "2026-09-19T20:31:05.545Z",
   "maps": [
     {
       "mapUid": "DTxdk3q4kA52fMdkOOgaRANZODb",
@@ -162,6 +162,15 @@
       "day": 18,
       "monthYear": "2026-09",
       "leaderboardUid": "2c6f791b-7ec1-4e5a-989c-a0a082b2ca4a"
+    },
+    {
+      "mapUid": "dQxpeeG8eCx9UoC8N9m2SQXMR3e",
+      "mapId": "90c0e325-b482-4625-b1b7-4dcd4f821237",
+      "name": "Grasstronaut ft rhino",
+      "authorTimeMs": 53436,
+      "day": 19,
+      "monthYear": "2026-09",
+      "leaderboardUid": "fa5e16f8-33dd-470d-97fa-c9fc4243183d"
     },
     {
       "mapUid": "Et1IVfZ6A59U6G_Bqx2UZ8pFw_g",

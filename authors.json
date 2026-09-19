@@ -38927,10 +38927,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "dQxpeeG8eCx9UoC8N9m2SQXMR3e",
+      "mapId": "90c0e325-b482-4625-b1b7-4dcd4f821237",
+      "name": "Grasstronaut ft rhino",
+      "authorTimeMs": 53436,
+      "day": 19,
+      "monthYear": "2026-09",
+      "leaderboardUid": "fa5e16f8-33dd-470d-97fa-c9fc4243183d",
+      "authorCount": 151,
+      "totalFinishers": 3436,
+      "pct": 4.4,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-09-18T20:31:16.223Z",
-  "medalsRefreshedAt": "2026-09-18T21:01:08.246Z",
+  "generatedAt": "2026-09-19T20:31:16.406Z",
+  "medalsRefreshedAt": "2026-09-19T21:01:52.213Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",
