@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-20T20:31:01.674Z",
+  "fetchedAt": "2026-09-21T20:31:06.905Z",
   "maps": [
     {
       "mapUid": "DTxdk3q4kA52fMdkOOgaRANZODb",
@@ -180,6 +180,15 @@
       "day": 20,
       "monthYear": "2026-09",
       "leaderboardUid": "569d7771-f24d-4b94-8a5f-c2833f81dbc0"
+    },
+    {
+      "mapUid": "ctWsgGfBN6ZrPjHlHewJPBc0axf",
+      "mapId": "45352714-a9cd-4466-ae4b-3d915c9e475a",
+      "name": "$zcar alarms",
+      "authorTimeMs": 46671,
+      "day": 21,
+      "monthYear": "2026-09",
+      "leaderboardUid": "0c3e865d-d022-445f-b0af-9b5f01cbbdfa"
     },
     {
       "mapUid": "Et1IVfZ6A59U6G_Bqx2UZ8pFw_g",
