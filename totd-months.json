@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-21T20:31:06.905Z",
+  "fetchedAt": "2026-09-22T20:31:08.906Z",
   "maps": [
     {
       "mapUid": "DTxdk3q4kA52fMdkOOgaRANZODb",
@@ -189,6 +189,15 @@
       "day": 21,
       "monthYear": "2026-09",
       "leaderboardUid": "0c3e865d-d022-445f-b0af-9b5f01cbbdfa"
+    },
+    {
+      "mapUid": "vE7Uw7ilScSovkFYxMUidfVxJj9",
+      "mapId": "d7b9d41b-9f94-4cfe-a3c0-04ef1a39db1f",
+      "name": "Chrematistic",
+      "authorTimeMs": 39488,
+      "day": 22,
+      "monthYear": "2026-09",
+      "leaderboardUid": "12d30d38-846c-4e5b-8293-7f8c196ef804"
     },
     {
       "mapUid": "Et1IVfZ6A59U6G_Bqx2UZ8pFw_g",

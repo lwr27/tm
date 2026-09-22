@@ -38984,10 +38984,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "vE7Uw7ilScSovkFYxMUidfVxJj9",
+      "mapId": "d7b9d41b-9f94-4cfe-a3c0-04ef1a39db1f",
+      "name": "Chrematistic",
+      "authorTimeMs": 39488,
+      "day": 22,
+      "monthYear": "2026-09",
+      "leaderboardUid": "12d30d38-846c-4e5b-8293-7f8c196ef804",
+      "authorCount": 159,
+      "totalFinishers": 3758,
+      "pct": 4.2,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-09-21T20:31:20.172Z",
-  "medalsRefreshedAt": "2026-09-21T21:01:08.433Z",
+  "generatedAt": "2026-09-22T20:31:20.163Z",
+  "medalsRefreshedAt": "2026-09-22T21:02:25.240Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",
