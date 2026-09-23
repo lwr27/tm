@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-22T20:31:08.906Z",
+  "fetchedAt": "2026-09-23T20:31:08.102Z",
   "maps": [
     {
       "mapUid": "DTxdk3q4kA52fMdkOOgaRANZODb",
@@ -198,6 +198,15 @@
       "day": 22,
       "monthYear": "2026-09",
       "leaderboardUid": "12d30d38-846c-4e5b-8293-7f8c196ef804"
+    },
+    {
+      "mapUid": "PkcKRWG6ixZiAbANd41TtEP66c1",
+      "mapId": "aa784d34-7806-47c3-b42a-56a420952c74",
+      "name": "$z$sThe $ec7Dirty Burger $z$sft' key",
+      "authorTimeMs": 57076,
+      "day": 23,
+      "monthYear": "2026-09",
+      "leaderboardUid": "4ae2de38-467a-478c-a861-b5fbe1c306f1"
     },
     {
       "mapUid": "Et1IVfZ6A59U6G_Bqx2UZ8pFw_g",

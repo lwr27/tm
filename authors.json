@@ -39003,10 +39003,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "PkcKRWG6ixZiAbANd41TtEP66c1",
+      "mapId": "aa784d34-7806-47c3-b42a-56a420952c74",
+      "name": "$z$sThe $ec7Dirty Burger $z$sft' key",
+      "authorTimeMs": 57076,
+      "day": 23,
+      "monthYear": "2026-09",
+      "leaderboardUid": "4ae2de38-467a-478c-a861-b5fbe1c306f1",
+      "authorCount": 272,
+      "totalFinishers": 4205,
+      "pct": 6.5,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-09-22T20:31:20.163Z",
-  "medalsRefreshedAt": "2026-09-22T21:02:25.240Z",
+  "generatedAt": "2026-09-23T20:31:22.145Z",
+  "medalsRefreshedAt": "2026-09-23T21:02:49.166Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",
