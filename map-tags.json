@@ -22923,6 +22923,16 @@
       ],
       "env": "RedIsland",
       "mxid": 301891
+    },
+    "Bu0ESmMUJFUrWluSJWpa5S3wgXm": {
+      "found": true,
+      "name": "TMP - Holunder",
+      "tags": [
+        "Tech",
+        "Sausage"
+      ],
+      "env": "Stadium",
+      "mxid": 345601
     }
   }
 }

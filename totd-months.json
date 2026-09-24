@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-23T20:31:08.102Z",
+  "fetchedAt": "2026-09-24T20:31:10.152Z",
   "maps": [
     {
       "mapUid": "DTxdk3q4kA52fMdkOOgaRANZODb",
@@ -207,6 +207,15 @@
       "day": 23,
       "monthYear": "2026-09",
       "leaderboardUid": "4ae2de38-467a-478c-a861-b5fbe1c306f1"
+    },
+    {
+      "mapUid": "Bu0ESmMUJFUrWluSJWpa5S3wgXm",
+      "mapId": "4a32a2e4-e239-47f1-9226-3ec7198ada9c",
+      "name": "$i$sTMP - Holunder",
+      "authorTimeMs": 38872,
+      "day": 24,
+      "monthYear": "2026-09",
+      "leaderboardUid": "8e8c3f4c-a2e4-49d5-9ac8-a2550395dffb"
     },
     {
       "mapUid": "Et1IVfZ6A59U6G_Bqx2UZ8pFw_g",

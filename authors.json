@@ -39022,10 +39022,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "Bu0ESmMUJFUrWluSJWpa5S3wgXm",
+      "mapId": "4a32a2e4-e239-47f1-9226-3ec7198ada9c",
+      "name": "$i$sTMP - Holunder",
+      "authorTimeMs": 38872,
+      "day": 24,
+      "monthYear": "2026-09",
+      "leaderboardUid": "8e8c3f4c-a2e4-49d5-9ac8-a2550395dffb",
+      "authorCount": 109,
+      "totalFinishers": 3393,
+      "pct": 3.2,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-09-23T20:31:22.145Z",
-  "medalsRefreshedAt": "2026-09-23T21:02:49.166Z",
+  "generatedAt": "2026-09-24T20:31:20.872Z",
+  "medalsRefreshedAt": "2026-09-24T21:01:27.082Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",
