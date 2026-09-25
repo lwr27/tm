@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-24T20:31:03.740Z",
+  "generatedAt": "2026-09-25T20:31:01.514Z",
   "players": {
     "XV27 & Whidot": {
       "cups": [
@@ -30857,10 +30857,24 @@
           "score": 0,
           "qualificationrank": 1703,
           "totalplayers": 1753
+        },
+        {
+          "id": 45715,
+          "timestamp": "2026-09-25T17:16:30Z",
+          "name": "COTD 2026-09-25 #1",
+          "mapuid": "J4ZRZOEFXhPaKzE2o_K9gClZIy8",
+          "mapgroup": "503fbdc3-3e3f-4ca0-99b9-0547088164c4",
+          "mapname": "$n$s$i$FC0Flight of the Bumblebee $gft' Votisx & Artroy",
+          "div": 16,
+          "rank": 1024,
+          "divrank": 0,
+          "score": 0,
+          "qualificationrank": 1017,
+          "totalplayers": 1597
         }
       ],
       "stats": {
-        "total": 1115,
+        "total": 1116,
         "bestrank": 160,
         "avgrank": 1044,
         "bestdiv": 3,

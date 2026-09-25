@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-24T20:31:10.152Z",
+  "fetchedAt": "2026-09-25T20:31:08.077Z",
   "maps": [
     {
       "mapUid": "DTxdk3q4kA52fMdkOOgaRANZODb",
@@ -216,6 +216,15 @@
       "day": 24,
       "monthYear": "2026-09",
       "leaderboardUid": "8e8c3f4c-a2e4-49d5-9ac8-a2550395dffb"
+    },
+    {
+      "mapUid": "J4ZRZOEFXhPaKzE2o_K9gClZIy8",
+      "mapId": "f52bc229-0b3c-46b9-967e-ff5a5c976c4d",
+      "name": "$n$s$i$FC0Flight of the Bumblebee $gft' Votisx & Artroy",
+      "authorTimeMs": 46455,
+      "day": 25,
+      "monthYear": "2026-09",
+      "leaderboardUid": "503fbdc3-3e3f-4ca0-99b9-0547088164c4"
     },
     {
       "mapUid": "Et1IVfZ6A59U6G_Bqx2UZ8pFw_g",
