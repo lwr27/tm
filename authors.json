@@ -39060,10 +39060,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "ffARs4JY_ExEouGaXV_u1hithVm",
+      "mapId": "ef0c20bb-570b-4b06-ab6d-9746874a6f18",
+      "name": "Proof I Can Still Tech",
+      "authorTimeMs": 41478,
+      "day": 26,
+      "monthYear": "2026-09",
+      "leaderboardUid": "64d884db-7ca5-4b2b-afaf-90e92db06b56",
+      "authorCount": 263,
+      "totalFinishers": 3486,
+      "pct": 7.5,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-09-25T20:31:16.162Z",
-  "medalsRefreshedAt": "2026-09-25T21:01:08.480Z",
+  "generatedAt": "2026-09-26T20:31:18.133Z",
+  "medalsRefreshedAt": "2026-09-26T21:02:19.543Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",
