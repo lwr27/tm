@@ -22951,6 +22951,16 @@
       ],
       "env": "RedIsland",
       "mxid": 360631
+    },
+    "PyerIC3KXZsnB8yjs7Y1ShNIiN4": {
+      "found": true,
+      "name": "Sundown Bay",
+      "tags": [
+        "Dirt",
+        "Mudslide"
+      ],
+      "env": "Stadium",
+      "mxid": 357827
     }
   }
 }
