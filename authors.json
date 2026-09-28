@@ -39098,10 +39098,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "ehL8YCnGODmMG912m26iwjCoUa2",
+      "mapId": "4dbc9c95-0e66-4549-8218-9fe4169c9c47",
+      "name": "$iWhite Crow $25aft'Moss",
+      "authorTimeMs": 40338,
+      "day": 28,
+      "monthYear": "2026-09",
+      "leaderboardUid": "9b149492-0d58-48b2-b3fe-515e985bc783",
+      "authorCount": 0,
+      "totalFinishers": 3746,
+      "pct": 0,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-09-27T23:08:35.702Z",
-  "medalsRefreshedAt": "2026-09-27T21:03:03.328Z",
+  "generatedAt": "2026-09-28T20:31:18.842Z",
+  "medalsRefreshedAt": "2026-09-28T21:03:34.019Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",

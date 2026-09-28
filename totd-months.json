@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-27T20:31:03.120Z",
+  "fetchedAt": "2026-09-28T20:31:09.931Z",
   "maps": [
     {
       "mapUid": "DTxdk3q4kA52fMdkOOgaRANZODb",
@@ -243,6 +243,15 @@
       "day": 27,
       "monthYear": "2026-09",
       "leaderboardUid": "1ae8b133-d8b0-4e88-941c-5f091a0c1796"
+    },
+    {
+      "mapUid": "ehL8YCnGODmMG912m26iwjCoUa2",
+      "mapId": "4dbc9c95-0e66-4549-8218-9fe4169c9c47",
+      "name": "$iWhite Crow $25aft'Moss",
+      "authorTimeMs": 40338,
+      "day": 28,
+      "monthYear": "2026-09",
+      "leaderboardUid": "9b149492-0d58-48b2-b3fe-515e985bc783"
     },
     {
       "mapUid": "Et1IVfZ6A59U6G_Bqx2UZ8pFw_g",
