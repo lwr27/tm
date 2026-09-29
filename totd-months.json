@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-28T20:31:09.931Z",
+  "fetchedAt": "2026-09-29T20:31:06.731Z",
   "maps": [
     {
       "mapUid": "DTxdk3q4kA52fMdkOOgaRANZODb",
@@ -252,6 +252,15 @@
       "day": 28,
       "monthYear": "2026-09",
       "leaderboardUid": "9b149492-0d58-48b2-b3fe-515e985bc783"
+    },
+    {
+      "mapUid": "Q8C5qFfjU62MZa6ikaYzYCkc4Ob",
+      "mapId": "bf17ae54-e089-4d0b-a2c4-41f8acfa1565",
+      "name": "Kodak",
+      "authorTimeMs": 43484,
+      "day": 29,
+      "monthYear": "2026-09",
+      "leaderboardUid": "ce616972-81c6-459f-8262-e8e0563dfe46"
     },
     {
       "mapUid": "Et1IVfZ6A59U6G_Bqx2UZ8pFw_g",
