@@ -39136,10 +39136,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "qy4ygDG_VQO00_AB_GbbWrxQF3j",
+      "mapId": "3a53cfd2-ce26-4631-895f-7e4472e8131b",
+      "name": "$s$033Der $F00U$033phill fällt nicht weit vom Stamm",
+      "authorTimeMs": 46488,
+      "day": 30,
+      "monthYear": "2026-09",
+      "leaderboardUid": "5b823504-3160-4acd-b96e-f755dc8d4061",
+      "authorCount": 61,
+      "totalFinishers": 3715,
+      "pct": 1.6,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-09-29T20:31:20.805Z",
-  "medalsRefreshedAt": "2026-09-29T21:02:51.801Z",
+  "generatedAt": "2026-09-30T20:31:17.532Z",
+  "medalsRefreshedAt": "2026-09-30T21:02:39.592Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",

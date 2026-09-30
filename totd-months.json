@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-29T20:31:06.731Z",
+  "fetchedAt": "2026-09-30T20:31:08.955Z",
   "maps": [
     {
       "mapUid": "DTxdk3q4kA52fMdkOOgaRANZODb",
@@ -261,6 +261,15 @@
       "day": 29,
       "monthYear": "2026-09",
       "leaderboardUid": "ce616972-81c6-459f-8262-e8e0563dfe46"
+    },
+    {
+      "mapUid": "qy4ygDG_VQO00_AB_GbbWrxQF3j",
+      "mapId": "3a53cfd2-ce26-4631-895f-7e4472e8131b",
+      "name": "$s$033Der $F00U$033phill fällt nicht weit vom Stamm",
+      "authorTimeMs": 46488,
+      "day": 30,
+      "monthYear": "2026-09",
+      "leaderboardUid": "5b823504-3160-4acd-b96e-f755dc8d4061"
     },
     {
       "mapUid": "Et1IVfZ6A59U6G_Bqx2UZ8pFw_g",
