@@ -1,6 +1,15 @@
 {
-  "fetchedAt": "2026-09-30T20:31:08.955Z",
+  "fetchedAt": "2026-10-01T20:31:06.022Z",
   "maps": [
+    {
+      "mapUid": "I1gkMBKI0Y5BMSFstmzsIqbUlB",
+      "mapId": "d8179dab-e4a0-4544-bfee-689b6bd71509",
+      "name": "Carnival - Funhouse (CE)",
+      "authorTimeMs": 44000,
+      "day": 1,
+      "monthYear": "2026-10",
+      "leaderboardUid": "ce69e855-88e2-4647-b3ff-328fd116086d"
+    },
     {
       "mapUid": "DTxdk3q4kA52fMdkOOgaRANZODb",
       "mapId": "182c3cbe-21de-4668-9dc2-fb58414a97b9",

@@ -39155,10 +39155,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "I1gkMBKI0Y5BMSFstmzsIqbUlB",
+      "mapId": "d8179dab-e4a0-4544-bfee-689b6bd71509",
+      "name": "Carnival - Funhouse (CE)",
+      "authorTimeMs": 44000,
+      "day": 1,
+      "monthYear": "2026-10",
+      "leaderboardUid": "ce69e855-88e2-4647-b3ff-328fd116086d",
+      "authorCount": 267,
+      "totalFinishers": 3102,
+      "pct": 8.6,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-09-30T20:31:17.532Z",
-  "medalsRefreshedAt": "2026-09-30T21:02:39.592Z",
+  "generatedAt": "2026-10-01T20:31:20.178Z",
+  "medalsRefreshedAt": "2026-10-01T21:02:29.686Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",
