@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-01T20:31:06.022Z",
+  "fetchedAt": "2026-10-02T20:31:04.273Z",
   "maps": [
     {
       "mapUid": "I1gkMBKI0Y5BMSFstmzsIqbUlB",
@@ -9,6 +9,15 @@
       "day": 1,
       "monthYear": "2026-10",
       "leaderboardUid": "ce69e855-88e2-4647-b3ff-328fd116086d"
+    },
+    {
+      "mapUid": "QvNh5yG3krJ1hdOw8nLDCKw8LH1",
+      "mapId": "9595c13a-7245-4487-8b03-7cfee1940b71",
+      "name": "Through the$6cc$o Seasons $g (CE)",
+      "authorTimeMs": 47287,
+      "day": 2,
+      "monthYear": "2026-10",
+      "leaderboardUid": "e793b00a-180b-46b3-99a6-c333f9ba3250"
     },
     {
       "mapUid": "DTxdk3q4kA52fMdkOOgaRANZODb",

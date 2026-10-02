@@ -39174,10 +39174,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "QvNh5yG3krJ1hdOw8nLDCKw8LH1",
+      "mapId": "9595c13a-7245-4487-8b03-7cfee1940b71",
+      "name": "Through the$6cc$o Seasons $g (CE)",
+      "authorTimeMs": 47287,
+      "day": 2,
+      "monthYear": "2026-10",
+      "leaderboardUid": "e793b00a-180b-46b3-99a6-c333f9ba3250",
+      "authorCount": 521,
+      "totalFinishers": 2992,
+      "pct": 17.4,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-10-01T20:31:20.178Z",
-  "medalsRefreshedAt": "2026-10-01T21:02:29.686Z",
+  "generatedAt": "2026-10-02T20:31:29.187Z",
+  "medalsRefreshedAt": "2026-10-02T21:02:53.384Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",
