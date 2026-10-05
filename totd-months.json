@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-04T20:31:01.222Z",
+  "fetchedAt": "2026-10-05T20:36:49.830Z",
   "maps": [
     {
       "mapUid": "I1gkMBKI0Y5BMSFstmzsIqbUlB",
@@ -36,6 +36,15 @@
       "day": 4,
       "monthYear": "2026-10",
       "leaderboardUid": "58f7c938-3487-4184-b3c4-103555fabb91"
+    },
+    {
+      "mapUid": "ulYLkmTNp07omgVdQgAIDQPJ1Df",
+      "mapId": "cef65e44-11d0-4410-9227-aabc854a2eb1",
+      "name": "$s$f90W$fffaktukistan",
+      "authorTimeMs": 58541,
+      "day": 5,
+      "monthYear": "2026-10",
+      "leaderboardUid": "06eb9a3d-c578-4c48-bd52-6ec116b64a1a"
     },
     {
       "mapUid": "DTxdk3q4kA52fMdkOOgaRANZODb",
