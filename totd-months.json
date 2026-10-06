@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-05T20:36:49.830Z",
+  "fetchedAt": "2026-10-06T20:31:06.556Z",
   "maps": [
     {
       "mapUid": "I1gkMBKI0Y5BMSFstmzsIqbUlB",
@@ -45,6 +45,15 @@
       "day": 5,
       "monthYear": "2026-10",
       "leaderboardUid": "06eb9a3d-c578-4c48-bd52-6ec116b64a1a"
+    },
+    {
+      "mapUid": "6gRGggWOlXgWD6bsYTbxvzGGBl6",
+      "mapId": "8c021cf5-3fe8-4692-a893-b3c547af6b33",
+      "name": "$s$FFFT$F003$FFFPM - $o$i$FC3Soak up the Sun",
+      "authorTimeMs": 43317,
+      "day": 6,
+      "monthYear": "2026-10",
+      "leaderboardUid": "7f1f66e1-1a45-4ae7-a857-97c02224a61e"
     },
     {
       "mapUid": "DTxdk3q4kA52fMdkOOgaRANZODb",

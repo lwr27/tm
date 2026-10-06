@@ -39250,10 +39250,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "6gRGggWOlXgWD6bsYTbxvzGGBl6",
+      "mapId": "8c021cf5-3fe8-4692-a893-b3c547af6b33",
+      "name": "$s$FFFT$F003$FFFPM - $o$i$FC3Soak up the Sun",
+      "authorTimeMs": 43317,
+      "day": 6,
+      "monthYear": "2026-10",
+      "leaderboardUid": "7f1f66e1-1a45-4ae7-a857-97c02224a61e",
+      "authorCount": 69,
+      "totalFinishers": 3607,
+      "pct": 1.9,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-10-05T20:36:58.805Z",
-  "medalsRefreshedAt": "2026-10-05T21:09:20.610Z",
+  "generatedAt": "2026-10-06T20:31:15.264Z",
+  "medalsRefreshedAt": "2026-10-06T21:03:05.341Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",
