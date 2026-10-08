@@ -39288,10 +39288,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "nMA1QH6tydNwHBEr3V2Y2Vl5kDl",
+      "mapId": "943669d8-ea8d-49bc-aecf-41dcf39262b1",
+      "name": "$s$CC9Not the Sharpest Tool in the Shed",
+      "authorTimeMs": 46978,
+      "day": 8,
+      "monthYear": "2026-10",
+      "leaderboardUid": "37d9b48b-da12-49cc-8cc7-2f1d08598775",
+      "authorCount": 250,
+      "totalFinishers": 3395,
+      "pct": 7.4,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-10-07T20:31:12.015Z",
-  "medalsRefreshedAt": "2026-10-07T21:02:18.397Z",
+  "generatedAt": "2026-10-08T20:31:17.532Z",
+  "medalsRefreshedAt": "2026-10-08T21:01:24.491Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",

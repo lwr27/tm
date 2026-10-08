@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-07T20:31:03.300Z",
+  "fetchedAt": "2026-10-08T20:31:04.360Z",
   "maps": [
     {
       "mapUid": "I1gkMBKI0Y5BMSFstmzsIqbUlB",
@@ -63,6 +63,15 @@
       "day": 7,
       "monthYear": "2026-10",
       "leaderboardUid": "35dc9bcd-a495-4f31-a20e-e6937b50f688"
+    },
+    {
+      "mapUid": "nMA1QH6tydNwHBEr3V2Y2Vl5kDl",
+      "mapId": "943669d8-ea8d-49bc-aecf-41dcf39262b1",
+      "name": "$s$CC9Not the Sharpest Tool in the Shed",
+      "authorTimeMs": 46978,
+      "day": 8,
+      "monthYear": "2026-10",
+      "leaderboardUid": "37d9b48b-da12-49cc-8cc7-2f1d08598775"
     },
     {
       "mapUid": "DTxdk3q4kA52fMdkOOgaRANZODb",
