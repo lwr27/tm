@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-08T20:31:04.360Z",
+  "fetchedAt": "2026-10-09T20:31:07.733Z",
   "maps": [
     {
       "mapUid": "I1gkMBKI0Y5BMSFstmzsIqbUlB",
@@ -72,6 +72,15 @@
       "day": 8,
       "monthYear": "2026-10",
       "leaderboardUid": "37d9b48b-da12-49cc-8cc7-2f1d08598775"
+    },
+    {
+      "mapUid": "LzXVXjzeBUeGbo_r83Cbutg3Wv2",
+      "mapId": "78e39b19-b039-43b7-a421-a2143dcada5b",
+      "name": "150th Map Special - $adeStraightline it",
+      "authorTimeMs": 42398,
+      "day": 9,
+      "monthYear": "2026-10",
+      "leaderboardUid": "5d3ff42e-d5c8-4209-b23d-75774b572257"
     },
     {
       "mapUid": "DTxdk3q4kA52fMdkOOgaRANZODb",

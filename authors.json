@@ -39307,10 +39307,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "LzXVXjzeBUeGbo_r83Cbutg3Wv2",
+      "mapId": "78e39b19-b039-43b7-a421-a2143dcada5b",
+      "name": "150th Map Special - $adeStraightline it",
+      "authorTimeMs": 42398,
+      "day": 9,
+      "monthYear": "2026-10",
+      "leaderboardUid": "5d3ff42e-d5c8-4209-b23d-75774b572257",
+      "authorCount": 395,
+      "totalFinishers": 3220,
+      "pct": 12.3,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-10-08T20:31:17.532Z",
-  "medalsRefreshedAt": "2026-10-08T21:01:24.491Z",
+  "generatedAt": "2026-10-09T20:31:26.938Z",
+  "medalsRefreshedAt": "2026-10-09T21:03:17.883Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",
