@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-09T20:31:07.733Z",
+  "fetchedAt": "2026-10-10T20:31:06.275Z",
   "maps": [
     {
       "mapUid": "I1gkMBKI0Y5BMSFstmzsIqbUlB",
@@ -81,6 +81,15 @@
       "day": 9,
       "monthYear": "2026-10",
       "leaderboardUid": "5d3ff42e-d5c8-4209-b23d-75774b572257"
+    },
+    {
+      "mapUid": "e0LFUE5p9eJAU2HM0Gp5qBsekY5",
+      "mapId": "a2979acb-d324-4b01-90b1-dad2e4476695",
+      "name": "$i$o$606My Apolo$FB0cheese",
+      "authorTimeMs": 47133,
+      "day": 10,
+      "monthYear": "2026-10",
+      "leaderboardUid": "8008dde4-b5c8-4ec2-97f4-85fa476a9a7f"
     },
     {
       "mapUid": "DTxdk3q4kA52fMdkOOgaRANZODb",

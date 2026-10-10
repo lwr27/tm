@@ -39326,10 +39326,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "e0LFUE5p9eJAU2HM0Gp5qBsekY5",
+      "mapId": "a2979acb-d324-4b01-90b1-dad2e4476695",
+      "name": "$i$o$606My Apolo$FB0cheese",
+      "authorTimeMs": 47133,
+      "day": 10,
+      "monthYear": "2026-10",
+      "leaderboardUid": "8008dde4-b5c8-4ec2-97f4-85fa476a9a7f",
+      "authorCount": 3,
+      "totalFinishers": 3197,
+      "pct": 0.1,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-10-09T20:31:26.938Z",
-  "medalsRefreshedAt": "2026-10-09T21:03:17.883Z",
+  "generatedAt": "2026-10-10T20:31:15.299Z",
+  "medalsRefreshedAt": "2026-10-10T21:03:38.322Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",
