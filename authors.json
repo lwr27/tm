@@ -39345,10 +39345,48 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "PGKFRLmfI1SWTL7DJTwLi9P6aXe",
+      "mapId": "9fe8da51-628f-4a2f-bccf-291fc6b3eaf0",
+      "name": "$0b8Frozen Urbex",
+      "authorTimeMs": 44734,
+      "day": 12,
+      "monthYear": "2026-10",
+      "leaderboardUid": "3098d69a-cb22-4521-9b43-d7bf04ac9baf",
+      "authorCount": 192,
+      "totalFinishers": 3087,
+      "pct": 6.2,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
+    },
+    {
+      "mapUid": "PkcKRWG6ixZiAbANd41TtEP66c1",
+      "mapId": "aa784d34-7806-47c3-b42a-56a420952c74",
+      "name": "$z$sThe $ec7Dirty Burger $z$sft' key",
+      "authorTimeMs": 57076,
+      "day": 23,
+      "monthYear": "2026-09",
+      "leaderboardUid": "4ae2de38-467a-478c-a861-b5fbe1c306f1",
+      "authorCount": 510,
+      "totalFinishers": 9973,
+      "pct": 5.1,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-10-11T23:07:40.872Z",
-  "medalsRefreshedAt": "2026-10-11T21:02:33.390Z",
+  "generatedAt": "2026-10-12T20:31:44.436Z",
+  "medalsRefreshedAt": "2026-10-12T21:02:42.892Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",

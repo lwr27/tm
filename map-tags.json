@@ -23089,6 +23089,15 @@
       ],
       "env": "Stadium",
       "mxid": 307256
+    },
+    "PGKFRLmfI1SWTL7DJTwLi9P6aXe": {
+      "found": true,
+      "name": "Frozen Urbex",
+      "tags": [
+        "Ice"
+      ],
+      "env": "Stadium",
+      "mxid": 362786
     }
   }
 }

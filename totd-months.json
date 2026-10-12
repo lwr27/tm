@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-11T20:31:05.172Z",
+  "fetchedAt": "2026-10-12T20:31:07.990Z",
   "maps": [
     {
       "mapUid": "I1gkMBKI0Y5BMSFstmzsIqbUlB",
@@ -99,6 +99,15 @@
       "day": 11,
       "monthYear": "2026-10",
       "leaderboardUid": "4b9f7597-a8c1-411f-b308-a7fb28559bf7"
+    },
+    {
+      "mapUid": "PGKFRLmfI1SWTL7DJTwLi9P6aXe",
+      "mapId": "9fe8da51-628f-4a2f-bccf-291fc6b3eaf0",
+      "name": "$0b8Frozen Urbex",
+      "authorTimeMs": 44734,
+      "day": 12,
+      "monthYear": "2026-10",
+      "leaderboardUid": "3098d69a-cb22-4521-9b43-d7bf04ac9baf"
     },
     {
       "mapUid": "DTxdk3q4kA52fMdkOOgaRANZODb",
