@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-12T20:31:07.990Z",
+  "fetchedAt": "2026-10-13T20:31:07.234Z",
   "maps": [
     {
       "mapUid": "I1gkMBKI0Y5BMSFstmzsIqbUlB",
@@ -108,6 +108,15 @@
       "day": 12,
       "monthYear": "2026-10",
       "leaderboardUid": "3098d69a-cb22-4521-9b43-d7bf04ac9baf"
+    },
+    {
+      "mapUid": "BiWBWFQcjFG92UE8pozOogxEWF",
+      "mapId": "05833c84-5214-46d6-b4d2-e93267771d63",
+      "name": "$n$i$s$FC9The Raven That Refused to Sing",
+      "authorTimeMs": 47835,
+      "day": 13,
+      "monthYear": "2026-10",
+      "leaderboardUid": "b4e896b4-cf0c-4482-a6f5-cdcfe8ab531e"
     },
     {
       "mapUid": "DTxdk3q4kA52fMdkOOgaRANZODb",

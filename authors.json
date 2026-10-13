@@ -39383,10 +39383,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "BiWBWFQcjFG92UE8pozOogxEWF",
+      "mapId": "05833c84-5214-46d6-b4d2-e93267771d63",
+      "name": "$n$i$s$FC9The Raven That Refused to Sing",
+      "authorTimeMs": 47835,
+      "day": 13,
+      "monthYear": "2026-10",
+      "leaderboardUid": "b4e896b4-cf0c-4482-a6f5-cdcfe8ab531e",
+      "authorCount": 58,
+      "totalFinishers": 3528,
+      "pct": 1.6,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-10-12T20:31:44.436Z",
-  "medalsRefreshedAt": "2026-10-12T21:02:42.892Z",
+  "generatedAt": "2026-10-13T20:31:15.954Z",
+  "medalsRefreshedAt": "2026-10-13T21:02:23.287Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",

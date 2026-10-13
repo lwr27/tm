@@ -23098,6 +23098,17 @@
       ],
       "env": "Stadium",
       "mxid": 362786
+    },
+    "BiWBWFQcjFG92UE8pozOogxEWF": {
+      "found": true,
+      "name": "The Raven That Refused to Sing",
+      "tags": [
+        "Tech",
+        "SpeedTech",
+        "Scenery"
+      ],
+      "env": "Stadium",
+      "mxid": 361498
     }
   }
 }
