@@ -39402,10 +39402,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "NlZkL2GgTV_ZGtFuplQ1wZDoyG",
+      "mapId": "7fca9cf9-f46d-448b-83f7-9935c0033395",
+      "name": "Indolent ft' Soap",
+      "authorTimeMs": 43423,
+      "day": 14,
+      "monthYear": "2026-10",
+      "leaderboardUid": "6b43fa09-e0ee-405c-856e-1150986cff9e",
+      "authorCount": 104,
+      "totalFinishers": 3332,
+      "pct": 3.1,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-10-13T20:31:15.954Z",
-  "medalsRefreshedAt": "2026-10-13T21:02:23.287Z",
+  "generatedAt": "2026-10-14T20:31:19.357Z",
+  "medalsRefreshedAt": "2026-10-14T21:01:34.600Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",

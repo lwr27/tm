@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-13T20:31:07.234Z",
+  "fetchedAt": "2026-10-14T20:31:08.323Z",
   "maps": [
     {
       "mapUid": "I1gkMBKI0Y5BMSFstmzsIqbUlB",
@@ -117,6 +117,15 @@
       "day": 13,
       "monthYear": "2026-10",
       "leaderboardUid": "b4e896b4-cf0c-4482-a6f5-cdcfe8ab531e"
+    },
+    {
+      "mapUid": "NlZkL2GgTV_ZGtFuplQ1wZDoyG",
+      "mapId": "7fca9cf9-f46d-448b-83f7-9935c0033395",
+      "name": "Indolent ft' Soap",
+      "authorTimeMs": 43423,
+      "day": 14,
+      "monthYear": "2026-10",
+      "leaderboardUid": "6b43fa09-e0ee-405c-856e-1150986cff9e"
     },
     {
       "mapUid": "DTxdk3q4kA52fMdkOOgaRANZODb",
