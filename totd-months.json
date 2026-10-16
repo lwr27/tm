@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-15T20:31:10.894Z",
+  "fetchedAt": "2026-10-16T20:31:09.749Z",
   "maps": [
     {
       "mapUid": "I1gkMBKI0Y5BMSFstmzsIqbUlB",
@@ -135,6 +135,15 @@
       "day": 15,
       "monthYear": "2026-10",
       "leaderboardUid": "991f1384-eb7c-46e7-95b7-d01cc477c6a8"
+    },
+    {
+      "mapUid": "b6OO3L4ObaxvPrbxJBWqJkKDDq8",
+      "mapId": "7be36ed1-bd7e-417f-a42a-c61083f3ad0e",
+      "name": "Vango Purity",
+      "authorTimeMs": 59488,
+      "day": 16,
+      "monthYear": "2026-10",
+      "leaderboardUid": "f177f13f-5913-44da-9e94-67918025f594"
     },
     {
       "mapUid": "DTxdk3q4kA52fMdkOOgaRANZODb",

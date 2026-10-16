@@ -23125,6 +23125,15 @@
       "tags": [],
       "env": null,
       "mxid": null
+    },
+    "b6OO3L4ObaxvPrbxJBWqJkKDDq8": {
+      "found": true,
+      "name": "Vango Purity",
+      "tags": [
+        "Race"
+      ],
+      "env": "Stadium",
+      "mxid": 365737
     }
   }
 }
