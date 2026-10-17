@@ -39459,10 +39459,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "dbiZyVMbUkG9U_pxdRKaIC6LHGl",
+      "mapId": "724c2e7f-3b37-4064-a891-2139f6f3b222",
+      "name": "$i$fffi'm all alone",
+      "authorTimeMs": 48899,
+      "day": 17,
+      "monthYear": "2026-10",
+      "leaderboardUid": "35036d33-abac-49b7-9b5b-b65d2c19da23",
+      "authorCount": 212,
+      "totalFinishers": 3370,
+      "pct": 6.3,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-10-16T20:31:23.983Z",
-  "medalsRefreshedAt": "2026-10-16T21:04:16.249Z",
+  "generatedAt": "2026-10-17T20:31:19.719Z",
+  "medalsRefreshedAt": "2026-10-17T21:02:40.013Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",

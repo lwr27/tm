@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-16T20:31:09.749Z",
+  "fetchedAt": "2026-10-17T20:31:06.020Z",
   "maps": [
     {
       "mapUid": "I1gkMBKI0Y5BMSFstmzsIqbUlB",
@@ -144,6 +144,15 @@
       "day": 16,
       "monthYear": "2026-10",
       "leaderboardUid": "f177f13f-5913-44da-9e94-67918025f594"
+    },
+    {
+      "mapUid": "dbiZyVMbUkG9U_pxdRKaIC6LHGl",
+      "mapId": "724c2e7f-3b37-4064-a891-2139f6f3b222",
+      "name": "$i$fffi'm all alone",
+      "authorTimeMs": 48899,
+      "day": 17,
+      "monthYear": "2026-10",
+      "leaderboardUid": "35036d33-abac-49b7-9b5b-b65d2c19da23"
     },
     {
       "mapUid": "DTxdk3q4kA52fMdkOOgaRANZODb",
