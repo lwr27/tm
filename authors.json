@@ -39478,10 +39478,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "uvVqp0z8Fzc3EalKpQjx8f37kDc",
+      "mapId": "59190b8e-2189-48cf-88a4-3b30dd085f28",
+      "name": "$sThe Downward Spiral",
+      "authorTimeMs": 43841,
+      "day": 18,
+      "monthYear": "2026-10",
+      "leaderboardUid": "a376f4e9-7632-43a5-a9b2-04029daf463a",
+      "authorCount": 626,
+      "totalFinishers": 3735,
+      "pct": 16.8,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-10-17T20:31:19.719Z",
-  "medalsRefreshedAt": "2026-10-17T21:02:40.013Z",
+  "generatedAt": "2026-10-18T20:31:27.688Z",
+  "medalsRefreshedAt": "2026-10-18T21:01:44.046Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",

@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-17T20:31:06.020Z",
+  "fetchedAt": "2026-10-18T20:31:04.184Z",
   "maps": [
     {
       "mapUid": "I1gkMBKI0Y5BMSFstmzsIqbUlB",
@@ -153,6 +153,15 @@
       "day": 17,
       "monthYear": "2026-10",
       "leaderboardUid": "35036d33-abac-49b7-9b5b-b65d2c19da23"
+    },
+    {
+      "mapUid": "uvVqp0z8Fzc3EalKpQjx8f37kDc",
+      "mapId": "59190b8e-2189-48cf-88a4-3b30dd085f28",
+      "name": "$sThe Downward Spiral",
+      "authorTimeMs": 43841,
+      "day": 18,
+      "monthYear": "2026-10",
+      "leaderboardUid": "a376f4e9-7632-43a5-a9b2-04029daf463a"
     },
     {
       "mapUid": "DTxdk3q4kA52fMdkOOgaRANZODb",
