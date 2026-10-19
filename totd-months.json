@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-18T20:31:04.184Z",
+  "fetchedAt": "2026-10-19T20:31:09.449Z",
   "maps": [
     {
       "mapUid": "I1gkMBKI0Y5BMSFstmzsIqbUlB",
@@ -162,6 +162,15 @@
       "day": 18,
       "monthYear": "2026-10",
       "leaderboardUid": "a376f4e9-7632-43a5-a9b2-04029daf463a"
+    },
+    {
+      "mapUid": "tA2iUcaXqEPsoQ2QB1Yl0XeCBx5",
+      "mapId": "786beea7-0d9f-4e13-bc08-43dfb7c9ac57",
+      "name": "$o$n$841Crevice  $z$fffFT NUMBERPLAY",
+      "authorTimeMs": 46729,
+      "day": 19,
+      "monthYear": "2026-10",
+      "leaderboardUid": "51fa49a8-30cf-40c7-8433-d33acc0fd796"
     },
     {
       "mapUid": "DTxdk3q4kA52fMdkOOgaRANZODb",
