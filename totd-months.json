@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-19T20:31:09.449Z",
+  "fetchedAt": "2026-10-20T20:31:08.567Z",
   "maps": [
     {
       "mapUid": "I1gkMBKI0Y5BMSFstmzsIqbUlB",
@@ -171,6 +171,15 @@
       "day": 19,
       "monthYear": "2026-10",
       "leaderboardUid": "51fa49a8-30cf-40c7-8433-d33acc0fd796"
+    },
+    {
+      "mapUid": "hVSN527JPIvJZXClcN_0Kta39Em",
+      "mapId": "b5141f49-8712-4a9c-ac63-75caf398b2f7",
+      "name": "$i$f9fPetite $888Brutality $s$fffft Ivancicus",
+      "authorTimeMs": 42698,
+      "day": 20,
+      "monthYear": "2026-10",
+      "leaderboardUid": "091d8637-1e15-424e-9c7e-1530467c8b99"
     },
     {
       "mapUid": "DTxdk3q4kA52fMdkOOgaRANZODb",

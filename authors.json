@@ -39516,10 +39516,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "hVSN527JPIvJZXClcN_0Kta39Em",
+      "mapId": "b5141f49-8712-4a9c-ac63-75caf398b2f7",
+      "name": "$i$f9fPetite $888Brutality $s$fffft Ivancicus",
+      "authorTimeMs": 42698,
+      "day": 20,
+      "monthYear": "2026-10",
+      "leaderboardUid": "091d8637-1e15-424e-9c7e-1530467c8b99",
+      "authorCount": 61,
+      "totalFinishers": 3518,
+      "pct": 1.7,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-10-19T20:31:18.775Z",
-  "medalsRefreshedAt": "2026-10-19T21:04:00.822Z",
+  "generatedAt": "2026-10-20T20:31:17.509Z",
+  "medalsRefreshedAt": "2026-10-20T21:03:39.907Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",
