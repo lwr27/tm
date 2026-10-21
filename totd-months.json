@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-20T20:31:08.567Z",
+  "fetchedAt": "2026-10-21T20:31:09.541Z",
   "maps": [
     {
       "mapUid": "I1gkMBKI0Y5BMSFstmzsIqbUlB",
@@ -180,6 +180,15 @@
       "day": 20,
       "monthYear": "2026-10",
       "leaderboardUid": "091d8637-1e15-424e-9c7e-1530467c8b99"
+    },
+    {
+      "mapUid": "VsCHMsCZ0tTFq_qnuvK2nXFC2C5",
+      "mapId": "edb830d5-68be-4867-b05d-71936c6f3a1d",
+      "name": "$sMt Zensoku $f00ft $fffmcFLy",
+      "authorTimeMs": 47170,
+      "day": 21,
+      "monthYear": "2026-10",
+      "leaderboardUid": "4c21987b-4f4b-450c-a89d-dbaff283f0d5"
     },
     {
       "mapUid": "DTxdk3q4kA52fMdkOOgaRANZODb",
