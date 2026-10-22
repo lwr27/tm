@@ -39554,10 +39554,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "fCE9mF8PR5zxLIT8h9lZiekMaNm",
+      "mapId": "cbf069ee-b29a-4376-ac99-d8dd0488fd33",
+      "name": "$s$i$C00Forever Distant ft' Inleader",
+      "authorTimeMs": 47445,
+      "day": 22,
+      "monthYear": "2026-10",
+      "leaderboardUid": "6941b50c-ad5c-4f91-8297-af58c4ebb44f",
+      "authorCount": 0,
+      "totalFinishers": 3083,
+      "pct": 0,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-10-21T20:31:18.047Z",
-  "medalsRefreshedAt": "2026-10-21T21:02:16.286Z",
+  "generatedAt": "2026-10-22T20:31:19.124Z",
+  "medalsRefreshedAt": "2026-10-22T21:03:27.597Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",

@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-21T20:31:09.541Z",
+  "fetchedAt": "2026-10-22T20:31:10.432Z",
   "maps": [
     {
       "mapUid": "I1gkMBKI0Y5BMSFstmzsIqbUlB",
@@ -189,6 +189,15 @@
       "day": 21,
       "monthYear": "2026-10",
       "leaderboardUid": "4c21987b-4f4b-450c-a89d-dbaff283f0d5"
+    },
+    {
+      "mapUid": "fCE9mF8PR5zxLIT8h9lZiekMaNm",
+      "mapId": "cbf069ee-b29a-4376-ac99-d8dd0488fd33",
+      "name": "$s$i$C00Forever Distant ft' Inleader",
+      "authorTimeMs": 47445,
+      "day": 22,
+      "monthYear": "2026-10",
+      "leaderboardUid": "6941b50c-ad5c-4f91-8297-af58c4ebb44f"
     },
     {
       "mapUid": "DTxdk3q4kA52fMdkOOgaRANZODb",
