@@ -39573,10 +39573,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "QM_cxfby6Ax3SnkzUYlkECNqdB9",
+      "mapId": "e0380c00-c315-4362-9122-22a8aedc1937",
+      "name": "$c60$sAutumn Valley ",
+      "authorTimeMs": 50027,
+      "day": 23,
+      "monthYear": "2026-10",
+      "leaderboardUid": "975b4acf-4280-4a3c-a153-c0f7b022837d",
+      "authorCount": 1891,
+      "totalFinishers": 3369,
+      "pct": 56.1,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-10-22T20:31:19.124Z",
-  "medalsRefreshedAt": "2026-10-22T21:03:27.597Z",
+  "generatedAt": "2026-10-23T20:31:42.367Z",
+  "medalsRefreshedAt": "2026-10-23T21:02:40.428Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",

@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-22T20:31:10.432Z",
+  "fetchedAt": "2026-10-23T20:31:08.228Z",
   "maps": [
     {
       "mapUid": "I1gkMBKI0Y5BMSFstmzsIqbUlB",
@@ -198,6 +198,15 @@
       "day": 22,
       "monthYear": "2026-10",
       "leaderboardUid": "6941b50c-ad5c-4f91-8297-af58c4ebb44f"
+    },
+    {
+      "mapUid": "QM_cxfby6Ax3SnkzUYlkECNqdB9",
+      "mapId": "e0380c00-c315-4362-9122-22a8aedc1937",
+      "name": "$c60$sAutumn Valley ",
+      "authorTimeMs": 50027,
+      "day": 23,
+      "monthYear": "2026-10",
+      "leaderboardUid": "975b4acf-4280-4a3c-a153-c0f7b022837d"
     },
     {
       "mapUid": "DTxdk3q4kA52fMdkOOgaRANZODb",
