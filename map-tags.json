@@ -23197,6 +23197,16 @@
       "tags": [],
       "env": null,
       "mxid": null
+    },
+    "BApluBrxlCCX2jlXAXzUlXHOzKb": {
+      "found": true,
+      "name": "PacuPacu",
+      "tags": [
+        "Grass",
+        "Mixed"
+      ],
+      "env": "Stadium",
+      "mxid": 366657
     }
   }
 }

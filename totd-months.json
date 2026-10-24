@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-23T20:31:08.228Z",
+  "fetchedAt": "2026-10-24T20:31:05.221Z",
   "maps": [
     {
       "mapUid": "I1gkMBKI0Y5BMSFstmzsIqbUlB",
@@ -207,6 +207,15 @@
       "day": 23,
       "monthYear": "2026-10",
       "leaderboardUid": "975b4acf-4280-4a3c-a153-c0f7b022837d"
+    },
+    {
+      "mapUid": "BApluBrxlCCX2jlXAXzUlXHOzKb",
+      "mapId": "2715d60d-bea6-4dac-9cad-7810b8777706",
+      "name": "PacuPacu",
+      "authorTimeMs": 48015,
+      "day": 24,
+      "monthYear": "2026-10",
+      "leaderboardUid": "5bb2ab7a-6b38-4ef5-b27f-a19cef44303d"
     },
     {
       "mapUid": "DTxdk3q4kA52fMdkOOgaRANZODb",
