@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-24T20:31:05.221Z",
+  "fetchedAt": "2026-10-25T21:31:02.748Z",
   "maps": [
     {
       "mapUid": "I1gkMBKI0Y5BMSFstmzsIqbUlB",
@@ -216,6 +216,15 @@
       "day": 24,
       "monthYear": "2026-10",
       "leaderboardUid": "5bb2ab7a-6b38-4ef5-b27f-a19cef44303d"
+    },
+    {
+      "mapUid": "jq9m_jmp610TismaZs4NH2SIKs5",
+      "mapId": "36446849-5698-43a1-a31e-e6cecc3377be",
+      "name": "Stairway to Spaghetti Heaven",
+      "authorTimeMs": 45757,
+      "day": 25,
+      "monthYear": "2026-10",
+      "leaderboardUid": "7647c2ca-7827-4c1b-8129-56b503ec5c6a"
     },
     {
       "mapUid": "DTxdk3q4kA52fMdkOOgaRANZODb",
