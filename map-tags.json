@@ -23213,6 +23213,15 @@
       "tags": [],
       "env": null,
       "mxid": null
+    },
+    "x4mo5RRF24kkXKBSq6AxKGMwT75": {
+      "found": true,
+      "name": "New Day",
+      "tags": [
+        "Bobsleigh"
+      ],
+      "env": "Stadium",
+      "mxid": 365672
     }
   }
 }

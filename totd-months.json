@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-25T21:31:02.748Z",
+  "fetchedAt": "2026-10-26T21:31:09.315Z",
   "maps": [
     {
       "mapUid": "I1gkMBKI0Y5BMSFstmzsIqbUlB",
@@ -225,6 +225,15 @@
       "day": 25,
       "monthYear": "2026-10",
       "leaderboardUid": "7647c2ca-7827-4c1b-8129-56b503ec5c6a"
+    },
+    {
+      "mapUid": "x4mo5RRF24kkXKBSq6AxKGMwT75",
+      "mapId": "b5933164-daa1-405a-bd36-519764f2f5f7",
+      "name": "New Day",
+      "authorTimeMs": 42000,
+      "day": 26,
+      "monthYear": "2026-10",
+      "leaderboardUid": "6eb922b7-d604-4d7b-8e36-e00a6a2d4aeb"
     },
     {
       "mapUid": "DTxdk3q4kA52fMdkOOgaRANZODb",
