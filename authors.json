@@ -39649,10 +39649,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "ByNj84vpdr_OvcvTKKNbJrnYUCm",
+      "mapId": "95251538-9499-4e57-a668-4cd3c0034251",
+      "name": "$s$360Timber $630Solitude$fff ft' Megaadri",
+      "authorTimeMs": 45705,
+      "day": 27,
+      "monthYear": "2026-10",
+      "leaderboardUid": "875649ec-999c-4b3b-951e-a01903c63e24",
+      "authorCount": 182,
+      "totalFinishers": 3699,
+      "pct": 4.9,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-10-26T21:31:45.669Z",
-  "medalsRefreshedAt": "2026-10-26T22:04:22.524Z",
+  "generatedAt": "2026-10-27T21:31:21.807Z",
+  "medalsRefreshedAt": "2026-10-27T22:03:29.147Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",

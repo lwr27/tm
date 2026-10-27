@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-26T21:31:09.315Z",
+  "fetchedAt": "2026-10-27T21:31:10.566Z",
   "maps": [
     {
       "mapUid": "I1gkMBKI0Y5BMSFstmzsIqbUlB",
@@ -234,6 +234,15 @@
       "day": 26,
       "monthYear": "2026-10",
       "leaderboardUid": "6eb922b7-d604-4d7b-8e36-e00a6a2d4aeb"
+    },
+    {
+      "mapUid": "ByNj84vpdr_OvcvTKKNbJrnYUCm",
+      "mapId": "95251538-9499-4e57-a668-4cd3c0034251",
+      "name": "$s$360Timber $630Solitude$fff ft' Megaadri",
+      "authorTimeMs": 45705,
+      "day": 27,
+      "monthYear": "2026-10",
+      "leaderboardUid": "875649ec-999c-4b3b-951e-a01903c63e24"
     },
     {
       "mapUid": "DTxdk3q4kA52fMdkOOgaRANZODb",
