@@ -23231,6 +23231,16 @@
       ],
       "env": "Stadium",
       "mxid": 367932
+    },
+    "16Dq83msDlLK93kMlELI8JOqxU4": {
+      "found": true,
+      "name": "Trick or Quit",
+      "tags": [
+        "Bugslide",
+        "Grass"
+      ],
+      "env": "Stadium",
+      "mxid": 368385
     }
   }
 }
