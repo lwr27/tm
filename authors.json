@@ -39687,10 +39687,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "Szn110f50vG6JkdXzy6fBWh3Ts5",
+      "mapId": "17a3018e-c572-4a43-a1d4-dde4a78f4e91",
+      "name": "$s$F00T$803F$006H $000- $FFFChrysalis ft' Intax",
+      "authorTimeMs": 62297,
+      "day": 29,
+      "monthYear": "2026-10",
+      "leaderboardUid": "cdd44589-cd30-4552-ba6b-ffdef4ca853c",
+      "authorCount": 30,
+      "totalFinishers": 3445,
+      "pct": 0.9,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-10-28T21:31:19.887Z",
-  "medalsRefreshedAt": "2026-10-28T22:02:57.152Z",
+  "generatedAt": "2026-10-29T21:31:18.959Z",
+  "medalsRefreshedAt": "2026-10-29T22:03:57.965Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",

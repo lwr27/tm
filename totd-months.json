@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-28T21:31:11.082Z",
+  "fetchedAt": "2026-10-29T21:31:09.884Z",
   "maps": [
     {
       "mapUid": "I1gkMBKI0Y5BMSFstmzsIqbUlB",
@@ -252,6 +252,15 @@
       "day": 28,
       "monthYear": "2026-10",
       "leaderboardUid": "da40a08f-a441-45f0-9afb-b56293e8f4f0"
+    },
+    {
+      "mapUid": "Szn110f50vG6JkdXzy6fBWh3Ts5",
+      "mapId": "17a3018e-c572-4a43-a1d4-dde4a78f4e91",
+      "name": "$s$F00T$803F$006H $000- $FFFChrysalis ft' Intax",
+      "authorTimeMs": 62297,
+      "day": 29,
+      "monthYear": "2026-10",
+      "leaderboardUid": "cdd44589-cd30-4552-ba6b-ffdef4ca853c"
     },
     {
       "mapUid": "DTxdk3q4kA52fMdkOOgaRANZODb",
