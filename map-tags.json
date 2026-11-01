@@ -23265,6 +23265,17 @@
       "tags": [],
       "env": null,
       "mxid": null
+    },
+    "eqYkZnUT__552a2wq1MFdMR2nZj": {
+      "found": true,
+      "name": "it's spooky season (ce)",
+      "tags": [
+        "Bugslide",
+        "Water",
+        "Mixed"
+      ],
+      "env": "Stadium",
+      "mxid": 367518
     }
   }
 }

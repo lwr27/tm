@@ -39744,10 +39744,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "eqYkZnUT__552a2wq1MFdMR2nZj",
+      "mapId": "e6038b9b-27b3-4848-8b4b-0bbe669bb870",
+      "name": "$z$sit's $FB0spooky $0F0season $FFF(ce)",
+      "authorTimeMs": 38488,
+      "day": 1,
+      "monthYear": "2026-11",
+      "leaderboardUid": "a6328ca1-a459-44b2-a742-c1f8570934b0",
+      "authorCount": 446,
+      "totalFinishers": 3334,
+      "pct": 13.4,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-10-31T21:31:41.779Z",
-  "medalsRefreshedAt": "2026-10-31T22:04:10.979Z",
+  "generatedAt": "2026-11-01T21:31:27.733Z",
+  "medalsRefreshedAt": "2026-11-01T22:03:36.182Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",
