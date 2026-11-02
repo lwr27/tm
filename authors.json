@@ -39763,10 +39763,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "x7Ee8oHAGoid_i2mwaYUqKHiWq1",
+      "mapId": "2609080f-64f2-46a4-919a-825b989dc43a",
+      "name": "$o$EC5[NN] - $fffEmpire of the Clouds $ec5ft' Cotton",
+      "authorTimeMs": 48000,
+      "day": 2,
+      "monthYear": "2026-11",
+      "leaderboardUid": "a0b1319c-c953-41e3-b15b-56df5a11a488",
+      "authorCount": 101,
+      "totalFinishers": 3188,
+      "pct": 3.2,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-11-02T00:08:25.504Z",
-  "medalsRefreshedAt": "2026-11-01T22:03:36.182Z",
+  "generatedAt": "2026-11-02T21:31:29.796Z",
+  "medalsRefreshedAt": "2026-11-02T22:03:13.281Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",

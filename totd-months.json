@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-01T21:31:08.739Z",
+  "fetchedAt": "2026-11-02T21:31:18.464Z",
   "maps": [
     {
       "mapUid": "eqYkZnUT__552a2wq1MFdMR2nZj",
@@ -9,6 +9,15 @@
       "day": 1,
       "monthYear": "2026-11",
       "leaderboardUid": "a6328ca1-a459-44b2-a742-c1f8570934b0"
+    },
+    {
+      "mapUid": "x7Ee8oHAGoid_i2mwaYUqKHiWq1",
+      "mapId": "2609080f-64f2-46a4-919a-825b989dc43a",
+      "name": "$o$EC5[NN] - $fffEmpire of the Clouds $ec5ft' Cotton",
+      "authorTimeMs": 48000,
+      "day": 2,
+      "monthYear": "2026-11",
+      "leaderboardUid": "a0b1319c-c953-41e3-b15b-56df5a11a488"
     },
     {
       "mapUid": "I1gkMBKI0Y5BMSFstmzsIqbUlB",
