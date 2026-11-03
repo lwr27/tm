@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-02T21:31:18.464Z",
+  "fetchedAt": "2026-11-03T21:31:21.216Z",
   "maps": [
     {
       "mapUid": "eqYkZnUT__552a2wq1MFdMR2nZj",
@@ -18,6 +18,15 @@
       "day": 2,
       "monthYear": "2026-11",
       "leaderboardUid": "a0b1319c-c953-41e3-b15b-56df5a11a488"
+    },
+    {
+      "mapUid": "ENVhkkO3Wu8cpQogfpl4IxT5eB3",
+      "mapId": "2b0e3721-db3f-46f6-ab68-e44dbf6aa0c3",
+      "name": "$oPrologue to Weightless Grey",
+      "authorTimeMs": 52933,
+      "day": 3,
+      "monthYear": "2026-11",
+      "leaderboardUid": "2e39c567-bdb5-4eef-93d5-2cf370202382"
     },
     {
       "mapUid": "I1gkMBKI0Y5BMSFstmzsIqbUlB",
