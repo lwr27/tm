@@ -39801,10 +39801,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "a22v0nplKvkZ7pRNLYekEz4C14m",
+      "mapId": "c3924ff4-560c-43d2-9528-e649df13480a",
+      "name": "$oMount $C00Stratos",
+      "authorTimeMs": 56531,
+      "day": 4,
+      "monthYear": "2026-11",
+      "leaderboardUid": "e6539912-ba48-4f43-91d8-8c0c454d08c9",
+      "authorCount": 61,
+      "totalFinishers": 3500,
+      "pct": 1.7,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-11-03T21:31:30.023Z",
-  "medalsRefreshedAt": "2026-11-03T22:03:44.677Z",
+  "generatedAt": "2026-11-04T21:31:18.504Z",
+  "medalsRefreshedAt": "2026-11-04T22:03:31.512Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",

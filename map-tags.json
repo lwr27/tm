@@ -23297,6 +23297,17 @@
       ],
       "env": "Stadium",
       "mxid": 366130
+    },
+    "a22v0nplKvkZ7pRNLYekEz4C14m": {
+      "found": true,
+      "name": "Mount Stratos",
+      "tags": [
+        "Signature",
+        "Scenery",
+        "RPG-Immersive"
+      ],
+      "env": "Stadium",
+      "mxid": 369721
     }
   }
 }

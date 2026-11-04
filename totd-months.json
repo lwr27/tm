@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-03T21:31:21.216Z",
+  "fetchedAt": "2026-11-04T21:31:09.555Z",
   "maps": [
     {
       "mapUid": "eqYkZnUT__552a2wq1MFdMR2nZj",
@@ -27,6 +27,15 @@
       "day": 3,
       "monthYear": "2026-11",
       "leaderboardUid": "2e39c567-bdb5-4eef-93d5-2cf370202382"
+    },
+    {
+      "mapUid": "a22v0nplKvkZ7pRNLYekEz4C14m",
+      "mapId": "c3924ff4-560c-43d2-9528-e649df13480a",
+      "name": "$oMount $C00Stratos",
+      "authorTimeMs": 56531,
+      "day": 4,
+      "monthYear": "2026-11",
+      "leaderboardUid": "e6539912-ba48-4f43-91d8-8c0c454d08c9"
     },
     {
       "mapUid": "I1gkMBKI0Y5BMSFstmzsIqbUlB",
