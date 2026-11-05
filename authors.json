@@ -39820,10 +39820,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "c94vCARJWKM_FsXQ4dnaqQWUHqf",
+      "mapId": "ad311207-3362-45ba-bc14-be9386bbcbb3",
+      "name": "$63fP$fffain ft Mango & Teuflum",
+      "authorTimeMs": 49282,
+      "day": 5,
+      "monthYear": "2026-11",
+      "leaderboardUid": "865bc39b-5252-4fdd-9bd1-9142489302a4",
+      "authorCount": 1,
+      "totalFinishers": 2534,
+      "pct": 0,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-11-04T21:31:18.504Z",
-  "medalsRefreshedAt": "2026-11-04T22:03:31.512Z",
+  "generatedAt": "2026-11-05T21:31:18.301Z",
+  "medalsRefreshedAt": "2026-11-05T22:01:48.686Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",

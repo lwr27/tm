@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-04T21:31:09.555Z",
+  "fetchedAt": "2026-11-05T21:31:10.232Z",
   "maps": [
     {
       "mapUid": "eqYkZnUT__552a2wq1MFdMR2nZj",
@@ -36,6 +36,15 @@
       "day": 4,
       "monthYear": "2026-11",
       "leaderboardUid": "e6539912-ba48-4f43-91d8-8c0c454d08c9"
+    },
+    {
+      "mapUid": "c94vCARJWKM_FsXQ4dnaqQWUHqf",
+      "mapId": "ad311207-3362-45ba-bc14-be9386bbcbb3",
+      "name": "$63fP$fffain ft Mango & Teuflum",
+      "authorTimeMs": 49282,
+      "day": 5,
+      "monthYear": "2026-11",
+      "leaderboardUid": "865bc39b-5252-4fdd-9bd1-9142489302a4"
     },
     {
       "mapUid": "I1gkMBKI0Y5BMSFstmzsIqbUlB",
