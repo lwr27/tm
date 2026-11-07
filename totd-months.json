@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-06T21:31:08.239Z",
+  "fetchedAt": "2026-11-07T21:31:04.479Z",
   "maps": [
     {
       "mapUid": "eqYkZnUT__552a2wq1MFdMR2nZj",
@@ -54,6 +54,15 @@
       "day": 6,
       "monthYear": "2026-11",
       "leaderboardUid": "930e28e6-741f-4bd5-8140-0aaa0dd1bbf3"
+    },
+    {
+      "mapUid": "kK4Y9xueCwOAIUVuLeeBWPMPaQ8",
+      "mapId": "5964940f-7ef3-4ab4-ae81-c55cbb280055",
+      "name": "$C3CZ$89EG$3FFW$FFF - Frostbite",
+      "authorTimeMs": 58701,
+      "day": 7,
+      "monthYear": "2026-11",
+      "leaderboardUid": "01f798e4-5222-4b52-bfd1-0b3b4afcaf0d"
     },
     {
       "mapUid": "I1gkMBKI0Y5BMSFstmzsIqbUlB",
