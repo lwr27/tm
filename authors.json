@@ -39915,10 +39915,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "l3DOx2Z_7zA6eNw85e3vxC2Kbid",
+      "mapId": "27e49d9c-83be-4823-913d-bd0b86804b72",
+      "name": "The Third Charm ft' xpphx",
+      "authorTimeMs": 43000,
+      "day": 10,
+      "monthYear": "2026-11",
+      "leaderboardUid": "b3b49816-04c5-4d9d-8458-34e9f816892e",
+      "authorCount": 1575,
+      "totalFinishers": 3384,
+      "pct": 46.5,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-11-09T21:31:17.729Z",
-  "medalsRefreshedAt": "2026-11-09T22:04:02.146Z",
+  "generatedAt": "2026-11-10T21:31:41.159Z",
+  "medalsRefreshedAt": "2026-11-10T22:04:33.543Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",

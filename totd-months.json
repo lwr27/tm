@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-09T21:31:08.941Z",
+  "fetchedAt": "2026-11-10T21:31:10.761Z",
   "maps": [
     {
       "mapUid": "eqYkZnUT__552a2wq1MFdMR2nZj",
@@ -81,6 +81,15 @@
       "day": 9,
       "monthYear": "2026-11",
       "leaderboardUid": "abff5465-f7bf-484d-8c42-26786acb2cbb"
+    },
+    {
+      "mapUid": "l3DOx2Z_7zA6eNw85e3vxC2Kbid",
+      "mapId": "27e49d9c-83be-4823-913d-bd0b86804b72",
+      "name": "The Third Charm ft' xpphx",
+      "authorTimeMs": 43000,
+      "day": 10,
+      "monthYear": "2026-11",
+      "leaderboardUid": "b3b49816-04c5-4d9d-8458-34e9f816892e"
     },
     {
       "mapUid": "I1gkMBKI0Y5BMSFstmzsIqbUlB",
