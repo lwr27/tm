@@ -23367,6 +23367,17 @@
       ],
       "env": "Stadium",
       "mxid": 366827
+    },
+    "UwllR6c3v9aVmS6GRrKm7WlAwuj": {
+      "found": true,
+      "name": "HELHEIM",
+      "tags": [
+        "Tech",
+        "SpeedTech",
+        "Scenery"
+      ],
+      "env": "Stadium",
+      "mxid": 369952
     }
   }
 }

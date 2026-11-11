@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-10T21:31:10.761Z",
+  "fetchedAt": "2026-11-11T21:31:06.290Z",
   "maps": [
     {
       "mapUid": "eqYkZnUT__552a2wq1MFdMR2nZj",
@@ -90,6 +90,15 @@
       "day": 10,
       "monthYear": "2026-11",
       "leaderboardUid": "b3b49816-04c5-4d9d-8458-34e9f816892e"
+    },
+    {
+      "mapUid": "UwllR6c3v9aVmS6GRrKm7WlAwuj",
+      "mapId": "9df6728c-9d64-4c85-989c-98770e1efa47",
+      "name": "$oHELHEIM",
+      "authorTimeMs": 41553,
+      "day": 11,
+      "monthYear": "2026-11",
+      "leaderboardUid": "c5179957-518d-42c6-8480-ec5e4fdef258"
     },
     {
       "mapUid": "I1gkMBKI0Y5BMSFstmzsIqbUlB",
