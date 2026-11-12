@@ -39953,10 +39953,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "ddsNqDMtjCoGaDdwswkI9XqWjem",
+      "mapId": "7968d358-4c54-46c7-885a-56806e060948",
+      "name": "Fractured Forest",
+      "authorTimeMs": 48128,
+      "day": 12,
+      "monthYear": "2026-11",
+      "leaderboardUid": "ee963705-6a73-4207-bc4c-c7ecb4780afa",
+      "authorCount": 90,
+      "totalFinishers": 3050,
+      "pct": 3,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-11-11T21:31:14.371Z",
-  "medalsRefreshedAt": "2026-11-11T22:01:48.558Z",
+  "generatedAt": "2026-11-12T21:31:14.991Z",
+  "medalsRefreshedAt": "2026-11-12T22:01:41.668Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",

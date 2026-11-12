@@ -23378,6 +23378,16 @@
       ],
       "env": "Stadium",
       "mxid": 369952
+    },
+    "ddsNqDMtjCoGaDdwswkI9XqWjem": {
+      "found": true,
+      "name": "Fractured Forest",
+      "tags": [
+        "Dirt",
+        "Wood"
+      ],
+      "env": "Stadium",
+      "mxid": 367709
     }
   }
 }

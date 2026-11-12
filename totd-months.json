@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-11T21:31:06.290Z",
+  "fetchedAt": "2026-11-12T21:31:07.010Z",
   "maps": [
     {
       "mapUid": "eqYkZnUT__552a2wq1MFdMR2nZj",
@@ -99,6 +99,15 @@
       "day": 11,
       "monthYear": "2026-11",
       "leaderboardUid": "c5179957-518d-42c6-8480-ec5e4fdef258"
+    },
+    {
+      "mapUid": "ddsNqDMtjCoGaDdwswkI9XqWjem",
+      "mapId": "7968d358-4c54-46c7-885a-56806e060948",
+      "name": "Fractured Forest",
+      "authorTimeMs": 48128,
+      "day": 12,
+      "monthYear": "2026-11",
+      "leaderboardUid": "ee963705-6a73-4207-bc4c-c7ecb4780afa"
     },
     {
       "mapUid": "I1gkMBKI0Y5BMSFstmzsIqbUlB",
