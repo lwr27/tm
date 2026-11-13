@@ -39972,10 +39972,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "86GJNmxv9_4pr7A9uiiKnVllfA3",
+      "mapId": "a7bda04c-5000-412e-b178-0a0c0e444252",
+      "name": "Utopia Drift",
+      "authorTimeMs": 48158,
+      "day": 13,
+      "monthYear": "2026-11",
+      "leaderboardUid": "61375739-f82a-44f2-bede-f016072f0a19",
+      "authorCount": 251,
+      "totalFinishers": 3456,
+      "pct": 7.3,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-11-12T21:31:14.991Z",
-  "medalsRefreshedAt": "2026-11-12T22:01:41.668Z",
+  "generatedAt": "2026-11-13T21:31:19.649Z",
+  "medalsRefreshedAt": "2026-11-13T22:02:31.046Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",
