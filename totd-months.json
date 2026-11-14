@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-13T21:31:06.731Z",
+  "fetchedAt": "2026-11-14T21:31:06.133Z",
   "maps": [
     {
       "mapUid": "eqYkZnUT__552a2wq1MFdMR2nZj",
@@ -117,6 +117,15 @@
       "day": 13,
       "monthYear": "2026-11",
       "leaderboardUid": "61375739-f82a-44f2-bede-f016072f0a19"
+    },
+    {
+      "mapUid": "_mhf2U1Mp2RnBPKWSOWbhQdPNyf",
+      "mapId": "91fc6df6-c8de-4be0-9683-381dab036d0f",
+      "name": "$BDE$S$ISnowCat",
+      "authorTimeMs": 46254,
+      "day": 14,
+      "monthYear": "2026-11",
+      "leaderboardUid": "75197351-ae98-41d3-bc36-efa56a095f96"
     },
     {
       "mapUid": "I1gkMBKI0Y5BMSFstmzsIqbUlB",

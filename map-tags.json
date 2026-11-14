@@ -23394,6 +23394,16 @@
       "tags": [],
       "env": null,
       "mxid": null
+    },
+    "_mhf2U1Mp2RnBPKWSOWbhQdPNyf": {
+      "found": true,
+      "name": "SnowCat",
+      "tags": [
+        "Nascar",
+        "Scenery"
+      ],
+      "env": "Stadium",
+      "mxid": 371596
     }
   }
 }
