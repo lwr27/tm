@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-14T21:31:06.133Z",
+  "fetchedAt": "2026-11-15T21:31:13.238Z",
   "maps": [
     {
       "mapUid": "eqYkZnUT__552a2wq1MFdMR2nZj",
@@ -126,6 +126,15 @@
       "day": 14,
       "monthYear": "2026-11",
       "leaderboardUid": "75197351-ae98-41d3-bc36-efa56a095f96"
+    },
+    {
+      "mapUid": "KPVZZVPMsR8riT7gB3ZZNYiGUka",
+      "mapId": "4a9d145e-a9ec-4e2b-9df7-79afe73a264a",
+      "name": "windy biomes",
+      "authorTimeMs": 40418,
+      "day": 15,
+      "monthYear": "2026-11",
+      "leaderboardUid": "266bd510-6016-4e80-8124-f06eb9cdf3f9"
     },
     {
       "mapUid": "I1gkMBKI0Y5BMSFstmzsIqbUlB",

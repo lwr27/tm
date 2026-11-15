@@ -40010,10 +40010,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "KPVZZVPMsR8riT7gB3ZZNYiGUka",
+      "mapId": "4a9d145e-a9ec-4e2b-9df7-79afe73a264a",
+      "name": "windy biomes",
+      "authorTimeMs": 40418,
+      "day": 15,
+      "monthYear": "2026-11",
+      "leaderboardUid": "266bd510-6016-4e80-8124-f06eb9cdf3f9",
+      "authorCount": 97,
+      "totalFinishers": 2982,
+      "pct": 3.3,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-11-14T21:31:14.951Z",
-  "medalsRefreshedAt": "2026-11-14T22:02:48.528Z",
+  "generatedAt": "2026-11-15T21:31:21.805Z",
+  "medalsRefreshedAt": "2026-11-15T22:03:46.844Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",
