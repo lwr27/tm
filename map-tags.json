@@ -23415,6 +23415,16 @@
       ],
       "env": "Stadium",
       "mxid": 371791
+    },
+    "0hoO9_NKwNmDfVUejtORyiOW56i": {
+      "found": true,
+      "name": "Star Signs",
+      "tags": [
+        "Scenery",
+        "Grass"
+      ],
+      "env": "Stadium",
+      "mxid": 369806
     }
   }
 }
