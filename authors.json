@@ -40105,10 +40105,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "ITdYLI7sRACep6zr0gmBeTXXmhi",
+      "mapId": "5f692f3d-b3c1-46bd-b7e0-065add6345fc",
+      "name": "$036Vadrouille",
+      "authorTimeMs": 37031,
+      "day": 20,
+      "monthYear": "2026-11",
+      "leaderboardUid": "dbad9360-b4ec-427b-b3df-b2ad45b0ab70",
+      "authorCount": 78,
+      "totalFinishers": 2637,
+      "pct": 3,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-11-19T21:31:21.194Z",
-  "medalsRefreshedAt": "2026-11-19T22:01:56.874Z",
+  "generatedAt": "2026-11-20T21:31:17.726Z",
+  "medalsRefreshedAt": "2026-11-20T22:03:00.528Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",

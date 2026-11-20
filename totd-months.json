@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-19T21:31:13.412Z",
+  "fetchedAt": "2026-11-20T21:31:09.072Z",
   "maps": [
     {
       "mapUid": "eqYkZnUT__552a2wq1MFdMR2nZj",
@@ -171,6 +171,15 @@
       "day": 19,
       "monthYear": "2026-11",
       "leaderboardUid": "7e3d2635-200f-46d4-8fc5-b39a6505f065"
+    },
+    {
+      "mapUid": "ITdYLI7sRACep6zr0gmBeTXXmhi",
+      "mapId": "5f692f3d-b3c1-46bd-b7e0-065add6345fc",
+      "name": "$036Vadrouille",
+      "authorTimeMs": 37031,
+      "day": 20,
+      "monthYear": "2026-11",
+      "leaderboardUid": "dbad9360-b4ec-427b-b3df-b2ad45b0ab70"
     },
     {
       "mapUid": "I1gkMBKI0Y5BMSFstmzsIqbUlB",
