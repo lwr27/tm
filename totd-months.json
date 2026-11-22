@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-21T21:31:08.034Z",
+  "fetchedAt": "2026-11-22T21:31:11.007Z",
   "maps": [
     {
       "mapUid": "eqYkZnUT__552a2wq1MFdMR2nZj",
@@ -189,6 +189,15 @@
       "day": 21,
       "monthYear": "2026-11",
       "leaderboardUid": "909cbaa7-9c85-4d80-b781-b4e16e2d3ba7"
+    },
+    {
+      "mapUid": "omydDj1tgDrhfMs0JjnrYXWHX4",
+      "mapId": "0c345365-f95f-43a7-98a1-5e5fc96dc2b1",
+      "name": "$i$w$oRECHARGE $FFFTHE $39FBATTERY",
+      "authorTimeMs": 45996,
+      "day": 22,
+      "monthYear": "2026-11",
+      "leaderboardUid": "cc0568c4-0200-4a32-b048-89b81d925a1e"
     },
     {
       "mapUid": "I1gkMBKI0Y5BMSFstmzsIqbUlB",
