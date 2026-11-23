@@ -40162,10 +40162,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "aDBkFCw2Eyu_F0QDWU6WaqoB41f",
+      "mapId": "d5f8dffa-7715-4493-92f6-54f2048b465a",
+      "name": "$C99$s$iWorms$FFF in Dirt ft Salty",
+      "authorTimeMs": 52465,
+      "day": 23,
+      "monthYear": "2026-11",
+      "leaderboardUid": "bed30865-4c08-48e0-ba55-19213fa1a4d2",
+      "authorCount": 109,
+      "totalFinishers": 2694,
+      "pct": 4,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-11-23T00:07:37.610Z",
-  "medalsRefreshedAt": "2026-11-22T22:02:08.387Z",
+  "generatedAt": "2026-11-23T21:31:21.301Z",
+  "medalsRefreshedAt": "2026-11-23T22:01:56.284Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",

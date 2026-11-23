@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-22T21:31:11.007Z",
+  "fetchedAt": "2026-11-23T21:31:11.181Z",
   "maps": [
     {
       "mapUid": "eqYkZnUT__552a2wq1MFdMR2nZj",
@@ -198,6 +198,15 @@
       "day": 22,
       "monthYear": "2026-11",
       "leaderboardUid": "cc0568c4-0200-4a32-b048-89b81d925a1e"
+    },
+    {
+      "mapUid": "aDBkFCw2Eyu_F0QDWU6WaqoB41f",
+      "mapId": "d5f8dffa-7715-4493-92f6-54f2048b465a",
+      "name": "$C99$s$iWorms$FFF in Dirt ft Salty",
+      "authorTimeMs": 52465,
+      "day": 23,
+      "monthYear": "2026-11",
+      "leaderboardUid": "bed30865-4c08-48e0-ba55-19213fa1a4d2"
     },
     {
       "mapUid": "I1gkMBKI0Y5BMSFstmzsIqbUlB",
