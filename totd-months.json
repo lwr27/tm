@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-23T21:31:11.181Z",
+  "fetchedAt": "2026-11-24T21:31:08.489Z",
   "maps": [
     {
       "mapUid": "eqYkZnUT__552a2wq1MFdMR2nZj",
@@ -207,6 +207,15 @@
       "day": 23,
       "monthYear": "2026-11",
       "leaderboardUid": "bed30865-4c08-48e0-ba55-19213fa1a4d2"
+    },
+    {
+      "mapUid": "nEde8ZUvD7rl7lpTA15wEM90wbk",
+      "mapId": "c15e6db6-89d0-45e0-9b50-d2e59581cccb",
+      "name": "$i$sTMP - $f92Pigeons Ordering Dessert",
+      "authorTimeMs": 40418,
+      "day": 24,
+      "monthYear": "2026-11",
+      "leaderboardUid": "c00f1781-a8a8-4f43-9327-2cf540d07d66"
     },
     {
       "mapUid": "I1gkMBKI0Y5BMSFstmzsIqbUlB",

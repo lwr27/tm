@@ -40181,10 +40181,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "nEde8ZUvD7rl7lpTA15wEM90wbk",
+      "mapId": "c15e6db6-89d0-45e0-9b50-d2e59581cccb",
+      "name": "$i$sTMP - $f92Pigeons Ordering Dessert",
+      "authorTimeMs": 40418,
+      "day": 24,
+      "monthYear": "2026-11",
+      "leaderboardUid": "c00f1781-a8a8-4f43-9327-2cf540d07d66",
+      "authorCount": 40,
+      "totalFinishers": 2846,
+      "pct": 1.4,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-11-23T21:31:21.301Z",
-  "medalsRefreshedAt": "2026-11-23T22:01:56.284Z",
+  "generatedAt": "2026-11-24T21:31:17.498Z",
+  "medalsRefreshedAt": "2026-11-24T22:03:51.909Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",
