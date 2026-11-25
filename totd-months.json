@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-24T21:31:08.489Z",
+  "fetchedAt": "2026-11-25T21:31:12.469Z",
   "maps": [
     {
       "mapUid": "eqYkZnUT__552a2wq1MFdMR2nZj",
@@ -216,6 +216,15 @@
       "day": 24,
       "monthYear": "2026-11",
       "leaderboardUid": "c00f1781-a8a8-4f43-9327-2cf540d07d66"
+    },
+    {
+      "mapUid": "ERR8Hmi9zzVrHspiX69tFZhGXa",
+      "mapId": "e605459b-0ecc-4d21-9060-3370e55e24a8",
+      "name": "lemon $dd2cake",
+      "authorTimeMs": 49322,
+      "day": 25,
+      "monthYear": "2026-11",
+      "leaderboardUid": "21592187-9b16-4810-ab8f-0935e2dde442"
     },
     {
       "mapUid": "I1gkMBKI0Y5BMSFstmzsIqbUlB",

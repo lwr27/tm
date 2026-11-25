@@ -40200,10 +40200,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "ERR8Hmi9zzVrHspiX69tFZhGXa",
+      "mapId": "e605459b-0ecc-4d21-9060-3370e55e24a8",
+      "name": "lemon $dd2cake",
+      "authorTimeMs": 49322,
+      "day": 25,
+      "monthYear": "2026-11",
+      "leaderboardUid": "21592187-9b16-4810-ab8f-0935e2dde442",
+      "authorCount": 215,
+      "totalFinishers": 2869,
+      "pct": 7.5,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-11-24T21:31:17.498Z",
-  "medalsRefreshedAt": "2026-11-24T22:03:51.909Z",
+  "generatedAt": "2026-11-25T21:31:26.704Z",
+  "medalsRefreshedAt": "2026-11-25T22:04:17.603Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",
