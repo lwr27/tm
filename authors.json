@@ -40219,10 +40219,29 @@
       },
       "authorCapped": false,
       "verified": true
+    },
+    {
+      "mapUid": "7hpekOtF0IWmPlhEAzN2SDkREq2",
+      "mapId": "2a8e6784-d232-429b-b755-c4062b2e10ce",
+      "name": "$700$sVulcan 828 $fff ft' Yoshy",
+      "authorTimeMs": 41017,
+      "day": 26,
+      "monthYear": "2026-11",
+      "leaderboardUid": "3e96b6da-2077-4f38-9a0b-522a368a9269",
+      "authorCount": 20,
+      "totalFinishers": 2411,
+      "pct": 0.8,
+      "playerHasAuthor": {
+        "XV27": false,
+        "TheBreaker0": false,
+        "Pho3nix_.": false
+      },
+      "authorCapped": false,
+      "verified": true
     }
   ],
-  "generatedAt": "2026-11-25T21:31:26.704Z",
-  "medalsRefreshedAt": "2026-11-25T22:04:17.603Z",
+  "generatedAt": "2026-11-26T21:31:21.413Z",
+  "medalsRefreshedAt": "2026-11-26T22:03:59.432Z",
   "medalEvents": [
     {
       "key": "XV27|ka8SCMvOV4xPnHT_FN3pKPE2SQi",
